@@ -677,7 +677,7 @@ class Samadi_EW_Components {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'placeholder' => __( 'جستجوی محصول، برند یا کد کالا…', 'samadi-elementor-widgets' ),
+				'placeholder' => __( 'جستجو در میان هزاران کالای برقی...', 'samadi-elementor-widgets' ),
 			)
 		);
 

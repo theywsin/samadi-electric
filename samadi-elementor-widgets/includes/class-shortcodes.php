@@ -179,7 +179,7 @@ class Samadi_EW_Shortcodes {
 	 * @return string
 	 */
 	public static function search( $atts ) {
-		$atts = shortcode_atts( array( 'placeholder' => __( 'جستجوی محصول، برند یا کد کالا…', 'samadi-elementor-widgets' ) ), $atts, 'samadi_search' );
+		$atts = shortcode_atts( array( 'placeholder' => __( 'جستجو در میان هزاران کالای برقی...', 'samadi-elementor-widgets' ) ), $atts, 'samadi_search' );
 
 		return Samadi_EW_Components::search( array( 'placeholder' => sanitize_text_field( $atts['placeholder'] ) ) );
 	}

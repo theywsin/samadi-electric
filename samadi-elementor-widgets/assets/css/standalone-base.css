@@ -5,15 +5,15 @@
  */
 
 :root {
-	--se-primary: #064e3b;
-	--se-brand: #075e46;
-	--se-accent: #c7f52a;
-	--se-bg: #f7f8f6;
+	--se-primary: #123f35;
+	--se-brand: #123f35;
+	--se-accent: #d9ee8c;
+	--se-bg: #f6f7f4;
 	--se-surface: #ffffff;
-	--se-text: #152421;
-	--se-muted: #718078;
-	--se-border: #e8ece8;
-	--se-sale: #f04438;
+	--se-text: #202b27;
+	--se-muted: #7a837e;
+	--se-border: #e6eae6;
+	--se-sale: #db6550;
 	--se-success: #12805c;
 	--se-warning: #b54708;
 	--se-radius-sm: 10px;

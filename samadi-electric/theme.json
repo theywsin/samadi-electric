@@ -7,15 +7,15 @@
 			"defaultPalette": false,
 			"defaultGradients": false,
 			"palette": [
-				{ "slug": "se-primary", "color": "#064E3B", "name": "سبز تیره" },
-				{ "slug": "se-brand", "color": "#075E46", "name": "سبز برند" },
-				{ "slug": "se-accent", "color": "#C7F52A", "name": "لیمویی" },
-				{ "slug": "se-bg", "color": "#F7F8F6", "name": "پس‌زمینه" },
+				{ "slug": "se-primary", "color": "#123f35", "name": "سبز تیره" },
+				{ "slug": "se-brand", "color": "#123f35", "name": "سبز برند" },
+				{ "slug": "se-accent", "color": "#d9ee8c", "name": "لیمویی" },
+				{ "slug": "se-bg", "color": "#f6f7f4", "name": "پس‌زمینه" },
 				{ "slug": "se-surface", "color": "#FFFFFF", "name": "سفید" },
-				{ "slug": "se-text", "color": "#152421", "name": "متن" },
-				{ "slug": "se-muted", "color": "#718078", "name": "متن ثانویه" },
-				{ "slug": "se-border", "color": "#E8ECE8", "name": "خط" },
-				{ "slug": "se-sale", "color": "#F04438", "name": "تخفیف" }
+				{ "slug": "se-text", "color": "#202b27", "name": "متن" },
+				{ "slug": "se-muted", "color": "#7a837e", "name": "متن ثانویه" },
+				{ "slug": "se-border", "color": "#e6eae6", "name": "خط" },
+				{ "slug": "se-sale", "color": "#db6550", "name": "تخفیف" }
 			]
 		},
 		"layout": {

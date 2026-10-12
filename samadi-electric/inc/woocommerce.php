@@ -687,3 +687,65 @@ function samadi_wc_view_toggle() {
 	</div>
 	<?php
 }
+
+/**
+ * End time (Unix timestamp) for the homepage offers countdown.
+ *
+ * Uses the Customizer value when set; otherwise the earliest real "sale ends" date among products on
+ * sale. Returns 0 when there is no future end date, so no invented deadline is ever shown.
+ *
+ * @return int
+ */
+function samadi_sale_countdown_end() {
+	$option = (string) samadi_option( 'home_sale_ends' );
+
+	if ( $option ) {
+		$date = date_create_immutable( $option, wp_timezone() );
+		return $date ? $date->getTimestamp() : 0;
+	}
+
+	if ( ! function_exists( 'wc_get_product_ids_on_sale' ) ) {
+		return 0;
+	}
+
+	$cached = get_transient( 'samadi_sale_countdown_end' );
+	if ( false !== $cached ) {
+		return (int) $cached > time() ? (int) $cached : 0;
+	}
+
+	$end = 0;
+	foreach ( array_slice( wc_get_product_ids_on_sale(), 0, 100 ) as $id ) {
+		$product = wc_get_product( $id );
+		$to      = $product ? $product->get_date_on_sale_to() : null;
+		if ( $to && $to->getTimestamp() > time() && ( ! $end || $to->getTimestamp() < $end ) ) {
+			$end = $to->getTimestamp();
+		}
+	}
+
+	set_transient( 'samadi_sale_countdown_end', $end, 10 * MINUTE_IN_SECONDS );
+
+	return $end;
+}
+
+/**
+ * Countdown text "HH : MM : SS" (hours may exceed 24) for server-side rendering before JS ticks.
+ *
+ * @param int $end End timestamp.
+ * @return string
+ */
+function samadi_countdown_text( $end ) {
+	$left = max( 0, (int) $end - time() );
+	$text = sprintf( '%02d : %02d : %02d', floor( $left / 3600 ), floor( $left / 60 ) % 60, $left % 60 );
+
+	return samadi_option( 'persian_digits' ) ? samadi_fa_digits( $text ) : $text;
+}
+
+/**
+ * Recalculate the offers countdown when products change.
+ */
+function samadi_flush_sale_countdown() {
+	delete_transient( 'samadi_sale_countdown_end' );
+}
+add_action( 'woocommerce_update_product', 'samadi_flush_sale_countdown' );
+add_action( 'woocommerce_new_product', 'samadi_flush_sale_countdown' );
+add_action( 'woocommerce_scheduled_sales', 'samadi_flush_sale_countdown' );

@@ -17,7 +17,7 @@ $samadi_brands = get_terms(
 	array(
 		'taxonomy'   => $samadi_tax,
 		'hide_empty' => true,
-		'number'     => 12,
+		'number'     => 6,
 		'orderby'    => 'count',
 		'order'      => 'DESC',
 	)
@@ -28,7 +28,7 @@ if ( is_wp_error( $samadi_brands ) || ! $samadi_brands ) {
 }
 ?>
 <section class="se-section se-home-brands">
-	<?php samadi_section_head( __( 'برندهای معتبر', 'samadi-electric' ) ); ?>
+	<?php samadi_section_head( __( 'برندهای معتبر، انتخاب‌های مطمئن', 'samadi-electric' ), samadi_shop_url(), __( 'همه برندها', 'samadi-electric' ) ); ?>
 	<ul class="se-brand-strip">
 		<?php foreach ( $samadi_brands as $samadi_brand ) : ?>
 			<li class="se-brand-strip__item">

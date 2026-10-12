@@ -21,35 +21,39 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 $samadi_link     = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
 $samadi_style    = sanitize_html_class( (string) samadi_option( 'card_style' ) );
 $samadi_brand    = samadi_option( 'card_show_brand' ) ? samadi_product_brand( $product->get_id() ) : null;
+$samadi_meta     = array_filter( array( trim( (string) samadi_option( 'card_meta_prefix' ) ), $samadi_brand ? $samadi_brand->name : '' ) );
 $samadi_wishlist = samadi_wishlist_provider() ? samadi_wishlist_button( $product->get_id() ) : '';
 ?>
 <li <?php wc_product_class( 'se-pcard se-pcard--' . $samadi_style, $product ); ?>>
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<div class="se-pcard__media">
-		<a href="<?php echo esc_url( $samadi_link ); ?>" class="se-pcard__image woocommerce-LoopProduct-link woocommerce-loop-product__link" tabindex="-1" aria-hidden="true">
-			<?php echo woocommerce_get_product_thumbnail(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		</a>
+	<div class="se-pcard__top">
 		<div class="se-pcard__badges">
 			<?php echo samadi_wc_sale_badge( $product ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php if ( $product->is_featured() ) : ?>
-				<span class="se-badge se-badge--featured"><?php esc_html_e( 'ویژه', 'samadi-electric' ); ?></span>
+				<span class="se-badge se-badge--featured"><?php esc_html_e( 'پیشنهاد ویژه', 'samadi-electric' ); ?></span>
 			<?php endif; ?>
 		</div>
 		<?php if ( $samadi_wishlist ) : ?>
 			<div class="se-pcard__wishlist"><?php echo $samadi_wishlist; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Wishlist plugin output. ?></div>
 		<?php endif; ?>
+	</div>
+
+	<div class="se-pcard__media">
+		<a href="<?php echo esc_url( $samadi_link ); ?>" class="se-pcard__image woocommerce-LoopProduct-link woocommerce-loop-product__link" tabindex="-1" aria-hidden="true">
+			<?php echo woocommerce_get_product_thumbnail(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		</a>
 		<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 	</div>
 
 	<div class="se-pcard__body">
-		<?php if ( $samadi_brand ) : ?>
-			<span class="se-pcard__brand"><?php echo esc_html( $samadi_brand->name ); ?></span>
-		<?php endif; ?>
-
 		<h3 class="se-pcard__title woocommerce-loop-product__title">
 			<a href="<?php echo esc_url( $samadi_link ); ?>"><?php echo esc_html( $product->get_name() ); ?></a>
 		</h3>
+
+		<?php if ( $samadi_meta ) : ?>
+			<span class="se-pcard__brand"><?php echo esc_html( implode( '  •  ', $samadi_meta ) ); ?></span>
+		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_shop_loop_item_title' ); ?>
 

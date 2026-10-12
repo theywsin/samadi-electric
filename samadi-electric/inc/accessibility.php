@@ -43,7 +43,7 @@ function samadi_search_form( $form ) {
 	?>
 	<form role="search" method="get" class="se-search-form search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<label class="screen-reader-text" for="<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'جستجو برای:', 'samadi-electric' ); ?></label>
-		<input type="search" id="<?php echo esc_attr( $id ); ?>" class="se-search-form__input search-field" placeholder="<?php echo esc_attr( samadi_is_wc() ? __( 'جستجوی محصول، برند یا کد کالا…', 'samadi-electric' ) : __( 'جستجو…', 'samadi-electric' ) ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" autocomplete="off">
+		<input type="search" id="<?php echo esc_attr( $id ); ?>" class="se-search-form__input search-field" placeholder="<?php echo esc_attr( samadi_is_wc() ? __( 'جستجو در میان هزاران کالای برقی...', 'samadi-electric' ) : __( 'جستجو…', 'samadi-electric' ) ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" autocomplete="off">
 		<?php if ( $post_type ) : ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php endif; ?>
