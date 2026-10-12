@@ -18,14 +18,16 @@ $samadi_count = max( 1, min( 24, absint( samadi_option( 'home_products_count' ) 
 			get_template_part( 'template-parts/home/hero' );
 		}
 
+		// Order follows the approved design: hero → categories → benefits → products.
+		if ( samadi_is_wc() && samadi_option( 'home_show_categories' ) ) {
+			get_template_part( 'template-parts/home/categories' );
+		}
+
 		if ( samadi_option( 'home_show_benefits' ) && samadi_option( 'benefits_show' ) ) {
 			get_template_part( 'template-parts/components/benefits' );
 		}
 
 		if ( samadi_is_wc() ) {
-			if ( samadi_option( 'home_show_categories' ) ) {
-				get_template_part( 'template-parts/home/categories' );
-			}
 
 			$samadi_sections = array(
 				'home_show_sale'        => array( __( 'پیشنهادهای ویژه', 'samadi-electric' ), 'on_sale="true" orderby="popularity"' ),

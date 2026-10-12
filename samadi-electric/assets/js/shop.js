@@ -288,6 +288,155 @@
 		} );
 	}
 
+
+	/* ---------- Sort menu (links; AJAX-enhanced by the companion plugin) ---------- */
+
+	document.addEventListener( 'click', function ( event ) {
+		var toggle = event.target.closest( '.se-sort__toggle' );
+		document.querySelectorAll( '[data-se-sort]' ).forEach( function ( sort ) {
+			var btn = sort.querySelector( '.se-sort__toggle' );
+			var list = sort.querySelector( '.se-sort__list' );
+			if ( toggle && sort.contains( toggle ) ) {
+				var open = list.hidden;
+				list.hidden = ! open;
+				btn.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+				if ( open ) {
+					var active = list.querySelector( '.is-active' ) || list.querySelector( 'a' );
+					if ( active ) {
+						active.focus();
+					}
+				}
+			} else if ( ! sort.contains( event.target ) || event.target.closest( '.se-sort__link' ) ) {
+				list.hidden = true;
+				btn.setAttribute( 'aria-expanded', 'false' );
+			}
+		} );
+	} );
+
+	document.addEventListener( 'keydown', function ( event ) {
+		if ( 'Escape' !== event.key ) {
+			return;
+		}
+		var sort = event.target.closest && event.target.closest( '[data-se-sort]' );
+		if ( sort ) {
+			sort.querySelector( '.se-sort__list' ).hidden = true;
+			var btn = sort.querySelector( '.se-sort__toggle' );
+			btn.setAttribute( 'aria-expanded', 'false' );
+			btn.focus();
+		}
+	} );
+
+	/* ---------- Quick filter chips → open the filter panel at the matching group ---------- */
+
+	document.addEventListener( 'click', function ( event ) {
+		var chip = event.target.closest( '[data-se-filter-jump]' );
+		if ( ! chip ) {
+			return;
+		}
+		var group = document.querySelector( '.se-filter-group[data-taxonomy="' + chip.getAttribute( 'data-se-filter-jump' ).replace( /"/g, '' ) + '"]' );
+		var opener = document.querySelector( '[data-se-filters-open]' );
+		if ( window.matchMedia( '(max-width: 991px)' ).matches && opener ) {
+			opener.click();
+		}
+		if ( group ) {
+			window.setTimeout( function () {
+				group.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+				group.classList.add( 'is-highlighted' );
+				var field = group.querySelector( 'input' );
+				if ( field ) {
+					field.focus( { preventScroll: true } );
+				}
+				window.setTimeout( function () {
+					group.classList.remove( 'is-highlighted' );
+				}, 1600 );
+			}, 80 );
+		}
+	} );
+
+	/* ---------- Product gallery: brand tile in the thumbnail column + "1 / N" counter ---------- */
+
+	function initGallery() {
+		var gallery = document.querySelector( '.se-single-product .woocommerce-product-gallery' );
+		if ( ! gallery ) {
+			return;
+		}
+		var brand = document.querySelector( '.se-single-product .se-gallery-brand' );
+		if ( brand && brand.parentNode !== gallery ) {
+			gallery.appendChild( brand );
+			gallery.classList.add( 'has-brand' );
+		}
+
+		var thumbs = gallery.querySelector( '.flex-control-thumbs' );
+		if ( ! thumbs ) {
+			// Slider initialises after images load; retry briefly.
+			if ( ! gallery.__seTries || gallery.__seTries < 20 ) {
+				gallery.__seTries = ( gallery.__seTries || 0 ) + 1;
+				window.setTimeout( initGallery, 250 );
+			}
+			return;
+		}
+		if ( gallery.__seCounter ) {
+			return;
+		}
+		gallery.classList.add( 'has-thumbs' );
+		var images = thumbs.querySelectorAll( 'img' );
+		var counter = document.createElement( 'span' );
+		counter.className = 'se-gallery-counter';
+		counter.setAttribute( 'aria-hidden', 'true' );
+		gallery.appendChild( counter );
+		gallery.__seCounter = counter;
+
+		var digits = function ( n ) {
+			return window.samadiTheme && window.samadiTheme.persianDigits ? String( n ).replace( /\d/g, function ( d ) {
+				return '۰۱۲۳۴۵۶۷۸۹'.charAt( +d );
+			} ) : String( n );
+		};
+		var update = function () {
+			var index = Array.prototype.findIndex.call( images, function ( img ) {
+				return img.classList.contains( 'flex-active' );
+			} );
+			counter.textContent = digits( Math.max( 0, index ) + 1 ) + ' / ' + digits( images.length );
+		};
+		new MutationObserver( update ).observe( thumbs, { attributes: true, subtree: true, attributeFilter: [ 'class' ] } );
+		update();
+	}
+
+	/* ---------- Variable products: one price — the selected variation updates the main price ---------- */
+
+	function initVariationPrice() {
+		if ( ! window.jQuery ) {
+			return;
+		}
+		var $ = window.jQuery;
+		$( '.se-single-product form.variations_form' ).each( function () {
+			var form = this;
+			var summary = form.closest( '.summary' );
+			var priceEl = summary ? summary.querySelector( 'p.price' ) : null;
+			if ( ! priceEl ) {
+				return;
+			}
+			var original = priceEl.innerHTML;
+			form.classList.add( 'se-price-sync' );
+			$( form )
+				.on( 'found_variation', function ( e, variation ) {
+					if ( variation && variation.price_html ) {
+						var tmp = document.createElement( 'div' );
+						tmp.innerHTML = variation.price_html;
+						var inner = tmp.querySelector( '.price' );
+						priceEl.innerHTML = inner ? inner.innerHTML : tmp.innerHTML;
+					}
+				} )
+				.on( 'reset_data', function () {
+					priceEl.innerHTML = original;
+				} );
+			// A default variation may already be selected before this handler was attached.
+			var idField = form.querySelector( 'input.variation_id' );
+			if ( idField && idField.value ) {
+				$( form ).trigger( 'check_variations' );
+			}
+		} );
+	}
+
 	/* ---------- Init ---------- */
 
 	function init() {
@@ -295,6 +444,8 @@
 		initSwatches();
 		initBuyBar();
 		initFilters();
+		initGallery();
+		initVariationPrice();
 		applyView( storedView() );
 
 		// Cart/checkout fragments and AJAX-loaded product lists replace markup: re-enhance.

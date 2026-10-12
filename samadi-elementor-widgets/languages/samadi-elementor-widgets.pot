@@ -23,7 +23,7 @@ msgstr ""
 msgid "رنگ"
 msgstr ""
 
-#: includes/class-shortcodes.php:182 includes/elementor/widgets/class-search.php:37 includes/class-components.php:656
+#: includes/class-shortcodes.php:182 includes/elementor/widgets/class-search.php:37 includes/class-components.php:680
 msgid "جستجوی محصول، برند یا کد کالا…"
 msgstr ""
 
@@ -151,67 +151,75 @@ msgstr ""
 msgid "تنظیمات صمدی الکتریک"
 msgstr ""
 
-#: includes/class-filters.php:373
+#: includes/class-filters.php:374
 msgid "فیلترها در صفحات فروشگاه و آرشیو دسته‌بندی محصولات نمایش داده می‌شوند."
 msgstr ""
 
-#: includes/class-filters.php:415 includes/elementor/widgets/class-product-filters.php:44
+#: includes/class-filters.php:416 includes/elementor/widgets/class-product-filters.php:44
 msgid "موجودی"
 msgstr ""
 
-#: includes/class-filters.php:418
+#: includes/class-filters.php:419
 msgid "فقط کالاهای موجود"
 msgstr ""
 
-#: includes/class-filters.php:425 includes/elementor/widgets/class-product-filters.php:45
+#: includes/class-filters.php:426 includes/class-filters.php:477 includes/elementor/widgets/class-product-filters.php:45
 msgid "برند"
 msgstr ""
 
-#: includes/class-filters.php:438
+#: includes/class-filters.php:439
 msgid "اعمال فیلترها"
 msgstr ""
 
-#: includes/class-filters.php:440
+#: includes/class-filters.php:441
 msgid "حذف همه فیلترها"
 msgstr ""
 
+#: includes/class-filters.php:484
+msgid "محدوده قیمت"
+msgstr ""
+
 #: includes/class-filters.php:498
+msgid "فیلتر سریع"
+msgstr ""
+
+#: includes/class-filters.php:562
 msgid "فقط موجود"
 msgstr ""
 
-#: includes/class-filters.php:501
+#: includes/class-filters.php:565
 msgid "از %s"
 msgstr ""
 
-#: includes/class-filters.php:501
+#: includes/class-filters.php:565
 msgid "تا %s"
 msgstr ""
 
-#: includes/class-filters.php:510
+#: includes/class-filters.php:574
 msgid "فیلترهای فعال"
 msgstr ""
 
-#: includes/class-filters.php:517
+#: includes/class-filters.php:581
 msgid "(حذف)"
 msgstr ""
 
-#: includes/class-filters.php:543
+#: includes/class-filters.php:607
 msgid "محدوده قیمت (%s)"
 msgstr ""
 
-#: includes/class-filters.php:544
+#: includes/class-filters.php:608
 msgid "از"
 msgstr ""
 
-#: includes/class-filters.php:545
+#: includes/class-filters.php:609
 msgid "تا"
 msgstr ""
 
-#: includes/class-filters.php:553
+#: includes/class-filters.php:617
 msgid "قیمت محصولات این بخش: %1$s تا %2$s"
 msgstr ""
 
-#: includes/class-filters.php:597
+#: includes/class-filters.php:661
 msgid "نمایش بیشتر"
 msgstr ""
 
@@ -327,7 +335,7 @@ msgstr ""
 msgid "قالب صمدی الکتریک این نوار را خودش نمایش می‌دهد؛ این ویجت برای زمانی است که آن را در «سفارشی‌سازی ← موبایل» خاموش کرده‌اید یا از قالب دیگری استفاده می‌کنید. فقط در عرض موبایل/تبلت دیده می‌شود."
 msgstr ""
 
-#: includes/elementor/widgets/class-mobile-nav.php:46 includes/class-components.php:905
+#: includes/elementor/widgets/class-mobile-nav.php:46 includes/class-components.php:929
 msgid "خانه"
 msgstr ""
 
@@ -335,7 +343,7 @@ msgstr ""
 msgid "دسته‌بندی‌ها / فروشگاه"
 msgstr ""
 
-#: includes/elementor/widgets/class-mobile-nav.php:48 includes/elementor/widgets/class-header-tools.php:41 includes/class-components.php:709 includes/class-components.php:907
+#: includes/elementor/widgets/class-mobile-nav.php:48 includes/elementor/widgets/class-header-tools.php:41 includes/class-components.php:733 includes/class-components.php:931
 msgid "سبد خرید"
 msgstr ""
 
@@ -343,7 +351,7 @@ msgstr ""
 msgid "علاقه‌مندی‌ها (در صورت نصب افزونه)"
 msgstr ""
 
-#: includes/elementor/widgets/class-mobile-nav.php:50 includes/elementor/widgets/class-header-tools.php:40 includes/class-components.php:704 includes/class-components.php:909
+#: includes/elementor/widgets/class-mobile-nav.php:50 includes/elementor/widgets/class-header-tools.php:40 includes/class-components.php:728 includes/class-components.php:933
 msgid "حساب کاربری"
 msgstr ""
 
@@ -411,7 +419,7 @@ msgstr ""
 msgid "محصولات مکمل (سبد خرید)"
 msgstr ""
 
-#: includes/elementor/widgets/class-product-grid.php:70 includes/elementor/widgets/class-category-cards.php:36 includes/class-components.php:906 includes/class-plugin.php:105
+#: includes/elementor/widgets/class-product-grid.php:70 includes/elementor/widgets/class-category-cards.php:36 includes/class-components.php:930 includes/class-plugin.php:105
 msgid "دسته‌بندی‌ها"
 msgstr ""
 
@@ -575,7 +583,7 @@ msgstr ""
 msgid "جستجوی محصولات صمدی"
 msgstr ""
 
-#: includes/elementor/widgets/class-search.php:36 includes/class-components.php:670
+#: includes/elementor/widgets/class-search.php:36 includes/class-components.php:694
 msgid "جستجو"
 msgstr ""
 
@@ -655,19 +663,43 @@ msgstr ""
 msgid "نمایش تصویر دسته"
 msgstr ""
 
-#: includes/elementor/widgets/class-category-cards.php:97
-msgid "کارت"
+#: includes/elementor/widgets/class-category-cards.php:93
+msgid "در موبایل به‌صورت شبکه‌ای"
 msgstr ""
 
-#: includes/elementor/widgets/class-category-cards.php:99
-msgid "متن و تصویر کارت"
+#: includes/elementor/widgets/class-category-cards.php:93
+msgid "اسلایدر در دسکتاپ، شبکه فشرده در موبایل (مطابق طرح)."
 msgstr ""
 
-#: includes/elementor/widgets/class-category-cards.php:100
-msgid "ارتفاع تصویر"
+#: includes/elementor/widgets/class-category-cards.php:94
+msgid "نمایش توضیح کوتاه دسته (دسکتاپ)"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:95
+msgid "برجسته کردن کارت اول (دسکتاپ)"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:96
+msgid "کاشی «برندها» (لینک صفحه برندها)"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:96
+msgid "خالی = نمایش داده نمی‌شود."
 msgstr ""
 
 #: includes/elementor/widgets/class-category-cards.php:101
+msgid "کارت"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:103
+msgid "متن و تصویر کارت"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:104
+msgid "ارتفاع تصویر"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:105
 msgid "نام دسته"
 msgstr ""
 
@@ -811,7 +843,7 @@ msgstr ""
 msgid "عنوان دکمه"
 msgstr ""
 
-#: includes/elementor/widgets/class-mega-menu.php:37 includes/class-components.php:736
+#: includes/elementor/widgets/class-mega-menu.php:37 includes/class-components.php:760
 msgid "همه دسته‌بندی‌ها"
 msgstr ""
 
@@ -879,7 +911,7 @@ msgstr ""
 msgid "مشاهده محصولات"
 msgstr ""
 
-#: includes/elementor/widgets/class-hero.php:73 includes/elementor/widgets/class-header-tools.php:38 includes/class-components.php:688
+#: includes/elementor/widgets/class-hero.php:73 includes/elementor/widgets/class-header-tools.php:38 includes/class-components.php:712
 msgid "خرید عمده"
 msgstr ""
 
@@ -1003,7 +1035,7 @@ msgstr ""
 msgid "فروش ویژه زمان‌دار صمدی"
 msgstr ""
 
-#: includes/elementor/widgets/class-flash-sale.php:38 includes/class-components.php:855
+#: includes/elementor/widgets/class-flash-sale.php:38 includes/class-components.php:879
 msgid "فروش ویژه"
 msgstr ""
 
@@ -1063,7 +1095,7 @@ msgstr ""
 msgid "برندهای صمدی"
 msgstr ""
 
-#: includes/elementor/widgets/class-brands.php:36 includes/class-plugin.php:106
+#: includes/elementor/widgets/class-brands.php:36 includes/class-components.php:262 includes/class-plugin.php:106
 msgid "برندها"
 msgstr ""
 
@@ -1319,71 +1351,71 @@ msgstr ""
 msgid "نمایش بنر %d"
 msgstr ""
 
-#: includes/class-components.php:306
+#: includes/class-components.php:315
 msgid "%s کالا"
 msgstr ""
 
-#: includes/class-components.php:482
+#: includes/class-components.php:506
 msgid "هیچ طبقه‌بندی برندی فعال نیست. برندهای ووکامرس (محصولات ← برندها) را فعال کنید."
 msgstr ""
 
-#: includes/class-components.php:569
+#: includes/class-components.php:593
 msgid "زمان باقی‌مانده تا پایان پیشنهاد"
 msgstr ""
 
-#: includes/class-components.php:570 includes/class-plugin.php:112
+#: includes/class-components.php:594 includes/class-plugin.php:112
 msgid "روز"
 msgstr ""
 
-#: includes/class-components.php:571 includes/class-plugin.php:113
+#: includes/class-components.php:595 includes/class-plugin.php:113
 msgid "ساعت"
 msgstr ""
 
-#: includes/class-components.php:572 includes/class-plugin.php:114
+#: includes/class-components.php:596 includes/class-plugin.php:114
 msgid "دقیقه"
 msgstr ""
 
-#: includes/class-components.php:573 includes/class-plugin.php:115
+#: includes/class-components.php:597 includes/class-plugin.php:115
 msgid "ثانیه"
 msgstr ""
 
-#: includes/class-components.php:666
+#: includes/class-components.php:690
 msgid "جستجوی محصولات"
 msgstr ""
 
-#: includes/class-components.php:700 includes/class-components.php:908
+#: includes/class-components.php:724 includes/class-components.php:932
 msgid "علاقه‌مندی‌ها"
 msgstr ""
 
-#: includes/class-components.php:704
+#: includes/class-components.php:728
 msgid "ورود / ثبت‌نام"
 msgstr ""
 
-#: includes/class-components.php:825
+#: includes/class-components.php:849
 msgid "این ویجت مشخصات فنی محصول جاری را نمایش می‌دهد (در قالب صفحه محصول استفاده کنید)."
 msgstr ""
 
-#: includes/class-components.php:858
+#: includes/class-components.php:882
 msgid "ویژه"
 msgstr ""
 
-#: includes/class-components.php:861
+#: includes/class-components.php:885
 msgid "ناموجود"
 msgstr ""
 
-#: includes/class-components.php:879
+#: includes/class-components.php:903
 msgid "ابتدا صفحه خرید عمده/استعلام قیمت را در تنظیمات افزونه مشخص کنید."
 msgstr ""
 
-#: includes/class-components.php:912
+#: includes/class-components.php:936
 msgid "ناوبری سریع"
 msgstr ""
 
-#: includes/class-components.php:941
+#: includes/class-components.php:965
 msgid "اطلاعات تماس از «نمایش ← سفارشی‌سازی ← تنظیمات صمدی الکتریک ← اطلاعات تماس» قالب صمدی خوانده می‌شود."
 msgstr ""
 
-#: includes/class-components.php:965
+#: includes/class-components.php:989
 msgid "هنوز اطلاعات تماسی در سفارشی‌سازی قالب وارد نشده است."
 msgstr ""
 

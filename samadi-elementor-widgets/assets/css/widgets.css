@@ -793,3 +793,112 @@
 		min-width: 44px;
 	}
 }
+
+/* ---------- Refinements v1.1 ---------- */
+
+.se-cat-card__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+@media (max-width: 767px) {
+	/* Category carousel turns into the compact grid of the mobile design. */
+	.se-carousel__track .se-cat-grid--mobile-grid {
+		grid-auto-flow: row;
+		grid-template-columns: repeat(var(--se-cols, 4), minmax(0, 1fr));
+		grid-auto-columns: auto;
+		overflow: visible;
+	}
+
+	.se-carousel:has(.se-cat-grid--mobile-grid) .se-carousel__nav {
+		display: none;
+	}
+}
+
+/* Flash sale: light surface with countdown pills in the heading row (as in the design). */
+.se-flash {
+	padding: 0;
+	background: none;
+	color: inherit;
+}
+
+.se-flash__head {
+	padding-inline-end: 100px;
+}
+
+.se-flash__title {
+	color: var(--se-text, #152421);
+}
+
+.se-flash__title svg {
+	color: var(--se-sale, #f04438);
+}
+
+.se-countdown__unit {
+	flex-direction: row;
+	gap: 4px;
+	min-width: 0;
+	padding: 6px 10px;
+	border: 1px solid var(--se-border, #e8ece8);
+	background: var(--se-surface, #fff);
+	color: var(--se-text, #152421);
+	align-items: baseline;
+}
+
+.se-countdown__unit b {
+	font-size: 1rem;
+}
+
+.se-countdown__unit small {
+	opacity: 1;
+	color: var(--se-muted, #718078);
+}
+
+/*
+ * Inside Elementor flex containers, give Samadi widgets a definite width (Elementor's own
+ * "custom width" setting still wins through --container-widget-width). Without it the browser
+ * measures grids at max-content width and under-sizes their height, so following sections overlap.
+ */
+.e-con > .elementor-widget[class*="elementor-widget-samadi-"],
+.e-con > .e-con-inner > .elementor-widget[class*="elementor-widget-samadi-"] {
+	width: var(--container-widget-width, 100%);
+}
+
+/* Carousel arrows sit on the row edges, vertically centred (as in the desktop design). */
+.se-carousel__nav,
+.se-section-head + .se-carousel .se-carousel__nav,
+.se-flash .se-carousel__nav {
+	position: absolute;
+	inset: 0;
+	display: block;
+	pointer-events: none;
+}
+
+.se-carousel__btn {
+	position: absolute;
+	z-index: 5;
+	inset-block-start: 50%;
+	margin-block-start: -20px;
+	width: 40px;
+	height: 40px;
+	pointer-events: auto;
+	box-shadow: 0 4px 14px rgba(21, 36, 33, 0.12);
+}
+
+.se-carousel__btn[data-dir="prev"] {
+	inset-inline-start: -14px;
+}
+
+.se-carousel__btn[data-dir="next"] {
+	inset-inline-end: -14px;
+}
+
+.se-carousel__btn:disabled {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.se-flash__head {
+	padding-inline-end: 0;
+}

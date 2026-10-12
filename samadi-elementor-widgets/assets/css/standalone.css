@@ -1179,3 +1179,329 @@ ul.products li.se-pcard,
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 }
+
+/* =========================================================================
+ * Reference refinements (design audit v1.1)
+ * Cards, badges, benefits, categories and hero tuned to the approved design.
+ * ====================================================================== */
+
+/* ---------- Product card ---------- */
+
+.woocommerce ul.products li.product.se-pcard,
+ul.products li.se-pcard,
+.se-pcard {
+	padding: 10px;
+	border-radius: var(--se-radius);
+	box-shadow: 0 1px 2px rgba(21, 36, 33, 0.03), 0 8px 24px -16px rgba(21, 36, 33, 0.14);
+}
+
+.se-pcard__media {
+	margin-block-end: 8px;
+}
+
+/* Badge top-right (start), wishlist top-left (end) — as in the design. */
+.se-pcard__badges {
+	inset-inline-start: 8px;
+	inset-inline-end: auto;
+	align-items: flex-start;
+}
+
+.se-pcard__wishlist {
+	inset-inline-start: auto;
+	inset-inline-end: 6px;
+}
+
+.woocommerce ul.products li.product .se-badge,
+.woocommerce span.onsale.se-badge,
+.se-pcard .se-badge {
+	position: static;
+	min-width: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 2px 9px;
+	border-radius: 999px;
+	font-size: 0.68rem;
+	font-weight: 800;
+	line-height: 1.7;
+	inset: auto;
+}
+
+.woocommerce ul.products li.product .se-pcard__title,
+.se-pcard__title {
+	font-size: 0.88rem;
+	font-weight: 600;
+	line-height: 1.75;
+	min-height: calc(1.75em * 2);
+}
+
+.se-pcard__footer {
+	margin-block-start: auto;
+	padding-block-start: 8px;
+	border-block-start: 0;
+	align-items: center;
+}
+
+.se-pcard__price .price,
+.woocommerce ul.products li.product .se-pcard__price .price {
+	font-size: 0.98rem;
+	font-weight: 800;
+	line-height: 1.45;
+	color: var(--se-text);
+}
+
+.se-pcard__price .price del {
+	font-size: 0.72rem;
+}
+
+.woocommerce ul.products li.product .se-pcard__action .button,
+.se-pcard__action .button,
+.se-pcard__cart {
+	width: 38px;
+	height: 38px;
+	min-height: 38px;
+	border: 0;
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--se-brand) 9%, var(--se-surface));
+	color: var(--se-primary);
+}
+
+.se-price-request {
+	font-size: 0.88rem;
+}
+
+/* ---------- Compact horizontal product rows (homepage carousels) ---------- */
+
+@media (max-width: 767px) {
+	.se-products--row ul.products,
+	.se-carousel__track .se-products--row ul.products,
+	.se-products-scroll ul.products {
+		grid-auto-flow: column;
+		grid-template-columns: none !important;
+		grid-auto-columns: calc((100% - 2 * 8px) / 3.1);
+		gap: 8px;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: none;
+	}
+
+	.se-products--row ul.products::-webkit-scrollbar,
+	.se-products-scroll ul.products::-webkit-scrollbar {
+		display: none;
+	}
+
+	.se-products--row li.se-pcard,
+	.se-products-scroll li.se-pcard {
+		padding: 8px;
+		border-radius: 14px;
+		/* Lets the floating cart button sit on the image corner (100cqw = image size). */
+		container-type: inline-size;
+	}
+
+	.se-products--row .se-pcard__title,
+	.se-products-scroll .se-pcard__title,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__title {
+		font-size: 0.74rem;
+		line-height: 1.7;
+	}
+
+	.se-products--row .se-pcard__price .price,
+	.se-products-scroll .se-pcard__price .price,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__price .price {
+		font-size: 0.8rem;
+	}
+
+	.se-products--row .se-pcard__price .woocommerce-Price-currencySymbol,
+	.se-products-scroll .se-pcard__price .woocommerce-Price-currencySymbol {
+		font-size: 0.66rem;
+	}
+
+	.se-products--row .se-badge,
+	.se-products-scroll .se-badge,
+	.woocommerce .se-products--row ul.products li.product .se-badge {
+		font-size: 0.6rem;
+		padding: 1px 6px;
+	}
+
+	/* The add-to-cart control floats on the image corner to keep compact cards clean. */
+	.se-products--row .se-pcard__action,
+	.se-products-scroll .se-pcard__action {
+		position: absolute;
+		z-index: 3;
+		top: calc(8px + 100cqw - 38px);
+		inset-inline-end: 12px;
+	}
+
+	.se-products--row .se-pcard__action .button,
+	.se-products-scroll .se-pcard__action .button,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__action .button {
+		width: 30px;
+		height: 30px;
+		min-height: 30px;
+		border-radius: 9px;
+		box-shadow: 0 2px 8px rgba(21, 36, 33, 0.12);
+		background: var(--se-surface);
+	}
+
+	.se-products--row .se-pcard__action .button svg,
+	.se-products-scroll .se-pcard__action .button svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	.se-products--row .se-stock,
+	.se-products-scroll .se-stock {
+		font-size: 0.66rem;
+	}
+}
+
+/* ---------- Benefits: icon beside text ---------- */
+
+.se-benefits__item {
+	flex-direction: row;
+	text-align: start;
+}
+
+@media (max-width: 767px) {
+	.se-benefits {
+		padding: 12px 4px;
+	}
+
+	.se-benefits__item {
+		flex-direction: row;
+		justify-content: center;
+		gap: 6px;
+		padding: 2px 6px;
+		text-align: start;
+	}
+
+	.se-benefits__icon {
+		width: auto;
+		height: auto;
+		background: none;
+		border-radius: 0;
+	}
+
+	.se-benefits__icon svg {
+		width: 26px;
+		height: 26px;
+	}
+
+	.se-benefits__title {
+		font-size: 0.72rem;
+	}
+
+	.se-benefits__text {
+		font-size: 0.64rem;
+	}
+}
+
+@media (max-width: 380px) {
+	.se-benefits__icon svg {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+/* ---------- Category cards ---------- */
+
+.se-cat-card__desc {
+	display: block;
+	color: var(--se-muted);
+	font-size: 0.78rem;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+/* Desktop: larger product-focused cards with a short description; optional highlighted first card. */
+@media (min-width: 768px) {
+	.se-cat-grid--featured .se-cat-card__link {
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 12px;
+		min-height: 210px;
+		padding: 18px;
+		text-align: start;
+	}
+
+	.se-cat-grid--featured .se-cat-card__media {
+		order: -1;
+		aspect-ratio: auto;
+		height: 120px;
+	}
+
+	.se-cat-grid--featured .se-cat-card__name {
+		font-size: 1rem;
+		font-weight: 800;
+	}
+
+	.se-cat-grid--highlight > .se-cat-card:first-child .se-cat-card__link {
+		background: var(--se-primary);
+		border-color: var(--se-primary);
+		color: #fff;
+	}
+
+	.se-cat-grid--highlight > .se-cat-card:first-child .se-cat-card__desc {
+		color: rgba(255, 255, 255, 0.75);
+	}
+}
+
+@media (max-width: 767px) {
+	.se-cat-card__desc {
+		display: none;
+	}
+
+	.se-cat-card__media {
+		aspect-ratio: 1.15;
+	}
+
+	.se-cat-card__name {
+		font-size: 0.74rem;
+		font-weight: 600;
+	}
+
+	.se-cat-card--brands .se-cat-card__media {
+		color: var(--se-primary);
+	}
+}
+
+/* ---------- Hero ---------- */
+
+.se-hero--end.has-image::before {
+	background: linear-gradient(90deg, rgba(247, 248, 246, 0.94) 0%, rgba(247, 248, 246, 0.65) 40%, rgba(247, 248, 246, 0) 70%);
+}
+
+.se-hero__actions .se-btn--primary svg {
+	order: 2;
+}
+
+@media (max-width: 767px) {
+	/* On phones the copy always sits at the start (right), over the light side of the image. */
+	.se-hero--end,
+	.se-hero--center {
+		justify-content: flex-start;
+		text-align: start;
+	}
+
+	.se-hero--end.has-image::before,
+	.se-hero--center.has-image::before {
+		background: linear-gradient(270deg, rgba(247, 248, 246, 0.95) 0%, rgba(247, 248, 246, 0.75) 55%, rgba(247, 248, 246, 0.2) 100%);
+	}
+
+	.se-hero__content {
+		max-width: 72%;
+	}
+
+	.se-hero__title {
+		font-size: 1.45rem;
+		line-height: 1.5;
+	}
+
+	.se-hero__text {
+		font-size: 0.85rem;
+		margin-block-end: 16px;
+	}
+
+	.se-hero__actions .se-btn--light {
+		display: none;
+	}
+}

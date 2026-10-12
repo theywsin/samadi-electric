@@ -29,6 +29,7 @@ class Samadi_EW_Filters {
 		add_action( 'init', array( __CLASS__, 'normalize_request' ), 1 );
 		add_filter( 'woocommerce_product_query_tax_query', array( __CLASS__, 'stock_tax_query' ) );
 		add_action( 'widgets_init', array( __CLASS__, 'register_widget' ) );
+		add_action( 'samadi_shop_quick_filters', array( __CLASS__, 'quick_chips' ) );
 
 		add_filter( 'wp_robots', array( __CLASS__, 'wp_robots' ) );
 		add_filter( 'wpseo_robots', array( __CLASS__, 'yoast_robots' ) );
@@ -411,7 +412,7 @@ class Samadi_EW_Filters {
 
 			if ( $args['stock'] ) {
 				?>
-				<fieldset class="se-filter-group">
+				<fieldset class="se-filter-group" data-taxonomy="stock">
 					<legend class="se-filter-group__title"><?php esc_html_e( 'موجودی', 'samadi-elementor-widgets' ); ?></legend>
 					<label class="se-filter-option">
 						<input type="checkbox" name="se_stock" value="instock" <?php checked( isset( $active['se_stock'] ) && 'instock' === $active['se_stock'] ); ?>>
@@ -443,6 +444,69 @@ class Samadi_EW_Filters {
 		</form>
 		<?php
 		return (string) ob_get_clean();
+	}
+
+	/**
+	 * Quick filter chips under the shop toolbar: one pill per filter group that applies to the current
+	 * archive (brand, attributes, price). Each chip opens the filter panel at that group.
+	 */
+	public static function quick_chips() {
+		if ( ! function_exists( 'is_shop' ) || ! ( is_shop() || is_product_taxonomy() || is_search() ) ) {
+			return;
+		}
+
+		$term       = self::context_term();
+		$brand_tax  = samadi_ew_brand_taxonomy();
+		$taxonomies = wc_get_attribute_taxonomy_names();
+		if ( 'product_brand' === $brand_tax ) {
+			array_unshift( $taxonomies, $brand_tax );
+		}
+		if ( $term ) {
+			$taxonomies = array_diff( $taxonomies, array( $term->taxonomy ) );
+		}
+
+		$data   = self::context_terms( $term, $taxonomies );
+		$active = self::active_params();
+		$chips  = array();
+
+		foreach ( $taxonomies as $taxonomy ) {
+			if ( empty( $data[ $taxonomy ] ) ) {
+				continue;
+			}
+			$param    = $taxonomy === $brand_tax ? 'filter_product_brand' : 'filter_' . wc_attribute_taxonomy_slug( $taxonomy );
+			$label    = $taxonomy === $brand_tax ? __( 'برند', 'samadi-elementor-widgets' ) : wc_attribute_label( $taxonomy );
+			$selected = isset( $active[ $param ] ) ? count( array_filter( explode( ',', $active[ $param ] ) ) ) : 0;
+			$chips[]  = array( $taxonomy, $label, $selected, true );
+		}
+
+		$range = self::price_range( $term );
+		if ( $range['max'] > $range['min'] ) {
+			$chips[] = array( 'price', __( 'محدوده قیمت', 'samadi-elementor-widgets' ), ( isset( $active['min_price'] ) || isset( $active['max_price'] ) ) ? 1 : 0, false );
+		}
+
+		/**
+		 * Filter the quick filter chips.
+		 *
+		 * @param array $chips [ taxonomy, label, active count, has dropdown ].
+		 */
+		$chips = apply_filters( 'samadi_quick_filter_chips', array_slice( $chips, 0, 7 ) );
+
+		if ( ! $chips ) {
+			return;
+		}
+
+		echo '<div class="se-chips" role="group" aria-label="' . esc_attr__( 'فیلتر سریع', 'samadi-elementor-widgets' ) . '">';
+		foreach ( $chips as $chip ) {
+			printf(
+				'<button type="button" class="se-chip%1$s" data-se-filter-jump="%2$s" aria-controls="se-filters"><span>%3$s</span>%4$s%5$s</button>',
+				$chip[2] ? ' is-active' : '',
+				esc_attr( $chip[0] ),
+				esc_html( $chip[1] ),
+				$chip[2] ? '<span class="se-chip__count">' . esc_html( samadi_ew_number( $chip[2] ) ) . '</span>' : '',
+				$chip[3] ? samadi_ew_icon( 'chevron-down', 14 ) : '' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			);
+		}
+		echo '</div>';
 	}
 
 	/**
@@ -538,7 +602,7 @@ class Samadi_EW_Filters {
 		$symbol = get_woocommerce_currency_symbol();
 
 		return sprintf(
-			'<fieldset class="se-filter-group se-filter-group--price"><legend class="se-filter-group__title">%1$s</legend><div class="se-price-inputs"><label><span>%2$s</span><input type="number" inputmode="numeric" name="min_price" min="%4$s" max="%5$s" step="1" value="%6$s" placeholder="%7$s"></label><label><span>%3$s</span><input type="number" inputmode="numeric" name="max_price" min="%4$s" max="%5$s" step="1" value="%8$s" placeholder="%9$s"></label></div><p class="se-filter-group__hint">%10$s</p></fieldset>',
+			'<fieldset class="se-filter-group se-filter-group--price" data-taxonomy="price"><legend class="se-filter-group__title">%1$s</legend><div class="se-price-inputs"><label><span>%2$s</span><input type="number" inputmode="numeric" name="min_price" min="%4$s" max="%5$s" step="1" value="%6$s" placeholder="%7$s"></label><label><span>%3$s</span><input type="number" inputmode="numeric" name="max_price" min="%4$s" max="%5$s" step="1" value="%8$s" placeholder="%9$s"></label></div><p class="se-filter-group__hint">%10$s</p></fieldset>',
 			/* translators: %s: currency symbol. */
 			esc_html( sprintf( __( 'محدوده قیمت (%s)', 'samadi-elementor-widgets' ), $symbol ) ),
 			esc_html__( 'از', 'samadi-elementor-widgets' ),

@@ -26,6 +26,27 @@ if ( $samadi_ids ) {
 	}
 }
 
+// With the companion plugin, reuse its category component (desktop carousel with descriptions, mobile grid).
+if ( class_exists( 'Samadi_EW_Components' ) ) {
+	$samadi_html = Samadi_EW_Components::categories(
+		array(
+			'source'      => $samadi_ids ? 'manual' : 'top',
+			'ids'         => $samadi_ids,
+			'limit'       => $samadi_limit,
+			'title'       => __( 'دسته‌بندی‌های محبوب', 'samadi-electric' ),
+			'link'        => samadi_shop_url(),
+			'link_text'   => __( 'همه محصولات', 'samadi-electric' ),
+			'layout'      => 'carousel',
+			'mobile_grid' => true,
+			'highlight'   => true,
+		)
+	);
+	if ( $samadi_html ) {
+		echo '<section class="se-section se-home-cats se-ew">' . $samadi_html . '</section>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by the component.
+	}
+	return;
+}
+
 $samadi_terms = get_terms( $samadi_args );
 
 if ( is_wp_error( $samadi_terms ) || ! $samadi_terms ) {

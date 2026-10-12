@@ -28,7 +28,11 @@ function samadi_wc_wrapper_start() {
 		$classes[] = 'se-single-product';
 	}
 	echo '<main id="se-main" class="' . esc_attr( implode( ' ', $classes ) ) . '"><div class="se-container">';
-	samadi_breadcrumb();
+
+	// Product archives print the breadcrumb inside their header card (archive-product.php).
+	if ( ! is_shop() && ! is_product_taxonomy() && ! is_search() ) {
+		samadi_breadcrumb();
+	}
 }
 add_action( 'woocommerce_before_main_content', 'samadi_wc_wrapper_start', 10 );
 
@@ -236,7 +240,8 @@ function samadi_wc_card_stock( $product ) {
 		}
 	}
 
-	return '<span class="se-stock se-stock--in">' . esc_html__( 'موجود', 'samadi-electric' ) . '</span>';
+	// Plain "in stock" is the normal state and is not labelled on cards (keeps cards compact, as in the design).
+	return '';
 }
 
 /* -------------------------------------------------------------------------
@@ -550,6 +555,120 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 function samadi_wc_has_filters() {
 	return samadi_option( 'shop_sidebar' ) && is_active_sidebar( 'sidebar-shop' );
 }
+
+/**
+ * Catalog sorting options (same rules as WooCommerce's ordering dropdown, filterable by the same hook).
+ *
+ * @return array<string, string>
+ */
+function samadi_wc_sort_options() {
+	$default_orderby = apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby', 'menu_order' ) );
+
+	$options = apply_filters(
+		'woocommerce_catalog_orderby',
+		array(
+			'menu_order' => __( 'پیش‌فرض', 'samadi-electric' ),
+			'popularity' => __( 'محبوب‌ترین (پرفروش)', 'samadi-electric' ),
+			'rating'     => __( 'بیشترین امتیاز', 'samadi-electric' ),
+			'date'       => __( 'جدیدترین', 'samadi-electric' ),
+			'price'      => __( 'ارزان‌ترین', 'samadi-electric' ),
+			'price-desc' => __( 'گران‌ترین', 'samadi-electric' ),
+		)
+	);
+
+	if ( 'menu_order' !== $default_orderby ) {
+		unset( $options['menu_order'] );
+	}
+	if ( ! wc_review_ratings_enabled() ) {
+		unset( $options['rating'] );
+	}
+
+	return $options;
+}
+
+/**
+ * Sort control: pill button + list of real sorting links (crawlable, works without JS, AJAX-enhanced).
+ */
+function samadi_wc_sort_control() {
+	$options = samadi_wc_sort_options();
+
+	if ( ! $options ) {
+		return;
+	}
+
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$current = isset( $_GET['orderby'] ) ? wc_clean( wp_unslash( (string) $_GET['orderby'] ) ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby', 'menu_order' ) );
+	$base    = remove_query_arg( array( 'orderby', 'product-page', 'paged' ), get_pagenum_link( 1, false ) );
+	?>
+	<div class="se-sort" data-se-sort>
+		<button type="button" class="se-pill se-sort__toggle" aria-expanded="false" aria-controls="se-sort-list">
+			<?php samadi_icon( 'arrow-up-down', array( 'size' => 18 ) ); ?>
+			<span><?php esc_html_e( 'مرتب‌سازی', 'samadi-electric' ); ?></span>
+			<span class="screen-reader-text">: <?php echo esc_html( isset( $options[ $current ] ) ? $options[ $current ] : '' ); ?></span>
+		</button>
+		<ul class="se-sort__list" id="se-sort-list" hidden>
+			<?php foreach ( $options as $key => $label ) : ?>
+				<li>
+					<a class="se-sort__link<?php echo $key === $current ? ' is-active' : ''; ?>" href="<?php echo esc_url( add_query_arg( 'orderby', $key, $base ) ); ?>" data-se-filter-link rel="nofollow"<?php echo $key === $current ? ' aria-current="true"' : ''; ?>>
+						<?php echo esc_html( $label ); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+	<?php
+}
+
+/**
+ * Product count line ("۲۳۶ محصول"), keeps WooCommerce's result-count class for scripts.
+ */
+function samadi_wc_result_count() {
+	$total = (int) wc_get_loop_prop( 'total' );
+	/* translators: %s: number of products. */
+	printf( '<p class="woocommerce-result-count se-result-count" role="status">%s</p>', esc_html( sprintf( __( '%s محصول', 'samadi-electric' ), samadi_number( $total ) ) ) );
+}
+
+/**
+ * Single product: gallery carousel arrows (flexslider) with Persian labels.
+ *
+ * @param array $options Options.
+ * @return array
+ */
+function samadi_wc_gallery_options( $options ) {
+	$options['directionNav'] = true;
+	$options['prevText']     = __( 'تصویر قبلی', 'samadi-electric' );
+	$options['nextText']     = __( 'تصویر بعدی', 'samadi-electric' );
+
+	return $options;
+}
+add_filter( 'woocommerce_single_product_carousel_options', 'samadi_wc_gallery_options' );
+
+/**
+ * Brand tile shown at the top of the gallery thumbnail column (moved into the gallery by shop.js).
+ */
+function samadi_wc_gallery_brand() {
+	global $product;
+
+	if ( ! $product instanceof WC_Product || ! samadi_option( 'product_show_brand' ) ) {
+		return;
+	}
+
+	$brand = samadi_product_brand( $product->get_id() );
+
+	if ( ! $brand ) {
+		return;
+	}
+
+	$logo = samadi_term_image( $brand, 'thumbnail' );
+
+	printf(
+		'<a class="se-gallery-brand" href="%1$s" title="%2$s">%3$s</a>',
+		esc_url( get_term_link( $brand ) ),
+		esc_attr( $brand->name ),
+		$logo ? $logo : '<span>' . esc_html( $brand->name ) . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped image markup.
+	);
+}
+add_action( 'woocommerce_before_single_product_summary', 'samadi_wc_gallery_brand', 21 );
 
 /**
  * List/grid view preference (purely presentational; stored client side).

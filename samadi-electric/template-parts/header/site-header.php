@@ -13,8 +13,15 @@ defined( 'ABSPATH' ) || exit;
 $samadi_wholesale_url   = samadi_wholesale_url();
 $samadi_wholesale_label = trim( (string) samadi_option( 'header_wholesale_label' ) );
 $samadi_wishlist_url    = samadi_wishlist_url();
+$samadi_is_product      = samadi_is_wc() && is_product();
+$samadi_back_url        = home_url( '/' );
+
+if ( $samadi_is_product ) {
+	$samadi_terms = wc_get_product_terms( get_queried_object_id(), 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) );
+	$samadi_back_url = $samadi_terms ? get_term_link( $samadi_terms[0] ) : samadi_shop_url();
+}
 ?>
-<header id="se-header" class="se-header" data-se-header>
+<header id="se-header" class="se-header<?php echo $samadi_is_product ? ' se-header--product' : ''; ?><?php echo is_front_page() ? ' se-header--home' : ''; ?>" data-se-header>
 	<div class="se-header__main">
 		<div class="se-container se-header__row">
 			<button type="button" class="se-icon-btn se-header__burger" data-se-drawer-open aria-controls="se-drawer" aria-expanded="false">
@@ -22,15 +29,35 @@ $samadi_wishlist_url    = samadi_wishlist_url();
 				<span class="screen-reader-text"><?php esc_html_e( 'باز کردن منو', 'samadi-electric' ); ?></span>
 			</button>
 
+			<?php if ( $samadi_is_product ) : ?>
+				<a class="se-icon-btn se-header__back" href="<?php echo esc_url( is_wp_error( $samadi_back_url ) ? samadi_shop_url() : $samadi_back_url ); ?>" data-se-back>
+					<?php samadi_icon( 'chevron-left' ); ?>
+					<span class="screen-reader-text"><?php esc_html_e( 'بازگشت', 'samadi-electric' ); ?></span>
+				</a>
+			<?php endif; ?>
+
 			<?php samadi_site_logo( 'header' ); ?>
 
 			<?php if ( samadi_option( 'header_show_search' ) ) : ?>
-				<div class="se-header__search" data-se-live-search>
+				<div class="se-header__search" id="se-header-search" data-se-live-search>
 					<?php get_search_form(); ?>
 				</div>
 			<?php endif; ?>
 
 			<div class="se-header__actions">
+				<?php if ( samadi_option( 'header_show_search' ) ) : ?>
+					<button type="button" class="se-icon-btn se-header__search-toggle" data-se-search-toggle aria-expanded="false" aria-controls="se-header-search">
+						<?php samadi_icon( 'search' ); ?>
+						<span class="screen-reader-text"><?php esc_html_e( 'جستجو', 'samadi-electric' ); ?></span>
+					</button>
+				<?php endif; ?>
+
+				<?php if ( $samadi_is_product ) : ?>
+					<button type="button" class="se-icon-btn se-header__share" data-se-share data-title="<?php echo esc_attr( wp_strip_all_tags( get_the_title( get_queried_object_id() ) ) ); ?>" data-url="<?php echo esc_url( get_permalink( get_queried_object_id() ) ); ?>">
+						<?php samadi_icon( 'share-2' ); ?>
+						<span class="screen-reader-text"><?php esc_html_e( 'اشتراک‌گذاری', 'samadi-electric' ); ?></span>
+					</button>
+				<?php endif; ?>
 				<?php if ( $samadi_wholesale_url && $samadi_wholesale_label ) : ?>
 					<a class="se-btn se-btn--primary se-header__wholesale" href="<?php echo esc_url( $samadi_wholesale_url ); ?>"><?php echo esc_html( $samadi_wholesale_label ); ?></a>
 				<?php endif; ?>

@@ -90,6 +90,10 @@ class Samadi_EW_Widget_Category_Cards extends Samadi_EW_Widget_Base {
 				),
 			)
 		);
+		$this->add_control( 'mobile_grid', array( 'label' => __( 'در موبایل به‌صورت شبکه‌ای', 'samadi-elementor-widgets' ), 'description' => __( 'اسلایدر در دسکتاپ، شبکه فشرده در موبایل (مطابق طرح).', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::SWITCHER, 'default' => 'yes', 'condition' => array( 'layout' => 'carousel' ) ) );
+		$this->add_control( 'show_desc', array( 'label' => __( 'نمایش توضیح کوتاه دسته (دسکتاپ)', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::SWITCHER, 'default' => 'yes' ) );
+		$this->add_control( 'highlight', array( 'label' => __( 'برجسته کردن کارت اول (دسکتاپ)', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::SWITCHER ) );
+		$this->add_control( 'brands_url', array( 'label' => __( 'کاشی «برندها» (لینک صفحه برندها)', 'samadi-elementor-widgets' ), 'description' => __( 'خالی = نمایش داده نمی‌شود.', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::URL, 'dynamic' => array( 'active' => true ) ) );
 		$this->add_columns_control( '.se-cat-grid', 8, 4, 4 );
 		$this->end_controls_section();
 
@@ -122,7 +126,11 @@ class Samadi_EW_Widget_Category_Cards extends Samadi_EW_Widget_Base {
 					'title_tag'  => $s['title_tag'],
 					'link'       => $this->url( $s['link'] ),
 					'link_text'  => $s['link_text'],
-					'layout'     => $s['layout'],
+					'layout'      => $s['layout'],
+					'mobile_grid' => isset( $s['mobile_grid'] ) && 'yes' === $s['mobile_grid'],
+					'show_desc'   => 'yes' === $s['show_desc'],
+					'highlight'   => 'yes' === $s['highlight'],
+					'brands_url'  => $this->url( isset( $s['brands_url'] ) ? $s['brands_url'] : '' ),
 				)
 			)
 		);

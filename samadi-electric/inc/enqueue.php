@@ -161,6 +161,9 @@ function samadi_enqueue_assets() {
 				'menuClose'    => __( 'بستن منو', 'samadi-electric' ),
 				'increase'     => __( 'افزایش تعداد', 'samadi-electric' ),
 				'decrease'     => __( 'کاهش تعداد', 'samadi-electric' ),
+				'linkCopied'   => __( 'لینک محصول کپی شد.', 'samadi-electric' ),
+				'copyLink'     => __( 'لینک را کپی کنید:', 'samadi-electric' ),
+				'imageOf'      => __( 'تصویر %1$s از %2$s', 'samadi-electric' ),
 			),
 			'persianDigits' => (bool) samadi_option( 'persian_digits' ),
 		)

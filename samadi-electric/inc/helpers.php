@@ -83,7 +83,7 @@ function samadi_defaults() {
 		'hero_btn1_text'         => __( 'مشاهده محصولات', 'samadi-electric' ),
 		'hero_btn1_url'          => '',
 		'hero_btn2_text'         => __( 'خرید عمده', 'samadi-electric' ),
-		'hero_align'             => 'start',
+		'hero_align'             => 'end',
 
 		// Benefits bar.
 		'benefits_show'          => true,
@@ -106,7 +106,7 @@ function samadi_defaults() {
 		// Shop & product card.
 		'card_style'             => 'default',
 		'card_show_sku'          => false,
-		'card_show_brand'        => true,
+		'card_show_brand'        => false,
 		'card_show_stock'        => true,
 		'card_show_rating'       => false,
 		'shop_columns'           => 4,

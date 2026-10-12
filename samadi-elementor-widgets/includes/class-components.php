@@ -255,6 +255,11 @@ class Samadi_EW_Components {
 				'link_text'  => '',
 				'title_tag'  => 'h2',
 				'layout'     => 'grid',
+				'show_desc'  => true,
+				'highlight'  => false,
+				'mobile_grid' => true,
+				'brands_url' => '',
+				'brands_label' => __( 'برندها', 'samadi-elementor-widgets' ),
 			)
 		);
 
@@ -300,7 +305,11 @@ class Samadi_EW_Components {
 
 			$items .= '<li class="se-cat-card"><a class="se-cat-card__link" href="' . esc_url( get_term_link( $term ) ) . '">';
 			$items .= '<span class="se-cat-card__media">' . $media . '</span>';
-			$items .= '<span class="se-cat-card__name">' . esc_html( $term->name ) . '</span>';
+			$items .= '<span class="se-cat-card__text"><span class="se-cat-card__name">' . esc_html( $term->name ) . '</span>';
+			if ( $args['show_desc'] && '' !== trim( (string) $term->description ) ) {
+				$items .= '<span class="se-cat-card__desc">' . esc_html( wp_trim_words( wp_strip_all_tags( $term->description ), 6 ) ) . '</span>';
+			}
+			$items .= '</span>';
 			if ( $args['show_count'] ) {
 				/* translators: %s: number of products. */
 				$items .= '<span class="se-cat-card__count">' . esc_html( sprintf( __( '%s کالا', 'samadi-elementor-widgets' ), samadi_ew_number( $term->count ) ) ) . '</span>';
@@ -308,8 +317,23 @@ class Samadi_EW_Components {
 			$items .= '</a></li>';
 		}
 
+		// Optional tile linking to a real brands page/archive (only when a URL is configured).
+		if ( $args['brands_url'] ) {
+			$items .= '<li class="se-cat-card se-cat-card--brands"><a class="se-cat-card__link" href="' . esc_url( $args['brands_url'] ) . '"><span class="se-cat-card__media">' . samadi_ew_icon( 'tag', 34 ) . '</span><span class="se-cat-card__text"><span class="se-cat-card__name">' . esc_html( $args['brands_label'] ) . '</span></span></a></li>';
+		}
+
 		$carousel = 'carousel' === $args['layout'];
-		$list     = '<ul class="se-cat-grid' . ( $carousel ? ' se-cat-grid--row' : '' ) . '">' . $items . '</ul>';
+		$classes  = array( 'se-cat-grid', 'se-cat-grid--featured' );
+		if ( $carousel ) {
+			$classes[] = 'se-cat-grid--row';
+		}
+		if ( $carousel && $args['mobile_grid'] ) {
+			$classes[] = 'se-cat-grid--mobile-grid';
+		}
+		if ( $args['highlight'] ) {
+			$classes[] = 'se-cat-grid--highlight';
+		}
+		$list = '<ul class="' . esc_attr( implode( ' ', $classes ) ) . '">' . $items . '</ul>';
 
 		return self::section_head( $args['title'], $args['link'], $args['link_text'], $args['title_tag'] ) . self::maybe_carousel( $list, $carousel, $args['title'] );
 	}

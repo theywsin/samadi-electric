@@ -64,6 +64,14 @@ $samadi_cats     = samadi_is_wc() ? samadi_mega_menu_categories() : array();
 				</nav>
 			<?php endif; ?>
 
+			<?php
+			$samadi_drawer_wholesale = samadi_wholesale_url();
+			$samadi_drawer_label     = trim( (string) samadi_option( 'header_wholesale_label' ) );
+			if ( $samadi_drawer_wholesale && $samadi_drawer_label ) :
+				?>
+				<a class="se-btn se-btn--primary se-btn--block se-drawer__wholesale" href="<?php echo esc_url( $samadi_drawer_wholesale ); ?>"><?php echo esc_html( $samadi_drawer_label ); ?></a>
+			<?php endif; ?>
+
 			<?php get_template_part( 'template-parts/components/contact-list', null, array( 'class' => 'se-drawer__contact' ) ); ?>
 		</div>
 	</div>

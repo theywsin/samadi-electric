@@ -7,15 +7,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Domain: samadi-electric\n"
 
-#: woocommerce/archive-product.php:39
+#: woocommerce/archive-product.php:40
 msgid "فیلتر محصولات"
 msgstr ""
 
-#: woocommerce/archive-product.php:41 woocommerce/archive-product.php:58
+#: woocommerce/archive-product.php:42 woocommerce/archive-product.php:63
 msgid "فیلترها"
 msgstr ""
 
-#: woocommerce/archive-product.php:44
+#: woocommerce/archive-product.php:45
 msgid "بستن فیلترها"
 msgstr ""
 
@@ -51,15 +51,15 @@ msgstr ""
 msgid "دسته‌بندی‌ها"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:55 inc/woocommerce.php:510
+#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:82 inc/woocommerce.php:515
 msgid "سبد خرید"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:41
+#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:68
 msgid "علاقه‌مندی‌ها"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:48
+#: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:75
 msgid "حساب کاربری"
 msgstr ""
 
@@ -83,15 +83,27 @@ msgstr ""
 msgid "منوی موبایل"
 msgstr ""
 
-#: template-parts/header/site-header.php:22 inc/enqueue.php:160
+#: template-parts/header/site-header.php:29 inc/enqueue.php:160
 msgid "باز کردن منو"
 msgstr ""
 
-#: template-parts/header/site-header.php:48
+#: template-parts/header/site-header.php:35
+msgid "بازگشت"
+msgstr ""
+
+#: template-parts/header/site-header.php:51 inc/accessibility.php:52
+msgid "جستجو"
+msgstr ""
+
+#: template-parts/header/site-header.php:58
+msgid "اشتراک‌گذاری"
+msgstr ""
+
+#: template-parts/header/site-header.php:75
 msgid "ورود / ثبت‌نام"
 msgstr ""
 
-#: template-parts/header/site-header.php:70
+#: template-parts/header/site-header.php:97
 msgid "منوی اصلی"
 msgstr ""
 
@@ -127,15 +139,15 @@ msgstr ""
 msgid "برندهای معتبر"
 msgstr ""
 
-#: template-parts/home/home.php:31
+#: template-parts/home/home.php:33
 msgid "پیشنهادهای ویژه"
 msgstr ""
 
-#: template-parts/home/home.php:32
+#: template-parts/home/home.php:34
 msgid "پرفروش‌ترین‌ها"
 msgstr ""
 
-#: template-parts/home/home.php:33
+#: template-parts/home/home.php:35
 msgid "جدیدترین محصولات"
 msgstr ""
 
@@ -143,11 +155,11 @@ msgstr ""
 msgid "راهنمای خرید و مقالات آموزشی"
 msgstr ""
 
-#: template-parts/home/categories.php:37
+#: template-parts/home/categories.php:36 template-parts/home/categories.php:58
 msgid "دسته‌بندی‌های محبوب"
 msgstr ""
 
-#: template-parts/home/categories.php:38
+#: template-parts/home/categories.php:38 template-parts/home/categories.php:59
 msgid "همه محصولات"
 msgstr ""
 
@@ -185,11 +197,11 @@ msgstr ""
 msgid "رنگ‌های برند"
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:118 inc/elementor.php:202
 msgid "سبز تیره اصلی"
 msgstr ""
 
-#: inc/customizer.php:119
+#: inc/customizer.php:119 inc/elementor.php:203
 msgid "سبز برند"
 msgstr ""
 
@@ -197,7 +209,7 @@ msgstr ""
 msgid "رنگ تأکیدی (لیمویی)"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:121 inc/elementor.php:208
 msgid "پس‌زمینه عمومی"
 msgstr ""
 
@@ -205,11 +217,11 @@ msgstr ""
 msgid "پس‌زمینه کارت‌ها"
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:123 inc/elementor.php:204
 msgid "متن اصلی"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:124 inc/elementor.php:210
 msgid "متن ثانویه"
 msgstr ""
 
@@ -617,10 +629,6 @@ msgstr ""
 msgid "جستجو…"
 msgstr ""
 
-#: inc/accessibility.php:52
-msgid "جستجو"
-msgstr ""
-
 #: inc/enqueue.php:158
 msgid "محصول به سبد خرید افزوده شد."
 msgstr ""
@@ -635,6 +643,18 @@ msgstr ""
 
 #: inc/enqueue.php:163
 msgid "کاهش تعداد"
+msgstr ""
+
+#: inc/enqueue.php:164
+msgid "لینک محصول کپی شد."
+msgstr ""
+
+#: inc/enqueue.php:165
+msgid "لینک را کپی کنید:"
+msgstr ""
+
+#: inc/enqueue.php:166
+msgid "تصویر %1$s از %2$s"
 msgstr ""
 
 #: inc/setup.php:62
@@ -673,75 +693,111 @@ msgstr ""
 msgid "کد رسمی نماد اعتماد الکترونیکی یا ساماندهی را با ابزارک «HTML سفارشی» اینجا قرار دهید. فقط نمادهای معتبر و متعلق به همین فروشگاه."
 msgstr ""
 
-#: inc/woocommerce.php:165
+#: inc/woocommerce.php:169
 msgid "%s٪ تخفیف"
 msgstr ""
 
-#: inc/woocommerce.php:166
+#: inc/woocommerce.php:170
 msgid "فروش ویژه"
 msgstr ""
 
-#: inc/woocommerce.php:225
+#: inc/woocommerce.php:229
 msgid "ناموجود"
 msgstr ""
 
-#: inc/woocommerce.php:228
+#: inc/woocommerce.php:232
 msgid "پیش‌سفارش"
 msgstr ""
 
-#: inc/woocommerce.php:235
+#: inc/woocommerce.php:239
 msgid "تنها %s عدد باقی مانده"
 msgstr ""
 
-#: inc/woocommerce.php:239
-msgid "موجود"
-msgstr ""
-
-#: inc/woocommerce.php:312
+#: inc/woocommerce.php:317
 msgid "برند:"
 msgstr ""
 
-#: inc/woocommerce.php:322
+#: inc/woocommerce.php:327
 msgid "کد کالا:"
 msgstr ""
 
-#: inc/woocommerce.php:364 inc/woocommerce.php:421
+#: inc/woocommerce.php:369 inc/woocommerce.php:426
 msgid "مشخصات فنی"
 msgstr ""
 
-#: inc/woocommerce.php:368
+#: inc/woocommerce.php:373
 msgid "توضیحات"
 msgstr ""
 
-#: inc/woocommerce.php:394
+#: inc/woocommerce.php:399
 msgid "برند"
 msgstr ""
 
-#: inc/woocommerce.php:401
+#: inc/woocommerce.php:406
 msgid "کد کالا"
 msgstr ""
 
-#: inc/woocommerce.php:511
+#: inc/woocommerce.php:516
 msgid "اطلاعات و پرداخت"
 msgstr ""
 
-#: inc/woocommerce.php:512
+#: inc/woocommerce.php:517
 msgid "ثبت سفارش"
 msgstr ""
 
-#: inc/woocommerce.php:515
+#: inc/woocommerce.php:520
 msgid "مراحل خرید"
 msgstr ""
 
-#: inc/woocommerce.php:559
+#: inc/woocommerce.php:570
+msgid "پیش‌فرض"
+msgstr ""
+
+#: inc/woocommerce.php:571
+msgid "محبوب‌ترین (پرفروش)"
+msgstr ""
+
+#: inc/woocommerce.php:572
+msgid "بیشترین امتیاز"
+msgstr ""
+
+#: inc/woocommerce.php:573
+msgid "جدیدترین"
+msgstr ""
+
+#: inc/woocommerce.php:574
+msgid "ارزان‌ترین"
+msgstr ""
+
+#: inc/woocommerce.php:575
+msgid "گران‌ترین"
+msgstr ""
+
+#: inc/woocommerce.php:606
+msgid "مرتب‌سازی"
+msgstr ""
+
+#: inc/woocommerce.php:628
+msgid "%s محصول"
+msgstr ""
+
+#: inc/woocommerce.php:639
+msgid "تصویر قبلی"
+msgstr ""
+
+#: inc/woocommerce.php:640
+msgid "تصویر بعدی"
+msgstr ""
+
+#: inc/woocommerce.php:678
 msgid "نحوه نمایش محصولات"
 msgstr ""
 
-#: inc/woocommerce.php:562
+#: inc/woocommerce.php:681
 msgid "نمایش شبکه‌ای"
 msgstr ""
 
-#: inc/woocommerce.php:566
+#: inc/woocommerce.php:685
 msgid "نمایش فهرستی"
 msgstr ""
 
@@ -880,5 +936,37 @@ msgstr ""
 
 #: inc/elementor.php:133
 msgid "قالب فوتر"
+msgstr ""
+
+#: inc/elementor.php:205
+msgid "لیمویی تأکیدی"
+msgstr ""
+
+#: inc/elementor.php:209
+msgid "سطح کارت"
+msgstr ""
+
+#: inc/elementor.php:211
+msgid "خطوط"
+msgstr ""
+
+#: inc/elementor.php:212
+msgid "تخفیف"
+msgstr ""
+
+#: inc/elementor.php:259
+msgid "عنوان‌ها"
+msgstr ""
+
+#: inc/elementor.php:260
+msgid "زیرعنوان"
+msgstr ""
+
+#: inc/elementor.php:261
+msgid "متن"
+msgstr ""
+
+#: inc/elementor.php:262
+msgid "دکمه و تأکید"
 msgstr ""
 

@@ -16,7 +16,7 @@ if ( false === strpos( $samadi_html, '<li' ) ) {
 ?>
 <section class="se-section se-home-products">
 	<?php samadi_section_head( $args['title'], samadi_shop_url() ); ?>
-	<div class="se-products-scroll">
+	<div class="se-products se-products--row se-products-scroll">
 		<?php echo $samadi_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WooCommerce shortcode output. ?>
 	</div>
 </section>

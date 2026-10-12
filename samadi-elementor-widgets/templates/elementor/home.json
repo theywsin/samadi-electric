@@ -18,9 +18,17 @@
     "padding": {
      "unit": "px",
      "top": "20",
-     "right": "0",
+     "right": "16",
      "bottom": "0",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -46,7 +54,7 @@
          "is_external": "",
          "nofollow": ""
         },
-        "align": "start"
+        "align": "end"
        }
       ],
       "autoplay": "yes",
@@ -56,6 +64,67 @@
      },
      "elements": [],
      "widgetType": "samadi-hero"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "6fce484",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "16",
+     "bottom": "12",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "1ac826a",
+     "elType": "widget",
+     "settings": {
+      "title": "دسته‌بندی‌های محبوب",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{shop_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "همه محصولات",
+      "source": "top",
+      "orderby": "menu_order",
+      "limit": 8,
+      "hide_empty": "yes",
+      "show_image": "yes",
+      "layout": "carousel",
+      "columns": "5",
+      "columns_tablet": "4",
+      "columns_mobile": "4",
+      "mobile_grid": "yes",
+      "show_desc": "yes",
+      "highlight": "yes"
+     },
+     "elements": [],
+     "widgetType": "samadi-category-cards"
     }
    ],
    "isInner": false
@@ -75,9 +144,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "12",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -126,56 +203,6 @@
    "isInner": false
   },
   {
-   "id": "6fce484",
-   "elType": "container",
-   "settings": {
-    "content_width": "boxed",
-    "flex_direction": "column",
-    "flex_gap": {
-     "unit": "px",
-     "size": 0,
-     "column": "0",
-     "row": "0"
-    },
-    "padding": {
-     "unit": "px",
-     "top": "12",
-     "right": "0",
-     "bottom": "12",
-     "left": "0",
-     "isLinked": false
-    }
-   },
-   "elements": [
-    {
-     "id": "1ac826a",
-     "elType": "widget",
-     "settings": {
-      "title": "دسته‌بندی‌های محبوب",
-      "title_tag": "h2",
-      "link": {
-       "url": "{{shop_url}}",
-       "is_external": "",
-       "nofollow": ""
-      },
-      "link_text": "همه محصولات",
-      "source": "top",
-      "orderby": "menu_order",
-      "limit": 8,
-      "hide_empty": "yes",
-      "show_image": "yes",
-      "layout": "grid",
-      "columns": "8",
-      "columns_tablet": "4",
-      "columns_mobile": "4"
-     },
-     "elements": [],
-     "widgetType": "samadi-category-cards"
-    }
-   ],
-   "isInner": false
-  },
-  {
    "id": "f21345d",
    "elType": "container",
    "settings": {
@@ -190,9 +217,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "12",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -237,9 +272,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "12",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -284,9 +327,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "12",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -331,9 +382,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "12",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },
@@ -371,9 +430,17 @@
     "padding": {
      "unit": "px",
      "top": "12",
-     "right": "0",
+     "right": "16",
      "bottom": "40",
-     "left": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "8",
+     "right": "16",
+     "bottom": "8",
+     "left": "16",
      "isLinked": false
     }
    },

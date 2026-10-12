@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SAMADI_VERSION', '1.0.0' );
+define( 'SAMADI_VERSION', '1.1.0' );
 define( 'SAMADI_DIR', get_template_directory() );
 define( 'SAMADI_URI', get_template_directory_uri() );
 

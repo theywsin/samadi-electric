@@ -847,3 +847,64 @@
 		inset-block-start: 0;
 	}
 }
+
+/* =========================================================================
+ * Reference refinements (design audit v1.1): mobile header variants
+ * ====================================================================== */
+
+.se-header__search-toggle,
+.se-header__back,
+.se-header__share {
+	display: none;
+}
+
+@media (max-width: 991px) {
+	/* Icon order in the design (right → left): cart, wishlist, search / share. */
+	.se-header__actions .se-header__cart { order: 1; }
+	.se-header__actions .se-header__wishlist { order: 2; }
+	.se-header__actions .se-header__search-toggle,
+	.se-header__actions .se-header__share { order: 3; }
+
+	/* Inner pages: compact header, search opens on demand. Home: search bar always visible. */
+	.se-header:not(.se-header--home) .se-header__search-toggle {
+		display: inline-flex;
+	}
+
+	.se-header:not(.se-header--home) .se-header__search {
+		display: none;
+	}
+
+	.se-header.is-search-open .se-header__search {
+		display: block;
+	}
+
+	.se-header:not(.se-header--home) .se-header__row {
+		padding-block-end: 6px;
+	}
+
+	/* Product page: back (left), logo, share + wishlist (right). */
+	.se-header--product .se-header__burger,
+	.se-header--product .se-header__cart,
+	.se-header--product .se-header__search-toggle {
+		display: none;
+	}
+
+	.se-header--product .se-header__back,
+	.se-header--product .se-header__share {
+		display: inline-flex;
+	}
+
+	.se-header--product .se-header__back {
+		order: 3;
+		justify-self: end;
+	}
+}
+.se-drawer__wholesale { margin-block-start: 20px; }
+
+@media (max-width: 991px) {
+	.se-header.se-header--product .se-header__search-toggle,
+	.se-header.se-header--product .se-header__burger,
+	.se-header.se-header--product .se-header__cart {
+		display: none;
+	}
+}

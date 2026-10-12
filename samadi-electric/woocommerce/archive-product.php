@@ -22,6 +22,7 @@ $samadi_thumb       = ( $samadi_term instanceof WP_Term ) ? samadi_term_image( $
 ?>
 <header class="se-archive-header<?php echo $samadi_thumb ? ' has-image' : ''; ?>">
 	<div class="se-archive-header__text">
+		<?php samadi_breadcrumb(); ?>
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 			<h1 class="se-archive-header__title woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 		<?php endif; ?>
@@ -52,16 +53,30 @@ $samadi_thumb       = ( $samadi_term instanceof WP_Term ) ? samadi_term_image( $
 
 	<div class="se-shop__results" id="se-shop-results" data-se-shop-results>
 		<div class="se-toolbar">
-			<?php if ( $samadi_has_filters ) : ?>
-				<button type="button" class="se-btn se-btn--outline se-toolbar__filters" data-se-filters-open aria-controls="se-filters" aria-expanded="false">
-					<?php samadi_icon( 'sliders-horizontal', array( 'size' => 18 ) ); ?>
-					<span><?php esc_html_e( 'فیلترها', 'samadi-electric' ); ?></span>
-				</button>
-			<?php endif; ?>
+			<div class="se-toolbar__main">
+				<?php if ( woocommerce_product_loop() ) : ?>
+					<?php samadi_wc_sort_control(); ?>
+				<?php endif; ?>
+				<?php if ( $samadi_has_filters ) : ?>
+					<button type="button" class="se-pill se-toolbar__filters" data-se-filters-open aria-controls="se-filters" aria-expanded="false">
+						<?php samadi_icon( 'sliders-horizontal', array( 'size' => 18 ) ); ?>
+						<span><?php esc_html_e( 'فیلترها', 'samadi-electric' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
+			<?php
+			if ( $samadi_has_filters ) {
+				/**
+				 * Quick filter chips (brand, colour, model, price…). Rendered by the companion plugin.
+				 */
+				do_action( 'samadi_shop_quick_filters' );
+			}
+			?>
 			<?php if ( woocommerce_product_loop() ) : ?>
-				<div class="se-toolbar__ordering"><?php woocommerce_catalog_ordering(); ?></div>
-				<div class="se-toolbar__count"><?php woocommerce_result_count(); ?></div>
-				<?php samadi_wc_view_toggle(); ?>
+				<div class="se-toolbar__meta">
+					<?php samadi_wc_result_count(); ?>
+					<?php samadi_wc_view_toggle(); ?>
+				</div>
 			<?php endif; ?>
 		</div>
 

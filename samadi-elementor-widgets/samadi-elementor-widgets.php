@@ -3,7 +3,7 @@
  * Plugin Name:       Samadi Elementor Widgets
  * Plugin URI:        https://samadielectric.ir/
  * Description:       افزونه همراه قالب صمدی الکتریک: ویجت‌های اختصاصی Elementor، فیلتر محصولات، جستجوی زنده، خرید عمده و استعلام قیمت، محصولات اخیراً مشاهده‌شده. Companion plugin for the Samadi Electric theme (works with other themes too).
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Requires Plugins:  woocommerce
@@ -22,7 +22,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SAMADI_EW_VERSION', '1.0.0' );
+define( 'SAMADI_EW_VERSION', '1.1.0' );
 define( 'SAMADI_EW_FILE', __FILE__ );
 define( 'SAMADI_EW_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SAMADI_EW_URL', plugin_dir_url( __FILE__ ) );
