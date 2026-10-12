@@ -44,7 +44,7 @@ $samadi_btn2_u = samadi_contact_url( (string) samadi_option( 'hero_btn2_url' ) )
 	</div>
 	<div class="se-home-hero__content">
 		<?php if ( $samadi_badge ) : ?>
-			<span class="se-pill"><?php echo esc_html( $samadi_badge ); ?></span>
+			<span class="se-kicker"><?php echo esc_html( $samadi_badge ); ?></span>
 		<?php endif; ?>
 		<?php if ( $samadi_title ) : ?>
 			<h2 class="se-home-hero__title" id="se-home-hero-title"><?php echo esc_html( $samadi_title ); ?></h2>

@@ -18,20 +18,57 @@ do_action( 'woocommerce_before_main_content' );
 
 $samadi_term        = is_product_taxonomy() ? get_queried_object() : null;
 $samadi_has_filters = samadi_wc_has_filters();
-$samadi_thumb       = ( $samadi_term instanceof WP_Term ) ? samadi_term_image( $samadi_term, 'samadi-category' ) : '';
+$samadi_total       = (int) $GLOBALS['wp_query']->found_posts;
+
+// Term description: short text sits under the title; a long buying guide moves to the box after the products.
+ob_start();
+do_action( 'woocommerce_archive_description' );
+$samadi_desc       = trim( (string) ob_get_clean() );
+$samadi_desc_long  = mb_strlen( wp_strip_all_tags( $samadi_desc ) ) > 220;
+
+// Sub-categories of the current category (top-level categories on the main shop page).
+$samadi_subcats = array();
+if ( is_shop() || is_product_category() ) {
+	$samadi_subcats = get_terms(
+		array(
+			'taxonomy'   => 'product_cat',
+			'parent'     => is_product_category() ? $samadi_term->term_id : 0,
+			'hide_empty' => true,
+			'number'     => 12,
+			'orderby'    => 'menu_order',
+			'exclude'    => array( (int) get_option( 'default_product_cat' ) ),
+		)
+	);
+	$samadi_subcats = is_wp_error( $samadi_subcats ) ? array() : $samadi_subcats;
+}
 ?>
-<header class="se-archive-header<?php echo $samadi_thumb ? ' has-image' : ''; ?>">
-	<div class="se-archive-header__text">
-		<?php samadi_breadcrumb(); ?>
+<?php samadi_breadcrumb(); ?>
+<header class="se-archive-intro">
+	<div class="se-archive-intro__text">
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-			<h1 class="se-archive-header__title woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+			<h1 class="se-archive-intro__title woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 		<?php endif; ?>
-		<?php do_action( 'woocommerce_archive_description' ); ?>
+		<?php if ( $samadi_desc && ! $samadi_desc_long ) : ?>
+			<div class="se-archive-intro__desc"><?php echo $samadi_desc; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WooCommerce archive description output. ?></div>
+		<?php endif; ?>
 	</div>
-	<?php if ( $samadi_thumb ) : ?>
-		<div class="se-archive-header__media"><?php echo $samadi_thumb; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+	<?php if ( $samadi_total ) : ?>
+		<p class="se-archive-intro__count">
+			<?php
+			/* translators: %s: number of products. */
+			echo esc_html( sprintf( __( '%s کالا', 'samadi-electric' ), samadi_number( $samadi_total ) ) );
+			?>
+		</p>
 	<?php endif; ?>
 </header>
+
+<?php if ( $samadi_subcats ) : ?>
+	<nav class="se-subcats" aria-label="<?php esc_attr_e( 'زیردسته‌ها', 'samadi-electric' ); ?>">
+		<?php foreach ( $samadi_subcats as $samadi_subcat ) : ?>
+			<a class="se-subcats__item" href="<?php echo esc_url( get_term_link( $samadi_subcat ) ); ?>"><?php echo esc_html( $samadi_subcat->name ); ?></a>
+		<?php endforeach; ?>
+	</nav>
+<?php endif; ?>
 
 <?php do_action( 'woocommerce_shop_loop_header' ); ?>
 
@@ -103,6 +140,12 @@ $samadi_thumb       = ( $samadi_term instanceof WP_Term ) ? samadi_term_image( $
 		<?php endif; ?>
 	</div>
 </div>
+
+<?php if ( $samadi_desc && $samadi_desc_long ) : ?>
+	<section class="se-cat-guide">
+		<?php echo $samadi_desc; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WooCommerce archive description output. ?>
+	</section>
+<?php endif; ?>
 <?php
 do_action( 'woocommerce_after_main_content' );
 

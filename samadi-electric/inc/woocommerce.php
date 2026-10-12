@@ -336,27 +336,70 @@ function samadi_wc_single_meta_line() {
 add_action( 'woocommerce_single_product_summary', 'samadi_wc_single_meta_line', 6 );
 
 /**
- * Store benefits under the add-to-cart form.
+ * Store benefits bar under the product overview (full width, as on the homepage).
  */
 function samadi_wc_single_benefits() {
 	if ( ! samadi_option( 'product_benefits' ) ) {
 		return;
 	}
-	$items = array_slice( samadi_benefit_items(), 0, 4 );
-	if ( ! $items ) {
-		return;
-	}
-	echo '<ul class="se-mini-benefits">';
-	foreach ( $items as $item ) {
-		printf(
-			'<li class="se-mini-benefits__item">%s<span>%s</span></li>',
-			samadi_get_icon( $item['icon'], array( 'size' => 22 ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			esc_html( $item['title'] )
-		);
-	}
-	echo '</ul>';
+	get_template_part( 'template-parts/components/benefits' );
 }
-add_action( 'woocommerce_single_product_summary', 'samadi_wc_single_benefits', 45 );
+add_action( 'woocommerce_after_single_product_summary', 'samadi_wc_single_benefits', 4 );
+
+/*
+ * Summary layout (Figma product page): details column (title, brand/SKU, rating, short description)
+ * and a "buy box" card (stock, price, add-to-cart form). Only WooCommerce's own callbacks are
+ * re-prioritised; the add-to-cart/variation forms are untouched.
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 7 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
+
+/**
+ * Open the buy box (before the price).
+ */
+function samadi_wc_buybox_open() {
+	global $product;
+
+	echo '<div class="se-buybox">';
+	echo '<p class="se-buybox__title">' . esc_html__( 'خرید از', 'samadi-electric' ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '</p>';
+
+	if ( $product instanceof WC_Product ) {
+		$rows = array();
+		$warranty = trim( (string) samadi_option( 'card_meta_prefix' ) );
+		if ( $warranty ) {
+			$rows[] = array( 'shield-check', $warranty );
+		}
+		if ( $product->is_in_stock() ) {
+			$rows[] = array( 'package-check', $product->is_on_backorder() ? __( 'قابل پیش‌سفارش', 'samadi-electric' ) : __( 'موجود در انبار', 'samadi-electric' ) );
+		}
+		if ( $rows ) {
+			echo '<ul class="se-buybox__rows">';
+			foreach ( $rows as $row ) {
+				echo '<li>' . samadi_get_icon( $row[0], array( 'size' => 18 ) ) . '<span>' . esc_html( $row[1] ) . '</span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '</ul>';
+		}
+	}
+}
+add_action( 'woocommerce_single_product_summary', 'samadi_wc_buybox_open', 9 );
+
+/**
+ * Close the buy box (after the add-to-cart form) with the optional wholesale/quote link.
+ */
+function samadi_wc_buybox_close() {
+	$url   = samadi_wholesale_url();
+	$label = trim( (string) samadi_option( 'header_wholesale_label' ) );
+
+	if ( $url && $label ) {
+		printf( '<a class="se-btn se-btn--outline se-btn--block se-buybox__quote" href="%s">%s</a>', esc_url( $url ), esc_html( $label ) );
+	}
+
+	samadi_wc_secure_note();
+	echo '</div>';
+}
+add_action( 'woocommerce_single_product_summary', 'samadi_wc_buybox_close', 35 );
 
 /**
  * Product tabs: "Additional information" becomes "Technical specifications" and comes first.
@@ -606,7 +649,7 @@ function samadi_wc_sort_control() {
 			<span><?php esc_html_e( 'مرتب‌سازی', 'samadi-electric' ); ?></span>
 			<span class="screen-reader-text">: <?php echo esc_html( isset( $options[ $current ] ) ? $options[ $current ] : '' ); ?></span>
 		</button>
-		<ul class="se-sort__list" id="se-sort-list" hidden>
+		<ul class="se-sort__list" id="se-sort-list" data-label="<?php esc_attr_e( 'مرتب‌سازی:', 'samadi-electric' ); ?>" hidden>
 			<?php foreach ( $options as $key => $label ) : ?>
 				<li>
 					<a class="se-sort__link<?php echo $key === $current ? ' is-active' : ''; ?>" href="<?php echo esc_url( add_query_arg( 'orderby', $key, $base ) ); ?>" data-se-filter-link rel="nofollow"<?php echo $key === $current ? ' aria-current="true"' : ''; ?>>

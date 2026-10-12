@@ -1357,7 +1357,7 @@ ul.products li.se-pcard,
 
 /* ---------- Shared ---------- */
 
-.se-pill {
+.se-kicker {
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;

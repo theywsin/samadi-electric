@@ -22,7 +22,7 @@ while ( have_posts() ) :
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'se-article' ); ?>>
 				<header class="se-article__header">
 					<?php if ( $samadi_cats ) : ?>
-						<a class="se-pill" href="<?php echo esc_url( get_category_link( $samadi_cats[0] ) ); ?>"><?php echo esc_html( $samadi_cats[0]->name ); ?></a>
+						<a class="se-kicker" href="<?php echo esc_url( get_category_link( $samadi_cats[0] ) ); ?>"><?php echo esc_html( $samadi_cats[0]->name ); ?></a>
 					<?php endif; ?>
 					<?php the_title( '<h1 class="entry-title se-article__title">', '</h1>' ); ?>
 					<?php if ( has_excerpt() ) : ?>
