@@ -1,0 +1,194 @@
+{
+ "version": "0.4",
+ "title": "Samadi — هدر",
+ "type": "header",
+ "content": [
+  {
+   "id": "15c0c8e",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "0",
+     "right": "16",
+     "bottom": "0",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "border_border": "solid",
+    "border_width": {
+     "unit": "px",
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "isLinked": false
+    },
+    "border_color": "#E8ECE8"
+   },
+   "elements": [
+    {
+     "id": "31ca376",
+     "elType": "container",
+     "settings": {
+      "content_width": "boxed",
+      "flex_direction": "row",
+      "flex_gap": {
+       "unit": "px",
+       "size": 20,
+       "column": "20",
+       "row": "20"
+      },
+      "padding": {
+       "unit": "px",
+       "top": "10",
+       "right": "0",
+       "bottom": "10",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_align_items": "center",
+      "flex_justify_content": "space-between"
+     },
+     "elements": [
+      {
+       "id": "7702172",
+       "elType": "widget",
+       "settings": {
+        "width": {
+         "unit": "px",
+         "size": 200
+        }
+       },
+       "elements": [],
+       "widgetType": "theme-site-logo"
+      },
+      {
+       "id": "4f7fd63",
+       "elType": "container",
+       "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "flex_gap": {
+         "unit": "px",
+         "size": 0,
+         "column": "0",
+         "row": "0"
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": true
+        },
+        "width": {
+         "unit": "%",
+         "size": 50
+        }
+       },
+       "elements": [
+        {
+         "id": "1a278f6",
+         "elType": "widget",
+         "settings": {
+          "placeholder": "جستجوی محصول، برند یا کد کالا…"
+         },
+         "elements": [],
+         "widgetType": "samadi-search"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "3dbdde1",
+       "elType": "widget",
+       "settings": {
+        "wholesale": "yes",
+        "wholesale_label": "خرید عمده",
+        "wishlist": "yes",
+        "account": "yes",
+        "cart": "yes"
+       },
+       "elements": [],
+       "widgetType": "samadi-header-tools"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "75dff6c",
+     "elType": "container",
+     "settings": {
+      "content_width": "boxed",
+      "flex_direction": "row",
+      "flex_gap": {
+       "unit": "px",
+       "size": 20,
+       "column": "20",
+       "row": "20"
+      },
+      "padding": {
+       "unit": "px",
+       "top": "10",
+       "right": "0",
+       "bottom": "10",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_align_items": "center",
+      "flex_justify_content": "flex-start",
+      "border_border": "solid",
+      "border_width": {
+       "unit": "px",
+       "top": "1",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "border_color": "#E8ECE8"
+     },
+     "elements": [
+      {
+       "id": "6e4d58e",
+       "elType": "widget",
+       "settings": {
+        "label": "همه دسته‌بندی‌ها",
+        "limit": 12,
+        "children": 8
+       },
+       "elements": [],
+       "widgetType": "samadi-mega-menu"
+      },
+      {
+       "id": "72e3102",
+       "elType": "widget",
+       "settings": {
+        "layout": "horizontal",
+        "pointer": "none",
+        "toggle": "burger"
+       },
+       "elements": [],
+       "widgetType": "nav-menu"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": []
+}

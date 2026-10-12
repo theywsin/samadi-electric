@@ -1,0 +1,26 @@
+/**
+ * Block editor styles (classic posts/pages edited with Gutenberg).
+ */
+
+@font-face {
+	font-family: "Vazirmatn";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("../fonts/vazirmatn/vazirmatn-arabic-wght-normal.woff2") format("woff2");
+}
+
+body {
+	font-family: "Vazirmatn", Tahoma, sans-serif;
+	color: #152421;
+	line-height: 2;
+}
+
+h1, h2, h3, h4 {
+	font-weight: 800;
+	line-height: 1.5;
+}
+
+a {
+	color: #075e46;
+}

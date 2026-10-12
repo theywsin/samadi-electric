@@ -1,0 +1,407 @@
+{
+ "version": "0.4",
+ "title": "Samadi — صفحه اصلی",
+ "type": "page",
+ "content": [
+  {
+   "id": "06d7e80",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "20",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "2d10267",
+     "elType": "widget",
+     "settings": {
+      "slides": [
+       {
+        "_id": "3087743",
+        "title": "تجهیزات الکتریکی باکیفیت، برای زندگی بهتر",
+        "text": "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت.",
+        "btn1_text": "مشاهده محصولات",
+        "btn1_url": {
+         "url": "{{shop_url}}",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "btn2_text": "خرید عمده",
+        "btn2_url": {
+         "url": "{{wholesale_url}}",
+         "is_external": "",
+         "nofollow": ""
+        },
+        "align": "start"
+       }
+      ],
+      "autoplay": "yes",
+      "interval": 6,
+      "title_tag": "h1",
+      "eager": "yes"
+     },
+     "elements": [],
+     "widgetType": "samadi-hero"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "ec87a17",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "b682575",
+     "elType": "widget",
+     "settings": {
+      "items": [
+       {
+        "_id": "5da846a",
+        "icon": "truck",
+        "title": "ارسال سریع",
+        "text": "به سراسر ایران"
+       },
+       {
+        "_id": "32c3bb8",
+        "icon": "shield-check",
+        "title": "ضمانت اصالت کالا",
+        "text": "از برندهای معتبر"
+       },
+       {
+        "_id": "1e3c29b",
+        "icon": "headset",
+        "title": "مشاوره تخصصی",
+        "text": "پیش از خرید"
+       },
+       {
+        "_id": "6217927",
+        "icon": "badge-percent",
+        "title": "قیمت مناسب",
+        "text": "خرید مستقیم"
+       },
+       {
+        "_id": "3c8eb5b",
+        "icon": "message-circle",
+        "title": "پشتیبانی واقعی",
+        "text": "همیشه کنار شما"
+       }
+      ]
+     },
+     "elements": [],
+     "widgetType": "samadi-benefits"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "6fce484",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "1ac826a",
+     "elType": "widget",
+     "settings": {
+      "title": "دسته‌بندی‌های محبوب",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{shop_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "همه محصولات",
+      "source": "top",
+      "orderby": "menu_order",
+      "limit": 8,
+      "hide_empty": "yes",
+      "show_image": "yes",
+      "layout": "grid",
+      "columns": "8",
+      "columns_tablet": "4",
+      "columns_mobile": "4"
+     },
+     "elements": [],
+     "widgetType": "samadi-category-cards"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "f21345d",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "78dcb74",
+     "elType": "widget",
+     "settings": {
+      "title": "پیشنهادهای ویژه",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{shop_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "مشاهده همه",
+      "source": "sale",
+      "limit": 10,
+      "layout": "carousel",
+      "columns": "5",
+      "columns_tablet": "3",
+      "columns_mobile": "2"
+     },
+     "elements": [],
+     "widgetType": "samadi-product-carousel"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "8a39d5e",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "2cce803",
+     "elType": "widget",
+     "settings": {
+      "title": "پرفروش‌ترین‌ها",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{shop_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "مشاهده همه",
+      "source": "best_selling",
+      "limit": 8,
+      "layout": "grid",
+      "columns": "4",
+      "columns_tablet": "3",
+      "columns_mobile": "2"
+     },
+     "elements": [],
+     "widgetType": "samadi-product-grid"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "b50af03",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "0853964",
+     "elType": "widget",
+     "settings": {
+      "title": "جدیدترین محصولات",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{shop_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "مشاهده همه",
+      "source": "recent",
+      "limit": 10,
+      "layout": "carousel",
+      "columns": "5",
+      "columns_tablet": "3",
+      "columns_mobile": "2"
+     },
+     "elements": [],
+     "widgetType": "samadi-product-carousel"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "f244f58",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "12",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "b971722",
+     "elType": "widget",
+     "settings": {
+      "title": "برندهای معتبر",
+      "title_tag": "h2",
+      "limit": 14,
+      "layout": "grid",
+      "columns": "7",
+      "columns_tablet": "4",
+      "columns_mobile": "3"
+     },
+     "elements": [],
+     "widgetType": "samadi-brands"
+    }
+   ],
+   "isInner": false
+  },
+  {
+   "id": "e3772a0",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "12",
+     "right": "0",
+     "bottom": "40",
+     "left": "0",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "d669cbe",
+     "elType": "widget",
+     "settings": {
+      "title": "راهنمای خرید و مقالات آموزشی",
+      "title_tag": "h2",
+      "link": {
+       "url": "{{blog_url}}",
+       "is_external": "",
+       "nofollow": ""
+      },
+      "link_text": "همه مقالات",
+      "count": 3,
+      "excerpt": 20
+     },
+     "elements": [],
+     "widgetType": "samadi-blog-posts"
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {
+  "hide_title": "yes",
+  "template": "elementor_header_footer"
+ }
+}

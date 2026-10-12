@@ -1,0 +1,156 @@
+/**
+ * Standalone base for the Samadi Elementor Widgets plugin when used WITHOUT the Samadi Electric theme.
+ * Provides design tokens, buttons, search, mega menu and cart counter. Component styles are appended
+ * from the theme's components.css by bin/build.sh into standalone.css.
+ */
+
+:root {
+	--se-primary: #064e3b;
+	--se-brand: #075e46;
+	--se-accent: #c7f52a;
+	--se-bg: #f7f8f6;
+	--se-surface: #ffffff;
+	--se-text: #152421;
+	--se-muted: #718078;
+	--se-border: #e8ece8;
+	--se-sale: #f04438;
+	--se-success: #12805c;
+	--se-warning: #b54708;
+	--se-radius-sm: 10px;
+	--se-radius: 16px;
+	--se-radius-lg: 24px;
+	--se-shadow-sm: 0 1px 2px rgba(21, 36, 33, 0.04);
+	--se-shadow: 0 4px 18px rgba(21, 36, 33, 0.06);
+	--se-shadow-lg: 0 18px 40px rgba(21, 36, 33, 0.1);
+	--se-tap: 44px;
+	--se-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.se-ew .screen-reader-text,
+.se-ew-search .screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.se-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: var(--se-tap);
+	padding: 10px 22px;
+	border: 1px solid transparent;
+	border-radius: var(--se-radius-sm);
+	background: var(--se-primary);
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.4;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.se-btn:hover { background: var(--se-brand); color: #fff; }
+.se-btn--outline { background: #fff; border-color: var(--se-border); color: var(--se-text); }
+.se-btn--outline:hover { background: #fff; border-color: var(--se-brand); color: var(--se-brand); }
+.se-btn--light { background: #fff; color: var(--se-primary); border-color: var(--se-border); }
+.se-btn--lg { min-height: 52px; padding: 12px 28px; }
+.se-btn--block { width: 100%; }
+
+.se-icon-btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--se-tap);
+	height: var(--se-tap);
+	border-radius: 12px;
+	color: var(--se-text);
+}
+
+.se-cart-count {
+	position: absolute;
+	inset-block-start: 2px;
+	inset-inline-start: 0;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 5px;
+	border-radius: 999px;
+	background: var(--se-accent);
+	color: var(--se-primary);
+	font-size: 0.72rem;
+	font-weight: 800;
+	line-height: 20px;
+	text-align: center;
+}
+
+.se-cart-count.is-empty { display: none; }
+
+.se-search-form { position: relative; display: flex; align-items: center; }
+
+.se-search-form__input {
+	width: 100%;
+	height: 48px;
+	padding-inline: 48px 16px;
+	border: 1px solid transparent;
+	border-radius: 14px;
+	background: var(--se-bg);
+}
+
+.se-search-form__submit {
+	position: absolute;
+	inset-inline-start: 4px;
+	inset-block: 4px;
+	width: 40px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--se-muted);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.se-mega__toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 40px;
+	padding: 8px 14px;
+	border: 0;
+	border-radius: 10px;
+	background: var(--se-bg);
+	color: var(--se-text);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.se-mega__panel {
+	z-index: 30;
+	padding: 24px;
+	background: #fff;
+	box-shadow: var(--se-shadow-lg);
+	max-height: 70vh;
+	overflow-y: auto;
+}
+
+.se-mega__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 20px 24px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.se-mega__parent { display: flex; align-items: center; gap: 10px; margin-block-end: 8px; color: var(--se-text); font-weight: 800; }
+.se-mega__thumb { display: inline-flex; width: 44px; height: 44px; border-radius: 12px; background: var(--se-bg); overflow: hidden; }
+.se-mega__thumb:empty { display: none; }
+.se-mega__thumb img { width: 100%; height: 100%; object-fit: contain; }
+.se-mega__children { margin: 0; padding: 0; list-style: none; }
+.se-mega__children a { display: block; padding: 4px 0; color: var(--se-muted); font-size: 0.9rem; }

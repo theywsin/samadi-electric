@@ -1,0 +1,219 @@
+/**
+ * Samadi Electric — posts, pages, comments and widgets.
+ */
+
+.se-page-header {
+	margin-block-end: 24px;
+}
+
+.se-page-header__title {
+	margin: 0 0 8px;
+	font-weight: 900;
+}
+
+.se-page-header__desc {
+	color: var(--se-muted);
+}
+
+.se-entry {
+	padding: clamp(18px, 3vw, 40px);
+}
+
+.se-entry__header {
+	margin-block-end: 20px;
+}
+
+.se-entry__title {
+	margin-block-end: 8px;
+	font-weight: 900;
+}
+
+.se-post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 16px;
+	color: var(--se-muted);
+	font-size: 0.85rem;
+}
+
+.se-entry__thumb {
+	margin: 0 0 24px;
+	border-radius: var(--se-radius);
+	overflow: hidden;
+}
+
+.se-entry__thumb img {
+	width: 100%;
+}
+
+.entry-content {
+	font-size: 1.02rem;
+	line-height: 2;
+}
+
+.entry-content > * {
+	max-width: 100%;
+}
+
+.entry-content h2,
+.entry-content h3 {
+	margin-block-start: 1.6em;
+}
+
+.entry-content a {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.entry-content blockquote {
+	margin: 1.5em 0;
+	padding: 16px 20px;
+	border-inline-start: 4px solid var(--se-accent);
+	background: var(--se-bg);
+	border-radius: var(--se-radius-sm);
+}
+
+.entry-content table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-block: 1.5em;
+	display: block;
+	overflow-x: auto;
+}
+
+.entry-content th,
+.entry-content td {
+	padding: 10px 12px;
+	border: 1px solid var(--se-border);
+	text-align: start;
+}
+
+.entry-content pre {
+	overflow-x: auto;
+	direction: ltr;
+	text-align: left;
+	padding: 16px;
+	background: var(--se-bg);
+	border-radius: var(--se-radius-sm);
+}
+
+.se-wc-page .entry-content {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.se-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-block-start: 24px;
+}
+
+.se-tags a {
+	padding: 4px 12px;
+	border-radius: 999px;
+	background: var(--se-bg);
+	font-size: 0.85rem;
+}
+
+.post-navigation {
+	margin-block: 24px;
+}
+
+.post-navigation .nav-links {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.post-navigation a {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 16px;
+	background: var(--se-surface);
+	border: 1px solid var(--se-border);
+	border-radius: var(--se-radius);
+}
+
+.post-navigation .nav-next {
+	text-align: end;
+}
+
+.se-post-nav__label {
+	color: var(--se-muted);
+	font-size: 0.8rem;
+}
+
+.se-post-nav__title {
+	color: var(--se-text);
+	font-weight: 700;
+}
+
+.se-sidebar .se-widget {
+	margin-block-end: 20px;
+	padding: 20px;
+	background: var(--se-surface);
+	border: 1px solid var(--se-border);
+	border-radius: var(--se-radius);
+}
+
+.se-widget__title {
+	font-size: 1rem;
+}
+
+.se-widget ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.se-widget li {
+	padding-block: 6px;
+}
+
+/* Comments */
+.se-comments {
+	margin-block-start: 24px;
+	padding: clamp(18px, 3vw, 32px);
+}
+
+.se-comments__list {
+	padding: 0;
+	list-style: none;
+}
+
+.se-comments__list .children {
+	list-style: none;
+	padding-inline-start: 24px;
+}
+
+.se-comments__list .comment-body {
+	padding: 16px 0;
+	border-block-end: 1px solid var(--se-border);
+}
+
+.comment-author img {
+	border-radius: 50%;
+	margin-inline-end: 8px;
+}
+
+.comment-metadata {
+	font-size: 0.8rem;
+	color: var(--se-muted);
+}
+
+.comment-form p {
+	margin-block-end: 14px;
+}
+
+.comment-form label {
+	display: block;
+	margin-block-end: 4px;
+}
+
+@media (max-width: 600px) {
+	.post-navigation .nav-links {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

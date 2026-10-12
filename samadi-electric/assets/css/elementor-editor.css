@@ -1,0 +1,11 @@
+/**
+ * Elementor editor panel tweaks.
+ */
+
+#elementor-panel-category-samadi .elementor-element .icon {
+	color: #075e46;
+}
+
+#elementor-panel-category-samadi .elementor-panel-category-title {
+	font-weight: 700;
+}

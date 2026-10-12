@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "se-primary", "color": "#064E3B", "name": "سبز تیره" },
+				{ "slug": "se-brand", "color": "#075E46", "name": "سبز برند" },
+				{ "slug": "se-accent", "color": "#C7F52A", "name": "لیمویی" },
+				{ "slug": "se-bg", "color": "#F7F8F6", "name": "پس‌زمینه" },
+				{ "slug": "se-surface", "color": "#FFFFFF", "name": "سفید" },
+				{ "slug": "se-text", "color": "#152421", "name": "متن" },
+				{ "slug": "se-muted", "color": "#718078", "name": "متن ثانویه" },
+				{ "slug": "se-border", "color": "#E8ECE8", "name": "خط" },
+				{ "slug": "se-sale", "color": "#F04438", "name": "تخفیف" }
+			]
+		},
+		"layout": {
+			"contentSize": "860px",
+			"wideSize": "1280px"
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontSizes": [
+				{ "slug": "small", "size": "13px", "name": "کوچک" },
+				{ "slug": "medium", "size": "15px", "name": "متوسط" },
+				{ "slug": "large", "size": "20px", "name": "بزرگ" },
+				{ "slug": "x-large", "size": "28px", "name": "خیلی بزرگ" }
+			]
+		},
+		"spacing": {
+			"units": [ "px", "em", "rem", "%", "vw" ]
+		}
+	}
+}

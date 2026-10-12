@@ -1,0 +1,136 @@
+{
+ "version": "0.4",
+ "title": "Samadi — فوتر",
+ "type": "footer",
+ "content": [
+  {
+   "id": "2d810a4",
+   "elType": "container",
+   "settings": {
+    "content_width": "boxed",
+    "flex_direction": "column",
+    "flex_gap": {
+     "unit": "px",
+     "size": 0,
+     "column": "0",
+     "row": "0"
+    },
+    "padding": {
+     "unit": "px",
+     "top": "32",
+     "right": "16",
+     "bottom": "32",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF"
+   },
+   "elements": [
+    {
+     "id": "ea20e32",
+     "elType": "widget",
+     "settings": {
+      "items": [
+       {
+        "_id": "9df4696",
+        "icon": "truck",
+        "title": "ارسال سریع",
+        "text": "به سراسر ایران"
+       },
+       {
+        "_id": "11a11f5",
+        "icon": "shield-check",
+        "title": "ضمانت اصالت کالا",
+        "text": "از برندهای معتبر"
+       },
+       {
+        "_id": "125227c",
+        "icon": "headset",
+        "title": "مشاوره تخصصی",
+        "text": "پیش از خرید"
+       },
+       {
+        "_id": "3712da8",
+        "icon": "badge-percent",
+        "title": "قیمت مناسب",
+        "text": "خرید مستقیم"
+       },
+       {
+        "_id": "6a78c49",
+        "icon": "message-circle",
+        "title": "پشتیبانی واقعی",
+        "text": "همیشه کنار شما"
+       }
+      ]
+     },
+     "elements": [],
+     "widgetType": "samadi-benefits"
+    },
+    {
+     "id": "4833489",
+     "elType": "container",
+     "settings": {
+      "content_width": "boxed",
+      "flex_direction": "row",
+      "flex_gap": {
+       "unit": "px",
+       "size": 20,
+       "column": "20",
+       "row": "20"
+      },
+      "padding": {
+       "unit": "px",
+       "top": "10",
+       "right": "0",
+       "bottom": "10",
+       "left": "0",
+       "isLinked": false
+      },
+      "flex_align_items": "center",
+      "flex_justify_content": "space-between"
+     },
+     "elements": [
+      {
+       "id": "684b27b",
+       "elType": "widget",
+       "settings": {
+        "width": {
+         "unit": "px",
+         "size": 180
+        }
+       },
+       "elements": [],
+       "widgetType": "theme-site-logo"
+      },
+      {
+       "id": "c0f7a1e",
+       "elType": "widget",
+       "settings": {},
+       "elements": [],
+       "widgetType": "samadi-contact"
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "6a68f81",
+     "elType": "widget",
+     "settings": {
+      "items": [
+       "home",
+       "shop",
+       "cart",
+       "wishlist",
+       "account"
+      ]
+     },
+     "elements": [],
+     "widgetType": "samadi-mobile-nav"
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": []
+}

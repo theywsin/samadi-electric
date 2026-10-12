@@ -1,0 +1,22 @@
+/*
+Theme Name: Samadi Electric
+Theme URI: https://samadielectric.ir/
+Author: Samadi Electric
+Description: قالب اختصاصی، راست‌چین و فارسی فروشگاه صمدی الکتریک؛ هماهنگ با WooCommerce و Elementor (به همراه Theme Builder در Elementor Pro). Custom RTL WooCommerce + Elementor theme for the Samadi Electric store.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 7.1
+Requires PHP: 7.4
+WC requires at least: 9.0
+WC tested up to: 10.9
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: samadi-electric
+Domain Path: /languages
+Tags: e-commerce, rtl-language-support, custom-logo, custom-menu, featured-images, full-width-template, theme-options, translation-ready, block-styles, wide-blocks
+*/
+
+/*
+ * Styles are split into files under assets/css/ and enqueued conditionally.
+ * See inc/enqueue.php. This file only carries the theme header.
+ */
