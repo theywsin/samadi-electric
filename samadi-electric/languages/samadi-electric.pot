@@ -1,0 +1,884 @@
+# Copyright (C) Samadi Electric
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Domain: samadi-electric\n"
+
+#: woocommerce/archive-product.php:39
+msgid "فیلتر محصولات"
+msgstr ""
+
+#: woocommerce/archive-product.php:41 woocommerce/archive-product.php:58
+msgid "فیلترها"
+msgstr ""
+
+#: woocommerce/archive-product.php:44
+msgid "بستن فیلترها"
+msgstr ""
+
+#: woocommerce/content-product.php:36
+msgid "ویژه"
+msgstr ""
+
+#: woocommerce/content-product.php:57
+msgid "کد:"
+msgstr ""
+
+#: 404.php:18
+msgid "صفحه موردنظر پیدا نشد"
+msgstr ""
+
+#: 404.php:19
+msgid "ممکن است آدرس تغییر کرده باشد. از جستجو استفاده کنید یا به فروشگاه بروید."
+msgstr ""
+
+#: 404.php:22
+msgid "بازگشت به خانه"
+msgstr ""
+
+#: 404.php:24 inc/helpers.php:83
+msgid "مشاهده محصولات"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:13
+msgid "خانه"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:22
+msgid "دسته‌بندی‌ها"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:55 inc/woocommerce.php:510
+msgid "سبد خرید"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:41
+msgid "علاقه‌مندی‌ها"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:48
+msgid "حساب کاربری"
+msgstr ""
+
+#: template-parts/components/bottom-nav.php:59
+msgid "ناوبری سریع"
+msgstr ""
+
+#: template-parts/header/mobile-drawer.php:17
+msgid "منو"
+msgstr ""
+
+#: template-parts/header/mobile-drawer.php:20 inc/enqueue.php:161
+msgid "بستن منو"
+msgstr ""
+
+#: template-parts/header/mobile-drawer.php:37
+msgid "زیرمجموعه‌های %s"
+msgstr ""
+
+#: template-parts/header/mobile-drawer.php:53 inc/setup.php:63
+msgid "منوی موبایل"
+msgstr ""
+
+#: template-parts/header/site-header.php:22 inc/enqueue.php:160
+msgid "باز کردن منو"
+msgstr ""
+
+#: template-parts/header/site-header.php:48
+msgid "ورود / ثبت‌نام"
+msgstr ""
+
+#: template-parts/header/site-header.php:70
+msgid "منوی اصلی"
+msgstr ""
+
+#: template-parts/content/single.php:34 template-parts/content/page.php:41
+msgid "صفحات:"
+msgstr ""
+
+#: template-parts/content/single.php:45
+msgid "سایدبار"
+msgstr ""
+
+#: template-parts/content/single.php:53
+msgid "نوشته قبلی"
+msgstr ""
+
+#: template-parts/content/single.php:54
+msgid "نوشته بعدی"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:43
+msgid "دسته‌بندی‌های اصلی"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:81
+msgid "ارتباط با ما"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:98
+msgid "© %1$s %2$s. تمامی حقوق محفوظ است."
+msgstr ""
+
+#: template-parts/home/brands.php:31
+msgid "برندهای معتبر"
+msgstr ""
+
+#: template-parts/home/home.php:31
+msgid "پیشنهادهای ویژه"
+msgstr ""
+
+#: template-parts/home/home.php:32
+msgid "پرفروش‌ترین‌ها"
+msgstr ""
+
+#: template-parts/home/home.php:33
+msgid "جدیدترین محصولات"
+msgstr ""
+
+#: template-parts/home/posts.php:26
+msgid "راهنمای خرید و مقالات آموزشی"
+msgstr ""
+
+#: template-parts/home/categories.php:37
+msgid "دسته‌بندی‌های محبوب"
+msgstr ""
+
+#: template-parts/home/categories.php:38
+msgid "همه محصولات"
+msgstr ""
+
+#: template-parts/archive/posts.php:14 inc/template-tags.php:139
+msgid "نتایج جستجو برای «%s»"
+msgstr ""
+
+#: template-parts/archive/posts.php:20
+msgid "آخرین مطالب"
+msgstr ""
+
+#: template-parts/archive/posts.php:48
+msgid "مطلبی پیدا نشد"
+msgstr ""
+
+#: template-parts/archive/posts.php:49
+msgid "عبارت دیگری را جستجو کنید."
+msgstr ""
+
+#: comments.php:20
+msgid "%s دیدگاه"
+msgid_plural "%s دیدگاه"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38
+msgid "امکان ثبت دیدگاه بسته شده است."
+msgstr ""
+
+#: inc/customizer.php:70
+msgid "تنظیمات صمدی الکتریک"
+msgstr ""
+
+#: inc/customizer.php:115
+msgid "رنگ‌های برند"
+msgstr ""
+
+#: inc/customizer.php:118
+msgid "سبز تیره اصلی"
+msgstr ""
+
+#: inc/customizer.php:119
+msgid "سبز برند"
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "رنگ تأکیدی (لیمویی)"
+msgstr ""
+
+#: inc/customizer.php:121
+msgid "پس‌زمینه عمومی"
+msgstr ""
+
+#: inc/customizer.php:122
+msgid "پس‌زمینه کارت‌ها"
+msgstr ""
+
+#: inc/customizer.php:123
+msgid "متن اصلی"
+msgstr ""
+
+#: inc/customizer.php:124
+msgid "متن ثانویه"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "خطوط و مرزها"
+msgstr ""
+
+#: inc/customizer.php:126
+msgid "رنگ تخفیف"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "تایپوگرافی"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "فونت"
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "وزیرمتن (محلی، همراه قالب)"
+msgstr ""
+
+#: inc/customizer.php:143
+msgid "فونت سیستم"
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "فونت دلخواه (بارگذاری‌شده توسط افزونه یا Elementor)"
+msgstr ""
+
+#: inc/customizer.php:153
+msgid "نام فونت دلخواه (font-family)"
+msgstr ""
+
+#: inc/customizer.php:154
+msgid "مثلاً IRANYekanX. فایل فونت باید با مجوز معتبر توسط شما بارگذاری شده باشد (مثلاً از Elementor → فونت‌های سفارشی)."
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "وزن متن"
+msgstr ""
+
+#: inc/customizer.php:173
+msgid "وزن عناوین"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "اندازه پایه متن (px)"
+msgstr ""
+
+#: inc/customizer.php:193
+msgid "نمایش اعداد قیمت‌ها و شمارنده‌ها با ارقام فارسی"
+msgstr ""
+
+#: inc/customizer.php:203
+msgid "سایت همیشه راست‌چین نمایش داده شود"
+msgstr ""
+
+#: inc/customizer.php:204
+msgid "پیشنهاد اصلی: زبان سایت را در «تنظیمات ← عمومی» فارسی قرار دهید. این گزینه برای زمانی است که زبان وردپرس فارسی نیست."
+msgstr ""
+
+#: inc/customizer.php:213
+msgid "هدر"
+msgstr ""
+
+#: inc/customizer.php:215
+msgid "هدر داخلی قالب. اگر در Elementor Pro قالب هدر با شرط نمایش ساخته شود، یا در بخش «Elementor» یک قالب هدر انتخاب شود، جایگزین این هدر می‌شود."
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "لوگوی موبایل"
+msgstr ""
+
+#: inc/customizer.php:219
+msgid "هدر چسبان"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "نمایش مگامنوی دسته‌بندی محصولات"
+msgstr ""
+
+#: inc/customizer.php:221
+msgid "عنوان دکمه دسته‌بندی‌ها"
+msgstr ""
+
+#: inc/customizer.php:222
+msgid "نمایش جستجو"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "نمایش حساب کاربری"
+msgstr ""
+
+#: inc/customizer.php:224
+msgid "عنوان دکمه خرید عمده (خالی = مخفی)"
+msgstr ""
+
+#: inc/customizer.php:230
+msgid "اطلاعات تماس و شبکه‌های اجتماعی"
+msgstr ""
+
+#: inc/customizer.php:232
+msgid "فقط اطلاعات واقعی فروشگاه را وارد کنید. موارد خالی در سایت نمایش داده نمی‌شوند."
+msgstr ""
+
+#: inc/customizer.php:235
+msgid "تلفن ثابت"
+msgstr ""
+
+#: inc/customizer.php:236
+msgid "تلفن همراه"
+msgstr ""
+
+#: inc/customizer.php:237
+msgid "ایمیل"
+msgstr ""
+
+#: inc/customizer.php:238
+msgid "آدرس"
+msgstr ""
+
+#: inc/customizer.php:239
+msgid "ساعات کاری"
+msgstr ""
+
+#: inc/customizer.php:240
+msgid "اینستاگرام (لینک کامل)"
+msgstr ""
+
+#: inc/customizer.php:241
+msgid "تلگرام (لینک کامل)"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "واتس‌اپ (لینک کامل wa.me)"
+msgstr ""
+
+#: inc/customizer.php:243
+msgid "لینکدین (لینک کامل)"
+msgstr ""
+
+#: inc/customizer.php:249 inc/helpers.php:50 inc/helpers.php:85
+msgid "خرید عمده"
+msgstr ""
+
+#: inc/customizer.php:251
+msgid "صفحه‌ای که فرم خرید عمده/استعلام قیمت در آن قرار دارد (شورت‌کد [samadi_quote_form] از افزونه همراه). اگر خالی باشد، دکمه‌های خرید عمده نمایش داده نمی‌شوند."
+msgstr ""
+
+#: inc/customizer.php:254
+msgid "صفحه خرید عمده"
+msgstr ""
+
+#: inc/customizer.php:255
+msgid "یا لینک دلخواه"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "صفحه اصلی (پیش‌فرض قالب)"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "این تنظیمات برای صفحه اصلی داخلی قالب است. اگر در «تنظیمات → خواندن» یک برگه ساخته‌شده با Elementor را به‌عنوان صفحه اصلی انتخاب کنید، همان برگه نمایش داده می‌شود و از Elementor ویرایش می‌شود."
+msgstr ""
+
+#: inc/customizer.php:267
+msgid "نمایش بنر اصلی"
+msgstr ""
+
+#: inc/customizer.php:268
+msgid "نمایش مزایای خرید"
+msgstr ""
+
+#: inc/customizer.php:269
+msgid "نمایش دسته‌بندی‌های محبوب"
+msgstr ""
+
+#: inc/customizer.php:270
+msgid "نمایش پیشنهادهای ویژه (تخفیف‌دار)"
+msgstr ""
+
+#: inc/customizer.php:271
+msgid "نمایش پرفروش‌ترین‌ها"
+msgstr ""
+
+#: inc/customizer.php:272
+msgid "نمایش جدیدترین محصولات"
+msgstr ""
+
+#: inc/customizer.php:273
+msgid "نمایش برندها"
+msgstr ""
+
+#: inc/customizer.php:274
+msgid "نمایش مقالات آموزشی"
+msgstr ""
+
+#: inc/customizer.php:286
+msgid "دسته‌بندی‌های منتخب"
+msgstr ""
+
+#: inc/customizer.php:287
+msgid "ترتیب نمایش مطابق ترتیب دسته‌ها در «محصولات → دسته‌بندی‌ها» (قابل جابه‌جایی با کشیدن) است. اگر چیزی انتخاب نشود، دسته‌های اصلی نمایش داده می‌شوند."
+msgstr ""
+
+#: inc/customizer.php:292
+msgid "حداکثر تعداد دسته‌ها"
+msgstr ""
+
+#: inc/customizer.php:293
+msgid "تعداد محصولات هر بخش"
+msgstr ""
+
+#: inc/customizer.php:294
+msgid "تعداد مقالات"
+msgstr ""
+
+#: inc/customizer.php:295
+msgid "تصویر بنر اصلی"
+msgstr ""
+
+#: inc/customizer.php:296
+msgid "عنوان بنر"
+msgstr ""
+
+#: inc/customizer.php:297
+msgid "متن بنر"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "متن دکمه اول"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "لینک دکمه اول (خالی = فروشگاه)"
+msgstr ""
+
+#: inc/customizer.php:300
+msgid "متن دکمه دوم (به صفحه خرید عمده لینک می‌شود)"
+msgstr ""
+
+#: inc/customizer.php:306
+msgid "موقعیت متن بنر"
+msgstr ""
+
+#: inc/customizer.php:308
+msgid "راست"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "وسط"
+msgstr ""
+
+#: inc/customizer.php:310
+msgid "چپ"
+msgstr ""
+
+#: inc/customizer.php:317
+msgid "مزایای فروشگاه"
+msgstr ""
+
+#: inc/customizer.php:318
+msgid "نمایش نوار مزایا"
+msgstr ""
+
+#: inc/customizer.php:322
+msgid "آیکون مورد %d"
+msgstr ""
+
+#: inc/customizer.php:324
+msgid "عنوان مورد %d (خالی = مخفی)"
+msgstr ""
+
+#: inc/customizer.php:326
+msgid "توضیح مورد %d"
+msgstr ""
+
+#: inc/customizer.php:330
+msgid "فروشگاه و کارت محصول"
+msgstr ""
+
+#: inc/customizer.php:336
+msgid "حالت نمایش کارت محصول"
+msgstr ""
+
+#: inc/customizer.php:338
+msgid "استاندارد"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "فشرده"
+msgstr ""
+
+#: inc/customizer.php:340
+msgid "با حاشیه"
+msgstr ""
+
+#: inc/customizer.php:345
+msgid "نمایش کد کالا در کارت"
+msgstr ""
+
+#: inc/customizer.php:346
+msgid "نمایش برند در کارت"
+msgstr ""
+
+#: inc/customizer.php:347
+msgid "نمایش وضعیت موجودی در کارت"
+msgstr ""
+
+#: inc/customizer.php:348
+msgid "نمایش امتیاز در کارت"
+msgstr ""
+
+#: inc/customizer.php:349
+msgid "تعداد ستون محصولات (دسکتاپ)"
+msgstr ""
+
+#: inc/customizer.php:350
+msgid "تعداد محصول در هر صفحه"
+msgstr ""
+
+#: inc/customizer.php:351
+msgid "نمایش ستون فیلترها در آرشیو"
+msgstr ""
+
+#: inc/customizer.php:352
+msgid "نمایش کد کالا در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:353
+msgid "نمایش برند در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:354
+msgid "نمایش مزایای فروشگاه در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:357
+msgid "مسیر راهنما (Breadcrumb)"
+msgstr ""
+
+#: inc/customizer.php:358
+msgid "نمایش مسیر راهنما"
+msgstr ""
+
+#: inc/customizer.php:364
+msgid "منبع"
+msgstr ""
+
+#: inc/customizer.php:365
+msgid "حالت خودکار در صورت فعال بودن Yoast SEO یا Rank Math از Breadcrumb همان افزونه (همراه با Schema آن) استفاده می‌کند."
+msgstr ""
+
+#: inc/customizer.php:367
+msgid "خودکار"
+msgstr ""
+
+#: inc/customizer.php:368
+msgid "ووکامرس / قالب"
+msgstr ""
+
+#: inc/customizer.php:375
+msgid "موبایل"
+msgstr ""
+
+#: inc/customizer.php:376
+msgid "نوار ناوبری پایین موبایل"
+msgstr ""
+
+#: inc/customizer.php:377
+msgid "نمایش علاقه‌مندی‌ها در نوار پایین (در صورت نصب افزونه علاقه‌مندی)"
+msgstr ""
+
+#: inc/customizer.php:378
+msgid "نوار خرید چسبان در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:381
+msgid "فوتر"
+msgstr ""
+
+#: inc/customizer.php:382
+msgid "درباره فروشگاه"
+msgstr ""
+
+#: inc/customizer.php:383
+msgid "متن کپی‌رایت (خالی = پیش‌فرض)"
+msgstr ""
+
+#: inc/accessibility.php:16
+msgid "رفتن به محتوای اصلی"
+msgstr ""
+
+#: inc/accessibility.php:45
+msgid "جستجو برای:"
+msgstr ""
+
+#: inc/accessibility.php:46
+msgid "جستجوی محصول، برند یا کد کالا…"
+msgstr ""
+
+#: inc/accessibility.php:46
+msgid "جستجو…"
+msgstr ""
+
+#: inc/accessibility.php:52
+msgid "جستجو"
+msgstr ""
+
+#: inc/enqueue.php:158
+msgid "محصول به سبد خرید افزوده شد."
+msgstr ""
+
+#: inc/enqueue.php:159
+msgid "سبد خرید به‌روزرسانی شد."
+msgstr ""
+
+#: inc/enqueue.php:162
+msgid "افزایش تعداد"
+msgstr ""
+
+#: inc/enqueue.php:163
+msgid "کاهش تعداد"
+msgstr ""
+
+#: inc/setup.php:62
+msgid "منوی اصلی (هدر)"
+msgstr ""
+
+#: inc/setup.php:64
+msgid "فوتر: دسترسی سریع فروشگاه"
+msgstr ""
+
+#: inc/setup.php:65
+msgid "فوتر: راهنما و قوانین"
+msgstr ""
+
+#: inc/setup.php:114
+msgid "سایدبار وبلاگ"
+msgstr ""
+
+#: inc/setup.php:115
+msgid "در صفحات نوشته و آرشیو وبلاگ نمایش داده می‌شود."
+msgstr ""
+
+#: inc/setup.php:125
+msgid "فیلترهای فروشگاه"
+msgstr ""
+
+#: inc/setup.php:126
+msgid "در آرشیو محصولات (دسکتاپ: ستون کناری، موبایل: پنل کشویی) نمایش داده می‌شود. ابزارک «فیلتر محصولات صمدی» یا ابزارک‌های فیلتر ووکامرس را اینجا قرار دهید."
+msgstr ""
+
+#: inc/setup.php:136
+msgid "فوتر: نمادهای اعتماد"
+msgstr ""
+
+#: inc/setup.php:137
+msgid "کد رسمی نماد اعتماد الکترونیکی یا ساماندهی را با ابزارک «HTML سفارشی» اینجا قرار دهید. فقط نمادهای معتبر و متعلق به همین فروشگاه."
+msgstr ""
+
+#: inc/woocommerce.php:165
+msgid "%s٪ تخفیف"
+msgstr ""
+
+#: inc/woocommerce.php:166
+msgid "فروش ویژه"
+msgstr ""
+
+#: inc/woocommerce.php:225
+msgid "ناموجود"
+msgstr ""
+
+#: inc/woocommerce.php:228
+msgid "پیش‌سفارش"
+msgstr ""
+
+#: inc/woocommerce.php:235
+msgid "تنها %s عدد باقی مانده"
+msgstr ""
+
+#: inc/woocommerce.php:239
+msgid "موجود"
+msgstr ""
+
+#: inc/woocommerce.php:312
+msgid "برند:"
+msgstr ""
+
+#: inc/woocommerce.php:322
+msgid "کد کالا:"
+msgstr ""
+
+#: inc/woocommerce.php:364 inc/woocommerce.php:421
+msgid "مشخصات فنی"
+msgstr ""
+
+#: inc/woocommerce.php:368
+msgid "توضیحات"
+msgstr ""
+
+#: inc/woocommerce.php:394
+msgid "برند"
+msgstr ""
+
+#: inc/woocommerce.php:401
+msgid "کد کالا"
+msgstr ""
+
+#: inc/woocommerce.php:511
+msgid "اطلاعات و پرداخت"
+msgstr ""
+
+#: inc/woocommerce.php:512
+msgid "ثبت سفارش"
+msgstr ""
+
+#: inc/woocommerce.php:515
+msgid "مراحل خرید"
+msgstr ""
+
+#: inc/woocommerce.php:559
+msgid "نحوه نمایش محصولات"
+msgstr ""
+
+#: inc/woocommerce.php:562
+msgid "نمایش شبکه‌ای"
+msgstr ""
+
+#: inc/woocommerce.php:566
+msgid "نمایش فهرستی"
+msgstr ""
+
+#: inc/helpers.php:47
+msgid "همه دسته‌بندی‌ها"
+msgstr ""
+
+#: inc/helpers.php:81
+msgid "تجهیزات الکتریکی باکیفیت، برای زندگی بهتر"
+msgstr ""
+
+#: inc/helpers.php:82
+msgid "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت."
+msgstr ""
+
+#: inc/helpers.php:91
+msgid "ارسال سریع"
+msgstr ""
+
+#: inc/helpers.php:92
+msgid "به سراسر ایران"
+msgstr ""
+
+#: inc/helpers.php:94
+msgid "ضمانت اصالت کالا"
+msgstr ""
+
+#: inc/helpers.php:95
+msgid "از برندهای معتبر"
+msgstr ""
+
+#: inc/helpers.php:97
+msgid "مشاوره تخصصی"
+msgstr ""
+
+#: inc/helpers.php:98
+msgid "پیش از خرید"
+msgstr ""
+
+#: inc/helpers.php:100
+msgid "قیمت مناسب"
+msgstr ""
+
+#: inc/helpers.php:101
+msgid "خرید مستقیم"
+msgstr ""
+
+#: inc/helpers.php:103
+msgid "پشتیبانی واقعی"
+msgstr ""
+
+#: inc/helpers.php:104
+msgid "همیشه کنار شما"
+msgstr ""
+
+#: inc/customizer-controls.php:43
+msgid "هنوز دسته‌ای تعریف نشده است."
+msgstr ""
+
+#: inc/navigation.php:28
+msgid "زیرمنوی %s"
+msgstr ""
+
+#: inc/navigation.php:142
+msgid "مشاهده همه محصولات"
+msgstr ""
+
+#: inc/navigation.php:164
+msgid "ساخت منوی اصلی"
+msgstr ""
+
+#: inc/template-tags.php:80 inc/template-tags.php:107 inc/template-tags.php:148
+msgid "مسیر راهنما"
+msgstr ""
+
+#: inc/template-tags.php:111 inc/template-tags.php:120
+msgctxt "breadcrumb"
+msgid "خانه"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "صفحه پیدا نشد"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgid "صفحه قبل"
+msgstr ""
+
+#: inc/template-tags.php:170
+msgid "صفحه بعد"
+msgstr ""
+
+#: inc/template-tags.php:171
+msgid "صفحه"
+msgstr ""
+
+#: inc/template-tags.php:214
+msgid "مشاهده همه"
+msgstr ""
+
+#: inc/template-tags.php:250
+msgid "اینستاگرام"
+msgstr ""
+
+#: inc/template-tags.php:251
+msgid "تلگرام"
+msgstr ""
+
+#: inc/template-tags.php:252
+msgid "واتس‌اپ"
+msgstr ""
+
+#: inc/template-tags.php:253
+msgid "لینکدین"
+msgstr ""
+
+#: inc/elementor.php:117
+msgid "— قالب داخلی پوسته —"
+msgstr ""
+
+#: inc/elementor.php:125
+msgid "Elementor"
+msgstr ""
+
+#: inc/elementor.php:128
+msgid "Elementor Pro فعال است: بهتر است هدر و فوتر را از «قالب‌ها → Theme Builder» با شرط نمایش بسازید. قالب‌های Theme Builder بر این تنظیمات اولویت دارند."
+msgstr ""
+
+#: inc/elementor.php:129
+msgid "با Elementor رایگان، یک قالب (Templates → Saved Templates، نوع Section/Container یا Page) بسازید و اینجا به‌عنوان هدر یا فوتر کل سایت انتخاب کنید."
+msgstr ""
+
+#: inc/elementor.php:133
+msgid "قالب هدر"
+msgstr ""
+
+#: inc/elementor.php:133
+msgid "قالب فوتر"
+msgstr ""
+

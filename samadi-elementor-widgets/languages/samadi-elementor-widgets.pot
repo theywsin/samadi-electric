@@ -1,0 +1,1525 @@
+# Copyright (C) Samadi Electric
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Domain: samadi-elementor-widgets\n"
+
+#: includes/class-term-colors.php:69 includes/class-term-colors.php:85
+msgid "رنگ نمونه (سواچ)"
+msgstr ""
+
+#: includes/class-term-colors.php:71
+msgid "برای ویژگی رنگ: کد رنگ این گزینه. در صفحه محصول به‌صورت دایره رنگی نمایش داده می‌شود."
+msgstr ""
+
+#: includes/class-term-colors.php:89
+msgid "خالی بگذارید تا گزینه به‌صورت دکمه متنی نمایش داده شود."
+msgstr ""
+
+#: includes/class-term-colors.php:124 includes/elementor/class-widget-base.php:240 includes/elementor/widgets/class-flash-sale.php:67
+msgid "رنگ"
+msgstr ""
+
+#: includes/class-shortcodes.php:182 includes/elementor/widgets/class-search.php:37 includes/class-components.php:656
+msgid "جستجوی محصول، برند یا کد کالا…"
+msgstr ""
+
+#: includes/class-shortcodes.php:222 includes/elementor/widgets/class-quote-form.php:38 includes/class-quote.php:112
+msgid "فرم درخواست خرید عمده و استعلام قیمت"
+msgstr ""
+
+#: includes/class-shortcodes.php:223 includes/elementor/widgets/class-quote-form.php:39 includes/class-quote.php:113
+msgid "فهرست کالاهای موردنیاز را وارد کنید؛ کارشناسان فروش در اولین فرصت با شما تماس می‌گیرند."
+msgstr ""
+
+#: includes/class-shortcodes.php:224 includes/elementor/widgets/class-quote-form.php:40 includes/class-quote.php:114
+msgid "ثبت درخواست"
+msgstr ""
+
+#: includes/class-shortcodes.php:254 includes/elementor/widgets/class-recently-viewed.php:38 includes/class-recently-viewed.php:101
+msgid "بازدیدهای اخیر شما"
+msgstr ""
+
+#: includes/class-shortcodes.php:282 includes/elementor/widgets/class-flash-sale.php:39
+msgid "پیشنهاد شگفت‌انگیز"
+msgstr ""
+
+#: includes/class-settings.php:60 includes/class-settings.php:61
+msgid "تنظیمات صمدی"
+msgstr ""
+
+#: includes/class-settings.php:75
+msgid "تنظیمات"
+msgstr ""
+
+#: includes/class-settings.php:94 includes/class-setup.php:253
+msgid "خرید عمده و استعلام قیمت"
+msgstr ""
+
+#: includes/class-settings.php:95
+msgid "جستجو، فیلتر و محصولات اخیر"
+msgstr ""
+
+#: includes/class-settings.php:98
+msgid "صفحه فرم خرید عمده / استعلام"
+msgstr ""
+
+#: includes/class-settings.php:99
+msgid "ایمیل دریافت اعلان"
+msgstr ""
+
+#: includes/class-settings.php:100
+msgid "دکمه استعلام قیمت در صفحه محصول"
+msgstr ""
+
+#: includes/class-settings.php:101
+msgid "متن دکمه استعلام"
+msgstr ""
+
+#: includes/class-settings.php:102
+msgid "محصولات بدون قیمت"
+msgstr ""
+
+#: includes/class-settings.php:102
+msgid "به‌جای قیمت خالی، «استعلام قیمت» نمایش داده شود (این محصولات قابل افزودن به سبد نیستند)."
+msgstr ""
+
+#: includes/class-settings.php:103
+msgid "جستجوی زنده"
+msgstr ""
+
+#: includes/class-settings.php:103
+msgid "پیشنهاد لحظه‌ای محصولات، دسته‌ها و برندها هنگام تایپ"
+msgstr ""
+
+#: includes/class-settings.php:104
+msgid "جستجوی کد کالا"
+msgstr ""
+
+#: includes/class-settings.php:104
+msgid "نتایج جستجوی فروشگاه شامل تطابق SKU (کد کالا) هم باشد"
+msgstr ""
+
+#: includes/class-settings.php:105
+msgid "ایندکس صفحات فیلترشده"
+msgstr ""
+
+#: includes/class-settings.php:105
+msgid "آدرس‌های دارای فیلتر با noindex,follow علامت‌گذاری شوند (پیشنهادی برای جلوگیری از محتوای تکراری)"
+msgstr ""
+
+#: includes/class-settings.php:106
+msgid "محصولات اخیراً مشاهده‌شده"
+msgstr ""
+
+#: includes/class-settings.php:106
+msgid "نمایش خودکار در انتهای صفحه محصول"
+msgstr ""
+
+#: includes/class-settings.php:107
+msgid "تعداد محصولات اخیر"
+msgstr ""
+
+#: includes/class-settings.php:171
+msgid "— انتخاب صفحه —"
+msgstr ""
+
+#: includes/class-settings.php:175
+msgid "شورت‌کد [samadi_quote_form] یا ویجت «فرم استعلام قیمت صمدی» باید در این صفحه قرار داشته باشد."
+msgstr ""
+
+#: includes/class-settings.php:179
+msgid "خالی = ایمیل مدیر سایت"
+msgstr ""
+
+#: includes/class-settings.php:183
+msgid "برای همه محصولات"
+msgstr ""
+
+#: includes/class-settings.php:184
+msgid "فقط محصولات «قیمت با استعلام»"
+msgstr ""
+
+#: includes/class-settings.php:185
+msgid "نمایش داده نشود"
+msgstr ""
+
+#: includes/class-settings.php:213
+msgid "تنظیمات صمدی الکتریک"
+msgstr ""
+
+#: includes/class-filters.php:373
+msgid "فیلترها در صفحات فروشگاه و آرشیو دسته‌بندی محصولات نمایش داده می‌شوند."
+msgstr ""
+
+#: includes/class-filters.php:415 includes/elementor/widgets/class-product-filters.php:44
+msgid "موجودی"
+msgstr ""
+
+#: includes/class-filters.php:418
+msgid "فقط کالاهای موجود"
+msgstr ""
+
+#: includes/class-filters.php:425 includes/elementor/widgets/class-product-filters.php:45
+msgid "برند"
+msgstr ""
+
+#: includes/class-filters.php:438
+msgid "اعمال فیلترها"
+msgstr ""
+
+#: includes/class-filters.php:440
+msgid "حذف همه فیلترها"
+msgstr ""
+
+#: includes/class-filters.php:498
+msgid "فقط موجود"
+msgstr ""
+
+#: includes/class-filters.php:501
+msgid "از %s"
+msgstr ""
+
+#: includes/class-filters.php:501
+msgid "تا %s"
+msgstr ""
+
+#: includes/class-filters.php:510
+msgid "فیلترهای فعال"
+msgstr ""
+
+#: includes/class-filters.php:517
+msgid "(حذف)"
+msgstr ""
+
+#: includes/class-filters.php:543
+msgid "محدوده قیمت (%s)"
+msgstr ""
+
+#: includes/class-filters.php:544
+msgid "از"
+msgstr ""
+
+#: includes/class-filters.php:545
+msgid "تا"
+msgstr ""
+
+#: includes/class-filters.php:553
+msgid "قیمت محصولات این بخش: %1$s تا %2$s"
+msgstr ""
+
+#: includes/class-filters.php:597
+msgid "نمایش بیشتر"
+msgstr ""
+
+#: includes/elementor/class-elementor.php:70 includes/elementor/class-elementor.php:98
+msgid "صمدی الکتریک"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:75 includes/elementor/class-widget-base.php:123
+msgid "عنوان بخش"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:85 includes/elementor/widgets/class-hero.php:85
+msgid "تگ عنوان"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:100
+msgid "لینک «مشاهده همه»"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:109
+msgid "متن لینک"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:111 includes/class-components.php:39
+msgid "مشاهده همه"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:130
+msgid "رنگ عنوان"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:145
+msgid "رنگ لینک"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:153
+msgid "فاصله تا محتوا"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:181 includes/elementor/widgets/class-mobile-nav.php:57 includes/elementor/widgets/class-search.php:43 includes/elementor/widgets/class-quote-form.php:45 includes/elementor/widgets/class-mega-menu.php:43
+msgid "پس‌زمینه"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:196 includes/elementor/widgets/class-search.php:45 includes/elementor/widgets/class-hero.php:107
+msgid "گردی گوشه‌ها"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:205
+msgid "فاصله داخلی"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:268 includes/elementor/widgets/class-blog-posts.php:54
+msgid "تعداد ستون"
+msgstr ""
+
+#: includes/elementor/class-widget-base.php:280
+msgid "فاصله بین آیتم‌ها"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:27
+msgid "اطلاعات فروشگاه"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:47
+msgid "فیلد"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:51
+msgid "تلفن ثابت"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:52
+msgid "تلفن همراه"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:53 includes/class-quote.php:454
+msgid "ایمیل"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:54
+msgid "آدرس"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:55
+msgid "ساعات کاری"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:83
+msgid "برند محصول"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:123
+msgid "کد کالا (SKU)"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:159
+msgid "لینک استعلام قیمت محصول"
+msgstr ""
+
+#: includes/elementor/tags/class-tags.php:195
+msgid "لینک صفحه خرید عمده"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:24
+msgid "نوار ناوبری موبایل صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:36 includes/elementor/widgets/class-mobile-nav.php:41 includes/elementor/widgets/class-benefits.php:65 includes/elementor/widgets/class-header-tools.php:36
+msgid "آیتم‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:37
+msgid "قالب صمدی الکتریک این نوار را خودش نمایش می‌دهد؛ این ویجت برای زمانی است که آن را در «سفارشی‌سازی ← موبایل» خاموش کرده‌اید یا از قالب دیگری استفاده می‌کنید. فقط در عرض موبایل/تبلت دیده می‌شود."
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:46 includes/class-components.php:905
+msgid "خانه"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:47
+msgid "دسته‌بندی‌ها / فروشگاه"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:48 includes/elementor/widgets/class-header-tools.php:41 includes/class-components.php:709 includes/class-components.php:907
+msgid "سبد خرید"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:49 includes/elementor/widgets/class-header-tools.php:39
+msgid "علاقه‌مندی‌ها (در صورت نصب افزونه)"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:50 includes/elementor/widgets/class-header-tools.php:40 includes/class-components.php:704 includes/class-components.php:909
+msgid "حساب کاربری"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:56 includes/elementor/widgets/class-benefits.php:63
+msgid "نوار"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:58
+msgid "رنگ آیتم‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-mobile-nav.php:59
+msgid "رنگ آیتم فعال"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:31
+msgid "شبکه محصولات صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:48
+msgid "منبع محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:53
+msgid "جدیدترین"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:54
+msgid "تخفیف‌دار (پیشنهاد ویژه)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:55
+msgid "پرفروش‌ترین"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:56
+msgid "محصولات ویژه (ستاره‌دار)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:57
+msgid "بیشترین امتیاز"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:58
+msgid "از دسته‌بندی‌های انتخابی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:59
+msgid "دسته‌بندی جاری (در آرشیو)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:60
+msgid "انتخاب دستی محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:61
+msgid "محصولات مرتبط (صفحه محصول)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:62
+msgid "محصولات پیشنهادی/جایگزین (صفحه محصول)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:63
+msgid "محصولات مکمل (سبد خرید)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:70 includes/elementor/widgets/class-category-cards.php:36 includes/class-components.php:906 includes/class-plugin.php:105
+msgid "دسته‌بندی‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:81
+msgid "شناسه محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:82
+msgid "شناسه‌ها (ID) را با کاما جدا کنید؛ به همین ترتیب نمایش داده می‌شوند."
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:88
+msgid "تعداد محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:92
+msgid "مرتب‌سازی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:96
+msgid "پیش‌فرض منبع"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:97 includes/class-quote.php:524
+msgid "تاریخ"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:98 includes/elementor/widgets/class-category-cards.php:71 includes/class-quote.php:451
+msgid "نام"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:99 includes/elementor/widgets/class-product-grid.php:157 includes/elementor/widgets/class-product-filters.php:43
+msgid "قیمت"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:100
+msgid "محبوبیت (فروش)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:101
+msgid "امتیاز"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:102
+msgid "ترتیب دستی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:103
+msgid "تصادفی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:110
+msgid "جهت"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:114
+msgid "نزولی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:115
+msgid "صعودی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:126 includes/class-plugin.php:104
+msgid "محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:132 includes/elementor/widgets/class-category-cards.php:84 includes/elementor/widgets/class-recently-viewed.php:43 includes/elementor/widgets/class-brands.php:54
+msgid "چیدمان"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:136 includes/elementor/widgets/class-category-cards.php:88 includes/elementor/widgets/class-recently-viewed.php:47 includes/elementor/widgets/class-brands.php:58
+msgid "شبکه‌ای"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:137 includes/elementor/widgets/class-category-cards.php:89 includes/elementor/widgets/class-recently-viewed.php:48 includes/elementor/widgets/class-brands.php:59
+msgid "اسلایدر افقی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:141
+msgid "صفحه‌بندی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:153
+msgid "کارت محصول"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:155
+msgid "محتوای کارت"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:156
+msgid "نام محصول"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:158
+msgid "پس‌زمینه نشان تخفیف"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:159
+msgid "پس‌زمینه دکمه سبد"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:160
+msgid "رنگ دکمه سبد"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-grid.php:202
+msgid "محصولی برای این تنظیمات پیدا نشد. منبع یا دسته‌بندی را تغییر دهید."
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:24 includes/class-filter-widget.php:21
+msgid "فیلتر محصولات صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:41
+msgid "فیلترها"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:42
+msgid "در قالب آرشیو محصولات استفاده کنید. فقط فیلترهایی نمایش داده می‌شوند که برای محصولات دسته جاری کاربرد دارند."
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:49
+msgid "ویژگی‌ها (خالی = همه ویژگی‌های مرتبط)"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:56
+msgid "نمایش «بیشتر» پس از چند گزینه"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:59 includes/elementor/widgets/class-flash-sale.php:64
+msgid "کادر"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:60 includes/elementor/widgets/class-quote-button.php:37 includes/elementor/widgets/class-quote-button.php:41 includes/elementor/widgets/class-hero.php:42 includes/elementor/widgets/class-hero.php:110
+msgid "متن"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:61
+msgid "عنوان گروه"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-filters.php:62
+msgid "گزینه‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-button.php:24
+msgid "دکمه استعلام قیمت صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-button.php:36 includes/elementor/widgets/class-quote-button.php:40 includes/elementor/widgets/class-quote-form.php:44 includes/elementor/widgets/class-mega-menu.php:42
+msgid "دکمه"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-button.php:42 includes/elementor/widgets/class-header-tools.php:38
+msgid "متن دکمه"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:24
+msgid "جستجوی محصولات صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:36 includes/class-components.php:670
+msgid "جستجو"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:37
+msgid "متن راهنما"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:38
+msgid "پیشنهادهای لحظه‌ای از «ووکامرس ← تنظیمات صمدی» فعال/غیرفعال می‌شوند."
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:41
+msgid "کادر جستجو"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:42
+msgid "ارتفاع"
+msgstr ""
+
+#: includes/elementor/widgets/class-search.php:44
+msgid "رنگ حاشیه"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:24
+msgid "کارت دسته‌بندی‌های صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:37
+msgid "دسته‌بندی‌های محبوب"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:41
+msgid "منبع"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:46
+msgid "دسته‌های اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:47
+msgid "انتخاب دستی (به همین ترتیب)"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:48
+msgid "زیردسته‌های دسته جاری"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:55
+msgid "دسته‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:66
+msgid "ترتیب"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:70
+msgid "ترتیب ووکامرس (قابل جابه‌جایی)"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:72
+msgid "تعداد محصول"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:77 includes/elementor/widgets/class-brands.php:49
+msgid "حداکثر تعداد"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:78
+msgid "پنهان کردن دسته‌های خالی"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:79
+msgid "نمایش تعداد کالا"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:80
+msgid "نمایش تصویر دسته"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:97
+msgid "کارت"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:99
+msgid "متن و تصویر کارت"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:100
+msgid "ارتفاع تصویر"
+msgstr ""
+
+#: includes/elementor/widgets/class-category-cards.php:101
+msgid "نام دسته"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:24
+msgid "فرم استعلام قیمت صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:36
+msgid "فرم"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:37
+msgid "درخواست‌ها در «ووکامرس ← درخواست‌های استعلام» ذخیره و به ایمیل تنظیم‌شده ارسال می‌شوند. این صفحه را در تنظیمات صمدی به‌عنوان صفحه خرید عمده انتخاب کنید و از کش صفحه مستثنا کنید."
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:38 includes/elementor/widgets/class-benefits.php:41 includes/elementor/widgets/class-benefits.php:69 includes/elementor/widgets/class-hero.php:41 includes/elementor/widgets/class-hero.php:109
+msgid "عنوان"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:39 includes/elementor/widgets/class-benefits.php:42 includes/elementor/widgets/class-benefits.php:70
+msgid "توضیح"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:40
+msgid "متن دکمه ارسال"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:43
+msgid "کادر فرم"
+msgstr ""
+
+#: includes/elementor/widgets/class-quote-form.php:46 includes/elementor/widgets/class-mega-menu.php:44
+msgid "رنگ متن"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:25
+msgid "نوار مزایای صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:37
+msgid "مزایا"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:40
+msgid "آیکون"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:45
+msgid "ارسال سریع"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:45
+msgid "به سراسر ایران"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:46
+msgid "ضمانت اصالت کالا"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:46
+msgid "از برندهای معتبر"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:47
+msgid "مشاوره تخصصی"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:47
+msgid "پیش از خرید"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:48
+msgid "قیمت مناسب"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:48
+msgid "خرید مستقیم"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:49
+msgid "پشتیبانی واقعی"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:49
+msgid "همیشه کنار شما"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:66 includes/elementor/widgets/class-contact.php:41 includes/elementor/widgets/class-header-tools.php:58
+msgid "رنگ آیکون"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:67
+msgid "پس‌زمینه آیکون"
+msgstr ""
+
+#: includes/elementor/widgets/class-benefits.php:68
+msgid "حذف جداکننده بین آیتم‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:24
+msgid "مقالات آموزشی صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:38
+msgid "مقالات"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:39
+msgid "راهنمای خرید و مقالات آموزشی"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:40 includes/elementor/widgets/class-recently-viewed.php:39 includes/class-quote.php:224 includes/class-quote.php:225 includes/class-quote.php:461
+msgid "تعداد"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:44
+msgid "دسته‌بندی"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:47
+msgid "همه"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:50
+msgid "تعداد کلمات خلاصه (۰ = بدون خلاصه)"
+msgstr ""
+
+#: includes/elementor/widgets/class-blog-posts.php:66
+msgid "کارت مقاله"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:24
+msgid "مگامنوی دسته‌بندی صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:36
+msgid "مگامنو"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:37
+msgid "عنوان دکمه"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:37 includes/class-components.php:736
+msgid "همه دسته‌بندی‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:38
+msgid "تعداد دسته‌های اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-mega-menu.php:39
+msgid "تعداد زیردسته برای هر دسته (۰ = بدون زیردسته)"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:25
+msgid "بنر تبلیغاتی صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:37
+msgid "اسلایدها"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:40
+msgid "تصویر"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:43
+msgid "متن دکمه اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:44
+msgid "لینک دکمه اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:45
+msgid "متن دکمه دوم"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:46
+msgid "لینک دکمه دوم"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:50
+msgid "موقعیت محتوا"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:54 includes/elementor/widgets/class-header-tools.php:48
+msgid "راست"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:55 includes/elementor/widgets/class-header-tools.php:49
+msgid "وسط"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:56 includes/elementor/widgets/class-header-tools.php:50
+msgid "چپ"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:69
+msgid "تجهیزات الکتریکی باکیفیت، برای زندگی بهتر"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:70
+msgid "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت."
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:71
+msgid "مشاهده محصولات"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:73 includes/elementor/widgets/class-header-tools.php:38 includes/class-components.php:688
+msgid "خرید عمده"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:80
+msgid "پخش خودکار"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:81
+msgid "فاصله زمانی (ثانیه)"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:91
+msgid "تصویر اول در بالای صفحه است (LCP)"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:91
+msgid "تصویر اسلاید اول بدون تأخیر و با اولویت بالا بارگذاری می‌شود."
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:94
+msgid "بنر"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:98
+msgid "حداقل ارتفاع"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:105
+msgid "رنگ پس‌زمینه"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:106
+msgid "حذف لایه محوکننده روی تصویر"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:108
+msgid "عرض محتوا"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:111
+msgid "پس‌زمینه دکمه اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-hero.php:112
+msgid "رنگ متن دکمه اصلی"
+msgstr ""
+
+#: includes/elementor/widgets/class-recently-viewed.php:24
+msgid "محصولات اخیراً مشاهده‌شده صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-recently-viewed.php:36
+msgid "محصولات اخیر"
+msgstr ""
+
+#: includes/elementor/widgets/class-recently-viewed.php:37
+msgid "فهرست در مرورگر بازدیدکننده نگهداری می‌شود و برای بازدیدکننده‌ای که محصولی ندیده است نمایش داده نمی‌شود (در ویرایشگر هم خالی است)."
+msgstr ""
+
+#: includes/elementor/widgets/class-product-badges.php:24
+msgid "نشان‌های محصول صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-badges.php:36
+msgid "نشان‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-badges.php:37
+msgid "پس‌زمینه تخفیف"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-badges.php:38
+msgid "پس‌زمینه ویژه"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-carousel.php:31
+msgid "اسلایدر محصولات صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-contact.php:24
+msgid "اطلاعات تماس صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-contact.php:36
+msgid "اطلاعات تماس"
+msgstr ""
+
+#: includes/elementor/widgets/class-contact.php:37
+msgid "تلفن، ایمیل، آدرس و ساعات کاری از تنظیمات قالب (سفارشی‌سازی ← اطلاعات تماس) خوانده می‌شوند. موارد خالی نمایش داده نمی‌شوند."
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:24
+msgid "ابزارهای هدر صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:37
+msgid "دکمه خرید عمده"
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:37
+msgid "به صفحه خرید عمده تعریف‌شده در تنظیمات لینک می‌شود."
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:45
+msgid "تراز"
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:57
+msgid "آیکون‌ها"
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:59
+msgid "پس‌زمینه شمارنده سبد"
+msgstr ""
+
+#: includes/elementor/widgets/class-header-tools.php:60
+msgid "پس‌زمینه دکمه خرید عمده"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:26
+msgid "فروش ویژه زمان‌دار صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:38 includes/class-components.php:855
+msgid "فروش ویژه"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:43
+msgid "زمان پایان"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:44
+msgid "به وقت تنظیمات سایت. شمارش معکوس تا این زمان نمایش داده می‌شود."
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:51
+msgid "پس از پایان زمان"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:55
+msgid "بخش پنهان شود"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:56
+msgid "محصولات نمایش داده شوند"
+msgstr ""
+
+#: includes/elementor/widgets/class-flash-sale.php:65
+msgid "شمارنده"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:24
+msgid "مشخصات فنی محصول صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:36 includes/elementor/widgets/class-product-specs.php:37
+msgid "مشخصات فنی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:38
+msgid "از ویژگی‌های محصول در ووکامرس (به همراه برند، کد کالا، وزن و ابعاد) ساخته می‌شود."
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:41
+msgid "جدول"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:42
+msgid "پس‌زمینه ستون عنوان"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:43
+msgid "عنوان ویژگی"
+msgstr ""
+
+#: includes/elementor/widgets/class-product-specs.php:44
+msgid "مقدار"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:24
+msgid "برندهای صمدی"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:36 includes/class-plugin.php:106
+msgid "برندها"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:37
+msgid "برندهای معتبر"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:41
+msgid "برندهای منتخب (خالی = پرکالاترین برندها)"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:50
+msgid "نمایش نام زیر لوگو"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:67
+msgid "کادر لوگو"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:68
+msgid "لوگو"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:69
+msgid "حداکثر ارتفاع لوگو"
+msgstr ""
+
+#: includes/elementor/widgets/class-brands.php:70
+msgid "خاکستری (رنگی هنگام هاور)"
+msgstr ""
+
+#: includes/class-quote.php:67 includes/class-quote.php:70
+msgid "درخواست‌های استعلام"
+msgstr ""
+
+#: includes/class-quote.php:68
+msgid "درخواست استعلام"
+msgstr ""
+
+#: includes/class-quote.php:69
+msgid "استعلام و خرید عمده"
+msgstr ""
+
+#: includes/class-quote.php:71
+msgid "مشاهده درخواست"
+msgstr ""
+
+#: includes/class-quote.php:72
+msgid "جستجوی درخواست‌ها"
+msgstr ""
+
+#: includes/class-quote.php:73
+msgid "درخواستی ثبت نشده است."
+msgstr ""
+
+#: includes/class-quote.php:129
+msgid "درخواست شما ثبت شد"
+msgstr ""
+
+#: includes/class-quote.php:129
+msgid "از اعتماد شما سپاسگزاریم. کارشناسان فروش به‌زودی با شما تماس می‌گیرند."
+msgstr ""
+
+#: includes/class-quote.php:129
+msgid "بازگشت به فروشگاه"
+msgstr ""
+
+#: includes/class-quote.php:175
+msgid "لطفاً موارد زیر را بررسی کنید:"
+msgstr ""
+
+#: includes/class-quote.php:190
+msgid "این فیلد را خالی بگذارید"
+msgstr ""
+
+#: includes/class-quote.php:196
+msgid "نام و نام خانوادگی"
+msgstr ""
+
+#: includes/class-quote.php:196 includes/class-quote.php:201 includes/class-quote.php:217
+msgid "الزامی"
+msgstr ""
+
+#: includes/class-quote.php:201
+msgid "شماره تماس"
+msgstr ""
+
+#: includes/class-quote.php:206
+msgid "نام شرکت / فروشگاه"
+msgstr ""
+
+#: includes/class-quote.php:210
+msgid "ایمیل (اختیاری)"
+msgstr ""
+
+#: includes/class-quote.php:217
+msgid "فهرست محصولات"
+msgstr ""
+
+#: includes/class-quote.php:222 includes/class-quote.php:223
+msgid "نام یا کد کالا"
+msgstr ""
+
+#: includes/class-quote.php:229
+msgid "افزودن ردیف"
+msgstr ""
+
+#: includes/class-quote.php:233 includes/class-quote.php:455
+msgid "توضیحات"
+msgstr ""
+
+#: includes/class-quote.php:277
+msgid "نشست شما منقضی شده است. لطفاً فرم را دوباره ارسال کنید."
+msgstr ""
+
+#: includes/class-quote.php:313
+msgid "نام و نام خانوادگی را وارد کنید."
+msgstr ""
+
+#: includes/class-quote.php:317
+msgid "شماره تماس معتبر وارد کنید."
+msgstr ""
+
+#: includes/class-quote.php:320
+msgid "ایمیل واردشده معتبر نیست."
+msgstr ""
+
+#: includes/class-quote.php:323
+msgid "دست‌کم یک کالا وارد کنید."
+msgstr ""
+
+#: includes/class-quote.php:335
+msgid "تعداد درخواست‌های شما بیش از حد مجاز است. لطفاً کمی بعد دوباره تلاش کنید یا تماس بگیرید."
+msgstr ""
+
+#: includes/class-quote.php:344
+msgid "%1$s %2$s"
+msgstr ""
+
+#: includes/class-quote.php:350
+msgid "ثبت درخواست با خطا مواجه شد. لطفاً دوباره تلاش کنید."
+msgstr ""
+
+#: includes/class-quote.php:387
+msgid "درخواست استعلام قیمت / خرید عمده جدید"
+msgstr ""
+
+#: includes/class-quote.php:389
+msgid "نام:"
+msgstr ""
+
+#: includes/class-quote.php:390
+msgid "تلفن:"
+msgstr ""
+
+#: includes/class-quote.php:392
+msgid "شرکت:"
+msgstr ""
+
+#: includes/class-quote.php:395
+msgid "ایمیل:"
+msgstr ""
+
+#: includes/class-quote.php:398
+msgid "اقلام:"
+msgstr ""
+
+#: includes/class-quote.php:404
+msgid "توضیحات:"
+msgstr ""
+
+#: includes/class-quote.php:415
+msgid "درخواست استعلام جدید #%d"
+msgstr ""
+
+#: includes/class-quote.php:429
+msgid "جدید"
+msgstr ""
+
+#: includes/class-quote.php:430
+msgid "در حال پیگیری"
+msgstr ""
+
+#: includes/class-quote.php:431
+msgid "پیش‌فاکتور ارسال شد"
+msgstr ""
+
+#: includes/class-quote.php:432
+msgid "بسته شد"
+msgstr ""
+
+#: includes/class-quote.php:440
+msgid "جزئیات درخواست"
+msgstr ""
+
+#: includes/class-quote.php:441
+msgid "وضعیت پیگیری"
+msgstr ""
+
+#: includes/class-quote.php:452 includes/class-quote.php:521
+msgid "تلفن"
+msgstr ""
+
+#: includes/class-quote.php:453
+msgid "شرکت"
+msgstr ""
+
+#: includes/class-quote.php:461
+msgid "اقلام درخواستی"
+msgstr ""
+
+#: includes/class-quote.php:461
+msgid "کالا"
+msgstr ""
+
+#: includes/class-quote.php:476 includes/class-quote.php:523
+msgid "وضعیت"
+msgstr ""
+
+#: includes/class-quote.php:480
+msgid "یادداشت داخلی"
+msgstr ""
+
+#: includes/class-quote.php:520
+msgid "درخواست‌کننده"
+msgstr ""
+
+#: includes/class-quote.php:522
+msgid "تعداد اقلام"
+msgstr ""
+
+#: includes/class-quote.php:561
+msgid "قیمت با استعلام"
+msgstr ""
+
+#: includes/class-quote.php:562
+msgid "به‌جای قیمت، «استعلام قیمت» نمایش داده شود و محصول قابل افزودن به سبد نباشد."
+msgstr ""
+
+#: includes/class-components.php:64 includes/class-plugin.php:110
+msgid "قبلی"
+msgstr ""
+
+#: includes/class-components.php:66 includes/class-plugin.php:111
+msgid "بعدی"
+msgstr ""
+
+#: includes/class-components.php:109
+msgid "بنرهای تبلیغاتی"
+msgstr ""
+
+#: includes/class-components.php:186
+msgid "نمایش بنر %d"
+msgstr ""
+
+#: includes/class-components.php:306
+msgid "%s کالا"
+msgstr ""
+
+#: includes/class-components.php:482
+msgid "هیچ طبقه‌بندی برندی فعال نیست. برندهای ووکامرس (محصولات ← برندها) را فعال کنید."
+msgstr ""
+
+#: includes/class-components.php:569
+msgid "زمان باقی‌مانده تا پایان پیشنهاد"
+msgstr ""
+
+#: includes/class-components.php:570 includes/class-plugin.php:112
+msgid "روز"
+msgstr ""
+
+#: includes/class-components.php:571 includes/class-plugin.php:113
+msgid "ساعت"
+msgstr ""
+
+#: includes/class-components.php:572 includes/class-plugin.php:114
+msgid "دقیقه"
+msgstr ""
+
+#: includes/class-components.php:573 includes/class-plugin.php:115
+msgid "ثانیه"
+msgstr ""
+
+#: includes/class-components.php:666
+msgid "جستجوی محصولات"
+msgstr ""
+
+#: includes/class-components.php:700 includes/class-components.php:908
+msgid "علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/class-components.php:704
+msgid "ورود / ثبت‌نام"
+msgstr ""
+
+#: includes/class-components.php:825
+msgid "این ویجت مشخصات فنی محصول جاری را نمایش می‌دهد (در قالب صفحه محصول استفاده کنید)."
+msgstr ""
+
+#: includes/class-components.php:858
+msgid "ویژه"
+msgstr ""
+
+#: includes/class-components.php:861
+msgid "ناموجود"
+msgstr ""
+
+#: includes/class-components.php:879
+msgid "ابتدا صفحه خرید عمده/استعلام قیمت را در تنظیمات افزونه مشخص کنید."
+msgstr ""
+
+#: includes/class-components.php:912
+msgid "ناوبری سریع"
+msgstr ""
+
+#: includes/class-components.php:941
+msgid "اطلاعات تماس از «نمایش ← سفارشی‌سازی ← تنظیمات صمدی الکتریک ← اطلاعات تماس» قالب صمدی خوانده می‌شود."
+msgstr ""
+
+#: includes/class-components.php:965
+msgid "هنوز اطلاعات تماسی در سفارشی‌سازی قالب وارد نشده است."
+msgstr ""
+
+#: includes/class-setup.php:59
+msgid "ساخت ویژگی‌های پیشنهادی محصولات"
+msgstr ""
+
+#: includes/class-setup.php:61
+msgid "ویژگی‌های سراسری برای فیلتر و مشخصات فنی: %s. موارد موجود دوباره ساخته نمی‌شوند."
+msgstr ""
+
+#: includes/class-setup.php:64
+msgid "ساخت دسته‌بندی‌های اصلی پیشنهادی"
+msgstr ""
+
+#: includes/class-setup.php:68
+msgid "ساخت صفحه «خرید عمده و استعلام قیمت»"
+msgstr ""
+
+#: includes/class-setup.php:69
+msgid "یک برگه با فرم استعلام می‌سازد و آن را در تنظیمات افزونه و قالب به‌عنوان صفحه خرید عمده ثبت می‌کند."
+msgstr ""
+
+#: includes/class-setup.php:75
+msgid "ساخت صفحه اصلی با Elementor"
+msgstr ""
+
+#: includes/class-setup.php:76
+msgid "برگه «صفحه اصلی» را با ویجت‌های صمدی (بنر، مزایا، دسته‌ها، پیشنهادهای ویژه، پرفروش‌ها، جدیدترین‌ها، برندها، مقالات) می‌سازد. همه بخش‌ها در Elementor قابل ویرایش‌اند."
+msgstr ""
+
+#: includes/class-setup.php:80
+msgid "ابزارهای راه‌اندازی"
+msgstr ""
+
+#: includes/class-setup.php:95
+msgid "به‌عنوان صفحه اصلی سایت تنظیم شود"
+msgstr ""
+
+#: includes/class-setup.php:97
+msgid "اجرا"
+msgstr ""
+
+#: includes/class-setup.php:104
+msgid "قالب‌های آماده هدر/فوتر Elementor Pro در پوشه templates/elementor افزونه قرار دارند و از «قالب‌ها ← وارد کردن» قابل استفاده‌اند."
+msgstr ""
+
+#: includes/class-setup.php:123
+msgid "%d ویژگی ساخته شد. برای هر ویژگی از «محصولات ← ویژگی‌ها ← پیکربندی» مقادیر را اضافه کنید."
+msgstr ""
+
+#: includes/class-setup.php:125
+msgid "%d دسته‌بندی ساخته شد. تصویر و ترتیب دسته‌ها را از «محصولات ← دسته‌بندی‌ها» تنظیم کنید."
+msgstr ""
+
+#: includes/class-setup.php:126
+msgid "صفحه خرید عمده ساخته و تنظیم شد."
+msgstr ""
+
+#: includes/class-setup.php:127
+msgid "صفحه اصلی Elementor ساخته شد."
+msgstr ""
+
+#: includes/class-setup.php:128
+msgid "عملیات انجام نشد. دسترسی یا پیش‌نیازها را بررسی کنید."
+msgstr ""
+
+#: includes/class-setup.php:137
+msgid "مشاهده"
+msgstr ""
+
+#: includes/class-setup.php:139
+msgid "ویرایش با Elementor"
+msgstr ""
+
+#: includes/class-setup.php:307
+msgid "صفحه اصلی"
+msgstr ""
+
+#: includes/class-plugin.php:101
+msgid "محصولی با این عبارت پیدا نشد."
+msgstr ""
+
+#: includes/class-plugin.php:102
+msgid "مشاهده همه نتایج"
+msgstr ""
+
+#: includes/class-plugin.php:103
+msgid "در حال جستجو…"
+msgstr ""
+
+#: includes/class-plugin.php:107
+msgid "کد:"
+msgstr ""
+
+#: includes/class-plugin.php:108
+msgid "نتایج به‌روزرسانی شد."
+msgstr ""
+
+#: includes/class-plugin.php:109
+msgid "بارگذاری نتایج با خطا مواجه شد. صفحه دوباره بارگذاری می‌شود."
+msgstr ""
+
+#: includes/class-plugin.php:116
+msgid "حذف ردیف"
+msgstr ""
+
+#: includes/class-plugin.php:141
+msgid "افزونه Samadi Elementor Widgets برای کار به WooCommerce نیاز دارد. لطفاً WooCommerce را نصب و فعال کنید."
+msgstr ""
+
+#: includes/class-filter-widget.php:23
+msgid "فیلتر برند، قیمت، موجودی و ویژگی‌های محصول — فقط فیلترهای مرتبط با دسته جاری نمایش داده می‌شوند."
+msgstr ""
+
+#: includes/class-filter-widget.php:77
+msgid "عنوان:"
+msgstr ""
+
+#: includes/class-filter-widget.php:80
+msgid "فیلتر قیمت"
+msgstr ""
+
+#: includes/class-filter-widget.php:80
+msgid "فیلتر موجودی"
+msgstr ""
+
+#: includes/class-filter-widget.php:80
+msgid "فیلتر برند"
+msgstr ""
+
+#: includes/class-filter-widget.php:86
+msgid "ویژگی‌ها"
+msgstr ""
+
+#: includes/class-filter-widget.php:87
+msgid "هیچ‌کدام انتخاب نشود = همه ویژگی‌هایی که در دسته جاری کاربرد دارند."
+msgstr ""
+

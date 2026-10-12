@@ -328,8 +328,10 @@ class Samadi_EW_Setup {
 			}
 		}
 
+		// Mark as built with Elementor (also required after Document::save()).
+		update_post_meta( $page_id, '_elementor_edit_mode', 'builder' );
+
 		if ( ! $saved ) {
-			update_post_meta( $page_id, '_elementor_edit_mode', 'builder' );
 			update_post_meta( $page_id, '_elementor_template_type', 'wp-page' );
 			update_post_meta( $page_id, '_elementor_data', wp_slash( wp_json_encode( $content ) ) );
 			if ( defined( 'ELEMENTOR_VERSION' ) ) {

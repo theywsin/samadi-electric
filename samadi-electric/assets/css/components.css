@@ -429,8 +429,7 @@ ul.products li.se-pcard,
 
 .se-pcard__price .price,
 .woocommerce ul.products li.product .se-pcard__price .price {
-	display: flex;
-	flex-direction: column;
+	display: block;
 	margin: 0;
 	color: var(--se-text);
 	font-size: 1rem;
@@ -439,7 +438,7 @@ ul.products li.se-pcard,
 }
 
 .se-pcard__price .price del {
-	order: -1;
+	display: block;
 	color: var(--se-muted);
 	font-size: 0.78rem;
 	font-weight: 500;

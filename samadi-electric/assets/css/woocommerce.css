@@ -389,8 +389,14 @@
 
 .se-single-product span.onsale.se-badge {
 	position: absolute;
-	inset-block-start: 28px;
+	top: 28px;
+	left: auto;
+	right: auto;
 	inset-inline-start: 28px;
+	width: auto;
+	min-width: 0;
+	min-height: 0;
+	line-height: 1.6;
 	z-index: 6;
 	padding: 4px 12px;
 	font-size: 0.8rem;

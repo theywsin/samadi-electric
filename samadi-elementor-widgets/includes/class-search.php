@@ -78,6 +78,10 @@ class Samadi_EW_Search {
 	public static function rest_search( $request ) {
 		$term = (string) $request->get_param( 'q' );
 
+		if ( ( function_exists( 'mb_strlen' ) ? mb_strlen( $term ) : strlen( $term ) ) < 2 ) {
+			return new WP_REST_Response( array( 'query' => $term, 'products' => array(), 'categories' => array(), 'brands' => array(), 'all' => '' ) );
+		}
+
 		/** Data store search covers title, excerpt, content and SKU (incl. variation SKUs → parent). */
 		$data_store = WC_Data_Store::load( 'product' );
 		$ids        = $data_store->search_products( $term, '', true, false, 60 );
