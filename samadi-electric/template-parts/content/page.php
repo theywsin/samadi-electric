@@ -28,7 +28,11 @@ while ( have_posts() ) :
 				}
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( $samadi_is_wc_page ? 'se-wc-page' : 'se-entry se-card' ); ?>>
-					<?php if ( ! $samadi_is_front && ! $samadi_elementor ) : ?>
+					<?php
+					// The classic cart template prints its own heading with the item count.
+					$samadi_own_head = samadi_is_wc() && is_cart() && ! WC()->cart->is_empty() && has_shortcode( (string) get_post_field( 'post_content' ), 'woocommerce_cart' );
+					?>
+					<?php if ( ! $samadi_is_front && ! $samadi_elementor && ! $samadi_own_head ) : ?>
 						<header class="se-entry__header">
 							<?php the_title( '<h1 class="entry-title se-entry__title">', '</h1>' ); ?>
 						</header>

@@ -500,9 +500,9 @@ add_action( 'wp_footer', 'samadi_wc_sticky_buy_bar', 6 );
  */
 function samadi_wc_checkout_steps() {
 	if ( is_wc_endpoint_url( 'order-pay' ) ) {
-		$current = 2;
-	} elseif ( is_wc_endpoint_url( 'order-received' ) ) {
 		$current = 3;
+	} elseif ( is_wc_endpoint_url( 'order-received' ) ) {
+		$current = 4;
 	} elseif ( is_checkout() ) {
 		$current = 2;
 	} elseif ( is_cart() ) {
@@ -512,9 +512,9 @@ function samadi_wc_checkout_steps() {
 	}
 
 	$steps = array(
-		1 => array( __( 'سبد خرید', 'samadi-electric' ), 'shopping-cart' ),
-		2 => array( __( 'اطلاعات و پرداخت', 'samadi-electric' ), 'file-text' ),
-		3 => array( __( 'ثبت سفارش', 'samadi-electric' ), 'check' ),
+		1 => array( __( 'سبد خرید', 'samadi-electric' ), 'shopping-bag' ),
+		2 => array( __( 'اطلاعات ارسال', 'samadi-electric' ), 'map-pin' ),
+		3 => array( __( 'پرداخت', 'samadi-electric' ), 'credit-card' ),
 	);
 
 	echo '<ol class="se-steps" aria-label="' . esc_attr__( 'مراحل خرید', 'samadi-electric' ) . '">';
@@ -749,3 +749,68 @@ function samadi_flush_sale_countdown() {
 add_action( 'woocommerce_update_product', 'samadi_flush_sale_countdown' );
 add_action( 'woocommerce_new_product', 'samadi_flush_sale_countdown' );
 add_action( 'woocommerce_scheduled_sales', 'samadi_flush_sale_countdown' );
+
+/**
+ * Progress towards free shipping, based on the store's real "Free shipping" methods (minimum amount).
+ * Prints nothing when no such method is configured.
+ */
+function samadi_wc_free_shipping_notice() {
+	if ( ! WC()->cart || ! class_exists( 'WC_Shipping_Zones' ) || ! wc_shipping_enabled() ) {
+		return;
+	}
+
+	$minimum = 0.0;
+	$zones   = WC_Shipping_Zones::get_zones();
+	$zones[] = array( 'shipping_methods' => ( new WC_Shipping_Zone( 0 ) )->get_shipping_methods() );
+
+	foreach ( $zones as $zone ) {
+		foreach ( $zone['shipping_methods'] as $method ) {
+			if ( 'free_shipping' !== $method->id || 'yes' !== $method->enabled ) {
+				continue;
+			}
+			$requires = $method->get_option( 'requires' );
+			$amount   = (float) $method->get_option( 'min_amount' );
+			if ( in_array( $requires, array( 'min_amount', 'either' ), true ) && $amount > 0 && ( ! $minimum || $amount < $minimum ) ) {
+				$minimum = $amount;
+			}
+		}
+	}
+
+	if ( ! $minimum ) {
+		return;
+	}
+
+	$total = (float) WC()->cart->get_displayed_subtotal();
+	if ( WC()->cart->display_prices_including_tax() ) {
+		$total -= (float) WC()->cart->get_discount_tax();
+	}
+	$total -= (float) WC()->cart->get_discount_total();
+	$left   = $minimum - $total;
+
+	echo '<div class="se-free-ship">';
+	samadi_icon( 'truck', array( 'size' => 24 ) );
+	echo '<p class="se-free-ship__text">';
+	if ( $left > 0 ) {
+		/* translators: %s: remaining amount. */
+		echo wp_kses_post( sprintf( __( 'با %s خرید بیشتر، ارسال سفارش شما رایگان می‌شود.', 'samadi-electric' ), wc_price( $left ) ) );
+	} else {
+		esc_html_e( 'ارسال این سفارش رایگان است.', 'samadi-electric' );
+	}
+	echo '</p>';
+	printf( '<span class="se-free-ship__bar" aria-hidden="true"><span style="width:%s%%"></span></span>', esc_attr( (string) min( 100, round( $total / $minimum * 100 ) ) ) );
+	echo '</div>';
+}
+
+/**
+ * Secure payment note under the cart totals and the checkout button.
+ */
+function samadi_wc_secure_note() {
+	$text = (string) samadi_option( 'footer_trust_text' );
+	if ( $text ) {
+		echo '<p class="se-secure-note">';
+		samadi_icon( 'lock', array( 'size' => 14 ) );
+		echo esc_html( $text ) . '</p>';
+	}
+}
+add_action( 'woocommerce_after_cart_totals', 'samadi_wc_secure_note' );
+add_action( 'woocommerce_review_order_after_submit', 'samadi_wc_secure_note' );
