@@ -26,15 +26,14 @@ $samadi_journal = isset( $args['style'] ) && 'journal' === $args['style'];
 		<?php if ( $samadi_journal ) : ?>
 			<p class="se-post-card__meta">
 				<?php
-				$samadi_cats    = get_the_category();
-				$samadi_minutes = max( 1, (int) round( count( preg_split( '/\s+/u', wp_strip_all_tags( get_the_content() ), -1, PREG_SPLIT_NO_EMPTY ) ) / 200 ) );
-				$samadi_parts   = array();
+				$samadi_cats  = get_the_category();
+				$samadi_parts = array();
 				if ( $samadi_cats ) {
 					$samadi_parts[] = $samadi_cats[0]->name;
 				}
-				/* translators: %s: reading time in minutes. */
-				$samadi_parts[] = sprintf( __( '%s دقیقه مطالعه', 'samadi-electric' ), samadi_number( $samadi_minutes ) );
-				echo esc_html( implode( '  •  ', $samadi_parts ) );
+				$samadi_parts[] = samadi_reading_time_label();
+				// Each part is bidi-isolated so Latin category names don't reorder the line.
+				echo '<bdi>' . implode( '</bdi>  •  <bdi>', array_map( 'esc_html', $samadi_parts ) ) . '</bdi>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Parts escaped above.
 				?>
 			</p>
 		<?php endif; ?>

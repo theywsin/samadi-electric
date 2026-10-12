@@ -197,6 +197,30 @@ function samadi_post_meta() {
 }
 
 /**
+ * Estimated reading time of the current post in minutes (≈200 words per minute).
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return int
+ */
+function samadi_reading_time( $post = null ) {
+	$text  = wp_strip_all_tags( (string) get_post_field( 'post_content', $post ) );
+	$words = preg_split( '/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY );
+
+	return max( 1, (int) round( count( (array) $words ) / 200 ) );
+}
+
+/**
+ * "N دقیقه مطالعه" label.
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return string
+ */
+function samadi_reading_time_label( $post = null ) {
+	/* translators: %s: reading time in minutes. */
+	return sprintf( __( '%s دقیقه مطالعه', 'samadi-electric' ), samadi_number( samadi_reading_time( $post ) ) );
+}
+
+/**
  * Section header with optional "view all" link.
  *
  * @param string $title     Title.

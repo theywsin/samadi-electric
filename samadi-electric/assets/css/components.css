@@ -2354,7 +2354,7 @@ ul.products li.se-pcard,
 		grid-template-columns: minmax(0, 1fr);
 	}
 
-	.se-post-grid--journal > :nth-child(n + 2) {
+	.se-home .se-post-grid--journal > :nth-child(n + 2) {
 		display: none;
 	}
 

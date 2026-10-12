@@ -52,7 +52,7 @@ $samadi_wishlist = samadi_wishlist_provider() ? samadi_wishlist_button( $product
 		</h3>
 
 		<?php if ( $samadi_meta ) : ?>
-			<span class="se-pcard__brand"><?php echo esc_html( implode( '  •  ', $samadi_meta ) ); ?></span>
+			<span class="se-pcard__brand"><bdi><?php echo implode( '</bdi>  •  <bdi>', array_map( 'esc_html', $samadi_meta ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Parts escaped. ?></bdi></span>
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_shop_loop_item_title' ); ?>
