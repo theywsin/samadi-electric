@@ -36,6 +36,6 @@ mkdir -p "$CORE/bundled" && cp "$DIST/samadi-elementor-widgets.zip" "$CORE/bundl
 mkdir -p "$THEME/bundled" && cp "$DIST/samadi-core.zip" "$THEME/bundled/"
 ( cd "$ROOT" && zip -qr "$DIST/samadi-electric.zip" samadi-electric -x '*.DS_Store' )
 
-cp "$ROOT/docs/00-quick-install.md" "$DIST/README-نصب.md"
-( cd "$DIST" && zip -q samadi-electric-full-package.zip samadi-electric.zip samadi-core.zip samadi-elementor-widgets.zip README-نصب.md )
+cp "$ROOT/docs/00-quick-install.md" "$DIST/README-INSTALL-FA.md"
+( cd "$DIST" && zip -q samadi-electric-full-package.zip samadi-electric.zip samadi-core.zip samadi-elementor-widgets.zip README-INSTALL-FA.md )
 ls -la "$DIST"
