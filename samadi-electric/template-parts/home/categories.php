@@ -1,6 +1,6 @@
 <?php
 /**
- * Homepage popular categories (real WooCommerce product categories).
+ * Homepage product categories (real WooCommerce product categories).
  *
  * @package Samadi_Electric
  */
@@ -26,27 +26,6 @@ if ( $samadi_ids ) {
 	}
 }
 
-// With the companion plugin, reuse its category component (desktop carousel with descriptions, mobile grid).
-if ( class_exists( 'Samadi_EW_Components' ) ) {
-	$samadi_html = Samadi_EW_Components::categories(
-		array(
-			'source'      => $samadi_ids ? 'manual' : 'top',
-			'ids'         => $samadi_ids,
-			'limit'       => $samadi_limit,
-			'title'       => __( 'دسته‌بندی‌های محبوب', 'samadi-electric' ),
-			'link'        => samadi_shop_url(),
-			'link_text'   => __( 'همه محصولات', 'samadi-electric' ),
-			'layout'      => 'carousel',
-			'mobile_grid' => true,
-			'highlight'   => true,
-		)
-	);
-	if ( $samadi_html ) {
-		echo '<section class="se-section se-home-cats se-ew">' . $samadi_html . '</section>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by the component.
-	}
-	return;
-}
-
 $samadi_terms = get_terms( $samadi_args );
 
 if ( is_wp_error( $samadi_terms ) || ! $samadi_terms ) {
@@ -55,20 +34,26 @@ if ( is_wp_error( $samadi_terms ) || ! $samadi_terms ) {
 ?>
 <section class="se-section se-home-cats" aria-labelledby="se-home-cats-title">
 	<div class="se-section-head">
-		<h2 class="se-section-head__title" id="se-home-cats-title"><?php esc_html_e( 'دسته‌بندی‌های محبوب', 'samadi-electric' ); ?></h2>
-		<a class="se-section-head__link" href="<?php echo esc_url( samadi_shop_url() ); ?>"><?php esc_html_e( 'همه محصولات', 'samadi-electric' ); ?><?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?></a>
+		<h2 class="se-section-head__title" id="se-home-cats-title"><?php esc_html_e( 'دسته‌بندی محصولات', 'samadi-electric' ); ?></h2>
+		<a class="se-section-head__link" href="<?php echo esc_url( samadi_shop_url() ); ?>"><?php esc_html_e( 'مشاهده همه', 'samadi-electric' ); ?><?php samadi_icon( 'arrow-left', array( 'size' => 14 ) ); ?></a>
 	</div>
-	<ul class="se-cat-grid">
+	<ul class="se-cat-tiles" style="--se-cat-count: <?php echo esc_attr( count( $samadi_terms ) ); ?>">
 		<?php foreach ( $samadi_terms as $samadi_term ) : ?>
-			<li class="se-cat-card">
-				<a class="se-cat-card__link" href="<?php echo esc_url( get_term_link( $samadi_term ) ); ?>">
-					<span class="se-cat-card__media">
+			<li class="se-cat-tile">
+				<a class="se-cat-tile__link" href="<?php echo esc_url( get_term_link( $samadi_term ) ); ?>">
+					<span class="se-cat-tile__media">
 						<?php
-						$samadi_img = samadi_term_image( $samadi_term, 'samadi-category' );
-						echo $samadi_img ? $samadi_img : samadi_get_icon( 'zap', array( 'size' => 36 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						$samadi_img = samadi_term_image( $samadi_term, 'woocommerce_thumbnail' );
+						echo $samadi_img ? $samadi_img : samadi_get_icon( 'zap', array( 'size' => 40 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						?>
 					</span>
-					<span class="se-cat-card__name"><?php echo esc_html( $samadi_term->name ); ?></span>
+					<span class="se-cat-tile__name"><?php echo esc_html( $samadi_term->name ); ?></span>
+					<span class="se-cat-tile__count">
+						<?php
+						/* translators: %s: number of products. */
+						echo esc_html( sprintf( __( '%s محصول', 'samadi-electric' ), samadi_number( $samadi_term->count ) ) );
+						?>
+					</span>
 				</a>
 			</li>
 		<?php endforeach; ?>

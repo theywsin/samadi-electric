@@ -47,6 +47,30 @@ function samadi_sanitize_id_list( $value ) {
 }
 
 /**
+ * Sanitize a datetime-local value (Y-m-d\TH:i).
+ *
+ * @param string $value Value.
+ * @return string
+ */
+function samadi_sanitize_datetime( $value ) {
+	$value = trim( (string) $value );
+
+	return preg_match( '/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/', $value ) ? $value : '';
+}
+
+/**
+ * Sanitize a single shortcode tag such as [form id="3"] (shortcodes only, no HTML).
+ *
+ * @param string $value Value.
+ * @return string
+ */
+function samadi_sanitize_shortcode( $value ) {
+	$value = trim( wp_strip_all_tags( (string) $value ) );
+
+	return preg_match( '/^\[[a-zA-Z0-9_-]+[^\[\]]*\]$/', $value ) ? $value : '';
+}
+
+/**
  * Sanitize a font family name (letters, digits, spaces, hyphens, commas, quotes).
  *
  * @param string $value Value.
@@ -219,6 +243,8 @@ function samadi_customize_register( $wp_customize ) {
 	$add( 'header_sticky', 'samadi_header', array( 'type' => 'checkbox', 'label' => __( 'هدر چسبان', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'header_show_categories', 'samadi_header', array( 'type' => 'checkbox', 'label' => __( 'نمایش مگامنوی دسته‌بندی محصولات', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'header_categories_label', 'samadi_header', array( 'label' => __( 'عنوان دکمه دسته‌بندی‌ها', 'samadi-electric' ) ) );
+	$add( 'header_announcement', 'samadi_header', array( 'label' => __( 'متن نوار اعلان بالای سایت (خالی = مخفی)', 'samadi-electric' ) ) );
+	$add( 'header_phone_label', 'samadi_header', array( 'label' => __( 'عنوان کنار تلفن در هدر', 'samadi-electric' ) ) );
 	$add( 'header_show_search', 'samadi_header', array( 'type' => 'checkbox', 'label' => __( 'نمایش جستجو', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'header_show_account', 'samadi_header', array( 'type' => 'checkbox', 'label' => __( 'نمایش حساب کاربری', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'header_wholesale_label', 'samadi_header', array( 'label' => __( 'عنوان دکمه خرید عمده (خالی = مخفی)', 'samadi-electric' ) ) );
@@ -269,9 +295,12 @@ function samadi_customize_register( $wp_customize ) {
 		'home_show_categories'  => __( 'نمایش دسته‌بندی‌های محبوب', 'samadi-electric' ),
 		'home_show_sale'        => __( 'نمایش پیشنهادهای ویژه (تخفیف‌دار)', 'samadi-electric' ),
 		'home_show_bestsellers' => __( 'نمایش پرفروش‌ترین‌ها', 'samadi-electric' ),
+		'home_show_campaign'    => __( 'نمایش بنر تبلیغاتی میانی', 'samadi-electric' ),
 		'home_show_new'         => __( 'نمایش جدیدترین محصولات', 'samadi-electric' ),
 		'home_show_brands'      => __( 'نمایش برندها', 'samadi-electric' ),
 		'home_show_blog'        => __( 'نمایش مقالات آموزشی', 'samadi-electric' ),
+		'home_show_consult'     => __( 'نمایش بخش مشاوره پروژه', 'samadi-electric' ),
+		'home_show_newsletter'  => __( 'نمایش خبرنامه', 'samadi-electric' ),
 	);
 	foreach ( $sections as $key => $label ) {
 		$add( $key, 'samadi_home', array( 'type' => 'checkbox', 'label' => $label ), 'samadi_sanitize_checkbox' );
@@ -292,12 +321,27 @@ function samadi_customize_register( $wp_customize ) {
 	$add( 'home_categories_limit', 'samadi_home', array( 'type' => 'number', 'label' => __( 'حداکثر تعداد دسته‌ها', 'samadi-electric' ), 'input_attrs' => array( 'min' => 1, 'max' => 24 ) ), 'absint' );
 	$add( 'home_products_count', 'samadi_home', array( 'type' => 'number', 'label' => __( 'تعداد محصولات هر بخش', 'samadi-electric' ), 'input_attrs' => array( 'min' => 1, 'max' => 24 ) ), 'absint' );
 	$add( 'home_posts_count', 'samadi_home', array( 'type' => 'number', 'label' => __( 'تعداد مقالات', 'samadi-electric' ), 'input_attrs' => array( 'min' => 1, 'max' => 12 ) ), 'absint' );
+	$add( 'home_sale_title', 'samadi_home', array( 'label' => __( 'عنوان بخش پیشنهادهای ویژه', 'samadi-electric' ) ) );
+	$add(
+		'home_sale_ends',
+		'samadi_home',
+		array(
+			'type'        => 'datetime-local',
+			'label'       => __( 'پایان پیشنهادهای ویژه (شمارش معکوس)', 'samadi-electric' ),
+			'description' => __( 'خالی = تا پایان امروز. اگر زمان گذشته باشد، شمارنده نمایش داده نمی‌شود.', 'samadi-electric' ),
+		),
+		'samadi_sanitize_datetime'
+	);
+	$add( 'home_bestsellers_title', 'samadi_home', array( 'label' => __( 'عنوان بخش پرفروش‌ها', 'samadi-electric' ) ) );
 	$add( 'hero_image', 'samadi_home', array( 'type' => 'media', 'label' => __( 'تصویر بنر اصلی', 'samadi-electric' ) ), 'absint' );
+	$add( 'hero_badge', 'samadi_home', array( 'label' => __( 'برچسب بالای عنوان بنر', 'samadi-electric' ) ) );
 	$add( 'hero_title', 'samadi_home', array( 'label' => __( 'عنوان بنر', 'samadi-electric' ) ) );
 	$add( 'hero_text', 'samadi_home', array( 'type' => 'textarea', 'label' => __( 'متن بنر', 'samadi-electric' ) ), 'sanitize_textarea_field' );
+	$add( 'hero_note', 'samadi_home', array( 'label' => __( 'یادداشت کوچک زیر دکمه‌ها', 'samadi-electric' ) ) );
 	$add( 'hero_btn1_text', 'samadi_home', array( 'label' => __( 'متن دکمه اول', 'samadi-electric' ) ) );
 	$add( 'hero_btn1_url', 'samadi_home', array( 'type' => 'url', 'label' => __( 'لینک دکمه اول (خالی = فروشگاه)', 'samadi-electric' ) ), 'esc_url_raw' );
-	$add( 'hero_btn2_text', 'samadi_home', array( 'label' => __( 'متن دکمه دوم (به صفحه خرید عمده لینک می‌شود)', 'samadi-electric' ) ) );
+	$add( 'hero_btn2_text', 'samadi_home', array( 'label' => __( 'متن دکمه دوم', 'samadi-electric' ) ) );
+	$add( 'hero_btn2_url', 'samadi_home', array( 'type' => 'url', 'label' => __( 'لینک دکمه دوم (خالی = صفحه خرید عمده یا تلفن تماس)', 'samadi-electric' ) ), 'esc_url_raw' );
 	$add(
 		'hero_align',
 		'samadi_home',
@@ -311,6 +355,29 @@ function samadi_customize_register( $wp_customize ) {
 			),
 		),
 		'samadi_sanitize_choice'
+	);
+
+	$add( 'campaign_image', 'samadi_home', array( 'type' => 'media', 'label' => __( 'تصویر بنر میانی', 'samadi-electric' ) ), 'absint' );
+	$add( 'campaign_title', 'samadi_home', array( 'label' => __( 'عنوان بنر میانی', 'samadi-electric' ) ) );
+	$add( 'campaign_text', 'samadi_home', array( 'type' => 'textarea', 'label' => __( 'متن بنر میانی', 'samadi-electric' ) ), 'sanitize_textarea_field' );
+	$add( 'campaign_btn_text', 'samadi_home', array( 'label' => __( 'متن دکمه بنر میانی', 'samadi-electric' ) ) );
+	$add( 'campaign_btn_url', 'samadi_home', array( 'type' => 'url', 'label' => __( 'لینک دکمه بنر میانی (خالی = فروشگاه)', 'samadi-electric' ) ), 'esc_url_raw' );
+	$add( 'consult_title', 'samadi_home', array( 'label' => __( 'عنوان بخش مشاوره', 'samadi-electric' ) ) );
+	$add( 'consult_text', 'samadi_home', array( 'type' => 'textarea', 'label' => __( 'متن بخش مشاوره', 'samadi-electric' ) ), 'sanitize_textarea_field' );
+	$add( 'consult_badge', 'samadi_home', array( 'label' => __( 'عدد نشان دایره‌ای (مثلاً ۳۰+)', 'samadi-electric' ) ) );
+	$add( 'consult_badge_text', 'samadi_home', array( 'label' => __( 'متن نشان دایره‌ای', 'samadi-electric' ) ) );
+	$add( 'consult_btn_text', 'samadi_home', array( 'label' => __( 'متن دکمه مشاوره', 'samadi-electric' ) ) );
+	$add( 'consult_btn_url', 'samadi_home', array( 'type' => 'url', 'label' => __( 'لینک دکمه مشاوره (خالی = صفحه خرید عمده یا تلفن تماس)', 'samadi-electric' ) ), 'esc_url_raw' );
+	$add( 'newsletter_title', 'samadi_home', array( 'label' => __( 'عنوان خبرنامه', 'samadi-electric' ) ) );
+	$add( 'newsletter_text', 'samadi_home', array( 'label' => __( 'متن خبرنامه', 'samadi-electric' ) ) );
+	$add(
+		'newsletter_shortcode',
+		'samadi_home',
+		array(
+			'label'       => __( 'شورت‌کد فرم خبرنامه (اختیاری)', 'samadi-electric' ),
+			'description' => __( 'خالی = فرم عضویت با شماره موبایل افزونه همراه (اعضا در «صمدی ← اعضای خبرنامه» ذخیره می‌شوند). برای استفاده از افزونه خبرنامه دیگر، شورت‌کد آن را وارد کنید.', 'samadi-electric' ),
+		),
+		'samadi_sanitize_shortcode'
 	);
 
 	/* ----- Benefits ----- */
@@ -344,6 +411,7 @@ function samadi_customize_register( $wp_customize ) {
 	);
 	$add( 'card_show_sku', 'samadi_shop', array( 'type' => 'checkbox', 'label' => __( 'نمایش کد کالا در کارت', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'card_show_brand', 'samadi_shop', array( 'type' => 'checkbox', 'label' => __( 'نمایش برند در کارت', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
+	$add( 'card_meta_prefix', 'samadi_shop', array( 'label' => __( 'متن خط توضیح کارت (کنار نام برند؛ خالی = فقط برند)', 'samadi-electric' ) ) );
 	$add( 'card_show_stock', 'samadi_shop', array( 'type' => 'checkbox', 'label' => __( 'نمایش وضعیت موجودی در کارت', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'card_show_rating', 'samadi_shop', array( 'type' => 'checkbox', 'label' => __( 'نمایش امتیاز در کارت', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 	$add( 'shop_columns', 'samadi_shop', array( 'type' => 'number', 'label' => __( 'تعداد ستون محصولات (دسکتاپ)', 'samadi-electric' ), 'input_attrs' => array( 'min' => 2, 'max' => 5 ) ), 'absint' );
@@ -380,6 +448,8 @@ function samadi_customize_register( $wp_customize ) {
 	/* ----- Footer ----- */
 	$wp_customize->add_section( 'samadi_footer', array( 'title' => __( 'فوتر', 'samadi-electric' ), 'panel' => 'samadi' ) );
 	$add( 'footer_about', 'samadi_footer', array( 'type' => 'textarea', 'label' => __( 'درباره فروشگاه', 'samadi-electric' ) ), 'wp_kses_post' );
+	$add( 'footer_trust_title', 'samadi_footer', array( 'label' => __( 'عنوان ستون نمادهای اعتماد', 'samadi-electric' ) ) );
+	$add( 'footer_trust_text', 'samadi_footer', array( 'label' => __( 'متن زیر نمادهای اعتماد', 'samadi-electric' ) ) );
 	$add( 'footer_copyright', 'samadi_footer', array( 'label' => __( 'متن کپی‌رایت (خالی = پیش‌فرض)', 'samadi-electric' ) ), 'wp_kses_post' );
 }
 add_action( 'customize_register', 'samadi_customize_register' );

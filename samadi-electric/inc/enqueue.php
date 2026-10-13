@@ -154,7 +154,8 @@ function samadi_enqueue_assets() {
 		'samadi-theme',
 		'samadiTheme',
 		array(
-			'i18n' => array(
+			'faDigits' => (bool) samadi_option( 'persian_digits' ),
+			'i18n'     => array(
 				'addedToCart'  => __( 'محصول به سبد خرید افزوده شد.', 'samadi-electric' ),
 				'cartUpdated'  => __( 'سبد خرید به‌روزرسانی شد.', 'samadi-electric' ),
 				'menuOpen'     => __( 'باز کردن منو', 'samadi-electric' ),

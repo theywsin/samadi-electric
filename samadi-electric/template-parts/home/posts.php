@@ -23,12 +23,12 @@ if ( ! $samadi_posts->have_posts() ) {
 $samadi_blog = (int) get_option( 'page_for_posts' );
 ?>
 <section class="se-section se-home-posts">
-	<?php samadi_section_head( __( 'راهنمای خرید و مقالات آموزشی', 'samadi-electric' ), $samadi_blog ? get_permalink( $samadi_blog ) : '' ); ?>
-	<div class="se-post-grid">
+	<?php samadi_section_head( __( 'مجله برق و روشنایی', 'samadi-electric' ), $samadi_blog ? get_permalink( $samadi_blog ) : '' ); ?>
+	<div class="se-post-grid se-post-grid--journal">
 		<?php
 		while ( $samadi_posts->have_posts() ) :
 			$samadi_posts->the_post();
-			get_template_part( 'template-parts/archive/post-card', null, array( 'heading' => 'h3' ) );
+			get_template_part( 'template-parts/archive/post-card', null, array( 'heading' => 'h3', 'style' => 'journal' ) );
 		endwhile;
 		wp_reset_postdata();
 		?>

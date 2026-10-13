@@ -34,7 +34,7 @@ class Samadi_EW_Widget_Search extends Samadi_EW_Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section( 'section_content', array( 'label' => __( 'جستجو', 'samadi-elementor-widgets' ) ) );
-		$this->add_control( 'placeholder', array( 'label' => __( 'متن راهنما', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => __( 'جستجوی محصول، برند یا کد کالا…', 'samadi-elementor-widgets' ), 'label_block' => true ) );
+		$this->add_control( 'placeholder', array( 'label' => __( 'متن راهنما', 'samadi-elementor-widgets' ), 'type' => Controls_Manager::TEXT, 'default' => __( 'جستجو در میان هزاران کالای برقی...', 'samadi-elementor-widgets' ), 'label_block' => true ) );
 		$this->add_control( 'live_note', array( 'type' => Controls_Manager::RAW_HTML, 'raw' => esc_html__( 'پیشنهادهای لحظه‌ای از «ووکامرس ← تنظیمات صمدی» فعال/غیرفعال می‌شوند.', 'samadi-elementor-widgets' ), 'content_classes' => 'elementor-descriptor' ) );
 		$this->end_controls_section();
 

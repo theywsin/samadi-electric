@@ -85,6 +85,34 @@
 		}
 	} );
 
+	/* ---------- Offers countdown (HH : MM : SS) ---------- */
+
+	var countdowns = document.querySelectorAll( '[data-se-countdown]' );
+	if ( countdowns.length ) {
+		var pad = function ( n ) {
+			var text = ( n < 10 ? '0' : '' ) + n;
+			return settings.faDigits ? text.replace( /\d/g, function ( d ) {
+				return '۰۱۲۳۴۵۶۷۸۹'.charAt( d );
+			} ) : text;
+		};
+		var tick = function () {
+			var now = Math.floor( Date.now() / 1000 );
+			countdowns.forEach( function ( el ) {
+				var left = parseInt( el.getAttribute( 'data-se-countdown' ), 10 ) - now;
+				var out = el.querySelector( '.se-countdown__time' );
+				if ( left <= 0 ) {
+					el.hidden = true;
+					return;
+				}
+				if ( out ) {
+					out.textContent = pad( Math.floor( left / 3600 ) ) + ' : ' + pad( Math.floor( left / 60 ) % 60 ) + ' : ' + pad( left % 60 );
+				}
+			} );
+		};
+		tick();
+		window.setInterval( tick, 1000 );
+	}
+
 	/* ---------- WooCommerce events (jQuery-based) → announcements ---------- */
 
 	if ( window.jQuery ) {

@@ -336,27 +336,70 @@ function samadi_wc_single_meta_line() {
 add_action( 'woocommerce_single_product_summary', 'samadi_wc_single_meta_line', 6 );
 
 /**
- * Store benefits under the add-to-cart form.
+ * Store benefits bar under the product overview (full width, as on the homepage).
  */
 function samadi_wc_single_benefits() {
 	if ( ! samadi_option( 'product_benefits' ) ) {
 		return;
 	}
-	$items = array_slice( samadi_benefit_items(), 0, 4 );
-	if ( ! $items ) {
-		return;
-	}
-	echo '<ul class="se-mini-benefits">';
-	foreach ( $items as $item ) {
-		printf(
-			'<li class="se-mini-benefits__item">%s<span>%s</span></li>',
-			samadi_get_icon( $item['icon'], array( 'size' => 22 ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			esc_html( $item['title'] )
-		);
-	}
-	echo '</ul>';
+	get_template_part( 'template-parts/components/benefits' );
 }
-add_action( 'woocommerce_single_product_summary', 'samadi_wc_single_benefits', 45 );
+add_action( 'woocommerce_after_single_product_summary', 'samadi_wc_single_benefits', 4 );
+
+/*
+ * Summary layout (Figma product page): details column (title, brand/SKU, rating, short description)
+ * and a "buy box" card (stock, price, add-to-cart form). Only WooCommerce's own callbacks are
+ * re-prioritised; the add-to-cart/variation forms are untouched.
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 7 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
+
+/**
+ * Open the buy box (before the price).
+ */
+function samadi_wc_buybox_open() {
+	global $product;
+
+	echo '<div class="se-buybox">';
+	echo '<p class="se-buybox__title">' . esc_html__( 'خرید از', 'samadi-electric' ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '</p>';
+
+	if ( $product instanceof WC_Product ) {
+		$rows = array();
+		$warranty = trim( (string) samadi_option( 'card_meta_prefix' ) );
+		if ( $warranty ) {
+			$rows[] = array( 'shield-check', $warranty );
+		}
+		if ( $product->is_in_stock() ) {
+			$rows[] = array( 'package-check', $product->is_on_backorder() ? __( 'قابل پیش‌سفارش', 'samadi-electric' ) : __( 'موجود در انبار', 'samadi-electric' ) );
+		}
+		if ( $rows ) {
+			echo '<ul class="se-buybox__rows">';
+			foreach ( $rows as $row ) {
+				echo '<li>' . samadi_get_icon( $row[0], array( 'size' => 18 ) ) . '<span>' . esc_html( $row[1] ) . '</span></li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '</ul>';
+		}
+	}
+}
+add_action( 'woocommerce_single_product_summary', 'samadi_wc_buybox_open', 9 );
+
+/**
+ * Close the buy box (after the add-to-cart form) with the optional wholesale/quote link.
+ */
+function samadi_wc_buybox_close() {
+	$url   = samadi_wholesale_url();
+	$label = trim( (string) samadi_option( 'header_wholesale_label' ) );
+
+	if ( $url && $label ) {
+		printf( '<a class="se-btn se-btn--outline se-btn--block se-buybox__quote" href="%s">%s</a>', esc_url( $url ), esc_html( $label ) );
+	}
+
+	samadi_wc_secure_note();
+	echo '</div>';
+}
+add_action( 'woocommerce_single_product_summary', 'samadi_wc_buybox_close', 35 );
 
 /**
  * Product tabs: "Additional information" becomes "Technical specifications" and comes first.
@@ -500,9 +543,9 @@ add_action( 'wp_footer', 'samadi_wc_sticky_buy_bar', 6 );
  */
 function samadi_wc_checkout_steps() {
 	if ( is_wc_endpoint_url( 'order-pay' ) ) {
-		$current = 2;
-	} elseif ( is_wc_endpoint_url( 'order-received' ) ) {
 		$current = 3;
+	} elseif ( is_wc_endpoint_url( 'order-received' ) ) {
+		$current = 4;
 	} elseif ( is_checkout() ) {
 		$current = 2;
 	} elseif ( is_cart() ) {
@@ -512,9 +555,9 @@ function samadi_wc_checkout_steps() {
 	}
 
 	$steps = array(
-		1 => array( __( 'سبد خرید', 'samadi-electric' ), 'shopping-cart' ),
-		2 => array( __( 'اطلاعات و پرداخت', 'samadi-electric' ), 'file-text' ),
-		3 => array( __( 'ثبت سفارش', 'samadi-electric' ), 'check' ),
+		1 => array( __( 'سبد خرید', 'samadi-electric' ), 'shopping-bag' ),
+		2 => array( __( 'اطلاعات ارسال', 'samadi-electric' ), 'map-pin' ),
+		3 => array( __( 'پرداخت', 'samadi-electric' ), 'credit-card' ),
 	);
 
 	echo '<ol class="se-steps" aria-label="' . esc_attr__( 'مراحل خرید', 'samadi-electric' ) . '">';
@@ -606,7 +649,7 @@ function samadi_wc_sort_control() {
 			<span><?php esc_html_e( 'مرتب‌سازی', 'samadi-electric' ); ?></span>
 			<span class="screen-reader-text">: <?php echo esc_html( isset( $options[ $current ] ) ? $options[ $current ] : '' ); ?></span>
 		</button>
-		<ul class="se-sort__list" id="se-sort-list" hidden>
+		<ul class="se-sort__list" id="se-sort-list" data-label="<?php esc_attr_e( 'مرتب‌سازی:', 'samadi-electric' ); ?>" hidden>
 			<?php foreach ( $options as $key => $label ) : ?>
 				<li>
 					<a class="se-sort__link<?php echo $key === $current ? ' is-active' : ''; ?>" href="<?php echo esc_url( add_query_arg( 'orderby', $key, $base ) ); ?>" data-se-filter-link rel="nofollow"<?php echo $key === $current ? ' aria-current="true"' : ''; ?>>
@@ -687,3 +730,130 @@ function samadi_wc_view_toggle() {
 	</div>
 	<?php
 }
+
+/**
+ * End time (Unix timestamp) for the homepage offers countdown.
+ *
+ * Uses the Customizer value when set; otherwise the earliest real "sale ends" date among products on
+ * sale. Returns 0 when there is no future end date, so no invented deadline is ever shown.
+ *
+ * @return int
+ */
+function samadi_sale_countdown_end() {
+	$option = (string) samadi_option( 'home_sale_ends' );
+
+	if ( $option ) {
+		$date = date_create_immutable( $option, wp_timezone() );
+		return $date ? $date->getTimestamp() : 0;
+	}
+
+	if ( ! function_exists( 'wc_get_product_ids_on_sale' ) ) {
+		return 0;
+	}
+
+	$cached = get_transient( 'samadi_sale_countdown_end' );
+	if ( false !== $cached ) {
+		return (int) $cached > time() ? (int) $cached : 0;
+	}
+
+	$end = 0;
+	foreach ( array_slice( wc_get_product_ids_on_sale(), 0, 100 ) as $id ) {
+		$product = wc_get_product( $id );
+		$to      = $product ? $product->get_date_on_sale_to() : null;
+		if ( $to && $to->getTimestamp() > time() && ( ! $end || $to->getTimestamp() < $end ) ) {
+			$end = $to->getTimestamp();
+		}
+	}
+
+	set_transient( 'samadi_sale_countdown_end', $end, 10 * MINUTE_IN_SECONDS );
+
+	return $end;
+}
+
+/**
+ * Countdown text "HH : MM : SS" (hours may exceed 24) for server-side rendering before JS ticks.
+ *
+ * @param int $end End timestamp.
+ * @return string
+ */
+function samadi_countdown_text( $end ) {
+	$left = max( 0, (int) $end - time() );
+	$text = sprintf( '%02d : %02d : %02d', floor( $left / 3600 ), floor( $left / 60 ) % 60, $left % 60 );
+
+	return samadi_option( 'persian_digits' ) ? samadi_fa_digits( $text ) : $text;
+}
+
+/**
+ * Recalculate the offers countdown when products change.
+ */
+function samadi_flush_sale_countdown() {
+	delete_transient( 'samadi_sale_countdown_end' );
+}
+add_action( 'woocommerce_update_product', 'samadi_flush_sale_countdown' );
+add_action( 'woocommerce_new_product', 'samadi_flush_sale_countdown' );
+add_action( 'woocommerce_scheduled_sales', 'samadi_flush_sale_countdown' );
+
+/**
+ * Progress towards free shipping, based on the store's real "Free shipping" methods (minimum amount).
+ * Prints nothing when no such method is configured.
+ */
+function samadi_wc_free_shipping_notice() {
+	if ( ! WC()->cart || ! class_exists( 'WC_Shipping_Zones' ) || ! wc_shipping_enabled() ) {
+		return;
+	}
+
+	$minimum = 0.0;
+	$zones   = WC_Shipping_Zones::get_zones();
+	$zones[] = array( 'shipping_methods' => ( new WC_Shipping_Zone( 0 ) )->get_shipping_methods() );
+
+	foreach ( $zones as $zone ) {
+		foreach ( $zone['shipping_methods'] as $method ) {
+			if ( 'free_shipping' !== $method->id || 'yes' !== $method->enabled ) {
+				continue;
+			}
+			$requires = $method->get_option( 'requires' );
+			$amount   = (float) $method->get_option( 'min_amount' );
+			if ( in_array( $requires, array( 'min_amount', 'either' ), true ) && $amount > 0 && ( ! $minimum || $amount < $minimum ) ) {
+				$minimum = $amount;
+			}
+		}
+	}
+
+	if ( ! $minimum ) {
+		return;
+	}
+
+	$total = (float) WC()->cart->get_displayed_subtotal();
+	if ( WC()->cart->display_prices_including_tax() ) {
+		$total -= (float) WC()->cart->get_discount_tax();
+	}
+	$total -= (float) WC()->cart->get_discount_total();
+	$left   = $minimum - $total;
+
+	echo '<div class="se-free-ship">';
+	samadi_icon( 'truck', array( 'size' => 24 ) );
+	echo '<p class="se-free-ship__text">';
+	if ( $left > 0 ) {
+		/* translators: %s: remaining amount. */
+		echo wp_kses_post( sprintf( __( 'با %s خرید بیشتر، ارسال سفارش شما رایگان می‌شود.', 'samadi-electric' ), wc_price( $left ) ) );
+	} else {
+		esc_html_e( 'ارسال این سفارش رایگان است.', 'samadi-electric' );
+	}
+	echo '</p>';
+	printf( '<span class="se-free-ship__bar" aria-hidden="true"><span style="width:%s%%"></span></span>', esc_attr( (string) min( 100, round( $total / $minimum * 100 ) ) ) );
+	echo '</div>';
+}
+
+/**
+ * Secure payment note under the cart totals and the checkout button.
+ */
+function samadi_wc_secure_note() {
+	$text = (string) samadi_option( 'footer_trust_text' );
+	if ( $text ) {
+		echo '<p class="se-secure-note">';
+		samadi_icon( 'lock', array( 'size' => 14 ) );
+		echo esc_html( $text ) . '</p>';
+	}
+}
+add_action( 'woocommerce_after_cart_totals', 'samadi_wc_secure_note' );
+add_action( 'woocommerce_review_order_after_submit', 'samadi_wc_secure_note' );

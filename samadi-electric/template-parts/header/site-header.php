@@ -2,7 +2,8 @@
 /**
  * Theme header (used when no Elementor header template is assigned).
  *
- * Desktop: row 1 = logo, search, actions; row 2 = categories mega menu + primary menu.
+ * Desktop: announcement bar; row 1 = logo, search, account button + icons; row 2 = categories mega menu,
+ * primary menu and the consultation phone.
  * Mobile: compact row with menu toggle, logo, search toggle, cart — plus full-width search.
  *
  * @package Samadi_Electric
@@ -15,12 +16,16 @@ $samadi_wholesale_label = trim( (string) samadi_option( 'header_wholesale_label'
 $samadi_wishlist_url    = samadi_wishlist_url();
 $samadi_is_product      = samadi_is_wc() && is_product();
 $samadi_back_url        = home_url( '/' );
+$samadi_announcement    = trim( (string) samadi_option( 'header_announcement' ) );
 
 if ( $samadi_is_product ) {
 	$samadi_terms = wc_get_product_terms( get_queried_object_id(), 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) );
 	$samadi_back_url = $samadi_terms ? get_term_link( $samadi_terms[0] ) : samadi_shop_url();
 }
 ?>
+<?php if ( $samadi_announcement ) : ?>
+	<div class="se-announcement"><p class="se-container se-announcement__text"><?php echo esc_html( $samadi_announcement ); ?></p></div>
+<?php endif; ?>
 <header id="se-header" class="se-header<?php echo $samadi_is_product ? ' se-header--product' : ''; ?><?php echo is_front_page() ? ' se-header--home' : ''; ?>" data-se-header>
 	<div class="se-header__main">
 		<div class="se-container se-header__row">
@@ -58,6 +63,12 @@ if ( $samadi_is_product ) {
 						<span class="screen-reader-text"><?php esc_html_e( 'اشتراک‌گذاری', 'samadi-electric' ); ?></span>
 					</button>
 				<?php endif; ?>
+				<?php if ( samadi_is_wc() && samadi_option( 'header_show_account' ) ) : ?>
+					<a class="se-btn se-btn--outline se-header__account" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
+						<?php echo is_user_logged_in() ? esc_html__( 'حساب کاربری', 'samadi-electric' ) : esc_html__( 'ورود / ثبت‌نام', 'samadi-electric' ); ?>
+					</a>
+				<?php endif; ?>
+
 				<?php if ( $samadi_wholesale_url && $samadi_wholesale_label ) : ?>
 					<a class="se-btn se-btn--primary se-header__wholesale" href="<?php echo esc_url( $samadi_wholesale_url ); ?>"><?php echo esc_html( $samadi_wholesale_label ); ?></a>
 				<?php endif; ?>
@@ -66,13 +77,6 @@ if ( $samadi_is_product ) {
 					<a class="se-icon-btn se-header__wishlist" href="<?php echo esc_url( $samadi_wishlist_url ); ?>">
 						<?php samadi_icon( 'heart' ); ?>
 						<span class="screen-reader-text"><?php esc_html_e( 'علاقه‌مندی‌ها', 'samadi-electric' ); ?></span>
-					</a>
-				<?php endif; ?>
-
-				<?php if ( samadi_is_wc() && samadi_option( 'header_show_account' ) ) : ?>
-					<a class="se-icon-btn se-header__account" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
-						<?php samadi_icon( 'user' ); ?>
-						<span class="screen-reader-text"><?php echo is_user_logged_in() ? esc_html__( 'حساب کاربری', 'samadi-electric' ) : esc_html__( 'ورود / ثبت‌نام', 'samadi-electric' ); ?></span>
 					</a>
 				<?php endif; ?>
 
@@ -112,7 +116,7 @@ if ( $samadi_is_product ) {
 			if ( $samadi_phone ) :
 				?>
 				<a class="se-header__phone" href="tel:<?php echo esc_attr( samadi_tel( $samadi_phone ) ); ?>">
-					<?php samadi_icon( 'phone', array( 'size' => 18 ) ); ?>
+					<?php echo esc_html( (string) samadi_option( 'header_phone_label' ) ); ?>
 					<span dir="ltr"><?php echo esc_html( $samadi_phone ); ?></span>
 				</a>
 			<?php endif; ?>

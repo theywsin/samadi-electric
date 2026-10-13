@@ -21,21 +21,21 @@ function samadi_defaults() {
 
 	$defaults = array(
 		// Colors.
-		'color_primary'          => '#064E3B',
-		'color_brand'            => '#075E46',
-		'color_accent'           => '#C7F52A',
-		'color_bg'               => '#F7F8F6',
+		'color_primary'          => '#123f35',
+		'color_brand'            => '#123f35',
+		'color_accent'           => '#d9ee8c',
+		'color_bg'               => '#f6f7f4',
 		'color_surface'          => '#FFFFFF',
-		'color_text'             => '#152421',
-		'color_muted'            => '#718078',
-		'color_border'           => '#E8ECE8',
-		'color_sale'             => '#F04438',
+		'color_text'             => '#202b27',
+		'color_muted'            => '#7a837e',
+		'color_border'           => '#e6eae6',
+		'color_sale'             => '#db6550',
 
 		// Typography.
 		'font_family'            => 'vazirmatn',
 		'font_custom_family'     => '',
 		'font_weight_body'       => 400,
-		'font_weight_heading'    => 800,
+		'font_weight_heading'    => 700,
 		'font_size_base'         => 15,
 		'persian_digits'         => true,
 		'force_rtl'              => true,
@@ -44,17 +44,19 @@ function samadi_defaults() {
 		'mobile_logo'            => 0,
 		'header_sticky'          => true,
 		'header_show_categories' => true,
-		'header_categories_label' => __( 'همه دسته‌بندی‌ها', 'samadi-electric' ),
+		'header_categories_label' => __( 'دسته‌بندی محصولات', 'samadi-electric' ),
+		'header_announcement'    => __( 'ارسال رایگان سفارش‌های بالای ۳ میلیون تومان  •  خرید مطمئن، روشنایی ماندگار', 'samadi-electric' ),
+		'header_phone_label'     => __( 'مشاوره خرید:', 'samadi-electric' ),
 		'header_show_search'     => true,
 		'header_show_account'    => true,
 		'header_wholesale_label' => __( 'خرید عمده', 'samadi-electric' ),
 
 		// Contact & social.
-		'contact_phone'          => '',
+		'contact_phone'          => '۰۲۱–۳۳۹۵۲۴۸۰',
 		'contact_mobile'         => '',
 		'contact_email'          => '',
-		'contact_address'        => '',
-		'contact_hours'          => '',
+		'contact_address'        => __( 'تهران، لاله‌زار جنوبی، خیابان منوچهری، پلاک ۱۲۴', 'samadi-electric' ),
+		'contact_hours'          => __( 'شنبه تا پنجشنبه، ۹ تا ۱۸', 'samadi-electric' ),
 		'social_instagram'       => '',
 		'social_telegram'        => '',
 		'social_whatsapp'        => '',
@@ -70,43 +72,67 @@ function samadi_defaults() {
 		'home_show_categories'   => true,
 		'home_show_sale'         => true,
 		'home_show_bestsellers'  => true,
-		'home_show_new'          => true,
+		'home_show_new'          => false,
+		'home_show_campaign'     => true,
+		'home_show_consult'      => true,
+		'home_show_newsletter'   => true,
+		'home_sale_title'        => __( 'پیشنهادهای ویژه امروز', 'samadi-electric' ),
+		'home_sale_ends'         => '',
+		'home_bestsellers_title' => __( 'پرفروش‌های صمدی', 'samadi-electric' ),
+		'campaign_image'         => 0,
+		'campaign_title'         => __( 'خانه‌ای روشن، با انتخابی زیبا', 'samadi-electric' ),
+		'campaign_text'          => __( 'مجموعه چراغ‌های آویز و روشنایی مدرن؛ نور را به سبک خودتان انتخاب کنید.', 'samadi-electric' ),
+		'campaign_btn_text'      => __( 'مشاهده چراغ‌های دکوراتیو', 'samadi-electric' ),
+		'campaign_btn_url'       => '',
+		'consult_title'          => __( 'برای پروژه‌تان، روی تجربه ما حساب کنید', 'samadi-electric' ),
+		'consult_text'           => __( 'بیش از سه دهه تجربه در تأمین تجهیزات برق ساختمان؛ مشاوره تخصصی، قیمت همکاری و تأمین یکجای سفارش‌های پروژه‌ای.', 'samadi-electric' ),
+		'consult_badge'          => __( '۳۰+', 'samadi-electric' ),
+		'consult_badge_text'     => __( 'سال تجربه', 'samadi-electric' ),
+		'consult_btn_text'       => __( 'دریافت مشاوره تخصصی', 'samadi-electric' ),
+		'consult_btn_url'        => '',
+		'newsletter_title'       => __( 'از پیشنهادهای روشن ما باخبر شوید', 'samadi-electric' ),
+		'newsletter_text'        => __( 'تخفیف‌های ویژه و محصولات جدید را زودتر از همه ببینید.', 'samadi-electric' ),
+		'newsletter_shortcode'   => '',
 		'home_show_brands'       => true,
 		'home_show_blog'         => true,
 		'home_categories'        => '',
-		'home_categories_limit'  => 8,
-		'home_products_count'    => 8,
+		'home_categories_limit'  => 6,
+		'home_products_count'    => 4,
 		'home_posts_count'       => 3,
 		'hero_image'             => 0,
-		'hero_title'             => __( 'تجهیزات الکتریکی باکیفیت، برای زندگی بهتر', 'samadi-electric' ),
-		'hero_text'              => __( 'صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت.', 'samadi-electric' ),
-		'hero_btn1_text'         => __( 'مشاهده محصولات', 'samadi-electric' ),
+		'hero_badge'             => __( 'تجهیزات مطمئن، انتخاب هوشمند', 'samadi-electric' ),
+		'hero_title'             => __( 'تجهیزات الکتریکی؛ با کیفیت، برای زندگی روشن', 'samadi-electric' ),
+		'hero_text'              => __( 'از کلید و پریز تا نورپردازی خانه و محل کار؛ هر آنچه برای یک انتخاب مطمئن نیاز دارید، در صمدی الکتریک.', 'samadi-electric' ),
+		'hero_note'              => __( 'بیش از ۳۰ سال همراه برق‌کاران و سازندگان', 'samadi-electric' ),
+		'hero_btn1_text'         => __( 'خرید کلید و پریز', 'samadi-electric' ),
 		'hero_btn1_url'          => '',
-		'hero_btn2_text'         => __( 'خرید عمده', 'samadi-electric' ),
+		'hero_btn2_text'         => __( 'مشاوره خرید', 'samadi-electric' ),
+		'hero_btn2_url'          => '',
 		'hero_align'             => 'end',
 
 		// Benefits bar.
 		'benefits_show'          => true,
 		'benefit_1_icon'         => 'truck',
-		'benefit_1_title'        => __( 'ارسال سریع', 'samadi-electric' ),
-		'benefit_1_text'         => __( 'به سراسر ایران', 'samadi-electric' ),
+		'benefit_1_title'        => __( 'ارسال سریع به سراسر ایران', 'samadi-electric' ),
+		'benefit_1_text'         => '',
 		'benefit_2_icon'         => 'shield-check',
-		'benefit_2_title'        => __( 'ضمانت اصالت کالا', 'samadi-electric' ),
-		'benefit_2_text'         => __( 'از برندهای معتبر', 'samadi-electric' ),
-		'benefit_3_icon'         => 'headset',
-		'benefit_3_title'        => __( 'مشاوره تخصصی', 'samadi-electric' ),
-		'benefit_3_text'         => __( 'پیش از خرید', 'samadi-electric' ),
-		'benefit_4_icon'         => 'badge-percent',
-		'benefit_4_title'        => __( 'قیمت مناسب', 'samadi-electric' ),
-		'benefit_4_text'         => __( 'خرید مستقیم', 'samadi-electric' ),
+		'benefit_2_title'        => __( 'تضمین اصالت کالا', 'samadi-electric' ),
+		'benefit_2_text'         => '',
+		'benefit_3_icon'         => 'package-check',
+		'benefit_3_title'        => __( '۷ روز ضمانت بازگشت', 'samadi-electric' ),
+		'benefit_3_text'         => '',
+		'benefit_4_icon'         => 'headset',
+		'benefit_4_title'        => __( 'مشاوره تخصصی خرید', 'samadi-electric' ),
+		'benefit_4_text'         => '',
 		'benefit_5_icon'         => 'message-circle',
-		'benefit_5_title'        => __( 'پشتیبانی واقعی', 'samadi-electric' ),
-		'benefit_5_text'         => __( 'همیشه کنار شما', 'samadi-electric' ),
+		'benefit_5_title'        => '',
+		'benefit_5_text'         => '',
 
 		// Shop & product card.
 		'card_style'             => 'default',
 		'card_show_sku'          => false,
-		'card_show_brand'        => false,
+		'card_show_brand'        => true,
+		'card_meta_prefix'       => __( 'گارانتی اصالت کالا', 'samadi-electric' ),
 		'card_show_stock'        => true,
 		'card_show_rating'       => false,
 		'shop_columns'           => 4,
@@ -126,7 +152,9 @@ function samadi_defaults() {
 		'mobile_sticky_cart'     => true,
 
 		// Footer.
-		'footer_about'           => '',
+		'footer_about'           => __( 'همراه شما در انتخاب تجهیزات برق و روشنایی؛ از یک کلید ساده تا تأمین یک پروژه کامل.', 'samadi-electric' ),
+		'footer_trust_title'     => __( 'خرید امن و مطمئن', 'samadi-electric' ),
+		'footer_trust_text'      => __( 'پرداخت امن با درگاه بانکی', 'samadi-electric' ),
 		'footer_copyright'       => '',
 	);
 
@@ -265,6 +293,23 @@ function samadi_number( $number ) {
 }
 
 /**
+ * Current year in the site's calendar: Solar Hijri for Persian sites (when the intl extension is available).
+ *
+ * @return string
+ */
+function samadi_local_year() {
+	if ( 0 === strpos( get_locale(), 'fa' ) && class_exists( 'IntlDateFormatter' ) ) {
+		$formatter = new IntlDateFormatter( 'en_US@calendar=persian', IntlDateFormatter::NONE, IntlDateFormatter::NONE, wp_timezone_string(), IntlDateFormatter::TRADITIONAL, 'y' );
+		$year      = $formatter->format( time() );
+		if ( $year ) {
+			return (string) $year;
+		}
+	}
+
+	return wp_date( 'Y' );
+}
+
+/**
  * Whether WooCommerce is active.
  *
  * @return bool
@@ -365,6 +410,27 @@ function samadi_wholesale_url() {
 	}
 
 	return esc_url_raw( (string) samadi_option( 'wholesale_url' ) );
+}
+
+/**
+ * Link for "consultation" style buttons: the given URL, else the wholesale/quote page, else a tel: link.
+ *
+ * @param string $url Explicit URL (may be empty).
+ * @return string Empty when nothing is configured — callers must hide the button then.
+ */
+function samadi_contact_url( $url = '' ) {
+	if ( $url ) {
+		return esc_url_raw( $url );
+	}
+
+	$wholesale = samadi_wholesale_url();
+	if ( $wholesale ) {
+		return $wholesale;
+	}
+
+	$phone = samadi_tel( (string) samadi_option( 'contact_phone' ) );
+
+	return $phone ? 'tel:' . $phone : '';
 }
 
 /**

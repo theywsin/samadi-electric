@@ -75,7 +75,7 @@
 	padding: clamp(24px, 5vw, 64px);
 	border-radius: var(--se-radius-lg);
 	overflow: hidden;
-	background: linear-gradient(120deg, #eef2ee 0%, #f7f8f6 100%);
+	background: linear-gradient(120deg, #eef2ee 0%, #f6f7f4 100%);
 	isolation: isolate;
 }
 
@@ -1348,4 +1348,1063 @@ ul.products li.se-pcard,
 	.se-hero__actions .se-btn--light {
 		display: none;
 	}
+}
+
+/* =========================================================================
+ * Figma design (v2.0) — homepage sections, product card, shared pieces.
+ * Values follow the approved Figma file (1440px desktop / 390px mobile frames).
+ * ====================================================================== */
+
+/* ---------- Shared ---------- */
+
+.se-kicker {
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	padding: 3px 10px;
+	border-radius: 100px;
+	background: var(--se-soft);
+	color: var(--se-primary);
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-section-head {
+	align-items: center;
+	margin-block-end: 24px;
+}
+
+.se-section-head__title {
+	margin: 0;
+	color: var(--se-text);
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-section-head__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: var(--se-primary);
+	font-size: 14px;
+	font-weight: 400;
+}
+
+/* ---------- Homepage rhythm ---------- */
+
+.se-home {
+	padding-block: 32px 64px;
+}
+
+.se-home__sections {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+}
+
+.se-home__sections > .se-section,
+.se-home__sections > .se-benefits {
+	margin: 0;
+}
+
+.se-home__sections > .se-benefits {
+	margin-block-start: -20px; /* 28px from the hero, as in the design */
+}
+
+/* ---------- Hero ---------- */
+
+.se-home-hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 59.5%);
+	min-height: 440px;
+	border-radius: var(--se-radius-lg);
+	background: var(--se-sand);
+	overflow: hidden;
+}
+
+.se-home-hero__content {
+	grid-column: 1;
+	grid-row: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 18px;
+	padding: 48px 50px 48px 36px;
+}
+
+.se-home-hero__media {
+	grid-column: 2;
+	grid-row: 1;
+	position: relative;
+}
+
+.se-home-hero__image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.se-home-hero__title {
+	margin: 0;
+	color: var(--se-text);
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-home-hero__text {
+	margin: 0;
+	color: var(--se-text-2);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.se-home-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.se-home-hero__note {
+	margin: 0;
+	color: var(--se-muted);
+	font-size: 12px;
+}
+
+/* ---------- Benefits ---------- */
+
+.se-benefits {
+	display: grid;
+	grid-template-columns: repeat(var(--se-benefits-count, 4), minmax(0, 1fr));
+	gap: 30px;
+	margin: 0;
+	padding: 26px 24px;
+	list-style: none;
+	border: 0;
+	border-radius: var(--se-radius);
+	background: var(--se-bg);
+	box-shadow: none;
+}
+
+.se-benefits__item,
+.se-benefits__item + .se-benefits__item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	padding: 0;
+	border: 0;
+	text-align: center;
+}
+
+.se-benefits__icon {
+	width: auto;
+	height: auto;
+	border-radius: 0;
+	background: none;
+	color: var(--se-primary);
+}
+
+.se-benefits__icon svg {
+	width: 30px;
+	height: 30px;
+	stroke-width: 1.5;
+}
+
+.se-benefits__title {
+	color: var(--se-text);
+	font-size: 13px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.se-benefits__text {
+	color: var(--se-muted);
+	font-size: 12px;
+}
+
+/* ---------- Category tiles ---------- */
+
+.se-cat-tiles {
+	display: grid;
+	grid-template-columns: repeat(var(--se-cat-count, 5), minmax(0, 1fr));
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.se-cat-tile__link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	height: 100%;
+	padding: 18px;
+	border-radius: var(--se-radius);
+	background: var(--se-bg);
+	color: var(--se-text);
+	text-align: center;
+	transition: background-color 0.2s var(--se-ease), box-shadow 0.2s var(--se-ease);
+}
+
+.se-cat-tile__link:hover {
+	background: var(--se-soft);
+	color: var(--se-text);
+}
+
+.se-cat-tile__media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 132px;
+	color: var(--se-primary);
+}
+
+.se-cat-tile__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	mix-blend-mode: multiply;
+}
+
+.se-cat-tile__name {
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-cat-tile__count {
+	margin-block-start: -8px;
+	color: var(--se-muted);
+	font-size: 12px;
+}
+
+/* ---------- Product card ---------- */
+
+.woocommerce ul.products li.product.se-pcard,
+ul.products li.se-pcard,
+.se-pcard {
+	gap: 12px;
+	padding: 18px;
+	border: 1px solid var(--se-border);
+	border-radius: var(--se-radius);
+	box-shadow: none;
+}
+
+.se-pcard:hover {
+	box-shadow: var(--se-shadow);
+	border-color: var(--se-border);
+}
+
+.se-pcard__top {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+	min-height: 24px;
+}
+
+.se-pcard__top .se-pcard__badges {
+	position: static;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 6px;
+}
+
+.se-pcard__top .se-pcard__wishlist {
+	position: static;
+	margin-inline-start: auto;
+}
+
+.woocommerce ul.products li.product .se-badge,
+.woocommerce span.onsale.se-badge,
+.se-pcard .se-badge,
+.se-badge {
+	padding: 3px 10px;
+	border-radius: 100px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-badge--featured {
+	background: var(--se-soft);
+	color: var(--se-primary);
+}
+
+.se-pcard__media {
+	margin: 0;
+	border-radius: 0;
+}
+
+.se-pcard__image {
+	aspect-ratio: auto;
+	height: 180px;
+}
+
+.se-pcard:hover .se-pcard__image img {
+	transform: none;
+}
+
+.se-pcard__body {
+	gap: 12px;
+}
+
+.woocommerce ul.products li.product .se-pcard__title,
+.se-pcard__title {
+	display: block;
+	min-height: 0;
+	overflow: hidden;
+	color: var(--se-text);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.65;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	-webkit-line-clamp: unset;
+}
+
+.se-pcard__brand {
+	overflow: hidden;
+	color: var(--se-muted);
+	font-size: 12px;
+	font-weight: 400;
+	text-overflow: ellipsis;
+	white-space: pre;
+}
+
+.se-pcard__footer {
+	align-items: flex-end;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.se-pcard__price .price,
+.woocommerce ul.products li.product .se-pcard__price .price {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	color: var(--se-text);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-pcard__price .price del,
+.woocommerce ul.products li.product .se-pcard__price .price del {
+	color: var(--se-muted);
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.se-pcard__price .price del .woocommerce-Price-currencySymbol {
+	display: none;
+}
+
+.se-pcard__price .woocommerce-Price-currencySymbol {
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.woocommerce ul.products li.product .se-pcard__action .button,
+.se-pcard__action .button,
+.se-pcard__cart {
+	width: 34px;
+	height: 34px;
+	min-height: 34px;
+	border: 0;
+	border-radius: var(--se-radius-sm);
+	background: var(--se-soft);
+	color: var(--se-primary);
+}
+
+.se-pcard__action .button svg {
+	width: 18px;
+	height: 18px;
+}
+
+/* Homepage product rows: four cards on desktop. */
+@media (min-width: 768px) {
+	.se-home-products .se-products-scroll ul.products {
+		grid-auto-flow: row;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-auto-columns: auto;
+		gap: 18px;
+		overflow: visible;
+	}
+}
+
+/* ---------- Offers countdown ---------- */
+
+.se-countdown {
+	display: inline-flex;
+	gap: 6px;
+	margin: 0;
+	color: var(--se-primary);
+	font-size: 13px;
+}
+
+.se-countdown__time {
+	font-variant-numeric: tabular-nums;
+	white-space: pre;
+}
+
+/* ---------- Campaign banner ---------- */
+
+.se-campaign {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 38%);
+	min-height: 244px;
+	border-radius: var(--se-radius-lg);
+	background: var(--se-primary);
+	overflow: hidden;
+}
+
+.se-campaign__content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 12px;
+	padding: 28px 40px;
+}
+
+.se-campaign__media {
+	position: relative;
+	min-height: 160px;
+}
+
+.se-campaign__image {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.se-campaign__title {
+	margin: 0;
+	color: #fff;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-campaign__text {
+	margin: 0;
+	color: #d1ded5;
+	font-size: 14px;
+}
+
+/* ---------- Brands ---------- */
+
+.se-brand-strip {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 16px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.se-brand-strip__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 82px;
+	padding: 12px;
+	border: 0;
+	border-radius: var(--se-radius-sm);
+	background: var(--se-bg);
+	color: var(--se-primary);
+	box-shadow: none;
+}
+
+.se-brand-strip__link:hover {
+	background: var(--se-soft);
+	color: var(--se-primary);
+}
+
+.se-brand-strip__name {
+	overflow: hidden;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.65;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.se-brand-strip__link img {
+	max-height: 50px;
+	filter: none;
+	opacity: 1;
+}
+
+/* ---------- Journal (homepage articles) ---------- */
+
+.se-post-grid--journal {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.se-post-card--journal {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 0;
+	border: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.se-post-card--journal .se-post-card__media {
+	display: block;
+	height: 206px;
+	aspect-ratio: auto;
+	border-radius: var(--se-radius);
+	overflow: hidden;
+}
+
+.se-post-card--journal .se-post-card__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.se-post-card--journal .se-post-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 0;
+}
+
+.se-post-card__meta {
+	margin: 0;
+	color: var(--se-primary);
+	font-size: 11px;
+	white-space: pre-wrap;
+}
+
+.se-post-card--journal .se-post-card__title {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-post-card__more {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: var(--se-muted);
+	font-size: 12px;
+}
+
+/* ---------- Project consultation ---------- */
+
+.se-consult {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	padding: 32px;
+	border-radius: var(--se-radius-lg);
+	background: var(--se-bg);
+}
+
+.se-consult__badge {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: var(--se-accent);
+	color: var(--se-text);
+	line-height: 1.65;
+}
+
+.se-consult__badge strong {
+	color: var(--se-primary);
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.se-consult__badge span {
+	font-size: 12px;
+}
+
+.se-consult__copy {
+	flex: 1;
+	min-width: 0;
+}
+
+.se-consult__title {
+	margin: 0 0 8px;
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-consult__text {
+	margin: 0;
+	color: var(--se-muted);
+	font-size: 14px;
+}
+
+.se-consult__action {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	flex-shrink: 0;
+	width: 265px;
+	text-align: center;
+}
+
+.se-consult__phone {
+	color: var(--se-muted);
+	font-size: 12px;
+}
+
+/* ---------- Newsletter ---------- */
+
+.se-newsletter {
+	display: flex;
+	align-items: center;
+	gap: 36px;
+}
+
+.se-newsletter__icon {
+	display: inline-flex;
+	color: var(--se-primary);
+}
+
+.se-newsletter__icon svg {
+	stroke-width: 1.25;
+}
+
+.se-newsletter__copy {
+	flex: 1;
+	min-width: 0;
+}
+
+.se-newsletter__title {
+	margin: 0 0 4px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.65;
+}
+
+.se-newsletter__text {
+	margin: 0;
+	color: var(--se-muted);
+	font-size: 13px;
+}
+
+.se-newsletter__form {
+	flex: 0 1 535px;
+	min-width: 0;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 1100px) {
+	.se-home-hero__title {
+		font-size: 34px;
+	}
+
+	.se-cat-tiles {
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	}
+
+	.se-brand-strip {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.se-consult {
+		flex-wrap: wrap;
+	}
+
+	.se-consult__action {
+		width: 100%;
+	}
+
+	.se-newsletter {
+		flex-wrap: wrap;
+		gap: 16px 24px;
+	}
+
+	.se-newsletter__form {
+		flex-basis: 100%;
+	}
+}
+
+/* ---------- Mobile (390px frame) ---------- */
+
+@media (max-width: 767px) {
+	.se-home {
+		padding-block: 0 28px;
+	}
+
+	.se-home__sections {
+		gap: 28px;
+	}
+
+	/* Phone order: hero → categories → benefits → … */
+	.se-home__sections > .se-home-hero {
+		order: -2;
+	}
+
+	.se-home__sections > .se-home-cats {
+		order: -1;
+	}
+
+	.se-home__sections > .se-benefits {
+		margin: 0;
+	}
+
+	.se-section-head {
+		margin-block-end: 16px;
+	}
+
+	.se-section-head__title {
+		font-size: 20px;
+	}
+
+	.se-section-head__link {
+		font-size: 12px;
+	}
+
+	.se-home-hero {
+		grid-template-columns: minmax(0, 1fr);
+		min-height: 0;
+		border-radius: var(--se-radius);
+	}
+
+	.se-home-hero__media {
+		grid-column: 1;
+		grid-row: 1;
+		height: 190px;
+	}
+
+	.se-home-hero__content {
+		grid-column: 1;
+		grid-row: 2;
+		gap: 8px;
+		padding: 18px 22px 22px;
+	}
+
+	.se-home-hero__title {
+		font-size: 25px;
+	}
+
+	.se-home-hero__text {
+		color: var(--se-text);
+		font-size: 12px;
+	}
+
+	.se-home-hero__actions {
+		margin-block-start: 4px;
+	}
+
+	.se-home-hero__actions .se-btn--outline,
+	.se-home-hero__note {
+		display: none;
+	}
+
+	.se-cat-tiles {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.se-cat-tile__link {
+		gap: 6px;
+		padding: 8px;
+		border-radius: 12px;
+	}
+
+	.se-cat-tile__media {
+		height: 70px;
+	}
+
+	.se-cat-tile__name {
+		font-size: 10px;
+	}
+
+	.se-cat-tile__count {
+		display: none;
+	}
+
+	.se-benefits {
+		grid-template-columns: repeat(var(--se-benefits-count, 4), minmax(0, 1fr));
+		gap: 12px;
+		padding: 16px 8px;
+	}
+
+	.se-benefits__item,
+	.se-benefits__item + .se-benefits__item,
+	.se-benefits__item:nth-child(n + 4) {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 8px;
+		padding: 0;
+		text-align: center;
+	}
+
+	.se-benefits__icon svg {
+		width: 25px;
+		height: 25px;
+	}
+
+	.se-benefits__title {
+		font-size: 10px;
+		white-space: normal;
+	}
+
+	.se-benefits__text {
+		display: none;
+	}
+
+	/* Product rows: two cards per view, scrollable. */
+	.se-home-products .se-products-scroll ul.products,
+	.se-products--row ul.products,
+	.se-products-scroll ul.products {
+		grid-auto-columns: calc((100% - 12px) / 2);
+		gap: 12px;
+	}
+
+	.woocommerce ul.products li.product.se-pcard,
+	ul.products li.se-pcard,
+	.se-pcard,
+	.se-products--row li.se-pcard,
+	.se-products-scroll li.se-pcard {
+		gap: 8px;
+		padding: 12px;
+		border-radius: var(--se-radius);
+	}
+
+	.se-pcard__image {
+		height: 128px;
+	}
+
+	.se-pcard__body {
+		gap: 8px;
+	}
+
+	.woocommerce ul.products li.product .se-pcard__title,
+	.se-pcard__title,
+	.se-products--row .se-pcard__title,
+	.se-products-scroll .se-pcard__title,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__title {
+		display: -webkit-box;
+		min-height: calc(1.65em * 2);
+		font-size: 11px;
+		white-space: normal;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	.se-pcard__brand {
+		font-size: 10px;
+	}
+
+	.se-pcard__price .price,
+	.woocommerce ul.products li.product .se-pcard__price .price,
+	.se-products--row .se-pcard__price .price,
+	.se-products-scroll .se-pcard__price .price,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__price .price {
+		gap: 8px;
+		font-size: 12px;
+	}
+
+	.se-pcard__price .price del,
+	.woocommerce ul.products li.product .se-pcard__price .price del {
+		font-size: 11px;
+	}
+
+	.se-products--row .se-badge,
+	.se-products-scroll .se-badge,
+	.woocommerce .se-products--row ul.products li.product .se-badge,
+	.se-pcard .se-badge {
+		padding: 3px 10px;
+		font-size: 11px;
+	}
+
+	/* Cart button back in the price row (the design keeps it there on phones too). */
+	.se-products--row .se-pcard__action,
+	.se-products-scroll .se-pcard__action {
+		position: relative;
+		top: auto;
+		inset-inline-end: auto;
+	}
+
+	.woocommerce ul.products li.product .se-pcard__action .button,
+	.se-pcard__action .button,
+	.se-products--row .se-pcard__action .button,
+	.se-products-scroll .se-pcard__action .button,
+	.woocommerce .se-products--row ul.products li.product .se-pcard__action .button {
+		width: 26px;
+		height: 26px;
+		min-height: 26px;
+		border-radius: var(--se-radius-sm);
+		background: var(--se-soft);
+		box-shadow: none;
+	}
+
+	.se-pcard__action .button svg,
+	.se-products--row .se-pcard__action .button svg,
+	.se-products-scroll .se-pcard__action .button svg {
+		width: 15px;
+		height: 15px;
+	}
+
+	/* Offers: the countdown moves under the cards on phones. */
+	.se-home-products--sale {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.se-home-products--sale .se-countdown {
+		order: 3;
+		justify-content: center;
+		margin-block-start: 16px;
+		color: var(--se-muted);
+		font-size: 11px;
+	}
+
+	.se-home-products--sale .se-section-head {
+		order: 1;
+	}
+
+	.se-home-products--sale .se-products {
+		order: 2;
+	}
+
+	.se-campaign {
+		grid-template-columns: minmax(0, 1fr) 110px;
+		gap: 12px;
+		min-height: 160px;
+		padding: 18px;
+		border-radius: var(--se-radius);
+	}
+
+	.se-campaign__content {
+		justify-content: flex-start;
+		gap: 8px;
+		padding: 0;
+	}
+
+	.se-campaign__media {
+		min-height: 124px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.se-campaign__title {
+		font-size: 19px;
+	}
+
+	.se-campaign__text {
+		color: var(--se-accent);
+		font-size: 11px;
+	}
+
+	.se-campaign .se-btn--light {
+		min-height: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: #fff;
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	.se-brand-strip {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 8px;
+	}
+
+	.se-brand-strip__link {
+		height: 60px;
+		border-radius: 10px;
+	}
+
+	.se-brand-strip__name {
+		color: var(--se-text);
+		font-size: 14px;
+	}
+
+	.se-post-grid--journal {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.se-home .se-post-grid--journal > :nth-child(n + 2) {
+		display: none;
+	}
+
+	.se-post-card--journal .se-post-card__media {
+		height: 178px;
+	}
+
+	.se-post-card--journal .se-post-card__title {
+		order: -1;
+		font-size: 16px;
+	}
+
+	.se-consult {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
+		padding: 20px;
+		border-radius: var(--se-radius);
+		text-align: center;
+	}
+
+	.se-consult__badge {
+		align-self: center;
+		width: 80px;
+		height: 80px;
+	}
+
+	.se-consult__badge strong {
+		font-size: 24px;
+	}
+
+	.se-consult__title {
+		font-size: 19px;
+	}
+
+	.se-consult__text {
+		font-size: 12px;
+	}
+
+	.se-newsletter__icon {
+		display: none;
+	}
+
+	.se-newsletter__title {
+		font-size: 18px;
+	}
+}
+
+.se-home-products .woocommerce,
+.se-home-products ul.products,
+.se-home-products .woocommerce ul.products {
+	margin: 0;
 }

@@ -48,11 +48,12 @@ function samadi_site_logo( $context = 'header' ) {
 			);
 		}
 	} else {
-		// Built-in brand mark + site name text.
-		printf(
-			'<img class="se-logo__mark" src="%s" width="44" height="44" alt="" aria-hidden="true">',
-			esc_url( SAMADI_URI . '/assets/images/logo-mark.svg' )
-		);
+		// Built-in brand mark (inline so the arcs follow the context colour) + site name text.
+		echo '<svg class="se-logo__mark" viewBox="0 0 36 40" width="36" height="40" aria-hidden="true" focusable="false">'
+			. '<path fill="currentColor" d="M31.92.78C6.3-3.47-3.14 10.35.9 23.1l10.79-7.44C8.99 8.22 22.48 5.04 31.92 7.16Z"/>'
+			. '<path fill="currentColor" d="M2.25 39.04C26.52 44.35 40.01 26.29 33.27 16.72L22.48 25.23C25.18 32.67 11.69 36.92 2.25 32.67Z"/>'
+			. '<path fill="#D9EE8C" d="M29 1 17 15h8l-3 11 14-15h-8l1-10Z"/>'
+			. '</svg>';
 		echo '<span class="se-logo__text"><span class="se-logo__name">' . esc_html( $name ) . '</span>';
 		$tagline = get_bloginfo( 'description', 'display' );
 		if ( $tagline ) {
@@ -196,6 +197,30 @@ function samadi_post_meta() {
 }
 
 /**
+ * Estimated reading time of the current post in minutes (≈200 words per minute).
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return int
+ */
+function samadi_reading_time( $post = null ) {
+	$text  = wp_strip_all_tags( (string) get_post_field( 'post_content', $post ) );
+	$words = preg_split( '/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY );
+
+	return max( 1, (int) round( count( (array) $words ) / 200 ) );
+}
+
+/**
+ * "N دقیقه مطالعه" label.
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return string
+ */
+function samadi_reading_time_label( $post = null ) {
+	/* translators: %s: reading time in minutes. */
+	return sprintf( __( '%s دقیقه مطالعه', 'samadi-electric' ), samadi_number( samadi_reading_time( $post ) ) );
+}
+
+/**
  * Section header with optional "view all" link.
  *
  * @param string $title     Title.
@@ -212,7 +237,7 @@ function samadi_section_head( $title, $link = '', $link_text = '', $tag = 'h2' )
 			'<a class="se-section-head__link" href="%s">%s%s</a>',
 			esc_url( $link ),
 			esc_html( $link_text ? $link_text : __( 'مشاهده همه', 'samadi-electric' ) ),
-			samadi_get_icon( 'chevron-left', array( 'size' => 16 ) ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			samadi_get_icon( 'arrow-left', array( 'size' => 14 ) ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		);
 	}
 	echo '</div>';
