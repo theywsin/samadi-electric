@@ -1,108 +1,156 @@
 <?php
 /**
- * My Account dashboard — greeting, shortcut tiles and recent orders (Samadi Electric design).
+ * My Account dashboard: greeting banner, stats, recent orders, addresses, wishlist and
+ * account details.
  *
- * Based on WooCommerce's myaccount/dashboard.php; all hooks are kept.
+ * Based on WooCommerce's myaccount/dashboard.php; the dashboard hooks still fire at the end.
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package Samadi_Electric
  * @version 4.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
 
-$samadi_orders = wc_get_orders(
-	array(
-		'customer_id' => get_current_user_id(),
-		'limit'       => 3,
-		'orderby'     => 'date',
-		'order'       => 'DESC',
-		'status'      => array_keys( wc_get_order_statuses() ),
-	)
-);
-$samadi_items  = wc_get_account_menu_items();
-$samadi_tiles  = array(
-	'orders'       => array( 'package', __( 'سفارش‌های من', 'samadi-electric' ), __( 'پیگیری وضعیت و جزئیات سفارش‌ها', 'samadi-electric' ) ),
-	'edit-address' => array( 'map-pin', __( 'آدرس‌ها', 'samadi-electric' ), __( 'آدرس ارسال و صورتحساب', 'samadi-electric' ) ),
-	'edit-account' => array( 'user', __( 'اطلاعات حساب', 'samadi-electric' ), __( 'نام، ایمیل و رمز عبور', 'samadi-electric' ) ),
-);
+$samadi_menu   = wc_get_account_menu_items();
+$samadi_recent = isset( $samadi_menu['orders'] ) ? samadi_account_recent_orders( 4 ) : array();
+$samadi_name   = $current_user->first_name ? $current_user->first_name : $current_user->display_name;
+$samadi_banner = samadi_account_banner_image();
+$samadi_phone  = (string) get_user_meta( $current_user->ID, 'billing_phone', true );
+$samadi_full   = trim( $current_user->first_name . ' ' . $current_user->last_name );
 ?>
 
-<div class="se-account-hello">
-	<h2 class="se-account-hello__title">
-		<?php
-		/* translators: %s: customer name. */
-		echo esc_html( sprintf( __( 'سلام %s، خوش آمدید', 'samadi-electric' ), $current_user->display_name ) );
-		?>
-	</h2>
-	<p class="se-account-hello__text"><?php esc_html_e( 'از این بخش می‌توانید سفارش‌ها، آدرس‌ها و اطلاعات حساب خود را مدیریت کنید.', 'samadi-electric' ); ?></p>
-</div>
+<section class="se-account-hero<?php echo $samadi_banner ? ' has-image' : ''; ?>"<?php echo $samadi_banner ? ' style="--se-hero-image: url(' . esc_url( $samadi_banner ) . ')"' : ''; ?>>
+	<div class="se-account-hero__text">
+		<h2 class="se-account-hero__title">
+			<?php
+			/* translators: %s: customer first name or display name. */
+			echo esc_html( sprintf( __( 'سلام، %s جان', 'samadi-electric' ), $samadi_name ) );
+			?>
+			<span class="se-account-hero__wave" aria-hidden="true">👋</span>
+		</h2>
+		<p class="se-account-hero__desc">
+			<?php
+			/* translators: %s: site name. */
+			echo esc_html( sprintf( __( 'به حساب کاربری خود در %s خوش آمدید.', 'samadi-electric' ), get_bloginfo( 'name' ) ) );
+			?>
+			<br>
+			<?php esc_html_e( 'از اینجا می‌توانید سفارش‌ها، آدرس‌ها و اطلاعات حساب خود را مدیریت کنید.', 'samadi-electric' ); ?>
+		</p>
+	</div>
+</section>
 
-<ul class="se-account-tiles">
-	<?php foreach ( $samadi_tiles as $samadi_endpoint => $samadi_tile ) : ?>
-		<?php
-		if ( ! isset( $samadi_items[ $samadi_endpoint ] ) ) {
-			continue;
-		}
-		?>
-		<li>
-			<a class="se-account-tile" href="<?php echo esc_url( wc_get_account_endpoint_url( $samadi_endpoint ) ); ?>">
-				<span class="se-account-tile__icon"><?php samadi_icon( $samadi_tile[0], array( 'size' => 24 ) ); ?></span>
-				<strong class="se-account-tile__title"><?php echo esc_html( $samadi_tile[1] ); ?></strong>
-				<span class="se-account-tile__text"><?php echo esc_html( $samadi_tile[2] ); ?></span>
+<?php $samadi_stats = samadi_account_stats(); ?>
+<?php if ( $samadi_stats ) : ?>
+	<ul class="se-account-stats">
+		<?php foreach ( $samadi_stats as $samadi_stat ) : ?>
+			<li class="se-account-stat se-account-stat--<?php echo esc_attr( $samadi_stat['key'] ); ?>">
+				<div class="se-account-stat__head">
+					<span class="se-account-stat__icon"><?php samadi_icon( $samadi_stat['icon'], array( 'size' => 20 ) ); ?></span>
+					<span class="se-account-stat__label"><?php echo esc_html( $samadi_stat['label'] ); ?></span>
+				</div>
+				<strong class="se-account-stat__value"><?php echo wp_kses_post( $samadi_stat['value'] ); ?></strong>
+				<a class="se-account-stat__link" href="<?php echo esc_url( $samadi_stat['url'] ); ?>">
+					<span><?php echo esc_html( $samadi_stat['link'] ); ?></span>
+					<?php samadi_icon( 'chevron-left', array( 'size' => 14 ) ); ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>
+
+<?php if ( isset( $samadi_menu['orders'] ) ) : ?>
+	<section class="se-panel">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'آخرین سفارش‌های من', 'samadi-electric' ); ?></h2>
+			<?php if ( $samadi_recent ) : ?>
+				<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>">
+					<span><?php esc_html_e( 'مشاهده همه سفارش‌ها', 'samadi-electric' ); ?></span>
+					<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
+				</a>
+			<?php endif; ?>
+		</header>
+		<?php if ( $samadi_recent ) : ?>
+			<ul class="se-order-list">
+				<?php
+				foreach ( $samadi_recent as $samadi_order ) {
+					get_template_part( 'template-parts/account/order-row', null, array( 'order' => $samadi_order ) );
+				}
+				?>
+			</ul>
+		<?php else : ?>
+			<?php get_template_part( 'template-parts/account/empty' ); ?>
+		<?php endif; ?>
+	</section>
+<?php endif; ?>
+
+<?php if ( isset( $samadi_menu['edit-address'] ) ) : ?>
+	<section class="se-panel">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'آدرس‌های من', 'samadi-electric' ); ?></h2>
+			<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-address' ) ); ?>">
+				<span><?php esc_html_e( 'مدیریت آدرس‌ها', 'samadi-electric' ); ?></span>
+				<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
 			</a>
-		</li>
-	<?php endforeach; ?>
-</ul>
+		</header>
+		<?php get_template_part( 'template-parts/account/addresses' ); ?>
+	</section>
+<?php endif; ?>
 
-<?php if ( $samadi_orders ) : ?>
-	<section class="se-account-recent">
-		<div class="se-section-head">
-			<h3 class="se-section-head__title"><?php esc_html_e( 'آخرین سفارش‌ها', 'samadi-electric' ); ?></h3>
-			<a class="se-section-head__link" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>"><?php esc_html_e( 'مشاهده همه', 'samadi-electric' ); ?><?php samadi_icon( 'arrow-left', array( 'size' => 14 ) ); ?></a>
-		</div>
-		<ul class="se-order-list">
-			<?php foreach ( $samadi_orders as $samadi_order ) : ?>
-				<li class="se-order-row">
-					<a href="<?php echo esc_url( $samadi_order->get_view_order_url() ); ?>">
-						<span class="se-order-row__id">
-							<?php
-							/* translators: %s: order number. */
-							echo esc_html( sprintf( __( 'سفارش #%s', 'samadi-electric' ), samadi_option( 'persian_digits' ) ? samadi_fa_digits( $samadi_order->get_order_number() ) : $samadi_order->get_order_number() ) );
-							?>
-						</span>
-						<span class="se-order-row__date"><?php echo esc_html( wc_format_datetime( $samadi_order->get_date_created() ) ); ?></span>
-						<span class="se-status se-status--<?php echo esc_attr( $samadi_order->get_status() ); ?>"><?php echo esc_html( wc_get_order_status_name( $samadi_order->get_status() ) ); ?></span>
-						<span class="se-order-row__total"><?php echo wp_kses_post( $samadi_order->get_formatted_order_total() ); ?></span>
-					</a>
-				</li>
-			<?php endforeach; ?>
-		</ul>
+<?php get_template_part( 'template-parts/account/wishlist' ); ?>
+
+<?php if ( isset( $samadi_menu['edit-account'] ) ) : ?>
+	<section class="se-panel se-panel--plain">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'اطلاعات حساب کاربری', 'samadi-electric' ); ?></h2>
+			<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-account' ) ); ?>">
+				<span><?php esc_html_e( 'ویرایش اطلاعات', 'samadi-electric' ); ?></span>
+				<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
+			</a>
+		</header>
+		<dl class="se-account-info">
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'key-round', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'رمز عبور', 'samadi-electric' ); ?></dt>
+				<dd aria-label="<?php esc_attr_e( 'پنهان', 'samadi-electric' ); ?>">••••••••</dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'user', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'نام و نام خانوادگی', 'samadi-electric' ); ?></dt>
+				<dd><?php echo esc_html( $samadi_full ? $samadi_full : $current_user->display_name ); ?></dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'phone', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'شماره موبایل', 'samadi-electric' ); ?></dt>
+				<dd dir="ltr"><?php echo $samadi_phone ? esc_html( samadi_option( 'persian_digits' ) ? samadi_fa_digits( $samadi_phone ) : $samadi_phone ) : esc_html__( 'ثبت نشده', 'samadi-electric' ); ?></dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'mail', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'ایمیل', 'samadi-electric' ); ?></dt>
+				<dd dir="ltr"><?php echo esc_html( $current_user->user_email ); ?></dd>
+			</div>
+		</dl>
 	</section>
 <?php endif; ?>
 
 <?php
-	/**
-	 * My Account dashboard.
-	 *
-	 * @since 2.6.0
-	 */
-	do_action( 'woocommerce_account_dashboard' );
+/**
+ * My Account dashboard.
+ *
+ * @since 2.6.0
+ */
+do_action( 'woocommerce_account_dashboard' );
 
-	/**
-	 * Deprecated woocommerce_before_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_before_my_account' );
+/**
+ * Deprecated woocommerce_before_my_account action.
+ *
+ * @deprecated 2.6.0
+ */
+do_action( 'woocommerce_before_my_account' );
 
-	/**
-	 * Deprecated woocommerce_after_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_after_my_account' );
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+/**
+ * Deprecated woocommerce_after_my_account action.
+ *
+ * @deprecated 2.6.0
+ */
+do_action( 'woocommerce_after_my_account' );
