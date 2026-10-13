@@ -451,5 +451,6 @@ function samadi_customize_register( $wp_customize ) {
 	$add( 'footer_trust_title', 'samadi_footer', array( 'label' => __( 'عنوان ستون نمادهای اعتماد', 'samadi-electric' ) ) );
 	$add( 'footer_trust_text', 'samadi_footer', array( 'label' => __( 'متن زیر نمادهای اعتماد', 'samadi-electric' ) ) );
 	$add( 'footer_copyright', 'samadi_footer', array( 'label' => __( 'متن کپی‌رایت (خالی = پیش‌فرض)', 'samadi-electric' ) ), 'wp_kses_post' );
+	$add( 'footer_back_to_top', 'samadi_footer', array( 'type' => 'checkbox', 'label' => __( 'دکمه بازگشت به بالا', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
 }
 add_action( 'customize_register', 'samadi_customize_register' );

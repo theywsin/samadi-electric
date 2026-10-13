@@ -7,39 +7,115 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Domain: samadi-electric\n"
 
-#: woocommerce/archive-product.php:40
+#: woocommerce/myaccount/dashboard.php:27
+msgid "سفارش‌های من"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:27
+msgid "پیگیری وضعیت و جزئیات سفارش‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:28
+msgid "آدرس‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:28
+msgid "آدرس ارسال و صورتحساب"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:29
+msgid "اطلاعات حساب"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:29
+msgid "نام، ایمیل و رمز عبور"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:37
+msgid "سلام %s، خوش آمدید"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:40
+msgid "از این بخش می‌توانید سفارش‌ها، آدرس‌ها و اطلاعات حساب خود را مدیریت کنید."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:63
+msgid "آخرین سفارش‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:64 template-parts/home/products.php:31 template-parts/home/categories.php:38 inc/template-tags.php:239
+msgid "مشاهده همه"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:73
+msgid "سفارش #%s"
+msgstr ""
+
+#: woocommerce/archive-product.php:59 woocommerce/cart/cart.php:27
+msgid "%s کالا"
+msgstr ""
+
+#: woocommerce/archive-product.php:66
+msgid "زیردسته‌ها"
+msgstr ""
+
+#: woocommerce/archive-product.php:77
 msgid "فیلتر محصولات"
 msgstr ""
 
-#: woocommerce/archive-product.php:42 woocommerce/archive-product.php:63
+#: woocommerce/archive-product.php:79 woocommerce/archive-product.php:100
 msgid "فیلترها"
 msgstr ""
 
-#: woocommerce/archive-product.php:45
+#: woocommerce/archive-product.php:82
 msgid "بستن فیلترها"
 msgstr ""
 
-#: woocommerce/content-product.php:36
-msgid "ویژه"
+#: woocommerce/cart/cart.php:23
+msgid "سبد خرید شما"
 msgstr ""
 
-#: woocommerce/content-product.php:57
+#: woocommerce/cart/cart.php:97
+msgid "قیمت واحد:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:166
+msgid "کد تخفیف دارید؟"
+msgstr ""
+
+#: woocommerce/cart/cart.php:168
+msgid "کد تخفیف را وارد کنید"
+msgstr ""
+
+#: woocommerce/cart/cart.php:169
+msgid "اعمال"
+msgstr ""
+
+#: woocommerce/cart/cart.php:175
+msgid "به‌روزرسانی سبد"
+msgstr ""
+
+#: woocommerce/content-product.php:34
+msgid "پیشنهاد ویژه"
+msgstr ""
+
+#: woocommerce/content-product.php:61
 msgid "کد:"
 msgstr ""
 
-#: 404.php:18
+#: 404.php:19
 msgid "صفحه موردنظر پیدا نشد"
 msgstr ""
 
-#: 404.php:19
+#: 404.php:20
 msgid "ممکن است آدرس تغییر کرده باشد. از جستجو استفاده کنید یا به فروشگاه بروید."
 msgstr ""
 
-#: 404.php:22
+#: 404.php:23
 msgid "بازگشت به خانه"
 msgstr ""
 
-#: 404.php:24 inc/helpers.php:83
+#: 404.php:25 template-parts/archive/posts.php:81
 msgid "مشاهده محصولات"
 msgstr ""
 
@@ -51,15 +127,15 @@ msgstr ""
 msgid "دسته‌بندی‌ها"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:82 inc/woocommerce.php:515
+#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:86 template-parts/footer/site-footer.php:100 inc/woocommerce.php:558
 msgid "سبد خرید"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:68
+#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:79
 msgid "علاقه‌مندی‌ها"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:75
+#: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:68
 msgid "حساب کاربری"
 msgstr ""
 
@@ -71,7 +147,7 @@ msgstr ""
 msgid "منو"
 msgstr ""
 
-#: template-parts/header/mobile-drawer.php:20 inc/enqueue.php:161
+#: template-parts/header/mobile-drawer.php:20 inc/enqueue.php:162
 msgid "بستن منو"
 msgstr ""
 
@@ -83,100 +159,128 @@ msgstr ""
 msgid "منوی موبایل"
 msgstr ""
 
-#: template-parts/header/site-header.php:29 inc/enqueue.php:160
+#: template-parts/header/site-header.php:34 inc/enqueue.php:161
 msgid "باز کردن منو"
 msgstr ""
 
-#: template-parts/header/site-header.php:35
+#: template-parts/header/site-header.php:40
 msgid "بازگشت"
 msgstr ""
 
-#: template-parts/header/site-header.php:51 inc/accessibility.php:52
+#: template-parts/header/site-header.php:56 inc/accessibility.php:52
 msgid "جستجو"
 msgstr ""
 
-#: template-parts/header/site-header.php:58
+#: template-parts/header/site-header.php:63 template-parts/content/single.php:62
 msgid "اشتراک‌گذاری"
 msgstr ""
 
-#: template-parts/header/site-header.php:75
+#: template-parts/header/site-header.php:68
 msgid "ورود / ثبت‌نام"
 msgstr ""
 
-#: template-parts/header/site-header.php:97
+#: template-parts/header/site-header.php:101
 msgid "منوی اصلی"
 msgstr ""
 
-#: template-parts/content/single.php:34 template-parts/content/page.php:41
+#: template-parts/content/single.php:51 template-parts/content/page.php:45
 msgid "صفحات:"
 msgstr ""
 
-#: template-parts/content/single.php:45
+#: template-parts/content/single.php:69
+msgid "مطلب قبلی"
+msgstr ""
+
+#: template-parts/content/single.php:70
+msgid "مطلب بعدی"
+msgstr ""
+
+#: template-parts/content/single.php:81
 msgid "سایدبار"
 msgstr ""
 
-#: template-parts/content/single.php:53
-msgid "نوشته قبلی"
+#: template-parts/content/single.php:103
+msgid "مطالب مرتبط"
 msgstr ""
 
-#: template-parts/content/single.php:54
-msgid "نوشته بعدی"
+#: template-parts/footer/site-footer.php:64
+msgid "دسترسی سریع"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:43
-msgid "دسته‌بندی‌های اصلی"
+#: template-parts/footer/site-footer.php:86
+msgid "خدمات مشتریان"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:81
-msgid "ارتباط با ما"
+#: template-parts/footer/site-footer.php:99
+msgid "پیگیری سفارش"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:98
-msgid "© %1$s %2$s. تمامی حقوق محفوظ است."
+#: template-parts/footer/site-footer.php:144
+msgid "تمامی حقوق این وب‌سایت متعلق به %1$s است. © %2$s"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:155
+msgid "لینک‌های قوانین"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:165
+msgid "بازگشت به بالا"
 msgstr ""
 
 #: template-parts/home/brands.php:31
-msgid "برندهای معتبر"
+msgid "برندهای معتبر، انتخاب‌های مطمئن"
 msgstr ""
 
-#: template-parts/home/home.php:33
-msgid "پیشنهادهای ویژه"
+#: template-parts/home/brands.php:31
+msgid "همه برندها"
 msgstr ""
 
-#: template-parts/home/home.php:34
-msgid "پرفروش‌ترین‌ها"
-msgstr ""
-
-#: template-parts/home/home.php:35
+#: template-parts/home/home.php:66
 msgid "جدیدترین محصولات"
 msgstr ""
 
-#: template-parts/home/posts.php:26
-msgid "راهنمای خرید و مقالات آموزشی"
+#: template-parts/home/posts.php:26 template-parts/archive/posts.php:24
+msgid "مجله برق و روشنایی"
 msgstr ""
 
-#: template-parts/home/categories.php:36 template-parts/home/categories.php:58
-msgid "دسته‌بندی‌های محبوب"
+#: template-parts/home/products.php:27
+msgid "پایان پیشنهادها:"
 msgstr ""
 
-#: template-parts/home/categories.php:38 template-parts/home/categories.php:59
-msgid "همه محصولات"
+#: template-parts/home/categories.php:37 inc/helpers.php:47
+msgid "دسته‌بندی محصولات"
 msgstr ""
 
-#: template-parts/archive/posts.php:14 inc/template-tags.php:139
+#: template-parts/home/categories.php:54 inc/woocommerce.php:671
+msgid "%s محصول"
+msgstr ""
+
+#: template-parts/archive/posts.php:16 inc/template-tags.php:140
 msgid "نتایج جستجو برای «%s»"
 msgstr ""
 
-#: template-parts/archive/posts.php:20
-msgid "آخرین مطالب"
+#: template-parts/archive/posts.php:32
+msgid "%s نتیجه پیدا شد."
 msgstr ""
 
-#: template-parts/archive/posts.php:48
+#: template-parts/archive/posts.php:53
+msgid "دسته‌بندی مطالب"
+msgstr ""
+
+#: template-parts/archive/posts.php:54
+msgid "همه مطالب"
+msgstr ""
+
+#: template-parts/archive/posts.php:76
 msgid "مطلبی پیدا نشد"
 msgstr ""
 
-#: template-parts/archive/posts.php:49
-msgid "عبارت دیگری را جستجو کنید."
+#: template-parts/archive/posts.php:77
+msgid "عبارت دیگری را جستجو کنید یا از دسته‌بندی محصولات دیدن کنید."
+msgstr ""
+
+#: template-parts/archive/post-card.php:42
+msgid "ادامه مطلب"
 msgstr ""
 
 #: comments.php:20
@@ -189,428 +293,552 @@ msgstr[1] ""
 msgid "امکان ثبت دیدگاه بسته شده است."
 msgstr ""
 
-#: inc/customizer.php:70
+#: inc/customizer.php:94
 msgid "تنظیمات صمدی الکتریک"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:139
 msgid "رنگ‌های برند"
 msgstr ""
 
-#: inc/customizer.php:118 inc/elementor.php:202
+#: inc/customizer.php:142 inc/elementor.php:202
 msgid "سبز تیره اصلی"
 msgstr ""
 
-#: inc/customizer.php:119 inc/elementor.php:203
+#: inc/customizer.php:143 inc/elementor.php:203
 msgid "سبز برند"
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:144
 msgid "رنگ تأکیدی (لیمویی)"
 msgstr ""
 
-#: inc/customizer.php:121 inc/elementor.php:208
+#: inc/customizer.php:145 inc/elementor.php:208
 msgid "پس‌زمینه عمومی"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:146
 msgid "پس‌زمینه کارت‌ها"
 msgstr ""
 
-#: inc/customizer.php:123 inc/elementor.php:204
+#: inc/customizer.php:147 inc/elementor.php:204
 msgid "متن اصلی"
 msgstr ""
 
-#: inc/customizer.php:124 inc/elementor.php:210
+#: inc/customizer.php:148 inc/elementor.php:210
 msgid "متن ثانویه"
 msgstr ""
 
-#: inc/customizer.php:125
+#: inc/customizer.php:149
 msgid "خطوط و مرزها"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:150
 msgid "رنگ تخفیف"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:157
 msgid "تایپوگرافی"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:164
 msgid "فونت"
 msgstr ""
 
-#: inc/customizer.php:142
+#: inc/customizer.php:166
 msgid "وزیرمتن (محلی، همراه قالب)"
 msgstr ""
 
-#: inc/customizer.php:143
+#: inc/customizer.php:167
 msgid "فونت سیستم"
 msgstr ""
 
-#: inc/customizer.php:144
+#: inc/customizer.php:168
 msgid "فونت دلخواه (بارگذاری‌شده توسط افزونه یا Elementor)"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:177
 msgid "نام فونت دلخواه (font-family)"
 msgstr ""
 
-#: inc/customizer.php:154
+#: inc/customizer.php:178
 msgid "مثلاً IRANYekanX. فایل فونت باید با مجوز معتبر توسط شما بارگذاری شده باشد (مثلاً از Elementor → فونت‌های سفارشی)."
 msgstr ""
 
-#: inc/customizer.php:163
+#: inc/customizer.php:187
 msgid "وزن متن"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:197
 msgid "وزن عناوین"
 msgstr ""
 
-#: inc/customizer.php:183
+#: inc/customizer.php:207
 msgid "اندازه پایه متن (px)"
 msgstr ""
 
-#: inc/customizer.php:193
+#: inc/customizer.php:217
 msgid "نمایش اعداد قیمت‌ها و شمارنده‌ها با ارقام فارسی"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:227
 msgid "سایت همیشه راست‌چین نمایش داده شود"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:228
 msgid "پیشنهاد اصلی: زبان سایت را در «تنظیمات ← عمومی» فارسی قرار دهید. این گزینه برای زمانی است که زبان وردپرس فارسی نیست."
 msgstr ""
 
-#: inc/customizer.php:213
+#: inc/customizer.php:237
 msgid "هدر"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:239
 msgid "هدر داخلی قالب. اگر در Elementor Pro قالب هدر با شرط نمایش ساخته شود، یا در بخش «Elementor» یک قالب هدر انتخاب شود، جایگزین این هدر می‌شود."
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:242
 msgid "لوگوی موبایل"
 msgstr ""
 
-#: inc/customizer.php:219
+#: inc/customizer.php:243
 msgid "هدر چسبان"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:244
 msgid "نمایش مگامنوی دسته‌بندی محصولات"
 msgstr ""
 
-#: inc/customizer.php:221
+#: inc/customizer.php:245
 msgid "عنوان دکمه دسته‌بندی‌ها"
 msgstr ""
 
-#: inc/customizer.php:222
+#: inc/customizer.php:246
+msgid "متن نوار اعلان بالای سایت (خالی = مخفی)"
+msgstr ""
+
+#: inc/customizer.php:247
+msgid "عنوان کنار تلفن در هدر"
+msgstr ""
+
+#: inc/customizer.php:248
 msgid "نمایش جستجو"
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer.php:249
 msgid "نمایش حساب کاربری"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:250
 msgid "عنوان دکمه خرید عمده (خالی = مخفی)"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:256
 msgid "اطلاعات تماس و شبکه‌های اجتماعی"
 msgstr ""
 
-#: inc/customizer.php:232
+#: inc/customizer.php:258
 msgid "فقط اطلاعات واقعی فروشگاه را وارد کنید. موارد خالی در سایت نمایش داده نمی‌شوند."
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:261
 msgid "تلفن ثابت"
 msgstr ""
 
-#: inc/customizer.php:236
+#: inc/customizer.php:262
 msgid "تلفن همراه"
 msgstr ""
 
-#: inc/customizer.php:237
+#: inc/customizer.php:263
 msgid "ایمیل"
 msgstr ""
 
-#: inc/customizer.php:238
+#: inc/customizer.php:264
 msgid "آدرس"
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:265
 msgid "ساعات کاری"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:266
 msgid "اینستاگرام (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:267
 msgid "تلگرام (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:242
+#: inc/customizer.php:268
 msgid "واتس‌اپ (لینک کامل wa.me)"
 msgstr ""
 
-#: inc/customizer.php:243
+#: inc/customizer.php:269
 msgid "لینکدین (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:249 inc/helpers.php:50 inc/helpers.php:85
+#: inc/customizer.php:275 inc/helpers.php:52
 msgid "خرید عمده"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:277
 msgid "صفحه‌ای که فرم خرید عمده/استعلام قیمت در آن قرار دارد (شورت‌کد [samadi_quote_form] از افزونه همراه). اگر خالی باشد، دکمه‌های خرید عمده نمایش داده نمی‌شوند."
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:280
 msgid "صفحه خرید عمده"
 msgstr ""
 
-#: inc/customizer.php:255
+#: inc/customizer.php:281
 msgid "یا لینک دلخواه"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:287
 msgid "صفحه اصلی (پیش‌فرض قالب)"
 msgstr ""
 
-#: inc/customizer.php:263
+#: inc/customizer.php:289
 msgid "این تنظیمات برای صفحه اصلی داخلی قالب است. اگر در «تنظیمات → خواندن» یک برگه ساخته‌شده با Elementor را به‌عنوان صفحه اصلی انتخاب کنید، همان برگه نمایش داده می‌شود و از Elementor ویرایش می‌شود."
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:293
 msgid "نمایش بنر اصلی"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:294
 msgid "نمایش مزایای خرید"
 msgstr ""
 
-#: inc/customizer.php:269
+#: inc/customizer.php:295
 msgid "نمایش دسته‌بندی‌های محبوب"
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:296
 msgid "نمایش پیشنهادهای ویژه (تخفیف‌دار)"
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:297
 msgid "نمایش پرفروش‌ترین‌ها"
 msgstr ""
 
-#: inc/customizer.php:272
-msgid "نمایش جدیدترین محصولات"
-msgstr ""
-
-#: inc/customizer.php:273
-msgid "نمایش برندها"
-msgstr ""
-
-#: inc/customizer.php:274
-msgid "نمایش مقالات آموزشی"
-msgstr ""
-
-#: inc/customizer.php:286
-msgid "دسته‌بندی‌های منتخب"
-msgstr ""
-
-#: inc/customizer.php:287
-msgid "ترتیب نمایش مطابق ترتیب دسته‌ها در «محصولات → دسته‌بندی‌ها» (قابل جابه‌جایی با کشیدن) است. اگر چیزی انتخاب نشود، دسته‌های اصلی نمایش داده می‌شوند."
-msgstr ""
-
-#: inc/customizer.php:292
-msgid "حداکثر تعداد دسته‌ها"
-msgstr ""
-
-#: inc/customizer.php:293
-msgid "تعداد محصولات هر بخش"
-msgstr ""
-
-#: inc/customizer.php:294
-msgid "تعداد مقالات"
-msgstr ""
-
-#: inc/customizer.php:295
-msgid "تصویر بنر اصلی"
-msgstr ""
-
-#: inc/customizer.php:296
-msgid "عنوان بنر"
-msgstr ""
-
-#: inc/customizer.php:297
-msgid "متن بنر"
-msgstr ""
-
 #: inc/customizer.php:298
-msgid "متن دکمه اول"
+msgid "نمایش بنر تبلیغاتی میانی"
 msgstr ""
 
 #: inc/customizer.php:299
-msgid "لینک دکمه اول (خالی = فروشگاه)"
+msgid "نمایش جدیدترین محصولات"
 msgstr ""
 
 #: inc/customizer.php:300
-msgid "متن دکمه دوم (به صفحه خرید عمده لینک می‌شود)"
+msgid "نمایش برندها"
 msgstr ""
 
-#: inc/customizer.php:306
-msgid "موقعیت متن بنر"
+#: inc/customizer.php:301
+msgid "نمایش مقالات آموزشی"
 msgstr ""
 
-#: inc/customizer.php:308
-msgid "راست"
+#: inc/customizer.php:302
+msgid "نمایش بخش مشاوره پروژه"
 msgstr ""
 
-#: inc/customizer.php:309
-msgid "وسط"
+#: inc/customizer.php:303
+msgid "نمایش خبرنامه"
 msgstr ""
 
-#: inc/customizer.php:310
-msgid "چپ"
+#: inc/customizer.php:315
+msgid "دسته‌بندی‌های منتخب"
 msgstr ""
 
-#: inc/customizer.php:317
-msgid "مزایای فروشگاه"
+#: inc/customizer.php:316
+msgid "ترتیب نمایش مطابق ترتیب دسته‌ها در «محصولات → دسته‌بندی‌ها» (قابل جابه‌جایی با کشیدن) است. اگر چیزی انتخاب نشود، دسته‌های اصلی نمایش داده می‌شوند."
 msgstr ""
 
-#: inc/customizer.php:318
-msgid "نمایش نوار مزایا"
+#: inc/customizer.php:321
+msgid "حداکثر تعداد دسته‌ها"
 msgstr ""
 
 #: inc/customizer.php:322
-msgid "آیکون مورد %d"
+msgid "تعداد محصولات هر بخش"
+msgstr ""
+
+#: inc/customizer.php:323
+msgid "تعداد مقالات"
 msgstr ""
 
 #: inc/customizer.php:324
-msgid "عنوان مورد %d (خالی = مخفی)"
-msgstr ""
-
-#: inc/customizer.php:326
-msgid "توضیح مورد %d"
+msgid "عنوان بخش پیشنهادهای ویژه"
 msgstr ""
 
 #: inc/customizer.php:330
-msgid "فروشگاه و کارت محصول"
+msgid "پایان پیشنهادهای ویژه (شمارش معکوس)"
+msgstr ""
+
+#: inc/customizer.php:331
+msgid "خالی = تا پایان امروز. اگر زمان گذشته باشد، شمارنده نمایش داده نمی‌شود."
+msgstr ""
+
+#: inc/customizer.php:335
+msgid "عنوان بخش پرفروش‌ها"
 msgstr ""
 
 #: inc/customizer.php:336
-msgid "حالت نمایش کارت محصول"
+msgid "تصویر بنر اصلی"
+msgstr ""
+
+#: inc/customizer.php:337
+msgid "برچسب بالای عنوان بنر"
 msgstr ""
 
 #: inc/customizer.php:338
-msgid "استاندارد"
+msgid "عنوان بنر"
 msgstr ""
 
 #: inc/customizer.php:339
-msgid "فشرده"
+msgid "متن بنر"
 msgstr ""
 
 #: inc/customizer.php:340
-msgid "با حاشیه"
+msgid "یادداشت کوچک زیر دکمه‌ها"
 msgstr ""
 
-#: inc/customizer.php:345
-msgid "نمایش کد کالا در کارت"
+#: inc/customizer.php:341
+msgid "متن دکمه اول"
 msgstr ""
 
-#: inc/customizer.php:346
-msgid "نمایش برند در کارت"
+#: inc/customizer.php:342
+msgid "لینک دکمه اول (خالی = فروشگاه)"
 msgstr ""
 
-#: inc/customizer.php:347
-msgid "نمایش وضعیت موجودی در کارت"
+#: inc/customizer.php:343
+msgid "متن دکمه دوم"
 msgstr ""
 
-#: inc/customizer.php:348
-msgid "نمایش امتیاز در کارت"
-msgstr ""
-
-#: inc/customizer.php:349
-msgid "تعداد ستون محصولات (دسکتاپ)"
+#: inc/customizer.php:344
+msgid "لینک دکمه دوم (خالی = صفحه خرید عمده یا تلفن تماس)"
 msgstr ""
 
 #: inc/customizer.php:350
-msgid "تعداد محصول در هر صفحه"
-msgstr ""
-
-#: inc/customizer.php:351
-msgid "نمایش ستون فیلترها در آرشیو"
+msgid "موقعیت متن بنر"
 msgstr ""
 
 #: inc/customizer.php:352
-msgid "نمایش کد کالا در صفحه محصول"
+msgid "راست"
 msgstr ""
 
 #: inc/customizer.php:353
-msgid "نمایش برند در صفحه محصول"
+msgid "وسط"
 msgstr ""
 
 #: inc/customizer.php:354
-msgid "نمایش مزایای فروشگاه در صفحه محصول"
+msgid "چپ"
 msgstr ""
 
-#: inc/customizer.php:357
-msgid "مسیر راهنما (Breadcrumb)"
+#: inc/customizer.php:360
+msgid "تصویر بنر میانی"
 msgstr ""
 
-#: inc/customizer.php:358
-msgid "نمایش مسیر راهنما"
+#: inc/customizer.php:361
+msgid "عنوان بنر میانی"
+msgstr ""
+
+#: inc/customizer.php:362
+msgid "متن بنر میانی"
+msgstr ""
+
+#: inc/customizer.php:363
+msgid "متن دکمه بنر میانی"
 msgstr ""
 
 #: inc/customizer.php:364
-msgid "منبع"
+msgid "لینک دکمه بنر میانی (خالی = فروشگاه)"
 msgstr ""
 
 #: inc/customizer.php:365
-msgid "حالت خودکار در صورت فعال بودن Yoast SEO یا Rank Math از Breadcrumb همان افزونه (همراه با Schema آن) استفاده می‌کند."
+msgid "عنوان بخش مشاوره"
+msgstr ""
+
+#: inc/customizer.php:366
+msgid "متن بخش مشاوره"
 msgstr ""
 
 #: inc/customizer.php:367
-msgid "خودکار"
+msgid "عدد نشان دایره‌ای (مثلاً ۳۰+)"
 msgstr ""
 
 #: inc/customizer.php:368
-msgid "ووکامرس / قالب"
+msgid "متن نشان دایره‌ای"
 msgstr ""
 
-#: inc/customizer.php:375
-msgid "موبایل"
+#: inc/customizer.php:369
+msgid "متن دکمه مشاوره"
 msgstr ""
 
-#: inc/customizer.php:376
-msgid "نوار ناوبری پایین موبایل"
+#: inc/customizer.php:370
+msgid "لینک دکمه مشاوره (خالی = صفحه خرید عمده یا تلفن تماس)"
+msgstr ""
+
+#: inc/customizer.php:371
+msgid "عنوان خبرنامه"
+msgstr ""
+
+#: inc/customizer.php:372
+msgid "متن خبرنامه"
 msgstr ""
 
 #: inc/customizer.php:377
-msgid "نمایش علاقه‌مندی‌ها در نوار پایین (در صورت نصب افزونه علاقه‌مندی)"
+msgid "شورت‌کد فرم خبرنامه (اختیاری)"
 msgstr ""
 
 #: inc/customizer.php:378
+msgid "خالی = فرم عضویت با شماره موبایل افزونه همراه (اعضا در «صمدی ← اعضای خبرنامه» ذخیره می‌شوند). برای استفاده از افزونه خبرنامه دیگر، شورت‌کد آن را وارد کنید."
+msgstr ""
+
+#: inc/customizer.php:384
+msgid "مزایای فروشگاه"
+msgstr ""
+
+#: inc/customizer.php:385
+msgid "نمایش نوار مزایا"
+msgstr ""
+
+#: inc/customizer.php:389
+msgid "آیکون مورد %d"
+msgstr ""
+
+#: inc/customizer.php:391
+msgid "عنوان مورد %d (خالی = مخفی)"
+msgstr ""
+
+#: inc/customizer.php:393
+msgid "توضیح مورد %d"
+msgstr ""
+
+#: inc/customizer.php:397
+msgid "فروشگاه و کارت محصول"
+msgstr ""
+
+#: inc/customizer.php:403
+msgid "حالت نمایش کارت محصول"
+msgstr ""
+
+#: inc/customizer.php:405
+msgid "استاندارد"
+msgstr ""
+
+#: inc/customizer.php:406
+msgid "فشرده"
+msgstr ""
+
+#: inc/customizer.php:407
+msgid "با حاشیه"
+msgstr ""
+
+#: inc/customizer.php:412
+msgid "نمایش کد کالا در کارت"
+msgstr ""
+
+#: inc/customizer.php:413
+msgid "نمایش برند در کارت"
+msgstr ""
+
+#: inc/customizer.php:414
+msgid "متن خط توضیح کارت (کنار نام برند؛ خالی = فقط برند)"
+msgstr ""
+
+#: inc/customizer.php:415
+msgid "نمایش وضعیت موجودی در کارت"
+msgstr ""
+
+#: inc/customizer.php:416
+msgid "نمایش امتیاز در کارت"
+msgstr ""
+
+#: inc/customizer.php:417
+msgid "تعداد ستون محصولات (دسکتاپ)"
+msgstr ""
+
+#: inc/customizer.php:418
+msgid "تعداد محصول در هر صفحه"
+msgstr ""
+
+#: inc/customizer.php:419
+msgid "نمایش ستون فیلترها در آرشیو"
+msgstr ""
+
+#: inc/customizer.php:420
+msgid "نمایش کد کالا در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:421
+msgid "نمایش برند در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:422
+msgid "نمایش مزایای فروشگاه در صفحه محصول"
+msgstr ""
+
+#: inc/customizer.php:425
+msgid "مسیر راهنما (Breadcrumb)"
+msgstr ""
+
+#: inc/customizer.php:426
+msgid "نمایش مسیر راهنما"
+msgstr ""
+
+#: inc/customizer.php:432
+msgid "منبع"
+msgstr ""
+
+#: inc/customizer.php:433
+msgid "حالت خودکار در صورت فعال بودن Yoast SEO یا Rank Math از Breadcrumb همان افزونه (همراه با Schema آن) استفاده می‌کند."
+msgstr ""
+
+#: inc/customizer.php:435
+msgid "خودکار"
+msgstr ""
+
+#: inc/customizer.php:436
+msgid "ووکامرس / قالب"
+msgstr ""
+
+#: inc/customizer.php:443
+msgid "موبایل"
+msgstr ""
+
+#: inc/customizer.php:444
+msgid "نوار ناوبری پایین موبایل"
+msgstr ""
+
+#: inc/customizer.php:445
+msgid "نمایش علاقه‌مندی‌ها در نوار پایین (در صورت نصب افزونه علاقه‌مندی)"
+msgstr ""
+
+#: inc/customizer.php:446
 msgid "نوار خرید چسبان در صفحه محصول"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:449
 msgid "فوتر"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:450
 msgid "درباره فروشگاه"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:451
+msgid "عنوان ستون نمادهای اعتماد"
+msgstr ""
+
+#: inc/customizer.php:452
+msgid "متن زیر نمادهای اعتماد"
+msgstr ""
+
+#: inc/customizer.php:453
 msgid "متن کپی‌رایت (خالی = پیش‌فرض)"
+msgstr ""
+
+#: inc/customizer.php:454
+msgid "دکمه بازگشت به بالا"
 msgstr ""
 
 #: inc/accessibility.php:16
@@ -622,38 +850,38 @@ msgid "جستجو برای:"
 msgstr ""
 
 #: inc/accessibility.php:46
-msgid "جستجوی محصول، برند یا کد کالا…"
+msgid "جستجو در میان هزاران کالای برقی..."
 msgstr ""
 
 #: inc/accessibility.php:46
 msgid "جستجو…"
 msgstr ""
 
-#: inc/enqueue.php:158
+#: inc/enqueue.php:159
 msgid "محصول به سبد خرید افزوده شد."
 msgstr ""
 
-#: inc/enqueue.php:159
+#: inc/enqueue.php:160
 msgid "سبد خرید به‌روزرسانی شد."
 msgstr ""
 
-#: inc/enqueue.php:162
+#: inc/enqueue.php:163
 msgid "افزایش تعداد"
 msgstr ""
 
-#: inc/enqueue.php:163
+#: inc/enqueue.php:164
 msgid "کاهش تعداد"
 msgstr ""
 
-#: inc/enqueue.php:164
+#: inc/enqueue.php:165
 msgid "لینک محصول کپی شد."
 msgstr ""
 
-#: inc/enqueue.php:165
+#: inc/enqueue.php:166
 msgid "لینک را کپی کنید:"
 msgstr ""
 
-#: inc/enqueue.php:166
+#: inc/enqueue.php:167
 msgid "تصویر %1$s از %2$s"
 msgstr ""
 
@@ -669,27 +897,31 @@ msgstr ""
 msgid "فوتر: راهنما و قوانین"
 msgstr ""
 
-#: inc/setup.php:114
-msgid "سایدبار وبلاگ"
+#: inc/setup.php:66
+msgid "فوتر: لینک‌های نوار پایین (قوانین، حریم خصوصی)"
 msgstr ""
 
 #: inc/setup.php:115
+msgid "سایدبار وبلاگ"
+msgstr ""
+
+#: inc/setup.php:116
 msgid "در صفحات نوشته و آرشیو وبلاگ نمایش داده می‌شود."
 msgstr ""
 
-#: inc/setup.php:125
+#: inc/setup.php:126
 msgid "فیلترهای فروشگاه"
 msgstr ""
 
-#: inc/setup.php:126
+#: inc/setup.php:127
 msgid "در آرشیو محصولات (دسکتاپ: ستون کناری، موبایل: پنل کشویی) نمایش داده می‌شود. ابزارک «فیلتر محصولات صمدی» یا ابزارک‌های فیلتر ووکامرس را اینجا قرار دهید."
 msgstr ""
 
-#: inc/setup.php:136
+#: inc/setup.php:137
 msgid "فوتر: نمادهای اعتماد"
 msgstr ""
 
-#: inc/setup.php:137
+#: inc/setup.php:138
 msgid "کد رسمی نماد اعتماد الکترونیکی یا ساماندهی را با ابزارک «HTML سفارشی» اینجا قرار دهید. فقط نمادهای معتبر و متعلق به همین فروشگاه."
 msgstr ""
 
@@ -721,136 +953,224 @@ msgstr ""
 msgid "کد کالا:"
 msgstr ""
 
-#: inc/woocommerce.php:369 inc/woocommerce.php:426
+#: inc/woocommerce.php:366
+msgid "خرید از"
+msgstr ""
+
+#: inc/woocommerce.php:375
+msgid "قابل پیش‌سفارش"
+msgstr ""
+
+#: inc/woocommerce.php:375
+msgid "موجود در انبار"
+msgstr ""
+
+#: inc/woocommerce.php:412 inc/woocommerce.php:469
 msgid "مشخصات فنی"
 msgstr ""
 
-#: inc/woocommerce.php:373
+#: inc/woocommerce.php:416
 msgid "توضیحات"
 msgstr ""
 
-#: inc/woocommerce.php:399
+#: inc/woocommerce.php:442
 msgid "برند"
 msgstr ""
 
-#: inc/woocommerce.php:406
+#: inc/woocommerce.php:449
 msgid "کد کالا"
 msgstr ""
 
-#: inc/woocommerce.php:516
-msgid "اطلاعات و پرداخت"
+#: inc/woocommerce.php:559
+msgid "اطلاعات ارسال"
 msgstr ""
 
-#: inc/woocommerce.php:517
-msgid "ثبت سفارش"
+#: inc/woocommerce.php:560
+msgid "پرداخت"
 msgstr ""
 
-#: inc/woocommerce.php:520
+#: inc/woocommerce.php:563
 msgid "مراحل خرید"
 msgstr ""
 
-#: inc/woocommerce.php:570
+#: inc/woocommerce.php:613
 msgid "پیش‌فرض"
 msgstr ""
 
-#: inc/woocommerce.php:571
+#: inc/woocommerce.php:614
 msgid "محبوب‌ترین (پرفروش)"
 msgstr ""
 
-#: inc/woocommerce.php:572
+#: inc/woocommerce.php:615
 msgid "بیشترین امتیاز"
 msgstr ""
 
-#: inc/woocommerce.php:573
+#: inc/woocommerce.php:616
 msgid "جدیدترین"
 msgstr ""
 
-#: inc/woocommerce.php:574
+#: inc/woocommerce.php:617
 msgid "ارزان‌ترین"
 msgstr ""
 
-#: inc/woocommerce.php:575
+#: inc/woocommerce.php:618
 msgid "گران‌ترین"
 msgstr ""
 
-#: inc/woocommerce.php:606
+#: inc/woocommerce.php:649
 msgid "مرتب‌سازی"
 msgstr ""
 
-#: inc/woocommerce.php:628
-msgid "%s محصول"
+#: inc/woocommerce.php:652
+msgid "مرتب‌سازی:"
 msgstr ""
 
-#: inc/woocommerce.php:639
+#: inc/woocommerce.php:682
 msgid "تصویر قبلی"
 msgstr ""
 
-#: inc/woocommerce.php:640
+#: inc/woocommerce.php:683
 msgid "تصویر بعدی"
 msgstr ""
 
-#: inc/woocommerce.php:678
+#: inc/woocommerce.php:721
 msgid "نحوه نمایش محصولات"
 msgstr ""
 
-#: inc/woocommerce.php:681
+#: inc/woocommerce.php:724
 msgid "نمایش شبکه‌ای"
 msgstr ""
 
-#: inc/woocommerce.php:685
+#: inc/woocommerce.php:728
 msgid "نمایش فهرستی"
 msgstr ""
 
-#: inc/helpers.php:47
-msgid "همه دسته‌بندی‌ها"
+#: inc/woocommerce.php:838
+msgid "با %s خرید بیشتر، ارسال سفارش شما رایگان می‌شود."
+msgstr ""
+
+#: inc/woocommerce.php:840
+msgid "ارسال این سفارش رایگان است."
+msgstr ""
+
+#: inc/helpers.php:48
+msgid "ارسال رایگان سفارش‌های بالای ۳ میلیون تومان  •  خرید مطمئن، روشنایی ماندگار"
+msgstr ""
+
+#: inc/helpers.php:49
+msgid "مشاوره خرید:"
+msgstr ""
+
+#: inc/helpers.php:58
+msgid "تهران، لاله‌زار جنوبی، خیابان منوچهری، پلاک ۱۲۴"
+msgstr ""
+
+#: inc/helpers.php:59
+msgid "شنبه تا پنجشنبه، ۹ تا ۱۸"
+msgstr ""
+
+#: inc/helpers.php:79
+msgid "پیشنهادهای ویژه امروز"
 msgstr ""
 
 #: inc/helpers.php:81
-msgid "تجهیزات الکتریکی باکیفیت، برای زندگی بهتر"
+msgid "پرفروش‌های صمدی"
 msgstr ""
 
-#: inc/helpers.php:82
-msgid "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت."
+#: inc/helpers.php:83
+msgid "خانه‌ای روشن، با انتخابی زیبا"
+msgstr ""
+
+#: inc/helpers.php:84
+msgid "مجموعه چراغ‌های آویز و روشنایی مدرن؛ نور را به سبک خودتان انتخاب کنید."
+msgstr ""
+
+#: inc/helpers.php:85
+msgid "مشاهده چراغ‌های دکوراتیو"
+msgstr ""
+
+#: inc/helpers.php:87
+msgid "برای پروژه‌تان، روی تجربه ما حساب کنید"
+msgstr ""
+
+#: inc/helpers.php:88
+msgid "بیش از سه دهه تجربه در تأمین تجهیزات برق ساختمان؛ مشاوره تخصصی، قیمت همکاری و تأمین یکجای سفارش‌های پروژه‌ای."
+msgstr ""
+
+#: inc/helpers.php:89
+msgid "۳۰+"
+msgstr ""
+
+#: inc/helpers.php:90
+msgid "سال تجربه"
 msgstr ""
 
 #: inc/helpers.php:91
-msgid "ارسال سریع"
+msgid "دریافت مشاوره تخصصی"
 msgstr ""
 
-#: inc/helpers.php:92
-msgid "به سراسر ایران"
+#: inc/helpers.php:93
+msgid "از پیشنهادهای روشن ما باخبر شوید"
 msgstr ""
 
 #: inc/helpers.php:94
-msgid "ضمانت اصالت کالا"
-msgstr ""
-
-#: inc/helpers.php:95
-msgid "از برندهای معتبر"
-msgstr ""
-
-#: inc/helpers.php:97
-msgid "مشاوره تخصصی"
-msgstr ""
-
-#: inc/helpers.php:98
-msgid "پیش از خرید"
-msgstr ""
-
-#: inc/helpers.php:100
-msgid "قیمت مناسب"
-msgstr ""
-
-#: inc/helpers.php:101
-msgid "خرید مستقیم"
+msgid "تخفیف‌های ویژه و محصولات جدید را زودتر از همه ببینید."
 msgstr ""
 
 #: inc/helpers.php:103
-msgid "پشتیبانی واقعی"
+msgid "تجهیزات مطمئن، انتخاب هوشمند"
 msgstr ""
 
 #: inc/helpers.php:104
-msgid "همیشه کنار شما"
+msgid "تجهیزات الکتریکی؛ با کیفیت، برای زندگی روشن"
+msgstr ""
+
+#: inc/helpers.php:105
+msgid "از کلید و پریز تا نورپردازی خانه و محل کار؛ هر آنچه برای یک انتخاب مطمئن نیاز دارید، در صمدی الکتریک."
+msgstr ""
+
+#: inc/helpers.php:106
+msgid "بیش از ۳۰ سال همراه برق‌کاران و سازندگان"
+msgstr ""
+
+#: inc/helpers.php:107
+msgid "خرید کلید و پریز"
+msgstr ""
+
+#: inc/helpers.php:109
+msgid "مشاوره خرید"
+msgstr ""
+
+#: inc/helpers.php:116
+msgid "ارسال سریع به سراسر ایران"
+msgstr ""
+
+#: inc/helpers.php:119
+msgid "تضمین اصالت کالا"
+msgstr ""
+
+#: inc/helpers.php:122
+msgid "۷ روز ضمانت بازگشت"
+msgstr ""
+
+#: inc/helpers.php:125
+msgid "مشاوره تخصصی خرید"
+msgstr ""
+
+#: inc/helpers.php:135
+msgid "گارانتی اصالت کالا"
+msgstr ""
+
+#: inc/helpers.php:155
+msgid "همراه شما در انتخاب تجهیزات برق و روشنایی؛ از یک کلید ساده تا تأمین یک پروژه کامل."
+msgstr ""
+
+#: inc/helpers.php:156
+msgid "خرید امن و مطمئن"
+msgstr ""
+
+#: inc/helpers.php:157
+msgid "پرداخت امن با درگاه بانکی"
 msgstr ""
 
 #: inc/customizer-controls.php:43
@@ -869,48 +1189,48 @@ msgstr ""
 msgid "ساخت منوی اصلی"
 msgstr ""
 
-#: inc/template-tags.php:80 inc/template-tags.php:107 inc/template-tags.php:148
+#: inc/template-tags.php:81 inc/template-tags.php:108 inc/template-tags.php:149
 msgid "مسیر راهنما"
 msgstr ""
 
-#: inc/template-tags.php:111 inc/template-tags.php:120
+#: inc/template-tags.php:112 inc/template-tags.php:121
 msgctxt "breadcrumb"
 msgid "خانه"
 msgstr ""
 
-#: inc/template-tags.php:145
+#: inc/template-tags.php:146
 msgid "صفحه پیدا نشد"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:170
 msgid "صفحه قبل"
 msgstr ""
 
-#: inc/template-tags.php:170
+#: inc/template-tags.php:171
 msgid "صفحه بعد"
 msgstr ""
 
-#: inc/template-tags.php:171
+#: inc/template-tags.php:172
 msgid "صفحه"
 msgstr ""
 
-#: inc/template-tags.php:214
-msgid "مشاهده همه"
+#: inc/template-tags.php:220
+msgid "%s دقیقه مطالعه"
 msgstr ""
 
-#: inc/template-tags.php:250
+#: inc/template-tags.php:275
 msgid "اینستاگرام"
 msgstr ""
 
-#: inc/template-tags.php:251
+#: inc/template-tags.php:276
 msgid "تلگرام"
 msgstr ""
 
-#: inc/template-tags.php:252
+#: inc/template-tags.php:277
 msgid "واتس‌اپ"
 msgstr ""
 
-#: inc/template-tags.php:253
+#: inc/template-tags.php:278
 msgid "لینکدین"
 msgstr ""
 

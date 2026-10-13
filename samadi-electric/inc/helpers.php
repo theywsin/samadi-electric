@@ -156,6 +156,7 @@ function samadi_defaults() {
 		'footer_trust_title'     => __( 'خرید امن و مطمئن', 'samadi-electric' ),
 		'footer_trust_text'      => __( 'پرداخت امن با درگاه بانکی', 'samadi-electric' ),
 		'footer_copyright'       => '',
+		'footer_back_to_top'     => true,
 	);
 
 	/**

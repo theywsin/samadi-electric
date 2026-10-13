@@ -111,27 +111,30 @@ $samadi_trust_text  = (string) samadi_option( 'footer_trust_text' );
 				?>
 			</div>
 
-			<div class="se-footer__col se-footer__col--trust">
-				<?php if ( $samadi_trust_title ) : ?>
-					<h2 class="se-footer__title"><?php echo esc_html( $samadi_trust_title ); ?></h2>
-				<?php endif; ?>
-				<div class="se-trust">
-					<?php if ( is_active_sidebar( 'footer-trust' ) ) : ?>
-						<?php dynamic_sidebar( 'footer-trust' ); ?>
-					<?php else : ?>
-						<span class="se-trust__seal"><?php samadi_icon( 'shield-check', array( 'size' => 38 ) ); ?></span>
-						<span class="se-trust__seal"><?php samadi_icon( 'badge-check', array( 'size' => 38 ) ); ?></span>
+			<?php // Seal placeholders appear only in the Customizer, so visitors never see seals the store does not hold. ?>
+			<?php if ( is_active_sidebar( 'footer-trust' ) || is_customize_preview() ) : ?>
+				<div class="se-footer__col se-footer__col--trust">
+					<?php if ( $samadi_trust_title ) : ?>
+						<h2 class="se-footer__title"><?php echo esc_html( $samadi_trust_title ); ?></h2>
+					<?php endif; ?>
+					<div class="se-trust">
+						<?php if ( is_active_sidebar( 'footer-trust' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-trust' ); ?>
+						<?php else : ?>
+							<span class="se-trust__seal"><?php samadi_icon( 'shield-check', array( 'size' => 38 ) ); ?></span>
+							<span class="se-trust__seal"><?php samadi_icon( 'badge-check', array( 'size' => 38 ) ); ?></span>
+						<?php endif; ?>
+					</div>
+					<?php if ( $samadi_trust_text ) : ?>
+						<p class="se-footer__trust-text"><?php echo esc_html( $samadi_trust_text ); ?></p>
 					<?php endif; ?>
 				</div>
-				<?php if ( $samadi_trust_text ) : ?>
-					<p class="se-footer__trust-text"><?php echo esc_html( $samadi_trust_text ); ?></p>
-				<?php endif; ?>
-			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 
 	<div class="se-footer__bottom">
-		<div class="se-container">
+		<div class="se-container se-footer__bottom-row">
 			<p class="se-footer__copy">
 				<?php
 				if ( $samadi_copyright ) {
@@ -142,6 +145,26 @@ $samadi_trust_text  = (string) samadi_option( 'footer_trust_text' );
 				}
 				?>
 			</p>
+			<?php
+			if ( has_nav_menu( 'footer_legal' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location'       => 'footer_legal',
+						'container'            => 'nav',
+						'container_class'      => 'se-footer__legal',
+						'container_aria_label' => __( 'لینک‌های قوانین', 'samadi-electric' ),
+						'menu_class'           => 'se-footer__legal-links',
+						'depth'                => 1,
+					)
+				);
+			}
+			?>
+			<?php if ( samadi_option( 'footer_back_to_top' ) ) : ?>
+				<a class="se-footer__top" href="#se-page">
+					<?php samadi_icon( 'arrow-up', array( 'size' => 16 ) ); ?>
+					<?php esc_html_e( 'بازگشت به بالا', 'samadi-electric' ); ?>
+				</a>
+			<?php endif; ?>
 		</div>
 	</div>
 </footer>
