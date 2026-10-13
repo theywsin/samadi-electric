@@ -711,6 +711,62 @@
 	margin: 0;
 }
 
+.se-footer__bottom-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px 24px;
+}
+
+.se-footer__bottom-row::before {
+	flex-basis: 100%;
+}
+
+/* Copyright stays centered when it is the only item, as in the design. */
+.se-footer__bottom-row > .se-footer__copy:last-child {
+	flex: 1 1 auto;
+}
+
+.se-footer__legal-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4px 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.se-footer__legal a,
+.se-footer__copy a {
+	color: var(--se-on-dark);
+}
+
+.se-footer__legal a:hover,
+.se-footer__copy a:hover {
+	color: #fff;
+}
+
+.se-footer__top {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 32px;
+	padding: 4px 12px;
+	border-radius: var(--se-radius-sm);
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	transition: background-color 0.2s var(--se-ease), color 0.2s var(--se-ease);
+}
+
+.se-footer__top:hover {
+	background: var(--se-accent);
+	color: var(--se-primary);
+}
+
 .se-contact {
 	margin: 0;
 	padding: 0;
@@ -972,6 +1028,15 @@
 
 	.se-footer__bottom .se-container::before {
 		margin-block-end: 28px;
+	}
+
+	.se-footer__bottom-row {
+		flex-direction: column;
+	}
+
+	.se-footer__bottom-row::before {
+		flex-basis: auto;
+		align-self: stretch;
 	}
 
 	.se-main {

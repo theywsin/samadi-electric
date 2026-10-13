@@ -59,10 +59,11 @@ function samadi_setup() {
 
 	register_nav_menus(
 		array(
-			'primary'     => __( 'منوی اصلی (هدر)', 'samadi-electric' ),
-			'mobile'      => __( 'منوی موبایل', 'samadi-electric' ),
-			'footer_shop' => __( 'فوتر: دسترسی سریع فروشگاه', 'samadi-electric' ),
-			'footer_help' => __( 'فوتر: راهنما و قوانین', 'samadi-electric' ),
+			'primary'      => __( 'منوی اصلی (هدر)', 'samadi-electric' ),
+			'mobile'       => __( 'منوی موبایل', 'samadi-electric' ),
+			'footer_shop'  => __( 'فوتر: دسترسی سریع فروشگاه', 'samadi-electric' ),
+			'footer_help'  => __( 'فوتر: راهنما و قوانین', 'samadi-electric' ),
+			'footer_legal' => __( 'فوتر: لینک‌های نوار پایین (قوانین، حریم خصوصی)', 'samadi-electric' ),
 		)
 	);
 
