@@ -12,6 +12,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 THEME="$ROOT/samadi-electric"
 PLUGIN="$ROOT/samadi-elementor-widgets"
 CORE="$ROOT/samadi-core"
+ACCOUNT="$ROOT/samadi-account"
 DIST="$ROOT/dist"
 
 cat "$PLUGIN/assets/css/standalone-base.css" "$THEME/assets/css/components.css" > "$PLUGIN/assets/css/standalone.css"
@@ -20,7 +21,7 @@ php "$ROOT/bin/make-pot.php" "$THEME" samadi-electric "$THEME/languages/samadi-e
 php "$ROOT/bin/make-pot.php" "$PLUGIN" samadi-elementor-widgets "$PLUGIN/languages/samadi-elementor-widgets.pot"
 php "$ROOT/bin/make-pot.php" "$CORE" samadi-core "$CORE/languages/samadi-core.pot"
 
-find "$THEME" "$PLUGIN" "$CORE" -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+find "$THEME" "$PLUGIN" "$CORE" "$ACCOUNT" -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
 
 if [ ! -f "$CORE/demo/images/hero-1.jpg" ]; then
 	python3 "$ROOT/bin/make-demo-images.py" "$CORE/demo/images"
@@ -28,6 +29,7 @@ fi
 
 rm -rf "$DIST" && mkdir -p "$DIST"
 
+( cd "$ROOT" && zip -qr "$DIST/samadi-account.zip" samadi-account -x '*.DS_Store' )
 ( cd "$ROOT" && zip -qr "$DIST/samadi-elementor-widgets.zip" samadi-elementor-widgets -x '*.DS_Store' 'samadi-elementor-widgets/assets/css/standalone-base.css' )
 
 mkdir -p "$CORE/bundled" && cp "$DIST/samadi-elementor-widgets.zip" "$CORE/bundled/"
