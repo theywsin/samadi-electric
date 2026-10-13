@@ -1,0 +1,585 @@
+# Copyright (C) Samadi Electric
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Domain: samadi-core\n"
+
+#: templates/compare.php:29
+msgid "مقایسه %s کالا"
+msgstr ""
+
+#: templates/compare.php:38
+msgid "فقط تفاوت‌ها"
+msgstr ""
+
+#: templates/compare.php:41
+msgid "پاک کردن همه"
+msgstr ""
+
+#: templates/compare.php:44
+msgid "جدول مقایسه محصولات"
+msgstr ""
+
+#: templates/compare.php:46
+msgid "مقایسه مشخصات محصولات"
+msgstr ""
+
+#: templates/compare.php:49
+msgid "ویژگی"
+msgstr ""
+
+#: templates/compare.php:52
+msgid "حذف %s از مقایسه"
+msgstr ""
+
+#: templates/compare.php:72
+msgid "ندارد"
+msgstr ""
+
+#: templates/compare.php:82
+msgid "هنوز محصولی برای مقایسه انتخاب نکرده‌اید"
+msgstr ""
+
+#: templates/compare.php:83
+msgid "روی کارت هر محصول، دکمه مقایسه را بزنید تا مشخصات آن‌ها را کنار هم ببینید."
+msgstr ""
+
+#: templates/compare.php:84 templates/wishlist.php:52
+msgid "مشاهده محصولات"
+msgstr ""
+
+#: templates/wishlist.php:23
+msgid "%s کالا در فهرست علاقه‌مندی‌های شما"
+msgstr ""
+
+#: templates/wishlist.php:50
+msgid "فهرست علاقه‌مندی‌های شما خالی است"
+msgstr ""
+
+#: templates/wishlist.php:51
+msgid "با زدن آیکون قلب روی هر محصول، آن را برای خرید بعدی اینجا نگه دارید."
+msgstr ""
+
+#: includes/modules/class-wishlist.php:220 includes/modules/class-wishlist.php:222
+msgid "حذف از علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/modules/class-wishlist.php:220 includes/modules/class-wishlist.php:221 includes/modules/class-wishlist.php:247 includes/modules/class-wishlist.php:250
+msgid "افزودن به علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/modules/class-wishlist.php:248 includes/modules/class-wishlist.php:250
+msgid "در علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/modules/class-wishlist.php:267
+msgid "به علاقه‌مندی‌ها اضافه شد."
+msgstr ""
+
+#: includes/modules/class-wishlist.php:268
+msgid "از علاقه‌مندی‌ها حذف شد."
+msgstr ""
+
+#: includes/modules/class-wishlist.php:269 includes/class-settings.php:255
+msgid "مشاهده"
+msgstr ""
+
+#: includes/modules/class-wishlist.php:377
+msgid "این محصول در دسترس نیست."
+msgstr ""
+
+#: includes/modules/class-compare.php:135 includes/modules/class-compare.php:137
+msgid "حذف از مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:135 includes/modules/class-compare.php:136 includes/modules/class-compare.php:162 includes/modules/class-compare.php:165
+msgid "افزودن به مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:163 includes/modules/class-compare.php:165
+msgid "در فهرست مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:184
+msgid "به فهرست مقایسه اضافه شد."
+msgstr ""
+
+#: includes/modules/class-compare.php:185
+msgid "از فهرست مقایسه حذف شد."
+msgstr ""
+
+#: includes/modules/class-compare.php:187
+msgid "حداکثر %s محصول را می‌توانید با هم مقایسه کنید."
+msgstr ""
+
+#: includes/modules/class-compare.php:188
+msgid "مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:219
+msgid "%s کالا برای مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:224
+msgid "مقایسه کنید"
+msgstr ""
+
+#: includes/modules/class-compare.php:225
+msgid "پاک کردن فهرست مقایسه"
+msgstr ""
+
+#: includes/modules/class-compare.php:273
+msgid "قیمت"
+msgstr ""
+
+#: includes/modules/class-compare.php:282
+msgid "امتیاز"
+msgstr ""
+
+#: includes/modules/class-compare.php:291
+msgid "موجودی"
+msgstr ""
+
+#: includes/modules/class-compare.php:294
+msgid "ناموجود"
+msgstr ""
+
+#: includes/modules/class-compare.php:296
+msgid "قابل پیش‌سفارش"
+msgstr ""
+
+#: includes/modules/class-compare.php:296
+msgid "موجود"
+msgstr ""
+
+#: includes/modules/class-compare.php:302
+msgid "برند"
+msgstr ""
+
+#: includes/modules/class-compare.php:311
+msgid "کد کالا"
+msgstr ""
+
+#: includes/modules/class-compare.php:321
+msgid "وزن"
+msgstr ""
+
+#: includes/modules/class-compare.php:331
+msgid "ابعاد"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:125
+msgid "این شماره قبلاً در خبرنامه عضو شده است."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:127
+msgid "لطفاً شماره موبایل معتبر وارد کنید؛ مثل ۰۹۱۲۳۴۵۶۷۸۹."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:129
+msgid "تعداد تلاش‌ها زیاد بود. چند دقیقه دیگر دوباره امتحان کنید."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:131
+msgid "ثبت عضویت انجام نشد. لطفاً دوباره تلاش کنید."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:233
+msgid "[%s] عضو جدید خبرنامه"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:235
+msgid "شماره موبایل: %1$s\nمحل فرم: %2$s"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:316
+msgid "در حال ثبت…"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:353 includes/modules/class-newsletter-table.php:40
+msgid "شماره موبایل"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:359
+msgid "وب‌سایت"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:373 includes/modules/class-newsletter.php:374 includes/modules/class-newsletter.php:438
+msgid "اعضای خبرنامه"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:439
+msgid "خروجی CSV"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:442
+msgid "ماژول خبرنامه خاموش است؛ فرم عضویت در سایت نمایش داده نمی‌شود."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:448
+msgid "%s عضو حذف شد."
+msgstr ""
+
+#: includes/modules/class-newsletter.php:455
+msgid "جستجوی شماره"
+msgstr ""
+
+#: includes/modules/class-newsletter.php:470
+msgid "دسترسی ندارید."
+msgstr ""
+
+#: includes/modules/class-security.php:126
+msgid "<strong>خطا:</strong> نام کاربری یا رمز عبور نادرست است."
+msgstr ""
+
+#: includes/modules/class-newsletter-table.php:41
+msgid "محل فرم"
+msgstr ""
+
+#: includes/modules/class-newsletter-table.php:42
+msgid "کاربر"
+msgstr ""
+
+#: includes/modules/class-newsletter-table.php:43
+msgid "تاریخ عضویت"
+msgstr ""
+
+#: includes/modules/class-newsletter-table.php:65 includes/modules/class-newsletter-table.php:140
+msgid "حذف"
+msgstr ""
+
+#: includes/modules/class-newsletter-table.php:170
+msgid "هنوز کسی در خبرنامه عضو نشده است."
+msgstr ""
+
+#: includes/modules/class-checkout.php:111
+msgid "کدپستی ۱۰ رقمی"
+msgstr ""
+
+#: includes/modules/class-checkout.php:126
+msgid "تلفن همراه"
+msgstr ""
+
+#: includes/modules/class-checkout.php:141 includes/modules/class-checkout.php:187 includes/modules/class-checkout.php:208
+msgid "کد ملی"
+msgstr ""
+
+#: includes/modules/class-checkout.php:247
+msgid "شماره موبایل معتبر نیست. شماره را به شکل ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید."
+msgstr ""
+
+#: includes/modules/class-checkout.php:253
+msgid "کدپستی باید ۱۰ رقم باشد."
+msgstr ""
+
+#: includes/modules/class-checkout.php:257
+msgid "کد ملی وارد شده معتبر نیست."
+msgstr ""
+
+#: includes/class-settings.php:44 includes/class-settings.php:45
+msgid "صمدی"
+msgstr ""
+
+#: includes/class-settings.php:53 includes/class-settings.php:334
+msgid "تنظیمات هسته صمدی"
+msgstr ""
+
+#: includes/class-settings.php:53 includes/class-settings.php:63
+msgid "تنظیمات"
+msgstr ""
+
+#: includes/class-settings.php:75
+msgid "ماژول‌ها"
+msgstr ""
+
+#: includes/class-settings.php:75
+msgid "هر بخش را می‌توانید جداگانه خاموش کنید. ماژول‌های فروشگاهی فقط با ووکامرس فعال اجرا می‌شوند."
+msgstr ""
+
+#: includes/class-settings.php:76 includes/class-settings.php:94 includes/class-plugin.php:185
+msgid "علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/class-settings.php:76
+msgid "دکمه قلب روی کارت محصول، آیکون هدر، نوار موبایل و بخش علاقه‌مندی حساب کاربری قالب خودکار به این ماژول وصل می‌شوند. فهرست مهمان در کوکی و فهرست کاربر واردشده در حسابش ذخیره می‌شود و هنگام ورود ادغام می‌شود."
+msgstr ""
+
+#: includes/class-settings.php:77 includes/class-settings.php:95 includes/class-plugin.php:186
+msgid "مقایسه محصولات"
+msgstr ""
+
+#: includes/class-settings.php:77
+msgid "محصولات انتخاب‌شده در مرورگر بازدیدکننده نگه داشته می‌شوند و در برگه مقایسه کنار هم نمایش داده می‌شوند."
+msgstr ""
+
+#: includes/class-settings.php:78
+msgid "خبرنامه"
+msgstr ""
+
+#: includes/class-settings.php:78
+msgid "فرم عضویت با شماره موبایل (شورت‌کد [samadi_newsletter]). بخش خبرنامه صفحه اصلی قالب از همین فرم استفاده می‌کند."
+msgstr ""
+
+#: includes/class-settings.php:79 includes/class-settings.php:97
+msgid "تاریخ شمسی"
+msgstr ""
+
+#: includes/class-settings.php:79
+msgid "تاریخ نوشته‌ها، دیدگاه‌ها و سفارش‌ها به شمسی نمایش داده می‌شود. اگر افزونه تاریخ شمسی دیگری (مثل Parsi Date) فعال باشد، این ماژول کاری نمی‌کند. قالب‌های ماشینی مثل Y-m-d و c میلادی می‌مانند."
+msgstr ""
+
+#: includes/class-settings.php:80 includes/class-settings.php:98
+msgid "تسویه‌حساب ایرانی"
+msgstr ""
+
+#: includes/class-settings.php:80
+msgid "ارقام فارسی و عربی فرم‌ها به لاتین تبدیل و شماره موبایل، کدپستی و کد ملی اعتبارسنجی می‌شوند (فقط برای آدرس‌های ایران)."
+msgstr ""
+
+#: includes/class-settings.php:81 includes/class-settings.php:99
+msgid "اسکیمای فروشگاه"
+msgstr ""
+
+#: includes/class-settings.php:81
+msgid "اطلاعات ساختاریافته فروشگاه (نام، لوگو، تلفن، آدرس، شبکه‌های اجتماعی) در صفحه اصلی. اطلاعات تماس از سفارشی‌ساز قالب خوانده می‌شود. با فعال بودن Yoast، Rank Math، SEOPress یا AIOSEO خروجی نمی‌دهد."
+msgstr ""
+
+#: includes/class-settings.php:82
+msgid "امنیت"
+msgstr ""
+
+#: includes/class-settings.php:82
+msgid "مقاوم‌سازی‌های کم‌خطر که روی کارکرد فروشگاه اثری ندارند."
+msgstr ""
+
+#: includes/class-settings.php:83
+msgid "پیشرفته"
+msgstr ""
+
+#: includes/class-settings.php:96
+msgid "خبرنامه پیامکی"
+msgstr ""
+
+#: includes/class-settings.php:100
+msgid "مقاوم‌سازی امنیتی"
+msgstr ""
+
+#: includes/class-settings.php:102
+msgid "برگه علاقه‌مندی‌ها"
+msgstr ""
+
+#: includes/class-settings.php:102
+msgid "برگه‌ای که شورت‌کد [samadi_wishlist] در آن است. هنگام فعال‌سازی افزونه خودکار ساخته می‌شود."
+msgstr ""
+
+#: includes/class-settings.php:103 includes/class-settings.php:108
+msgid "دکمه در صفحه محصول"
+msgstr ""
+
+#: includes/class-settings.php:103
+msgid "دکمه «افزودن به علاقه‌مندی‌ها» زیر دکمه خرید"
+msgstr ""
+
+#: includes/class-settings.php:105
+msgid "برگه مقایسه"
+msgstr ""
+
+#: includes/class-settings.php:105
+msgid "برگه‌ای که شورت‌کد [samadi_compare] در آن است. هنگام فعال‌سازی افزونه خودکار ساخته می‌شود."
+msgstr ""
+
+#: includes/class-settings.php:106
+msgid "حداکثر تعداد محصولات"
+msgstr ""
+
+#: includes/class-settings.php:106
+msgid "بین ۲ تا ۶"
+msgstr ""
+
+#: includes/class-settings.php:107
+msgid "دکمه روی کارت محصول"
+msgstr ""
+
+#: includes/class-settings.php:110
+msgid "متن راهنمای فیلد"
+msgstr ""
+
+#: includes/class-settings.php:111
+msgid "متن دکمه"
+msgstr ""
+
+#: includes/class-settings.php:112
+msgid "پیام موفقیت"
+msgstr ""
+
+#: includes/class-settings.php:113
+msgid "ایمیل اعلان عضو جدید"
+msgstr ""
+
+#: includes/class-settings.php:113
+msgid "خالی = بدون اعلان"
+msgstr ""
+
+#: includes/class-settings.php:115
+msgid "در پیشخوان وردپرس"
+msgstr ""
+
+#: includes/class-settings.php:115
+msgid "تاریخ‌ها در بخش مدیریت هم شمسی نمایش داده شوند"
+msgstr ""
+
+#: includes/class-settings.php:116
+msgid "ارقام فارسی"
+msgstr ""
+
+#: includes/class-settings.php:116
+msgid "اعداد تاریخ با ارقام فارسی نوشته شوند"
+msgstr ""
+
+#: includes/class-settings.php:118
+msgid "اعتبارسنجی موبایل"
+msgstr ""
+
+#: includes/class-settings.php:118
+msgid "فیلد تلفن باید شماره موبایل ایران باشد (۰۹xxxxxxxxx)"
+msgstr ""
+
+#: includes/class-settings.php:119
+msgid "اعتبارسنجی کدپستی"
+msgstr ""
+
+#: includes/class-settings.php:119
+msgid "کدپستی باید ۱۰ رقمی باشد"
+msgstr ""
+
+#: includes/class-settings.php:122
+msgid "فیلد کد ملی"
+msgstr ""
+
+#: includes/class-settings.php:124
+msgid "برای صدور فاکتور رسمی یا ارسال با پست"
+msgstr ""
+
+#: includes/class-settings.php:126
+msgid "نمایش داده نشود"
+msgstr ""
+
+#: includes/class-settings.php:127
+msgid "اختیاری"
+msgstr ""
+
+#: includes/class-settings.php:128
+msgid "الزامی"
+msgstr ""
+
+#: includes/class-settings.php:131
+msgid "پنهان کردن نام شرکت"
+msgstr ""
+
+#: includes/class-settings.php:132
+msgid "پنهان کردن خط دوم آدرس"
+msgstr ""
+
+#: includes/class-settings.php:133
+msgid "کشور پیش‌فرض ایران"
+msgstr ""
+
+#: includes/class-settings.php:133
+msgid "وقتی کشور فروشگاه ایران است، فرم با ایران و ترتیب «استان، شهر، آدرس» شروع شود"
+msgstr ""
+
+#: includes/class-settings.php:137
+msgid "نوع کسب‌وکار"
+msgstr ""
+
+#: includes/class-settings.php:141
+msgid "فروشگاه (Store)"
+msgstr ""
+
+#: includes/class-settings.php:142
+msgid "فروشگاه لوازم الکترونیکی (ElectronicsStore)"
+msgstr ""
+
+#: includes/class-settings.php:143
+msgid "فروشگاه ابزار و یراق (HardwareStore)"
+msgstr ""
+
+#: includes/class-settings.php:144
+msgid "فروشگاه لوازم خانه (HomeGoodsStore)"
+msgstr ""
+
+#: includes/class-settings.php:145
+msgid "فقط فروشگاه اینترنتی (OnlineStore)"
+msgstr ""
+
+#: includes/class-settings.php:148
+msgid "جعبه جستجوی گوگل"
+msgstr ""
+
+#: includes/class-settings.php:148
+msgid "اعلام جستجوی محصولات سایت به موتورهای جستجو (WebSite + SearchAction)"
+msgstr ""
+
+#: includes/class-settings.php:150
+msgid "غیرفعال کردن XML-RPC"
+msgstr ""
+
+#: includes/class-settings.php:150
+msgid "اگر از اپلیکیشن موبایل وردپرس یا Jetpack استفاده می‌کنید، خاموش کنید."
+msgstr ""
+
+#: includes/class-settings.php:151
+msgid "پنهان کردن نسخه وردپرس"
+msgstr ""
+
+#: includes/class-settings.php:152
+msgid "جلوگیری از شناسایی نام کاربری‌ها"
+msgstr ""
+
+#: includes/class-settings.php:152
+msgid "آدرس ?author= و فهرست کاربران REST API برای بازدیدکنندگان بسته می‌شود"
+msgstr ""
+
+#: includes/class-settings.php:153
+msgid "پیام خطای یکسان ورود"
+msgstr ""
+
+#: includes/class-settings.php:153
+msgid "خطای ورود نشان نمی‌دهد نام کاربری درست بوده یا رمز عبور"
+msgstr ""
+
+#: includes/class-settings.php:155
+msgid "حذف داده‌ها هنگام پاک کردن افزونه"
+msgstr ""
+
+#: includes/class-settings.php:155
+msgid "تنظیمات، فهرست اعضای خبرنامه و علاقه‌مندی‌های کاربران پاک می‌شوند"
+msgstr ""
+
+#: includes/class-settings.php:167
+msgid "افزونه علاقه‌مندی دیگری فعال است؛ قالب از آن استفاده می‌کند و این ماژول کنار می‌رود."
+msgstr ""
+
+#: includes/class-settings.php:170
+msgid "افزونه تاریخ شمسی دیگری فعال است؛ این ماژول کاری نمی‌کند."
+msgstr ""
+
+#: includes/class-settings.php:240
+msgid "فعال"
+msgstr ""
+
+#: includes/class-settings.php:250
+msgid "— انتخاب برگه —"
+msgstr ""
+
+#: includes/class-settings.php:335
+msgid "بخش‌های تنظیمات"
+msgstr ""
+
+#: includes/class-plugin.php:166
+msgid "خطایی رخ داد. لطفاً دوباره تلاش کنید."
+msgstr ""
+
