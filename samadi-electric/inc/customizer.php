@@ -379,6 +379,22 @@ function samadi_customize_register( $wp_customize ) {
 
 	/* ----- Footer ----- */
 	$wp_customize->add_section( 'samadi_footer', array( 'title' => __( 'فوتر', 'samadi-electric' ), 'panel' => 'samadi' ) );
+	$add(
+		'footer_style',
+		'samadi_footer',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'رنگ‌بندی فوتر', 'samadi-electric' ),
+			'choices' => array(
+				'dark'  => __( 'تیره (رنگ اصلی)', 'samadi-electric' ),
+				'light' => __( 'روشن', 'samadi-electric' ),
+			),
+		),
+		'samadi_sanitize_choice'
+	);
+	$add( 'footer_cta_show', 'samadi_footer', array( 'type' => 'checkbox', 'label' => __( 'نوار مشاوره بالای فوتر (فقط وقتی تلفن یا لینک خرید عمده تعیین شده باشد)', 'samadi-electric' ) ), 'samadi_sanitize_checkbox' );
+	$add( 'footer_cta_title', 'samadi_footer', array( 'label' => __( 'عنوان نوار مشاوره', 'samadi-electric' ) ), 'sanitize_text_field' );
+	$add( 'footer_cta_text', 'samadi_footer', array( 'type' => 'textarea', 'label' => __( 'توضیح نوار مشاوره', 'samadi-electric' ) ), 'sanitize_textarea_field' );
 	$add( 'footer_about', 'samadi_footer', array( 'type' => 'textarea', 'label' => __( 'درباره فروشگاه', 'samadi-electric' ) ), 'wp_kses_post' );
 	$add( 'footer_copyright', 'samadi_footer', array( 'label' => __( 'متن کپی‌رایت (خالی = پیش‌فرض)', 'samadi-electric' ) ), 'wp_kses_post' );
 }

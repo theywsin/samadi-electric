@@ -85,6 +85,58 @@
 		}
 	} );
 
+	/* ---------- Footer: link columns collapse into accordions on mobile ---------- */
+
+	var footer = document.querySelector( '[data-se-footer]' );
+	if ( footer && window.matchMedia ) {
+		var footerMq = window.matchMedia( '(max-width: 767px)' );
+		var chevron = '<svg class="se-footer__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>';
+		var cols = Array.prototype.slice.call( footer.querySelectorAll( '[data-se-footer-col]' ) );
+
+		var setFooterMode = function () {
+			var collapsible = footerMq.matches;
+			footer.classList.toggle( 'is-collapsible', collapsible );
+
+			cols.forEach( function ( col ) {
+				var title = col.querySelector( '.se-footer__title' );
+				var panel = col.querySelector( '.se-footer__panel' );
+				var toggle = title && title.querySelector( '.se-footer__toggle' );
+				if ( ! title || ! panel ) {
+					return;
+				}
+
+				if ( collapsible && ! toggle ) {
+					toggle = document.createElement( 'button' );
+					toggle.type = 'button';
+					toggle.className = 'se-footer__toggle';
+					toggle.setAttribute( 'aria-controls', panel.id );
+					toggle.innerHTML = '<span></span>' + chevron;
+					toggle.firstChild.textContent = title.textContent;
+					title.textContent = '';
+					title.appendChild( toggle );
+					toggle.addEventListener( 'click', function () {
+						var open = 'true' !== toggle.getAttribute( 'aria-expanded' );
+						toggle.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+						panel.hidden = ! open;
+					} );
+				}
+
+				if ( collapsible ) {
+					toggle.setAttribute( 'aria-expanded', 'false' );
+					panel.hidden = true;
+				} else if ( toggle ) {
+					title.textContent = toggle.textContent;
+					panel.hidden = false;
+				}
+			} );
+		};
+
+		setFooterMode();
+		if ( footerMq.addEventListener ) {
+			footerMq.addEventListener( 'change', setFooterMode );
+		}
+	}
+
 	/* ---------- WooCommerce events (jQuery-based) → announcements ---------- */
 
 	if ( window.jQuery ) {

@@ -283,3 +283,145 @@ function samadi_is_built_with_elementor( $post_id = null ) {
 
 	return $document && $document->is_built_with_elementor();
 }
+
+/**
+ * Render a flat list of footer links.
+ *
+ * @param array<int, array{url:string,label:string}> $links Links.
+ * @return string Escaped HTML.
+ */
+function samadi_footer_links_html( $links ) {
+	if ( ! $links ) {
+		return '';
+	}
+
+	$html = '<ul class="se-footer__links">';
+	foreach ( $links as $link ) {
+		$html .= sprintf( '<li><a href="%s">%s</a></li>', esc_url( $link['url'] ), esc_html( $link['label'] ) );
+	}
+
+	return $html . '</ul>';
+}
+
+/**
+ * Footer link columns (between the brand column and the contact column).
+ *
+ * Every column is built only from real data: an assigned menu, product categories,
+ * WooCommerce account pages or published policy pages. Empty columns are skipped.
+ *
+ * @return array<string, array{title:string,html:string}>
+ */
+function samadi_footer_link_columns() {
+	$columns = array();
+	$menu    = static function ( $location ) {
+		return (string) wp_nav_menu(
+			array(
+				'theme_location' => $location,
+				'container'      => false,
+				'menu_class'     => 'se-footer__links',
+				'depth'          => 1,
+				'fallback_cb'    => false,
+				'echo'           => false,
+			)
+		);
+	};
+
+	// Shop: assigned menu, or the top-level product categories.
+	if ( has_nav_menu( 'footer_shop' ) ) {
+		$columns['shop'] = array(
+			'title' => __( 'دسته‌بندی‌های اصلی', 'samadi-electric' ),
+			'html'  => $menu( 'footer_shop' ),
+		);
+	} elseif ( samadi_is_wc() ) {
+		$links = array();
+		foreach ( array_slice( samadi_mega_menu_categories(), 0, 6 ) as $cat ) {
+			$url = get_term_link( $cat['term'] );
+			if ( ! is_wp_error( $url ) ) {
+				$links[] = array(
+					'url'   => $url,
+					'label' => $cat['term']->name,
+				);
+			}
+		}
+		$columns['shop'] = array(
+			'title' => __( 'دسته‌بندی‌های اصلی', 'samadi-electric' ),
+			'html'  => samadi_footer_links_html( $links ),
+		);
+	}
+
+	// Customer: WooCommerce account, orders, cart, wishlist and wholesale.
+	if ( samadi_is_wc() ) {
+		$links = array(
+			array(
+				'url'   => wc_get_page_permalink( 'myaccount' ),
+				'label' => __( 'حساب کاربری من', 'samadi-electric' ),
+			),
+			array(
+				'url'   => wc_get_account_endpoint_url( 'orders' ),
+				'label' => __( 'پیگیری سفارش‌ها', 'samadi-electric' ),
+			),
+			array(
+				'url'   => wc_get_cart_url(),
+				'label' => __( 'سبد خرید', 'samadi-electric' ),
+			),
+		);
+		if ( samadi_wishlist_url() ) {
+			$links[] = array(
+				'url'   => samadi_wishlist_url(),
+				'label' => __( 'علاقه‌مندی‌ها', 'samadi-electric' ),
+			);
+		}
+		if ( samadi_wholesale_url() ) {
+			$links[] = array(
+				'url'   => samadi_wholesale_url(),
+				'label' => (string) samadi_option( 'header_wholesale_label' ),
+			);
+		}
+		$columns['customer'] = array(
+			'title' => __( 'خدمات مشتریان', 'samadi-electric' ),
+			'html'  => samadi_footer_links_html( $links ),
+		);
+	}
+
+	// Help: assigned menu, or the published privacy / terms pages.
+	if ( has_nav_menu( 'footer_help' ) ) {
+		$columns['help'] = array(
+			'title' => wp_get_nav_menu_name( 'footer_help' ),
+			'html'  => $menu( 'footer_help' ),
+		);
+	} else {
+		$links = array();
+		$pages = array( (int) get_option( 'wp_page_for_privacy_policy' ) );
+		if ( samadi_is_wc() ) {
+			$pages[] = (int) wc_terms_and_conditions_page_id();
+		}
+		foreach ( array_unique( array_filter( $pages ) ) as $page_id ) {
+			if ( 'publish' === get_post_status( $page_id ) ) {
+				$links[] = array(
+					'url'   => get_permalink( $page_id ),
+					'label' => get_the_title( $page_id ),
+				);
+			}
+		}
+		if ( $links ) {
+			$columns['help'] = array(
+				'title' => __( 'راهنما و قوانین', 'samadi-electric' ),
+				'html'  => samadi_footer_links_html( $links ),
+			);
+		}
+	}
+
+	$columns = array_filter(
+		$columns,
+		static function ( $column ) {
+			return '' !== trim( $column['html'] );
+		}
+	);
+
+	/**
+	 * Filter footer link columns.
+	 *
+	 * @param array $columns Columns keyed by slug: { title, html (escaped) }.
+	 */
+	return apply_filters( 'samadi_footer_link_columns', $columns );
+}

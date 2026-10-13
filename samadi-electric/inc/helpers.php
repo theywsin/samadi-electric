@@ -126,6 +126,10 @@ function samadi_defaults() {
 		'mobile_sticky_cart'     => true,
 
 		// Footer.
+		'footer_style'           => 'dark',
+		'footer_cta_show'        => true,
+		'footer_cta_title'       => __( 'برای انتخاب تجهیزات مشاوره می‌خواهید؟', 'samadi-electric' ),
+		'footer_cta_text'        => __( 'کارشناسان ما برای استعلام قیمت، خرید عمده و انتخاب کالای مناسب پاسخگوی شما هستند.', 'samadi-electric' ),
 		'footer_about'           => '',
 		'footer_copyright'       => '',
 	);

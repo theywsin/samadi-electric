@@ -687,3 +687,137 @@ function samadi_wc_view_toggle() {
 	</div>
 	<?php
 }
+
+/* -------------------------------------------------------------------------
+ * My account
+ * ---------------------------------------------------------------------- */
+
+/**
+ * Icon and short description for a My Account endpoint.
+ *
+ * @param string $endpoint Endpoint key from wc_get_account_menu_items().
+ * @return array{icon:string,desc:string}
+ */
+function samadi_wc_account_item_meta( $endpoint ) {
+	$map = array(
+		'dashboard'       => array( 'layout-grid', __( 'خلاصه حساب و آخرین سفارش‌ها', 'samadi-electric' ) ),
+		'orders'          => array( 'package', __( 'پیگیری وضعیت و جزئیات سفارش‌ها', 'samadi-electric' ) ),
+		'downloads'       => array( 'download', __( 'فایل‌های قابل دانلود خریدها', 'samadi-electric' ) ),
+		'edit-address'    => array( 'map-pin', __( 'آدرس‌های ارسال و صورتحساب', 'samadi-electric' ) ),
+		'payment-methods' => array( 'wallet', __( 'روش‌های پرداخت ذخیره‌شده', 'samadi-electric' ) ),
+		'edit-account'    => array( 'user', __( 'نام، ایمیل و رمز عبور', 'samadi-electric' ) ),
+		'customer-logout' => array( 'log-out', '' ),
+	);
+	$meta = isset( $map[ $endpoint ] ) ? $map[ $endpoint ] : array( 'chevron-left', '' );
+
+	/**
+	 * Filter the icon/description of a My Account menu item (custom endpoints from plugins).
+	 *
+	 * @param array  $meta     { icon, desc }.
+	 * @param string $endpoint Endpoint.
+	 */
+	return apply_filters(
+		'samadi_account_item_meta',
+		array(
+			'icon' => $meta[0],
+			'desc' => $meta[1],
+		),
+		$endpoint
+	);
+}
+
+/**
+ * Current My Account endpoint ('dashboard' when none).
+ *
+ * @return string
+ */
+function samadi_wc_account_endpoint() {
+	if ( ! function_exists( 'WC' ) || ! WC()->query ) {
+		return 'dashboard';
+	}
+	$endpoint = WC()->query->get_current_endpoint();
+
+	return $endpoint ? $endpoint : 'dashboard';
+}
+
+/**
+ * Body classes for the account area.
+ *
+ * @param string[] $classes Classes.
+ * @return string[]
+ */
+function samadi_wc_account_body_class( $classes ) {
+	if ( is_account_page() ) {
+		$classes[] = 'se-account';
+		$classes[] = is_user_logged_in() ? 'se-account--' . sanitize_html_class( samadi_wc_account_endpoint() ) : 'se-account--guest';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'samadi_wc_account_body_class' );
+
+/**
+ * Format a date for display with the theme's digit setting.
+ *
+ * @param int|string $timestamp Timestamp.
+ * @return string
+ */
+function samadi_wc_account_date( $timestamp ) {
+	return samadi_option( 'persian_digits' ) ? samadi_fa_digits( date_i18n( get_option( 'date_format' ), $timestamp ) ) : date_i18n( get_option( 'date_format' ), $timestamp );
+}
+
+/**
+ * Account statistics for the dashboard (real WooCommerce data only).
+ *
+ * @param int $user_id User ID.
+ * @return array{orders:int,active:int,spent:float}
+ */
+function samadi_wc_account_stats( $user_id ) {
+	$active = wc_get_orders(
+		array(
+			'customer_id' => $user_id,
+			'status'      => apply_filters( 'samadi_account_active_statuses', array( 'wc-pending', 'wc-processing', 'wc-on-hold' ) ),
+			'limit'       => 1,
+			'paginate'    => true,
+			'return'      => 'ids',
+		)
+	);
+
+	return array(
+		'orders' => (int) wc_get_customer_order_count( $user_id ),
+		'active' => is_object( $active ) ? (int) $active->total : 0,
+		'spent'  => (float) wc_get_customer_total_spent( $user_id ),
+	);
+}
+
+/**
+ * Login / register screen: wrapper, intro and mobile tabs.
+ */
+function samadi_wc_login_intro() {
+	$register = 'yes' === get_option( 'woocommerce_enable_myaccount_registration' );
+	?>
+	<div class="se-auth<?php echo $register ? ' se-auth--register' : ''; ?>" data-se-auth>
+		<div class="se-auth__intro">
+			<span class="se-auth__icon"><?php samadi_icon( 'user', array( 'size' => 28 ) ); ?></span>
+			<div>
+				<p class="se-auth__title"><?php echo $register ? esc_html__( 'ورود یا ثبت‌نام', 'samadi-electric' ) : esc_html__( 'ورود به حساب کاربری', 'samadi-electric' ); ?></p>
+				<p class="se-auth__text"><?php esc_html_e( 'با ورود به حساب، سفارش‌ها را پیگیری کنید، آدرس‌ها را ذخیره کنید و سریع‌تر خرید کنید.', 'samadi-electric' ); ?></p>
+			</div>
+		</div>
+		<?php if ( $register ) : ?>
+			<div class="se-auth__tabs" role="tablist" hidden>
+				<button type="button" class="se-auth__tab is-active" role="tab" aria-selected="true" data-se-auth-tab="login"><?php esc_html_e( 'ورود', 'samadi-electric' ); ?></button>
+				<button type="button" class="se-auth__tab" role="tab" aria-selected="false" data-se-auth-tab="register"><?php esc_html_e( 'ثبت‌نام', 'samadi-electric' ); ?></button>
+			</div>
+		<?php endif; ?>
+	<?php
+}
+add_action( 'woocommerce_before_customer_login_form', 'samadi_wc_login_intro', 5 );
+
+/**
+ * Close the login / register wrapper.
+ */
+function samadi_wc_login_outro() {
+	echo '</div>';
+}
+add_action( 'woocommerce_after_customer_login_form', 'samadi_wc_login_outro', 50 );

@@ -437,6 +437,37 @@
 		} );
 	}
 
+	/* ---------- My account: login / register tabs (mobile layout) ---------- */
+
+	function initAuthTabs() {
+		var auth = document.querySelector( '[data-se-auth]' );
+		var tabs = auth && auth.querySelectorAll( '[data-se-auth-tab]' );
+		if ( ! auth || ! tabs.length || ! auth.querySelector( '.u-column2' ) ) {
+			return;
+		}
+
+		var select = function ( name ) {
+			auth.setAttribute( 'data-tab', name );
+			Array.prototype.forEach.call( tabs, function ( tab ) {
+				var active = tab.getAttribute( 'data-se-auth-tab' ) === name;
+				tab.classList.toggle( 'is-active', active );
+				tab.setAttribute( 'aria-selected', active ? 'true' : 'false' );
+			} );
+		};
+
+		Array.prototype.forEach.call( tabs, function ( tab ) {
+			tab.addEventListener( 'click', function () {
+				select( tab.getAttribute( 'data-se-auth-tab' ) );
+			} );
+		} );
+
+		// Re-open the register tab after a failed registration (WooCommerce keeps the email filled in).
+		var regEmail = auth.querySelector( '#reg_email' );
+		select( '#register' === window.location.hash || ( regEmail && regEmail.value ) ? 'register' : 'login' );
+		auth.querySelector( '.se-auth__tabs' ).hidden = false;
+		auth.classList.add( 'has-tabs' );
+	}
+
 	/* ---------- Init ---------- */
 
 	function init() {
@@ -446,6 +477,7 @@
 		initFilters();
 		initGallery();
 		initVariationPrice();
+		initAuthTabs();
 		applyView( storedView() );
 
 		// Cart/checkout fragments and AJAX-loaded product lists replace markup: re-enhance.
