@@ -33,6 +33,7 @@ foreach ( $samadi_modules as $samadi_module ) {
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once SAMADI_DIR . '/inc/woocommerce.php';
+	require_once SAMADI_DIR . '/inc/account.php';
 }
 
 unset( $samadi_modules, $samadi_module );

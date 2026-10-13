@@ -141,6 +141,9 @@ function samadi_enqueue_assets() {
 		if ( samadi_is_wc_view() ) {
 			wp_enqueue_style( 'samadi-woocommerce', SAMADI_URI . '/assets/css/woocommerce.css', array( 'samadi-components' ), samadi_asset_version( 'assets/css/woocommerce.css' ) );
 		}
+		if ( is_account_page() ) {
+			wp_enqueue_style( 'samadi-account', SAMADI_URI . '/assets/css/account.css', array( 'samadi-woocommerce' ), samadi_asset_version( 'assets/css/account.css' ) );
+		}
 	}
 
 	if ( is_singular() || is_home() || is_archive() || is_search() || is_404() ) {
