@@ -6,6 +6,14 @@
 |---|---|---|
 | قالب **Samadi Electric** | `samadi-electric/` | `dist/samadi-electric.zip` |
 | افزونه همراه **Samadi Elementor Widgets** | `samadi-elementor-widgets/` | `dist/samadi-elementor-widgets.zip` |
+| افزونه هسته **Samadi Core** (راه‌انداز + دموی کامل) | `samadi-core/` | `dist/samadi-core.zip` |
+
+## نصب آسان با دموی کامل
+
+فایل آماده: [`release/samadi-electric-full-package.zip`](release/samadi-electric-full-package.zip) — راهنما: [نصب سریع](docs/00-quick-install.md).
+
+قالب را نصب و فعال کنید ← در اعلان «نصب و فعال‌سازی Samadi Core» را بزنید ← «شروع راه‌اندازی کامل».
+WooCommerce، Elementor و افزونه همراه نصب و همه صفحات، ۲۷ محصول، دسته‌ها، برندها، وبلاگ، منوها و تنظیمات درون‌ریزی می‌شوند؛ نیازی به ساختن دستی هیچ صفحه‌ای نیست.
 
 ساخت فایل‌های ZIP:
 
@@ -17,6 +25,7 @@
 
 ## مستندات
 
+0. [نصب سریع با دموی کامل](docs/00-quick-install.md)
 1. [راهنمای نصب](docs/01-installation.md)
 2. [ساخت و تخصیص قالب‌های Elementor](docs/02-elementor.md)
 3. [افزونه‌های ضروری و اختیاری](docs/03-plugins.md)
@@ -40,5 +49,7 @@ samadi-elementor-widgets/        افزونه همراه
   includes/                      فیلتر محصولات، جستجوی زنده، استعلام قیمت/خرید عمده، محصولات اخیر، ابزار راه‌اندازی
   includes/elementor/            ۱۹ ویجت + ۵ برچسب پویا
   templates/elementor/           قالب‌های آماده صفحه اصلی، هدر و فوتر (JSON)
-bin/                             build.sh و make-pot.php
+samadi-core/                     افزونه هسته: راه‌انداز، نصب افزونه‌ها، درون‌ریزی/حذف دمو، WP-CLI (wp samadi)
+  demo/                          محتوای دمو (content.php) و تصاویر تولیدشده
+bin/                             build.sh، make-pot.php، make-demo-images.py
 ```

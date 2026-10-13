@@ -785,6 +785,30 @@ msgstr ""
 msgid "کد رسمی نماد اعتماد الکترونیکی یا ساماندهی را با ابزارک «HTML سفارشی» اینجا قرار دهید. فقط نمادهای معتبر و متعلق به همین فروشگاه."
 msgstr ""
 
+#: inc/core-plugin.php:34
+msgid "قالب صمدی الکتریک:"
+msgstr ""
+
+#: inc/core-plugin.php:35
+msgid "برای راه‌اندازی خودکار و درون‌ریزی کامل دمو (همه صفحات، محصولات، منوها)، افزونه Samadi Core را فعال کنید."
+msgstr ""
+
+#: inc/core-plugin.php:37
+msgid "فعال‌سازی Samadi Core"
+msgstr ""
+
+#: inc/core-plugin.php:37
+msgid "نصب و فعال‌سازی Samadi Core"
+msgstr ""
+
+#: inc/core-plugin.php:48
+msgid "دسترسی ندارید."
+msgstr ""
+
+#: inc/core-plugin.php:61
+msgid "نصب Samadi Core انجام نشد. فایل samadi-core.zip را از «افزونه‌ها ← افزودن ← بارگذاری» نصب کنید."
+msgstr ""
+
 #: inc/woocommerce.php:169
 msgid "%s٪ تخفیف"
 msgstr ""
