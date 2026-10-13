@@ -1,0 +1,1626 @@
+/**
+ * Samadi Account Dashboard — My Account design.
+ * Every rule is scoped to .sad-* classes so it works on top of any theme.
+ */
+
+:root {
+	--sad-primary: #0f4d3a;
+	--sad-accent: #1e7a52;
+	--sad-accent-soft: #eaf4ee;
+	--sad-danger: #e5484d;
+	--sad-danger-soft: #fdecec;
+	--sad-info: #2563eb;
+	--sad-info-soft: #e8f0fe;
+	--sad-success: #16794f;
+	--sad-success-soft: #e6f4ec;
+	--sad-warning: #b45309;
+	--sad-warning-soft: #fef3e2;
+	--sad-text: #1b1f1d;
+	--sad-muted: #7d8581;
+	--sad-border: #eaecea;
+	--sad-panel: #f3f4f1;
+	--sad-soft: #f1f2f0;
+	--sad-surface: #fff;
+	--sad-radius: 14px;
+	--sad-radius-sm: 10px;
+	--sad-shadow: 0 1px 2px rgba(16, 24, 20, 0.04);
+}
+
+/* ---------- Neutralise theme / WooCommerce account layouts ---------- */
+
+body.sad-page .woocommerce:has(> .sad-account),
+body.sad-page .se-wc-page .woocommerce {
+	display: block;
+}
+
+.sad-hide-title .entry-title,
+.sad-hide-title .page-title,
+.sad-hide-title .se-entry__header,
+.sad-hide-title .elementor-page-title,
+.sad-hide-title .wp-block-post-title {
+	display: none !important;
+}
+
+.sad-account,
+.sad-account *,
+.sad-account *::before,
+.sad-account *::after {
+	box-sizing: border-box;
+}
+
+.sad-account {
+	display: grid;
+	grid-template-columns: 260px minmax(0, 1fr);
+	gap: 24px;
+	align-items: start;
+	margin-block: 8px 32px;
+	color: var(--sad-text);
+	font-size: 14px;
+	line-height: 1.8;
+	direction: rtl;
+	text-align: right;
+}
+
+.sad-account a {
+	text-decoration: none;
+	box-shadow: none;
+}
+
+.sad-account p {
+	margin: 0;
+}
+
+.sad-account ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sad-account .sad-content,
+.woocommerce-account .sad-account .woocommerce-MyAccount-content {
+	float: none;
+	width: auto;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	border-radius: 0;
+	display: grid;
+	gap: 18px;
+	align-content: start;
+}
+
+.sad-content > .woocommerce-notices-wrapper:empty {
+	display: none;
+}
+
+.sad-sr {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+.sad-icon {
+	flex: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* ---------- Buttons & pills ---------- */
+
+.sad-account .sad-btn,
+.sad-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	min-height: 42px;
+	padding: 8px 18px;
+	border: 1px solid transparent;
+	border-radius: var(--sad-radius-sm);
+	font: inherit;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.sad-account .sad-btn--primary {
+	background: var(--sad-primary);
+	color: #fff;
+}
+
+.sad-account .sad-btn--primary:hover {
+	background: color-mix(in srgb, var(--sad-primary) 85%, #000);
+	color: #fff;
+}
+
+.sad-account .sad-btn--outline {
+	background: var(--sad-surface);
+	border-color: var(--sad-primary);
+	color: var(--sad-primary);
+}
+
+.sad-account .sad-btn--outline:hover {
+	background: var(--sad-primary);
+	color: #fff;
+}
+
+.sad-account .sad-btn--soft {
+	background: var(--sad-soft);
+	color: var(--sad-text);
+}
+
+.sad-account .sad-btn--soft:hover {
+	background: #e5e7e4;
+	color: var(--sad-text);
+}
+
+.sad-account .sad-btn--sm {
+	min-height: 34px;
+	padding: 4px 14px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.sad-btn--block {
+	width: 100%;
+}
+
+.sad-pill {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 12px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.6;
+	white-space: nowrap;
+}
+
+.sad-pill--xs {
+	padding: 1px 8px;
+	font-size: 10.5px;
+}
+
+.sad-pill--info { background: var(--sad-info-soft); color: var(--sad-info); }
+.sad-pill--success { background: var(--sad-success-soft); color: var(--sad-success); }
+.sad-pill--warning { background: var(--sad-warning-soft); color: var(--sad-warning); }
+.sad-pill--danger { background: var(--sad-danger-soft); color: var(--sad-danger); }
+.sad-pill--neutral { background: var(--sad-soft); color: var(--sad-muted); }
+
+.sad-badge {
+	margin-inline-start: auto;
+	padding: 2px 10px;
+	border-radius: 999px;
+	background: var(--sad-primary);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sad-side {
+	position: sticky;
+	top: 24px;
+}
+
+.admin-bar .sad-side {
+	top: 56px;
+}
+
+.sad-side__card {
+	padding: 22px 14px 14px;
+	border-radius: var(--sad-radius);
+	background: var(--sad-panel);
+}
+
+.sad-profile {
+	display: grid;
+	justify-items: center;
+	gap: 4px;
+	padding-block-end: 18px;
+	text-align: center;
+}
+
+.sad-avatar {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: 50%;
+	background: var(--sad-accent-soft);
+	color: var(--sad-accent);
+	font-weight: 800;
+}
+
+.sad-avatar--lg {
+	width: 84px;
+	height: 84px;
+	margin-block-end: 8px;
+	border: 3px solid var(--sad-surface);
+	box-shadow: 0 4px 14px rgba(16, 24, 20, 0.08);
+	font-size: 32px;
+}
+
+.sad-avatar img,
+.sad-avatar__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.sad-profile__name {
+	color: var(--sad-text);
+	font-size: 15px;
+	font-weight: 800;
+}
+
+.sad-profile__email {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	max-width: 100%;
+	color: var(--sad-muted);
+	font-size: 12px;
+}
+
+.sad-profile__email span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.sad-account .sad-profile__edit {
+	display: inline-flex;
+	color: var(--sad-text);
+}
+
+.sad-account .sad-profile__edit:hover {
+	color: var(--sad-accent);
+}
+
+/* Menu (overrides theme and WooCommerce navigation styles) */
+
+.sad-account .sad-nav,
+.woocommerce-account .sad-account .woocommerce-MyAccount-navigation {
+	float: none;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	border-radius: 0;
+}
+
+.sad-account .sad-nav ul {
+	display: grid;
+	gap: 4px;
+}
+
+.sad-account .sad-nav li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.sad-account .sad-nav a {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-height: 44px;
+	padding: 8px 14px;
+	border-radius: var(--sad-radius-sm);
+	background: none;
+	color: var(--sad-text);
+	font-size: 14px;
+	font-weight: 500;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.sad-account .sad-nav a .sad-icon {
+	color: var(--sad-text);
+}
+
+.sad-account .sad-nav a:hover {
+	background: var(--sad-soft);
+	color: var(--sad-text);
+}
+
+.sad-account .sad-nav .is-active > a {
+	background: #e9ebe8;
+	color: var(--sad-text);
+	font-weight: 800;
+}
+
+.sad-account .sad-nav .is-active > a .sad-icon {
+	color: var(--sad-accent);
+	fill: color-mix(in srgb, var(--sad-accent) 18%, transparent);
+}
+
+.sad-account .woocommerce-MyAccount-navigation-link--customer-logout,
+.sad-account .woocommerce-MyAccount-navigation-link--customer-logout a {
+	margin: 0;
+	padding-block-start: 0;
+	border: 0;
+	color: var(--sad-text);
+}
+
+/* Support box */
+
+.sad-support {
+	display: grid;
+	justify-items: center;
+	gap: 4px;
+	margin-block-start: 18px;
+	padding: 20px 16px 16px;
+	border-radius: 12px;
+	background: var(--sad-surface);
+	text-align: center;
+}
+
+.sad-support__icon {
+	color: var(--sad-accent);
+}
+
+.sad-support__title {
+	margin-block-start: 4px;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.sad-support__text {
+	margin-block-end: 10px;
+	color: var(--sad-muted);
+	font-size: 11.5px;
+}
+
+/* ---------- Hero ---------- */
+
+.sad-hero {
+	display: flex;
+	align-items: center;
+	min-height: 190px;
+	padding: 28px 36px;
+	overflow: hidden;
+	border-radius: var(--sad-radius);
+	background-color: #ece3d6;
+	background-position: left center;
+	background-size: cover;
+}
+
+.sad-hero__text {
+	max-width: 56%;
+}
+
+.sad-account .sad-hero__title {
+	margin: 0 0 10px;
+	padding: 0;
+	color: var(--sad-text);
+	font-size: 26px;
+	font-weight: 900;
+	line-height: 1.5;
+}
+
+.sad-hero__desc {
+	color: #3b423f;
+	font-size: 13px;
+	line-height: 2.1;
+}
+
+/* ---------- Stats ---------- */
+
+.sad-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 14px;
+}
+
+.sad-stat {
+	display: grid;
+	justify-items: center;
+	gap: 4px;
+	padding: 16px 16px 14px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+	background: var(--sad-surface);
+	box-shadow: var(--sad-shadow);
+	text-align: center;
+}
+
+.sad-stat__top {
+	display: flex;
+	align-items: center;
+	justify-self: stretch;
+	gap: 10px;
+}
+
+.sad-stat__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: var(--sad-accent-soft);
+	color: var(--sad-accent);
+}
+
+.sad-stat--heart .sad-stat__icon {
+	background: var(--sad-danger-soft);
+	color: var(--sad-danger);
+}
+
+.sad-stat__label {
+	color: var(--sad-muted);
+	font-size: 12px;
+}
+
+.sad-stat__value {
+	margin-block: 6px 2px !important;
+	color: var(--sad-text);
+	font-size: 26px;
+	font-weight: 900;
+	line-height: 1.4;
+}
+
+.sad-stat__value--price {
+	font-size: 20px;
+}
+
+.sad-stat__value .woocommerce-Price-currencySymbol {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.sad-account .sad-stat__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	color: var(--sad-primary);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.sad-account .sad-stat__link:hover {
+	color: var(--sad-accent);
+}
+
+/* ---------- Cards & panels ---------- */
+
+.sad-card {
+	padding: 18px 20px;
+	border: 1px solid var(--sad-border);
+	border-radius: var(--sad-radius);
+	background: var(--sad-surface);
+	box-shadow: var(--sad-shadow);
+}
+
+.sad-panel {
+	padding: 16px;
+	border-radius: var(--sad-radius);
+	background: var(--sad-panel);
+}
+
+.sad-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-block-end: 12px;
+}
+
+.sad-account .sad-head__title {
+	margin: 0;
+	padding: 0;
+	color: var(--sad-text);
+	font-size: 16px;
+	font-weight: 900;
+	line-height: 1.6;
+}
+
+.sad-account .sad-head__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	color: var(--sad-primary);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.sad-muted {
+	margin-block-end: 12px !important;
+	color: var(--sad-muted);
+	font-size: 12.5px;
+}
+
+/* ---------- Orders ---------- */
+
+.sad-orders {
+	display: grid;
+}
+
+.sad-order {
+	display: grid;
+	grid-template-columns: 52px minmax(70px, 0.9fr) minmax(90px, 1fr) minmax(90px, 1fr) minmax(110px, 1fr) auto 24px;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 4px;
+	border-block-start: 1px solid var(--sad-border);
+}
+
+.sad-order:first-child {
+	border-block-start: 0;
+}
+
+.sad-order__thumb {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	overflow: hidden;
+	border: 1px solid var(--sad-border);
+	border-radius: 10px;
+	background: var(--sad-panel);
+	color: var(--sad-muted);
+}
+
+.sad-order__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.sad-account .sad-order__number {
+	color: var(--sad-text);
+	font-weight: 700;
+	direction: ltr;
+	text-align: right;
+}
+
+.sad-order__date {
+	display: grid;
+	color: var(--sad-muted);
+	font-size: 12.5px;
+	line-height: 1.6;
+}
+
+.sad-order__items {
+	font-size: 11px;
+}
+
+.sad-order__total {
+	color: var(--sad-text);
+	font-size: 13px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.sad-order__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	justify-content: flex-end;
+}
+
+.sad-account .sad-order__go {
+	display: inline-flex;
+	color: var(--sad-text);
+}
+
+.sad-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-block-start: 14px;
+}
+
+.sad-pagination__info {
+	color: var(--sad-muted);
+	font-size: 12px;
+}
+
+/* ---------- Addresses ---------- */
+
+.sad-addresses {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.sad-address {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	min-height: 190px;
+	padding: 16px 18px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+	background: var(--sad-surface);
+}
+
+.sad-address.is-default {
+	border: 2px solid var(--sad-primary);
+	padding: 15px 17px;
+}
+
+.sad-address__top {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-block-end: 8px;
+}
+
+.sad-address__icon,
+.sad-address__plus {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: var(--sad-soft);
+	color: var(--sad-text);
+}
+
+.sad-address__plus {
+	width: 42px;
+	height: 42px;
+}
+
+.sad-address__label {
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.sad-address__line {
+	color: #4b5350;
+	font-size: 12.5px;
+	line-height: 2;
+}
+
+.sad-address__name {
+	margin-block-start: auto !important;
+	padding-block-start: 8px;
+	color: var(--sad-muted);
+	font-size: 12.5px;
+}
+
+.sad-address__phone {
+	color: var(--sad-text);
+	font-weight: 800;
+	text-align: right;
+}
+
+.sad-address--new .sad-address__line {
+	margin-block-end: auto !important;
+	color: var(--sad-muted);
+}
+
+.sad-address--new .sad-btn {
+	margin-block-start: 12px;
+}
+
+.sad-address__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-block-start: 10px;
+	padding-block-start: 10px;
+	border-block-start: 1px dashed var(--sad-border);
+}
+
+.sad-account .sad-address__actions a {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: var(--sad-primary);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.sad-account .sad-address__actions a.is-danger {
+	color: var(--sad-danger);
+}
+
+/* ---------- Products (wishlist) ---------- */
+
+.sad-products {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.sad-product {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 12px 14px 14px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+	background: var(--sad-surface);
+	transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.sad-product:hover {
+	box-shadow: 0 8px 24px rgba(16, 24, 20, 0.06);
+}
+
+.sad-product__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sad-product__top .sad-wish {
+	order: 2;
+}
+
+.sad-account .sad-product__image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+}
+
+.sad-product__image img {
+	max-width: 80%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: 8px;
+}
+
+.sad-account .sad-product__name {
+	display: -webkit-box;
+	overflow: hidden;
+	color: var(--sad-text);
+	font-size: 13px;
+	font-weight: 800;
+	line-height: 1.7;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.sad-product__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-block-start: auto;
+}
+
+.sad-product__price {
+	color: var(--sad-text);
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.sad-product__price del {
+	display: block;
+	color: var(--sad-muted);
+	font-size: 11px;
+	font-weight: 400;
+}
+
+.sad-product__price ins {
+	text-decoration: none;
+}
+
+.sad-product__price .woocommerce-Price-currencySymbol {
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.sad-account .sad-product__cart {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border: 1px solid var(--sad-border);
+	border-radius: 9px;
+	background: var(--sad-surface);
+	color: var(--sad-text);
+}
+
+.sad-account .sad-product__cart:hover {
+	border-color: var(--sad-primary);
+	background: var(--sad-primary);
+	color: #fff;
+}
+
+.sad-product__cart.added + .added_to_cart {
+	display: none;
+}
+
+/* Heart buttons (account, theme cards, other themes) */
+
+.sad-wish {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--sad-danger);
+	cursor: pointer;
+	transition: transform 0.15s, background-color 0.2s;
+}
+
+.sad-wish:hover {
+	background: var(--sad-danger-soft);
+}
+
+.sad-wish:active {
+	transform: scale(0.9);
+}
+
+.sad-wish.is-active .sad-icon {
+	fill: currentColor;
+}
+
+.sad-wish[disabled] {
+	opacity: 0.6;
+}
+
+.sad-wish--card {
+	background: rgba(255, 255, 255, 0.92);
+}
+
+.sad-wish--loop {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 3;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce ul.products li.product,
+.wc-block-grid__product {
+	position: relative;
+}
+
+.sad-wish-single {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-block: 12px;
+	font-size: 14px;
+}
+
+.sad-wish--single {
+	width: 42px;
+	height: 42px;
+	border: 1px solid var(--sad-border);
+	background: #fff;
+}
+
+/* ---------- Account info ---------- */
+
+.sad-info {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.sad-info__item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 0;
+	padding: 16px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+}
+
+.sad-info__icon {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: var(--sad-soft);
+	color: var(--sad-text);
+}
+
+.sad-info__text {
+	display: grid;
+	min-width: 0;
+}
+
+.sad-info__label {
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.sad-info__value {
+	overflow: hidden;
+	color: var(--sad-muted);
+	font-size: 12px;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* ---------- Empty states ---------- */
+
+.sad-empty {
+	display: grid;
+	justify-items: center;
+	gap: 10px;
+	padding: 28px 16px;
+	border: 1px dashed var(--sad-border);
+	border-radius: 12px;
+	color: var(--sad-muted);
+	text-align: center;
+}
+
+.sad-empty .sad-icon {
+	color: var(--sad-accent);
+}
+
+.sad-empty--flat {
+	background: var(--sad-surface);
+}
+
+/* ---------- Notices inside the account ---------- */
+
+.sad-content .woocommerce-info,
+.sad-content .woocommerce-message,
+.sad-content .woocommerce-error {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 16px;
+	margin: 0;
+	padding: 14px 18px;
+	border: 1px solid var(--sad-border);
+	border-inline-start: 4px solid var(--sad-accent);
+	border-radius: 12px;
+	background: var(--sad-surface);
+	list-style: none;
+}
+
+.sad-content .woocommerce-error {
+	border-inline-start-color: var(--sad-danger);
+}
+
+.sad-content .woocommerce-info::before,
+.sad-content .woocommerce-message::before,
+.sad-content .woocommerce-error::before {
+	display: none;
+}
+
+.sad-content .woocommerce-info .button,
+.sad-content .woocommerce-message .button {
+	order: 2;
+	margin-inline-start: auto;
+	min-height: 36px;
+	padding: 6px 14px;
+}
+
+/* ---------- Forms (address form + WooCommerce forms inside the content) ---------- */
+
+.sad-content > form,
+.sad-content > .woocommerce-EditAccountForm,
+.sad-content > .woocommerce-address-fields,
+.sad-content > .woocommerce-order-details,
+.sad-content > .woocommerce-customer-details,
+.sad-content > .woocommerce-MyAccount-downloads,
+.sad-content > p,
+.sad-content > table,
+.sad-content > .woocommerce-Message,
+.sad-content > .woocommerce-PaymentMethods {
+	margin: 0;
+}
+
+.sad-content > .woocommerce-EditAccountForm,
+.sad-content > form,
+.sad-content > section.woocommerce-order-details,
+.sad-content > section.woocommerce-customer-details,
+.sad-content > .woocommerce-MyAccount-downloads,
+.sad-content > table.shop_table {
+	padding: 20px;
+	border: 1px solid var(--sad-border);
+	border-radius: var(--sad-radius);
+	background: var(--sad-surface);
+}
+
+.sad-content > p:first-child {
+	padding: 14px 18px;
+	border-radius: 12px;
+	background: var(--sad-panel);
+}
+
+.sad-content mark {
+	padding: 0 6px;
+	border-radius: 6px;
+	background: var(--sad-accent-soft);
+	color: var(--sad-primary);
+	font-weight: 700;
+}
+
+.sad-content input[type="text"],
+.sad-content input[type="email"],
+.sad-content input[type="tel"],
+.sad-content input[type="password"],
+.sad-content input[type="number"],
+.sad-content select,
+.sad-content textarea {
+	width: 100%;
+	min-height: 46px;
+	padding: 10px 14px;
+	border: 1px solid #dfe3e0;
+	border-radius: var(--sad-radius-sm);
+	background: #fff;
+	color: var(--sad-text);
+	font: inherit;
+	font-size: 14px;
+	box-shadow: none;
+}
+
+.sad-content textarea {
+	min-height: 84px;
+	resize: vertical;
+}
+
+.sad-content input:focus,
+.sad-content select:focus,
+.sad-content textarea:focus {
+	border-color: var(--sad-accent);
+	outline: 0;
+	box-shadow: 0 0 0 3px var(--sad-accent-soft);
+}
+
+.sad-content label {
+	display: block;
+	margin-block-end: 6px;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.sad-content .required {
+	color: var(--sad-danger);
+	text-decoration: none;
+}
+
+.sad-content fieldset {
+	margin: 18px 0 0;
+	padding: 16px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+}
+
+.sad-content legend {
+	padding-inline: 8px;
+	font-weight: 800;
+}
+
+.sad-content .woocommerce-Button,
+.sad-content button.button,
+.sad-content .button {
+	min-height: 44px;
+	padding: 10px 22px;
+	border: 0;
+	border-radius: var(--sad-radius-sm);
+	background: var(--sad-primary);
+	color: #fff;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.sad-content .woocommerce-Button:hover,
+.sad-content button.button:hover,
+.sad-content .button:hover {
+	background: color-mix(in srgb, var(--sad-primary) 85%, #000);
+	color: #fff;
+}
+
+.sad-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 4px 16px;
+}
+
+.sad-field {
+	margin: 0 0 12px !important;
+}
+
+.sad-field--wide {
+	grid-column: 1 / -1;
+}
+
+.sad-types {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0 0 16px !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.sad-types legend {
+	margin-block-end: 8px;
+	padding: 0 !important;
+	font-size: 13px;
+}
+
+.sad-type input {
+	position: absolute;
+	opacity: 0;
+}
+
+.sad-type span {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 16px;
+	border: 1px solid var(--sad-border);
+	border-radius: 999px;
+	background: #fff;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.sad-type input:checked + span {
+	border-color: var(--sad-primary);
+	background: var(--sad-primary);
+	color: #fff;
+}
+
+.sad-type input:focus-visible + span {
+	outline: 2px solid var(--sad-accent);
+	outline-offset: 2px;
+}
+
+.sad-check {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600 !important;
+	cursor: pointer;
+}
+
+.sad-form__actions {
+	display: flex;
+	gap: 10px;
+	margin-block-start: 16px;
+}
+
+.sad-hint {
+	color: var(--sad-muted);
+	font-size: 11.5px;
+}
+
+.sad-profile-photo {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-block-end: 16px;
+	padding: 14px;
+	border-radius: 12px;
+	background: var(--sad-panel);
+}
+
+.sad-profile-photo .sad-avatar--lg {
+	margin: 0;
+}
+
+.sad-content .sad-profile-photo__label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+	padding: 6px 14px;
+	border: 1px solid var(--sad-primary);
+	border-radius: 999px;
+	color: var(--sad-primary);
+	cursor: pointer;
+}
+
+.sad-content .woocommerce-EditAccountForm .form-row-first,
+.sad-content .woocommerce-EditAccountForm .form-row-last {
+	float: none;
+	width: auto;
+}
+
+.sad-content .woocommerce-EditAccountForm {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0 16px;
+}
+
+.sad-content .woocommerce-EditAccountForm > * {
+	grid-column: 1 / -1;
+}
+
+.sad-content .woocommerce-EditAccountForm > .form-row-first {
+	grid-column: 1;
+}
+
+.sad-content .woocommerce-EditAccountForm > .form-row-last {
+	grid-column: 2;
+}
+
+.sad-content .woocommerce-EditAccountForm .clear {
+	display: none;
+}
+
+/* Tables (downloads, order details) */
+
+.sad-content table.shop_table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0;
+}
+
+.sad-content table.shop_table th,
+.sad-content table.shop_table td {
+	padding: 12px 10px;
+	border: 0;
+	border-block-end: 1px solid var(--sad-border);
+	text-align: right;
+}
+
+.sad-content table.shop_table thead th {
+	color: var(--sad-muted);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.sad-content .woocommerce-customer-details address {
+	padding: 14px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+	font-style: normal;
+	line-height: 2;
+}
+
+/* Checkout address picker */
+
+.sad-picker {
+	margin-block-end: 18px;
+	font-size: 14px;
+}
+
+.sad-picker.is-loading {
+	opacity: 0.55;
+	pointer-events: none;
+}
+
+.sad-picker__title {
+	margin: 0 0 8px;
+	font-weight: 800;
+}
+
+.sad-picker__list {
+	display: grid;
+	gap: 8px;
+}
+
+.sad-picker__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 12px 14px;
+	border: 1px solid var(--sad-border);
+	border-radius: 12px;
+	cursor: pointer;
+}
+
+.sad-picker__item:has(input:checked) {
+	border-color: var(--sad-primary);
+	box-shadow: 0 0 0 1px var(--sad-primary);
+}
+
+.sad-picker__item span {
+	display: grid;
+}
+
+.sad-picker__item small {
+	color: var(--sad-muted);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1200px) {
+	.sad-products {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.sad-info {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.sad-order {
+		grid-template-columns: 52px minmax(0, 1fr) minmax(0, 1fr) auto auto 24px;
+	}
+
+	.sad-order__date {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.sad-order__number {
+		grid-row: 1;
+	}
+
+	.sad-order__thumb {
+		grid-row: span 2;
+	}
+
+	.sad-order__status {
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	.sad-order__total {
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+	.sad-order__actions {
+		grid-column: 4 / 6;
+		grid-row: span 2;
+	}
+
+	.sad-order__go {
+		grid-column: 6;
+		grid-row: span 2;
+	}
+}
+
+@media (max-width: 991px) {
+	.sad-account {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.sad-side {
+		position: static;
+	}
+
+	.sad-side__card {
+		padding: 14px;
+	}
+
+	.sad-profile {
+		grid-template-columns: auto minmax(0, 1fr);
+		justify-items: start;
+		column-gap: 12px;
+		padding-block-end: 12px;
+		text-align: right;
+	}
+
+	.sad-profile .sad-avatar--lg {
+		grid-row: span 2;
+		width: 56px;
+		height: 56px;
+		margin: 0;
+		font-size: 22px;
+	}
+
+	.sad-profile__email {
+		justify-content: flex-start;
+	}
+
+	.sad-account .sad-nav ul {
+		display: flex;
+		gap: 6px;
+		margin-inline: -14px;
+		padding-inline: 14px;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.sad-account .sad-nav ul::-webkit-scrollbar {
+		display: none;
+	}
+
+	.sad-account .sad-nav a {
+		gap: 6px;
+		min-height: 38px;
+		padding: 6px 12px;
+		border: 1px solid var(--sad-border);
+		border-radius: 999px;
+		background: var(--sad-surface);
+		font-size: 13px;
+		white-space: nowrap;
+	}
+
+	.sad-account .sad-nav .is-active > a {
+		border-color: var(--sad-primary);
+		background: var(--sad-primary);
+		color: #fff;
+	}
+
+	.sad-account .sad-nav .is-active > a .sad-icon {
+		color: #fff;
+		fill: none;
+	}
+
+	.sad-support {
+		display: none;
+	}
+
+	.sad-addresses {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.sad-hero__text {
+		max-width: 70%;
+	}
+}
+
+@media (max-width: 767px) {
+	.sad-hero {
+		min-height: 160px;
+		padding: 20px;
+		background-position: 25% center;
+	}
+
+	.sad-hero::before {
+		content: none;
+	}
+
+	.sad-hero__text {
+		max-width: 100%;
+		padding: 12px 14px;
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.72);
+		backdrop-filter: blur(6px);
+	}
+
+	.sad-account .sad-hero__title {
+		font-size: 20px;
+	}
+
+	.sad-hero__desc {
+		font-size: 12px;
+		line-height: 1.9;
+	}
+
+	.sad-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.sad-stat {
+		padding: 12px 10px;
+	}
+
+	.sad-stat__icon {
+		width: 34px;
+		height: 34px;
+	}
+
+	.sad-stat__value {
+		font-size: 22px;
+	}
+
+	.sad-stat__value--price {
+		font-size: 15px;
+	}
+
+	.sad-card {
+		padding: 14px;
+	}
+
+	.sad-panel {
+		padding: 12px;
+	}
+
+	.sad-order {
+		grid-template-columns: 48px minmax(0, 1fr) auto;
+		gap: 4px 10px;
+		padding: 12px 0;
+	}
+
+	.sad-order__thumb {
+		grid-row: span 3;
+		align-self: start;
+	}
+
+	.sad-order__number {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.sad-order__status {
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	.sad-order__date {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.sad-order__total {
+		grid-column: 3;
+		grid-row: 2;
+	}
+
+	.sad-order__actions {
+		grid-column: 2 / -1;
+		grid-row: 3;
+		justify-content: flex-start;
+		margin-block-start: 6px;
+	}
+
+	.sad-order__go {
+		display: none !important;
+	}
+
+	.sad-addresses,
+	.sad-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.sad-address {
+		min-height: 0;
+	}
+
+	.sad-products {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.sad-product {
+		padding: 10px;
+	}
+
+	.sad-info {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.sad-content .woocommerce-EditAccountForm {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.sad-content .woocommerce-EditAccountForm > .form-row-first,
+	.sad-content .woocommerce-EditAccountForm > .form-row-last {
+		grid-column: 1;
+	}
+
+	.sad-content table.shop_table_responsive thead {
+		display: none;
+	}
+
+	.sad-content table.shop_table_responsive tr,
+	.sad-content table.shop_table_responsive td {
+		display: block;
+	}
+
+	.sad-content table.shop_table_responsive td {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		text-align: left;
+	}
+
+	.sad-content table.shop_table_responsive td::before {
+		content: attr(data-title);
+		font-weight: 700;
+	}
+}

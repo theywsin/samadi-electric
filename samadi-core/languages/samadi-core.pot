@@ -1,0 +1,209 @@
+# Copyright (C) Samadi Electric
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Domain: samadi-core\n"
+
+#: includes/class-wizard.php:36
+msgid "راه‌اندازی صمدی الکتریک"
+msgstr ""
+
+#: includes/class-wizard.php:37
+msgid "صمدی الکتریک"
+msgstr ""
+
+#: includes/class-wizard.php:72
+msgid "صمدی الکتریک:"
+msgstr ""
+
+#: includes/class-wizard.php:73
+msgid "برای نصب افزونه‌های لازم و درون‌ریزی کامل دمو (همه صفحات، محصولات و منوها) راه‌انداز را اجرا کنید."
+msgstr ""
+
+#: includes/class-wizard.php:75
+msgid "شروع راه‌اندازی"
+msgstr ""
+
+#: includes/class-wizard.php:109
+msgid "در حال نصب و فعال‌سازی…"
+msgstr ""
+
+#: includes/class-wizard.php:110
+msgid "فعال"
+msgstr ""
+
+#: includes/class-wizard.php:111
+msgid "در حال انجام…"
+msgstr ""
+
+#: includes/class-wizard.php:112
+msgid "انجام شد"
+msgstr ""
+
+#: includes/class-wizard.php:113
+msgid "خطا"
+msgstr ""
+
+#: includes/class-wizard.php:114
+msgid "همه محتوای دموی درون‌ریزی‌شده (محصولات، برگه‌ها، تصاویر، منوها) حذف شود؟"
+msgstr ""
+
+#: includes/class-wizard.php:115
+msgid "محتوای دمو حذف شد."
+msgstr ""
+
+#: includes/class-wizard.php:133
+msgid "راه‌اندازی فروشگاه صمدی الکتریک"
+msgstr ""
+
+#: includes/class-wizard.php:134
+msgid "با یک کلیک، افزونه‌های لازم نصب می‌شوند و دموی کامل فروشگاه درون‌ریزی می‌شود: صفحه اصلی Elementor، فروشگاه، محصولات با تصویر و ویژگی، برندها، وبلاگ، درباره ما، تماس، خرید عمده، قوانین، منوها و تنظیمات قالب."
+msgstr ""
+
+#: includes/class-wizard.php:139
+msgid "قالب «Samadi Electric» فعال نیست. ابتدا قالب را از «نمایش ← پوسته‌ها» فعال کنید."
+msgstr ""
+
+#: includes/class-wizard.php:144
+msgid "افزونه‌های لازم"
+msgstr ""
+
+#: includes/class-wizard.php:148
+msgid "درون‌ریزی دمو"
+msgstr ""
+
+#: includes/class-wizard.php:155
+msgid "اجرای دوباره (فقط موارد جاافتاده)"
+msgstr ""
+
+#: includes/class-wizard.php:155
+msgid "شروع راه‌اندازی کامل"
+msgstr ""
+
+#: includes/class-wizard.php:158
+msgid "حذف محتوای دمو"
+msgstr ""
+
+#: includes/class-wizard.php:164
+msgid "فروشگاه آماده است"
+msgstr ""
+
+#: includes/class-wizard.php:166
+msgid "مشاهده سایت"
+msgstr ""
+
+#: includes/class-wizard.php:167
+msgid "سفارشی‌سازی قالب"
+msgstr ""
+
+#: includes/class-wizard.php:168 includes/class-demo-importer.php:37
+msgid "محصولات"
+msgstr ""
+
+#: includes/class-wizard.php:170
+msgid "اطلاعات تماس، شبکه‌های اجتماعی و نام برندها نمونه هستند؛ آن‌ها را از «سفارشی‌سازی ← صمدی الکتریک» و «محصولات ← برندها» با اطلاعات واقعی جایگزین کنید."
+msgstr ""
+
+#: includes/class-wizard.php:182
+msgid "دسترسی ندارید."
+msgstr ""
+
+#: includes/class-wizard.php:218
+msgid "%d مورد حذف شد."
+msgstr ""
+
+#: includes/class-plugins.php:80
+msgid "افزونه ناشناخته است."
+msgstr ""
+
+#: includes/class-plugins.php:86
+msgid "اجازه نصب افزونه را ندارید."
+msgstr ""
+
+#: includes/class-plugins.php:103
+msgid "بسته افزونه همراه در Samadi Core پیدا نشد."
+msgstr ""
+
+#: includes/class-plugins.php:119
+msgid "نصب افزونه انجام نشد. دسترسی نوشتن پوشه افزونه‌ها را بررسی کنید."
+msgstr ""
+
+#: includes/class-plugins.php:126
+msgid "اجازه فعال‌سازی افزونه را ندارید."
+msgstr ""
+
+#: includes/class-demo-importer.php:34
+msgid "تنظیمات فروشگاه و سایت"
+msgstr ""
+
+#: includes/class-demo-importer.php:35
+msgid "تصاویر"
+msgstr ""
+
+#: includes/class-demo-importer.php:36
+msgid "دسته‌بندی‌ها، برندها و ویژگی‌ها"
+msgstr ""
+
+#: includes/class-demo-importer.php:38
+msgid "مقالات وبلاگ"
+msgstr ""
+
+#: includes/class-demo-importer.php:39
+msgid "برگه‌ها و صفحه اصلی"
+msgstr ""
+
+#: includes/class-demo-importer.php:40
+msgid "منوها و ابزارک‌ها"
+msgstr ""
+
+#: includes/class-demo-importer.php:41
+msgid "تنظیمات قالب"
+msgstr ""
+
+#: includes/class-demo-importer.php:42
+msgid "نهایی‌سازی"
+msgstr ""
+
+#: includes/class-demo-importer.php:79
+msgid "ابتدا این افزونه‌ها را فعال کنید: %s"
+msgstr ""
+
+#: includes/class-demo-importer.php:264
+msgid "تنظیمات واحد پول (تومان)، کشور، پیوندهای یکتا و روش‌های پرداخت اعمال شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:351
+msgid "%d تصویر به کتابخانه رسانه افزوده شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:438
+msgid "دسته‌بندی‌ها (با تصویر)، برندها، ویژگی‌های فنی و رنگ‌ها ساخته شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:626
+msgid "%d محصول (ساده، متغیر، تخفیف‌دار، ناموجود و استعلامی) ساخته شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:809
+msgid "%d مقاله با تصویر شاخص منتشر شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:875
+msgid "صفحه اصلی Elementor، فروشگاه، سبد، تسویه، حساب کاربری، خرید عمده، درباره ما، تماس، سؤالات متداول، قوانین، ارسال و مرجوعی، حریم خصوصی و وبلاگ ساخته شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:1013
+msgid "منوهای هدر، موبایل و فوتر و ابزارک‌های فیلتر فروشگاه و وبلاگ تنظیم شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:1152
+msgid "اطلاعات تماس نمونه، شبکه‌های اجتماعی، متن فوتر و رنگ‌های Elementor تنظیم شد."
+msgstr ""
+
+#: includes/class-demo-importer.php:1178
+msgid "درون‌نمایی کامل شد."
+msgstr ""
+

@@ -1,0 +1,25 @@
+.sc-wizard { max-width: 1040px; }
+.sc-hero { display: flex; gap: 20px; align-items: center; margin: 20px 0; padding: 28px; border-radius: 20px; background: radial-gradient(480px 220px at 0 0, rgba(199, 245, 42, 0.25), transparent 70%), #064e3b; color: rgba(255, 255, 255, 0.85); }
+.sc-hero h1 { margin: 0 0 6px; padding: 0; color: #fff; font-size: 24px; font-weight: 800; }
+.sc-hero p { margin: 0; font-size: 14px; line-height: 2; }
+.sc-hero__icon.dashicons { flex: none; width: 64px; height: 64px; border-radius: 18px; background: #c7f52a; color: #064e3b; font-size: 34px; line-height: 64px; text-align: center; }
+.sc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sc-card { padding: 20px 24px; border: 1px solid #e2e8e4; border-radius: 16px; background: #fff; }
+.sc-card h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 16px; }
+.sc-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #eef4f0; color: #064e3b; font-weight: 800; }
+.sc-list { margin: 0; }
+.sc-list li { display: grid; grid-template-columns: 14px minmax(0, 1fr); column-gap: 10px; align-items: center; margin: 0; padding: 10px 0; border-top: 1px solid #f0f2f0; }
+.sc-list li:first-child { border-top: 0; }
+.sc-label { font-weight: 600; }
+.sc-note { grid-column: 2; color: #718078; font-size: 12px; }
+.sc-dot { width: 12px; height: 12px; border-radius: 50%; background: #d5dcd8; }
+.is-running .sc-dot { background: #f5b301; animation: sc-pulse 1s infinite; }
+.is-done .sc-dot { background: #12805c; }
+.is-error .sc-dot { background: #d63638; }
+.is-error .sc-note { color: #d63638; }
+.sc-actions { display: flex; gap: 12px; align-items: center; margin-top: 20px; }
+.sc-status { font-weight: 600; }
+.sc-done { margin-top: 16px; padding: 20px 24px; border-radius: 16px; background: #eef8f2; border: 1px solid #c6e6d4; }
+.sc-done h2 { margin-top: 0; }
+@keyframes sc-pulse { 50% { opacity: 0.35; } }
+@media (max-width: 782px) { .sc-grid { grid-template-columns: minmax(0, 1fr); } }

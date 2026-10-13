@@ -7,6 +7,78 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Domain: samadi-electric\n"
 
+#: woocommerce/myaccount/dashboard.php:37
+msgid "سلام %s، خوش آمدید"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:40
+msgid "از این‌جا سفارش‌ها را پیگیری کنید، آدرس‌ها و اطلاعات حساب را مدیریت کنید."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:46
+msgid "عضو از %s"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:53
+msgid "ادامه خرید"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:61
+msgid "کل سفارش‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:66
+msgid "سفارش‌های جاری"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:71
+msgid "مجموع خرید"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:77
+msgid "آخرین سفارش‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:80
+msgid "همه سفارش‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:103
+msgid "سفارش %s"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:113
+msgid "%s کالا"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:128
+msgid "هنوز سفارشی ثبت نکرده‌اید."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:129 404.php:24 inc/helpers.php:83
+msgid "مشاهده محصولات"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:137
+msgid "دسترسی سریع"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:160 template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:68 inc/template-tags.php:371
+msgid "علاقه‌مندی‌ها"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:161
+msgid "محصولاتی که ذخیره کرده‌اید"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:173
+msgid "استعلام قیمت و سفارش عمده"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:183 woocommerce/myaccount/navigation.php:31
+msgid "خروج از حساب"
+msgstr ""
+
 #: woocommerce/archive-product.php:40
 msgid "فیلتر محصولات"
 msgstr ""
@@ -39,10 +111,6 @@ msgstr ""
 msgid "بازگشت به خانه"
 msgstr ""
 
-#: 404.php:24 inc/helpers.php:83
-msgid "مشاهده محصولات"
-msgstr ""
-
 #: template-parts/components/bottom-nav.php:13
 msgid "خانه"
 msgstr ""
@@ -51,12 +119,8 @@ msgstr ""
 msgid "دسته‌بندی‌ها"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:82 inc/woocommerce.php:515
+#: template-parts/components/bottom-nav.php:28 template-parts/header/site-header.php:82 inc/woocommerce.php:515 inc/template-tags.php:365
 msgid "سبد خرید"
-msgstr ""
-
-#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:68
-msgid "علاقه‌مندی‌ها"
 msgstr ""
 
 #: template-parts/components/bottom-nav.php:46 template-parts/header/site-header.php:75
@@ -123,16 +187,20 @@ msgstr ""
 msgid "نوشته بعدی"
 msgstr ""
 
-#: template-parts/footer/site-footer.php:43
-msgid "دسته‌بندی‌های اصلی"
-msgstr ""
-
-#: template-parts/footer/site-footer.php:81
-msgid "ارتباط با ما"
+#: template-parts/footer/site-footer.php:73
+msgid "ما را دنبال کنید"
 msgstr ""
 
 #: template-parts/footer/site-footer.php:98
+msgid "ارتباط با ما"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:116
 msgid "© %1$s %2$s. تمامی حقوق محفوظ است."
+msgstr ""
+
+#: template-parts/footer/site-footer.php:121
+msgid "بازگشت به بالا"
 msgstr ""
 
 #: template-parts/home/brands.php:31
@@ -605,11 +673,35 @@ msgstr ""
 msgid "فوتر"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:387
+msgid "رنگ‌بندی فوتر"
+msgstr ""
+
+#: inc/customizer.php:389
+msgid "تیره (رنگ اصلی)"
+msgstr ""
+
+#: inc/customizer.php:390
+msgid "روشن"
+msgstr ""
+
+#: inc/customizer.php:395
+msgid "نوار مشاوره بالای فوتر (فقط وقتی تلفن یا لینک خرید عمده تعیین شده باشد)"
+msgstr ""
+
+#: inc/customizer.php:396
+msgid "عنوان نوار مشاوره"
+msgstr ""
+
+#: inc/customizer.php:397
+msgid "توضیح نوار مشاوره"
+msgstr ""
+
+#: inc/customizer.php:398
 msgid "درباره فروشگاه"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:399
 msgid "متن کپی‌رایت (خالی = پیش‌فرض)"
 msgstr ""
 
@@ -691,6 +783,30 @@ msgstr ""
 
 #: inc/setup.php:137
 msgid "کد رسمی نماد اعتماد الکترونیکی یا ساماندهی را با ابزارک «HTML سفارشی» اینجا قرار دهید. فقط نمادهای معتبر و متعلق به همین فروشگاه."
+msgstr ""
+
+#: inc/core-plugin.php:34
+msgid "قالب صمدی الکتریک:"
+msgstr ""
+
+#: inc/core-plugin.php:35
+msgid "برای راه‌اندازی خودکار و درون‌ریزی کامل دمو (همه صفحات، محصولات، منوها)، افزونه Samadi Core را فعال کنید."
+msgstr ""
+
+#: inc/core-plugin.php:37
+msgid "فعال‌سازی Samadi Core"
+msgstr ""
+
+#: inc/core-plugin.php:37
+msgid "نصب و فعال‌سازی Samadi Core"
+msgstr ""
+
+#: inc/core-plugin.php:48
+msgid "دسترسی ندارید."
+msgstr ""
+
+#: inc/core-plugin.php:61
+msgid "نصب Samadi Core انجام نشد. فایل samadi-core.zip را از «افزونه‌ها ← افزودن ← بارگذاری» نصب کنید."
 msgstr ""
 
 #: inc/woocommerce.php:169
@@ -801,6 +917,50 @@ msgstr ""
 msgid "نمایش فهرستی"
 msgstr ""
 
+#: inc/woocommerce.php:703
+msgid "خلاصه حساب و آخرین سفارش‌ها"
+msgstr ""
+
+#: inc/woocommerce.php:704
+msgid "پیگیری وضعیت و جزئیات سفارش‌ها"
+msgstr ""
+
+#: inc/woocommerce.php:705
+msgid "فایل‌های قابل دانلود خریدها"
+msgstr ""
+
+#: inc/woocommerce.php:706
+msgid "آدرس‌های ارسال و صورتحساب"
+msgstr ""
+
+#: inc/woocommerce.php:707
+msgid "روش‌های پرداخت ذخیره‌شده"
+msgstr ""
+
+#: inc/woocommerce.php:708
+msgid "نام، ایمیل و رمز عبور"
+msgstr ""
+
+#: inc/woocommerce.php:803
+msgid "ورود یا ثبت‌نام"
+msgstr ""
+
+#: inc/woocommerce.php:803
+msgid "ورود به حساب کاربری"
+msgstr ""
+
+#: inc/woocommerce.php:804
+msgid "با ورود به حساب، سفارش‌ها را پیگیری کنید، آدرس‌ها را ذخیره کنید و سریع‌تر خرید کنید."
+msgstr ""
+
+#: inc/woocommerce.php:809
+msgid "ورود"
+msgstr ""
+
+#: inc/woocommerce.php:810
+msgid "ثبت‌نام"
+msgstr ""
+
 #: inc/helpers.php:47
 msgid "همه دسته‌بندی‌ها"
 msgstr ""
@@ -851,6 +1011,14 @@ msgstr ""
 
 #: inc/helpers.php:104
 msgid "همیشه کنار شما"
+msgstr ""
+
+#: inc/helpers.php:131
+msgid "برای انتخاب تجهیزات مشاوره می‌خواهید؟"
+msgstr ""
+
+#: inc/helpers.php:132
+msgid "کارشناسان ما برای استعلام قیمت، خرید عمده و انتخاب کالای مناسب پاسخگوی شما هستند."
 msgstr ""
 
 #: inc/customizer-controls.php:43
@@ -912,6 +1080,26 @@ msgstr ""
 
 #: inc/template-tags.php:253
 msgid "لینکدین"
+msgstr ""
+
+#: inc/template-tags.php:332 inc/template-tags.php:347
+msgid "دسته‌بندی‌های اصلی"
+msgstr ""
+
+#: inc/template-tags.php:357
+msgid "حساب کاربری من"
+msgstr ""
+
+#: inc/template-tags.php:361
+msgid "پیگیری سفارش‌ها"
+msgstr ""
+
+#: inc/template-tags.php:381
+msgid "خدمات مشتریان"
+msgstr ""
+
+#: inc/template-tags.php:408
+msgid "راهنما و قوانین"
 msgstr ""
 
 #: inc/elementor.php:117

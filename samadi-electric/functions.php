@@ -25,6 +25,7 @@ $samadi_modules = array(
 	'performance',
 	'seo',
 	'elementor',
+	'core-plugin',
 );
 
 foreach ( $samadi_modules as $samadi_module ) {
