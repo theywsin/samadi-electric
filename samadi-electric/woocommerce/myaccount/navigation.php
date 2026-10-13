@@ -1,9 +1,8 @@
 <?php
 /**
- * My Account navigation: customer card + icon menu.
+ * My Account navigation: profile card, icon menu and a support box.
  *
  * Based on WooCommerce's myaccount/navigation.php; menu items, classes and hooks are unchanged.
- * Follows the Figma design (v2): initial-letter avatar, flat menu on the page fill.
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package Samadi_Electric
@@ -12,7 +11,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$samadi_user = wp_get_current_user();
+$samadi_user    = wp_get_current_user();
+$samadi_support = samadi_account_support_url();
 
 do_action( 'woocommerce_before_account_navigation' );
 ?>
@@ -20,13 +20,14 @@ do_action( 'woocommerce_before_account_navigation' );
 <nav class="woocommerce-MyAccount-navigation se-account-nav" aria-label="<?php esc_attr_e( 'بخش‌های حساب کاربری', 'samadi-electric' ); ?>">
 	<?php if ( $samadi_user->exists() ) : ?>
 		<div class="se-account-nav__user">
-			<span class="se-account-nav__avatar" aria-hidden="true"><?php echo esc_html( mb_substr( $samadi_user->display_name ? $samadi_user->display_name : $samadi_user->user_login, 0, 1 ) ); ?></span>
-			<span class="se-account-nav__who">
-				<strong class="se-account-nav__name"><?php echo esc_html( $samadi_user->display_name ); ?></strong>
-				<?php if ( $samadi_user->user_email ) : ?>
-					<span class="se-account-nav__email" dir="ltr"><?php echo esc_html( $samadi_user->user_email ); ?></span>
-				<?php endif; ?>
+			<span class="se-account-nav__avatar">
+				<?php echo get_avatar( $samadi_user->ID, 160, '', '', array( 'class' => 'se-account-nav__avatar-img' ) ); ?>
 			</span>
+			<strong class="se-account-nav__name"><?php echo esc_html( $samadi_user->display_name ); ?></strong>
+			<a class="se-account-nav__email" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-account' ) ); ?>" title="<?php esc_attr_e( 'ویرایش اطلاعات حساب', 'samadi-electric' ); ?>">
+				<span dir="ltr"><?php echo esc_html( $samadi_user->user_email ); ?></span>
+				<?php samadi_icon( 'pencil', array( 'size' => 15 ) ); ?>
+			</a>
 		</div>
 	<?php endif; ?>
 
@@ -40,6 +41,15 @@ do_action( 'woocommerce_before_account_navigation' );
 			</li>
 		<?php endforeach; ?>
 	</ul>
+
+	<?php if ( $samadi_support ) : ?>
+		<div class="se-account-help">
+			<span class="se-account-help__icon"><?php samadi_icon( 'headset', array( 'size' => 28 ) ); ?></span>
+			<strong class="se-account-help__title"><?php esc_html_e( 'نیاز به کمک دارید؟', 'samadi-electric' ); ?></strong>
+			<span class="se-account-help__text"><?php esc_html_e( 'کارشناسان ما آماده پاسخگویی هستند.', 'samadi-electric' ); ?></span>
+			<a class="se-btn se-btn--outline se-account-help__btn" href="<?php echo esc_url( $samadi_support ); ?>"><?php esc_html_e( 'تماس با پشتیبانی', 'samadi-electric' ); ?></a>
+		</div>
+	<?php endif; ?>
 </nav>
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>

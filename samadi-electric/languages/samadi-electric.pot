@@ -7,59 +7,75 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "X-Domain: samadi-electric\n"
 
-#: woocommerce/myaccount/dashboard.php:25
-msgid "سلام %s، خوش آمدید"
-msgstr ""
-
 #: woocommerce/myaccount/dashboard.php:28
-msgid "از این بخش می‌توانید سفارش‌ها را پیگیری کنید، آدرس‌ها را مدیریت کنید و اطلاعات حساب خود را تغییر دهید."
+msgid "سلام، %s جان"
 msgstr ""
 
 #: woocommerce/myaccount/dashboard.php:35
-msgid "%s نیستید؟ خروج"
+msgid "به حساب کاربری خود در %s خوش آمدید."
 msgstr ""
 
-#: woocommerce/myaccount/dashboard.php:55 template-parts/footer/site-footer.php:64
-msgid "دسترسی سریع"
+#: woocommerce/myaccount/dashboard.php:38
+msgid "از اینجا می‌توانید سفارش‌ها، آدرس‌ها و اطلاعات حساب خود را مدیریت کنید."
 msgstr ""
 
-#: woocommerce/myaccount/dashboard.php:78
-msgid "آخرین سفارش‌ها"
+#: woocommerce/myaccount/dashboard.php:65
+msgid "آخرین سفارش‌های من"
 msgstr ""
 
-#: woocommerce/myaccount/dashboard.php:81 template-parts/home/products.php:31 template-parts/home/categories.php:38 inc/template-tags.php:239
-msgid "مشاهده همه"
+#: woocommerce/myaccount/dashboard.php:68
+msgid "مشاهده همه سفارش‌ها"
 msgstr ""
 
-#: woocommerce/myaccount/my-address.php:20 woocommerce/myaccount/my-address.php:29
-msgid "آدرس صورتحساب"
+#: woocommerce/myaccount/dashboard.php:90 inc/account.php:24
+msgid "آدرس‌های من"
 msgstr ""
 
-#: woocommerce/myaccount/my-address.php:21
-msgid "آدرس ارسال"
+#: woocommerce/myaccount/dashboard.php:92 inc/account.php:318
+msgid "مدیریت آدرس‌ها"
 msgstr ""
 
-#: woocommerce/myaccount/my-address.php:40
+#: woocommerce/myaccount/dashboard.php:105
+msgid "اطلاعات حساب کاربری"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:107
+msgid "ویرایش اطلاعات"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:114
+msgid "رمز عبور"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:115
+msgid "پنهان"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:119
+msgid "نام و نام خانوادگی"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:124
+msgid "شماره موبایل"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:125
+msgid "ثبت نشده"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:129 inc/customizer.php:263
+msgid "ایمیل"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:17
 msgid "این آدرس‌ها به‌صورت پیش‌فرض در صفحه تسویه‌حساب استفاده می‌شوند."
 msgstr ""
 
-#: woocommerce/myaccount/my-address.php:59
-msgid "هنوز این آدرس را ثبت نکرده‌اید."
-msgstr ""
-
-#: woocommerce/myaccount/my-address.php:75
-msgid "ویرایش %s"
-msgstr ""
-
-#: woocommerce/myaccount/my-address.php:75
-msgid "افزودن %s"
-msgstr ""
-
-#: woocommerce/myaccount/orders.php:37
+#: woocommerce/myaccount/orders.php:38
 msgid "سفارش‌های جدیدتر"
 msgstr ""
 
-#: woocommerce/myaccount/orders.php:43
+#: woocommerce/myaccount/orders.php:44
 msgid "سفارش‌های قدیمی‌تر"
 msgstr ""
 
@@ -67,7 +83,23 @@ msgstr ""
 msgid "بخش‌های حساب کاربری"
 msgstr ""
 
-#: woocommerce/archive-product.php:59 woocommerce/cart/cart.php:27 template-parts/account/order-card.php:122
+#: woocommerce/myaccount/navigation.php:27
+msgid "ویرایش اطلاعات حساب"
+msgstr ""
+
+#: woocommerce/myaccount/navigation.php:48
+msgid "نیاز به کمک دارید؟"
+msgstr ""
+
+#: woocommerce/myaccount/navigation.php:49
+msgid "کارشناسان ما آماده پاسخگویی هستند."
+msgstr ""
+
+#: woocommerce/myaccount/navigation.php:50
+msgid "تماس با پشتیبانی"
+msgstr ""
+
+#: woocommerce/archive-product.php:59 woocommerce/cart/cart.php:27
 msgid "%s کالا"
 msgstr ""
 
@@ -147,7 +179,7 @@ msgstr ""
 msgid "سبد خرید"
 msgstr ""
 
-#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:79
+#: template-parts/components/bottom-nav.php:38 template-parts/header/site-header.php:79 inc/account.php:41 inc/account.php:45 inc/account.php:300
 msgid "علاقه‌مندی‌ها"
 msgstr ""
 
@@ -159,6 +191,14 @@ msgstr ""
 msgid "ناوبری سریع"
 msgstr ""
 
+#: template-parts/account/order-row.php:111
+msgid "%1$s سفارش %2$s"
+msgstr ""
+
+#: template-parts/account/order-row.php:118
+msgid "مشاهده جزئیات"
+msgstr ""
+
 #: template-parts/account/empty.php:14
 msgid "هنوز سفارشی ثبت نکرده‌اید"
 msgstr ""
@@ -167,16 +207,44 @@ msgstr ""
 msgid "سفارش‌های شما پس از خرید اینجا نمایش داده می‌شوند و می‌توانید وضعیت آن‌ها را پیگیری کنید."
 msgstr ""
 
-#: template-parts/account/order-card.php:71
-msgid "سفارش #%s"
+#: template-parts/account/addresses.php:33 inc/woocommerce.php:613
+msgid "پیش‌فرض"
 msgstr ""
 
-#: template-parts/account/order-card.php:99
-msgid "کالاهای سفارش"
+#: template-parts/account/addresses.php:40
+msgid "ویرایش %s"
 msgstr ""
 
-#: template-parts/account/order-card.php:151
-msgid "%1$s سفارش %2$s"
+#: template-parts/account/addresses.php:75
+msgid "آدرس جدید"
+msgstr ""
+
+#: template-parts/account/addresses.php:77
+msgid "برای افزودن آدرس جدید روی دکمه زیر کلیک کنید."
+msgstr ""
+
+#: template-parts/account/addresses.php:79
+msgid "افزودن آدرس جدید"
+msgstr ""
+
+#: template-parts/account/wishlist.php:20
+msgid "علاقه‌مندی‌های من"
+msgstr ""
+
+#: template-parts/account/wishlist.php:22 template-parts/home/products.php:31 template-parts/home/categories.php:38 inc/template-tags.php:239
+msgid "مشاهده همه"
+msgstr ""
+
+#: template-parts/account/wishlist.php:40 inc/woocommerce.php:375
+msgid "موجود در انبار"
+msgstr ""
+
+#: template-parts/account/wishlist.php:42 inc/woocommerce.php:229
+msgid "ناموجود"
+msgstr ""
+
+#: template-parts/account/wishlist.php:62
+msgid "هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید."
 msgstr ""
 
 #: template-parts/header/mobile-drawer.php:17
@@ -237,6 +305,10 @@ msgstr ""
 
 #: template-parts/content/single.php:103
 msgid "مطالب مرتبط"
+msgstr ""
+
+#: template-parts/footer/site-footer.php:64
+msgid "دسترسی سریع"
 msgstr ""
 
 #: template-parts/footer/site-footer.php:86
@@ -471,10 +543,6 @@ msgstr ""
 
 #: inc/customizer.php:262
 msgid "تلفن همراه"
-msgstr ""
-
-#: inc/customizer.php:263
-msgid "ایمیل"
 msgstr ""
 
 #: inc/customizer.php:264
@@ -949,10 +1017,6 @@ msgstr ""
 msgid "فروش ویژه"
 msgstr ""
 
-#: inc/woocommerce.php:229
-msgid "ناموجود"
-msgstr ""
-
 #: inc/woocommerce.php:232
 msgid "پیش‌سفارش"
 msgstr ""
@@ -975,10 +1039,6 @@ msgstr ""
 
 #: inc/woocommerce.php:375
 msgid "قابل پیش‌سفارش"
-msgstr ""
-
-#: inc/woocommerce.php:375
-msgid "موجود در انبار"
 msgstr ""
 
 #: inc/woocommerce.php:412 inc/woocommerce.php:469
@@ -1007,10 +1067,6 @@ msgstr ""
 
 #: inc/woocommerce.php:563
 msgid "مراحل خرید"
-msgstr ""
-
-#: inc/woocommerce.php:613
-msgid "پیش‌فرض"
 msgstr ""
 
 #: inc/woocommerce.php:614
@@ -1198,15 +1254,11 @@ msgid "پیشخوان"
 msgstr ""
 
 #: inc/account.php:22
-msgid "سفارش‌ها"
+msgid "سفارش‌های من"
 msgstr ""
 
 #: inc/account.php:23
-msgid "دانلودها"
-msgstr ""
-
-#: inc/account.php:24
-msgid "آدرس‌ها"
+msgid "دانلودهای من"
 msgstr ""
 
 #: inc/account.php:25
@@ -1214,43 +1266,43 @@ msgid "روش‌های پرداخت"
 msgstr ""
 
 #: inc/account.php:26
-msgid "جزئیات حساب"
+msgid "اطلاعات حساب"
 msgstr ""
 
 #: inc/account.php:27
 msgid "خروج از حساب"
 msgstr ""
 
-#: inc/account.php:71
-msgid "پیگیری وضعیت و جزئیات سفارش‌ها"
+#: inc/account.php:214
+msgid "صورتحساب"
 msgstr ""
 
-#: inc/account.php:72
-msgid "فایل‌های قابل دانلود خریدهای شما"
+#: inc/account.php:217
+msgid "محل ارسال"
 msgstr ""
 
-#: inc/account.php:73
-msgid "آدرس صورتحساب و ارسال"
+#: inc/account.php:281
+msgid "تعداد سفارش‌ها"
 msgstr ""
 
-#: inc/account.php:74
-msgid "کارت‌ها و روش‌های پرداخت ذخیره‌شده"
+#: inc/account.php:284
+msgid "مشاهده سفارش‌ها"
 msgstr ""
 
-#: inc/account.php:75
-msgid "نام، ایمیل و تغییر رمز عبور"
+#: inc/account.php:289
+msgid "مجموع خریدها"
 msgstr ""
 
-#: inc/account.php:165
-msgid "همه سفارش‌ها"
+#: inc/account.php:292
+msgid "جزئیات مالی"
 msgstr ""
 
-#: inc/account.php:171
-msgid "در حال انجام"
+#: inc/account.php:303
+msgid "مشاهده موارد محبوب"
 msgstr ""
 
-#: inc/account.php:177
-msgid "تحویل‌شده"
+#: inc/account.php:315
+msgid "آدرس‌های ثبت شده"
 msgstr ""
 
 #: inc/navigation.php:28

@@ -1,6 +1,7 @@
 <?php
 /**
- * My Account dashboard: greeting, order stats, shortcuts and recent orders.
+ * My Account dashboard: greeting banner, stats, recent orders, addresses, wishlist and
+ * account details.
  *
  * Based on WooCommerce's myaccount/dashboard.php; the dashboard hooks still fire at the end.
  *
@@ -12,95 +13,123 @@
 defined( 'ABSPATH' ) || exit;
 
 $samadi_menu   = wc_get_account_menu_items();
-$samadi_recent = isset( $samadi_menu['orders'] ) ? samadi_account_recent_orders( 3 ) : array();
+$samadi_recent = isset( $samadi_menu['orders'] ) ? samadi_account_recent_orders( 4 ) : array();
 $samadi_name   = $current_user->first_name ? $current_user->first_name : $current_user->display_name;
-$samadi_skip   = array( 'dashboard', 'customer-logout' );
+$samadi_banner = samadi_account_banner_image();
+$samadi_phone  = (string) get_user_meta( $current_user->ID, 'billing_phone', true );
+$samadi_full   = trim( $current_user->first_name . ' ' . $current_user->last_name );
 ?>
 
-<section class="se-account-hero">
+<section class="se-account-hero<?php echo $samadi_banner ? ' has-image' : ''; ?>"<?php echo $samadi_banner ? ' style="--se-hero-image: url(' . esc_url( $samadi_banner ) . ')"' : ''; ?>>
 	<div class="se-account-hero__text">
 		<h2 class="se-account-hero__title">
 			<?php
 			/* translators: %s: customer first name or display name. */
-			echo esc_html( sprintf( __( 'سلام %s، خوش آمدید', 'samadi-electric' ), $samadi_name ) );
+			echo esc_html( sprintf( __( 'سلام، %s جان', 'samadi-electric' ), $samadi_name ) );
 			?>
+			<span class="se-account-hero__wave" aria-hidden="true">👋</span>
 		</h2>
-		<p class="se-account-hero__desc"><?php esc_html_e( 'از این بخش می‌توانید سفارش‌ها را پیگیری کنید، آدرس‌ها را مدیریت کنید و اطلاعات حساب خود را تغییر دهید.', 'samadi-electric' ); ?></p>
-	</div>
-	<a class="se-account-hero__logout" href="<?php echo esc_url( wc_logout_url() ); ?>">
-		<?php samadi_icon( 'log-out', array( 'size' => 18 ) ); ?>
-		<span>
+		<p class="se-account-hero__desc">
 			<?php
-			/* translators: %s: customer display name. */
-			echo esc_html( sprintf( __( '%s نیستید؟ خروج', 'samadi-electric' ), $current_user->display_name ) );
+			/* translators: %s: site name. */
+			echo esc_html( sprintf( __( 'به حساب کاربری خود در %s خوش آمدید.', 'samadi-electric' ), get_bloginfo( 'name' ) ) );
 			?>
-		</span>
-	</a>
+			<br>
+			<?php esc_html_e( 'از اینجا می‌توانید سفارش‌ها، آدرس‌ها و اطلاعات حساب خود را مدیریت کنید.', 'samadi-electric' ); ?>
+		</p>
+	</div>
 </section>
 
-<?php if ( isset( $samadi_menu['orders'] ) ) : ?>
+<?php $samadi_stats = samadi_account_stats(); ?>
+<?php if ( $samadi_stats ) : ?>
 	<ul class="se-account-stats">
-		<?php foreach ( samadi_account_stats() as $samadi_stat ) : ?>
-			<li class="se-account-stat se-account-stat--<?php echo esc_attr( $samadi_stat['tone'] ); ?>">
-				<a href="<?php echo esc_url( wc_get_endpoint_url( 'orders' ) ); ?>">
-					<span class="se-account-stat__icon"><?php samadi_icon( $samadi_stat['icon'], array( 'size' => 22 ) ); ?></span>
-					<span class="se-account-stat__value"><?php echo esc_html( samadi_number( $samadi_stat['value'] ) ); ?></span>
+		<?php foreach ( $samadi_stats as $samadi_stat ) : ?>
+			<li class="se-account-stat se-account-stat--<?php echo esc_attr( $samadi_stat['key'] ); ?>">
+				<div class="se-account-stat__head">
+					<span class="se-account-stat__icon"><?php samadi_icon( $samadi_stat['icon'], array( 'size' => 20 ) ); ?></span>
 					<span class="se-account-stat__label"><?php echo esc_html( $samadi_stat['label'] ); ?></span>
+				</div>
+				<strong class="se-account-stat__value"><?php echo wp_kses_post( $samadi_stat['value'] ); ?></strong>
+				<a class="se-account-stat__link" href="<?php echo esc_url( $samadi_stat['url'] ); ?>">
+					<span><?php echo esc_html( $samadi_stat['link'] ); ?></span>
+					<?php samadi_icon( 'chevron-left', array( 'size' => 14 ) ); ?>
 				</a>
 			</li>
 		<?php endforeach; ?>
 	</ul>
 <?php endif; ?>
 
-<nav class="se-account-shortcuts" aria-label="<?php esc_attr_e( 'دسترسی سریع', 'samadi-electric' ); ?>">
-	<?php foreach ( $samadi_menu as $samadi_endpoint => $samadi_label ) : ?>
-		<?php
-		if ( in_array( $samadi_endpoint, $samadi_skip, true ) ) {
-			continue;
-		}
-		$samadi_desc = samadi_account_menu_description( $samadi_endpoint );
-		?>
-		<a class="se-account-shortcut" href="<?php echo esc_url( wc_get_account_endpoint_url( $samadi_endpoint ) ); ?>">
-			<span class="se-account-shortcut__icon"><?php samadi_icon( samadi_account_menu_icon( $samadi_endpoint ), array( 'size' => 22 ) ); ?></span>
-			<span class="se-account-shortcut__text">
-				<strong><?php echo esc_html( $samadi_label ); ?></strong>
-				<?php if ( $samadi_desc ) : ?>
-					<span><?php echo esc_html( $samadi_desc ); ?></span>
-				<?php endif; ?>
-			</span>
-		</a>
-	<?php endforeach; ?>
-</nav>
-
 <?php if ( isset( $samadi_menu['orders'] ) ) : ?>
-	<section class="se-account-section">
-		<header class="se-account-section__head">
-			<h2 class="se-account-section__title"><?php esc_html_e( 'آخرین سفارش‌ها', 'samadi-electric' ); ?></h2>
+	<section class="se-panel">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'آخرین سفارش‌های من', 'samadi-electric' ); ?></h2>
 			<?php if ( $samadi_recent ) : ?>
-				<a class="se-account-section__more" href="<?php echo esc_url( wc_get_endpoint_url( 'orders' ) ); ?>">
-					<span><?php esc_html_e( 'مشاهده همه', 'samadi-electric' ); ?></span>
-					<?php samadi_icon( 'arrow-left', array( 'size' => 14 ) ); ?>
+				<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'orders' ) ); ?>">
+					<span><?php esc_html_e( 'مشاهده همه سفارش‌ها', 'samadi-electric' ); ?></span>
+					<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
 				</a>
 			<?php endif; ?>
 		</header>
 		<?php if ( $samadi_recent ) : ?>
-			<div class="se-orders">
+			<ul class="se-order-list">
 				<?php
 				foreach ( $samadi_recent as $samadi_order ) {
-					get_template_part(
-						'template-parts/account/order-card',
-						null,
-						array(
-							'order'   => $samadi_order,
-							'compact' => true,
-						)
-					);
+					get_template_part( 'template-parts/account/order-row', null, array( 'order' => $samadi_order ) );
 				}
 				?>
-			</div>
+			</ul>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/account/empty' ); ?>
 		<?php endif; ?>
+	</section>
+<?php endif; ?>
+
+<?php if ( isset( $samadi_menu['edit-address'] ) ) : ?>
+	<section class="se-panel">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'آدرس‌های من', 'samadi-electric' ); ?></h2>
+			<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-address' ) ); ?>">
+				<span><?php esc_html_e( 'مدیریت آدرس‌ها', 'samadi-electric' ); ?></span>
+				<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
+			</a>
+		</header>
+		<?php get_template_part( 'template-parts/account/addresses' ); ?>
+	</section>
+<?php endif; ?>
+
+<?php get_template_part( 'template-parts/account/wishlist' ); ?>
+
+<?php if ( isset( $samadi_menu['edit-account'] ) ) : ?>
+	<section class="se-panel se-panel--plain">
+		<header class="se-panel__head">
+			<h2 class="se-panel__title"><?php esc_html_e( 'اطلاعات حساب کاربری', 'samadi-electric' ); ?></h2>
+			<a class="se-panel__more" href="<?php echo esc_url( wc_get_account_endpoint_url( 'edit-account' ) ); ?>">
+				<span><?php esc_html_e( 'ویرایش اطلاعات', 'samadi-electric' ); ?></span>
+				<?php samadi_icon( 'chevron-left', array( 'size' => 16 ) ); ?>
+			</a>
+		</header>
+		<dl class="se-account-info">
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'key-round', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'رمز عبور', 'samadi-electric' ); ?></dt>
+				<dd aria-label="<?php esc_attr_e( 'پنهان', 'samadi-electric' ); ?>">••••••••</dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'user', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'نام و نام خانوادگی', 'samadi-electric' ); ?></dt>
+				<dd><?php echo esc_html( $samadi_full ? $samadi_full : $current_user->display_name ); ?></dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'phone', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'شماره موبایل', 'samadi-electric' ); ?></dt>
+				<dd dir="ltr"><?php echo $samadi_phone ? esc_html( samadi_option( 'persian_digits' ) ? samadi_fa_digits( $samadi_phone ) : $samadi_phone ) : esc_html__( 'ثبت نشده', 'samadi-electric' ); ?></dd>
+			</div>
+			<div class="se-account-info__item">
+				<span class="se-account-info__icon"><?php samadi_icon( 'mail', array( 'size' => 20 ) ); ?></span>
+				<dt><?php esc_html_e( 'ایمیل', 'samadi-electric' ); ?></dt>
+				<dd dir="ltr"><?php echo esc_html( $current_user->user_email ); ?></dd>
+			</div>
+		</dl>
 	</section>
 <?php endif; ?>
 
