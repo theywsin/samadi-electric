@@ -40,6 +40,9 @@ function samadi_defaults() {
 		'persian_digits'         => true,
 		'force_rtl'              => true,
 
+		// Store type (demo preset): electric | medical. Drives the built-in logo mark and placeholder icons.
+		'store_type'             => 'electric',
+
 		// Header.
 		'mobile_logo'            => 0,
 		'header_sticky'          => true,
@@ -428,4 +431,20 @@ function samadi_product_brand( $product_id ) {
 	$terms = get_the_terms( $product_id, $taxonomy );
 
 	return ( $terms && ! is_wp_error( $terms ) ) ? reset( $terms ) : null;
+}
+
+/**
+ * Placeholder icon for the current store type.
+ *
+ * @param string $context 'category' | 'post'.
+ * @return string Icon name.
+ */
+function samadi_placeholder_icon( $context = 'category' ) {
+	$medical = 'medical' === samadi_option( 'store_type' );
+
+	if ( 'post' === $context ) {
+		return $medical ? 'stethoscope' : 'lightbulb';
+	}
+
+	return $medical ? 'heart-pulse' : 'zap';
 }

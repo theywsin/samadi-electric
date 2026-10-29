@@ -15,7 +15,7 @@ $samadi_heading = isset( $args['heading'] ) && in_array( $args['heading'], array
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'medium_large', array( 'loading' => 'lazy', 'alt' => '' ) );
 		} else {
-			echo '<span class="se-post-card__placeholder">' . samadi_get_icon( 'lightbulb', array( 'size' => 40 ) ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<span class="se-post-card__placeholder">' . samadi_get_icon( samadi_placeholder_icon( 'post' ), array( 'size' => 40 ) ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		?>
 	</a>

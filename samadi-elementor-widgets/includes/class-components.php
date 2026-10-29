@@ -301,7 +301,7 @@ class Samadi_EW_Components {
 			$thumb_id = (int) get_term_meta( $term->term_id, 'thumbnail_id', true );
 			$media    = ( $args['show_image'] && $thumb_id )
 				? wp_get_attachment_image( $thumb_id, 'woocommerce_thumbnail', false, array( 'alt' => $term->name, 'loading' => 'lazy' ) )
-				: samadi_ew_icon( 'zap', 36 );
+				: samadi_ew_icon( function_exists( 'samadi_placeholder_icon' ) ? samadi_placeholder_icon() : 'zap', 36 );
 
 			$items .= '<li class="se-cat-card"><a class="se-cat-card__link" href="' . esc_url( get_term_link( $term ) ) . '">';
 			$items .= '<span class="se-cat-card__media">' . $media . '</span>';
@@ -584,7 +584,7 @@ class Samadi_EW_Components {
 		$html  = '<div class="se-flash">';
 		$html .= '<div class="se-flash__head">';
 		if ( $args['title'] ) {
-			$html .= '<h2 class="se-flash__title">' . samadi_ew_icon( 'zap', 22 ) . esc_html( $args['title'] ) . '</h2>';
+			$html .= '<h2 class="se-flash__title">' . samadi_ew_icon( function_exists( 'samadi_option' ) && 'medical' === samadi_option( 'store_type' ) ? 'activity' : 'zap', 22 ) . esc_html( $args['title'] ) . '</h2>';
 		}
 		if ( $end ) {
 			$html .= sprintf(
@@ -645,7 +645,7 @@ class Samadi_EW_Components {
 			$query->the_post();
 			$html .= '<article class="se-post-card se-card">';
 			$html .= '<a class="se-post-card__media" href="' . esc_url( get_permalink() ) . '" tabindex="-1" aria-hidden="true">';
-			$html .= has_post_thumbnail() ? get_the_post_thumbnail( null, 'medium_large', array( 'loading' => 'lazy', 'alt' => '' ) ) : '<span class="se-post-card__placeholder">' . samadi_ew_icon( 'lightbulb', 40 ) . '</span>';
+			$html .= has_post_thumbnail() ? get_the_post_thumbnail( null, 'medium_large', array( 'loading' => 'lazy', 'alt' => '' ) ) : '<span class="se-post-card__placeholder">' . samadi_ew_icon( function_exists( 'samadi_placeholder_icon' ) ? samadi_placeholder_icon( 'post' ) : 'lightbulb', 40 ) . '</span>';
 			$html .= '</a><div class="se-post-card__body">';
 			$html .= '<h3 class="se-post-card__title"><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></h3>';
 			if ( $args['excerpt'] ) {

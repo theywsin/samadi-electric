@@ -55,7 +55,7 @@ msgstr ""
 msgid "تنظیمات"
 msgstr ""
 
-#: includes/class-settings.php:94 includes/class-setup.php:253
+#: includes/class-settings.php:94 includes/class-setup.php:282
 msgid "خرید عمده و استعلام قیمت"
 msgstr ""
 
@@ -419,7 +419,7 @@ msgstr ""
 msgid "محصولات مکمل (سبد خرید)"
 msgstr ""
 
-#: includes/elementor/widgets/class-product-grid.php:70 includes/elementor/widgets/class-category-cards.php:36 includes/class-components.php:930 includes/class-plugin.php:105
+#: includes/elementor/widgets/class-product-grid.php:70 includes/elementor/widgets/class-category-cards.php:36 includes/class-components.php:930 includes/class-plugin.php:106
 msgid "دسته‌بندی‌ها"
 msgstr ""
 
@@ -483,7 +483,7 @@ msgstr ""
 msgid "صعودی"
 msgstr ""
 
-#: includes/elementor/widgets/class-product-grid.php:126 includes/class-plugin.php:104
+#: includes/elementor/widgets/class-product-grid.php:126 includes/class-plugin.php:105
 msgid "محصولات"
 msgstr ""
 
@@ -907,11 +907,11 @@ msgstr ""
 msgid "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت."
 msgstr ""
 
-#: includes/elementor/widgets/class-hero.php:71
+#: includes/elementor/widgets/class-hero.php:71 includes/class-setup.php:334
 msgid "مشاهده محصولات"
 msgstr ""
 
-#: includes/elementor/widgets/class-hero.php:73 includes/elementor/widgets/class-header-tools.php:38 includes/class-components.php:712
+#: includes/elementor/widgets/class-hero.php:73 includes/elementor/widgets/class-header-tools.php:38 includes/class-components.php:712 includes/class-setup.php:335
 msgid "خرید عمده"
 msgstr ""
 
@@ -1095,7 +1095,7 @@ msgstr ""
 msgid "برندهای صمدی"
 msgstr ""
 
-#: includes/elementor/widgets/class-brands.php:36 includes/class-components.php:262 includes/class-plugin.php:106
+#: includes/elementor/widgets/class-brands.php:36 includes/class-components.php:262 includes/class-plugin.php:107
 msgid "برندها"
 msgstr ""
 
@@ -1335,11 +1335,11 @@ msgstr ""
 msgid "به‌جای قیمت، «استعلام قیمت» نمایش داده شود و محصول قابل افزودن به سبد نباشد."
 msgstr ""
 
-#: includes/class-components.php:64 includes/class-plugin.php:110
+#: includes/class-components.php:64 includes/class-plugin.php:111
 msgid "قبلی"
 msgstr ""
 
-#: includes/class-components.php:66 includes/class-plugin.php:111
+#: includes/class-components.php:66 includes/class-plugin.php:112
 msgid "بعدی"
 msgstr ""
 
@@ -1363,19 +1363,19 @@ msgstr ""
 msgid "زمان باقی‌مانده تا پایان پیشنهاد"
 msgstr ""
 
-#: includes/class-components.php:594 includes/class-plugin.php:112
+#: includes/class-components.php:594 includes/class-plugin.php:113
 msgid "روز"
 msgstr ""
 
-#: includes/class-components.php:595 includes/class-plugin.php:113
+#: includes/class-components.php:595 includes/class-plugin.php:114
 msgid "ساعت"
 msgstr ""
 
-#: includes/class-components.php:596 includes/class-plugin.php:114
+#: includes/class-components.php:596 includes/class-plugin.php:115
 msgid "دقیقه"
 msgstr ""
 
-#: includes/class-components.php:597 includes/class-plugin.php:115
+#: includes/class-components.php:597 includes/class-plugin.php:116
 msgid "ثانیه"
 msgstr ""
 
@@ -1420,110 +1420,130 @@ msgid "هنوز اطلاعات تماسی در سفارشی‌سازی قالب 
 msgstr ""
 
 #: includes/class-setup.php:59
+msgid "اعمال دمو (نوع فروشگاه)"
+msgstr ""
+
+#: includes/class-setup.php:60
+msgid "رنگ‌ها، نماد لوگو، متن‌های بنر و مزایا را تنظیم می‌کند؛ در صورت انتخاب، ویژگی‌ها و دسته‌های همان نوع فروشگاه و صفحه اصلی Elementor را هم می‌سازد. محصول، قیمت، مجوز یا اطلاعات تماس ساخته نمی‌شود."
+msgstr ""
+
+#: includes/class-setup.php:63
 msgid "ساخت ویژگی‌های پیشنهادی محصولات"
 msgstr ""
 
-#: includes/class-setup.php:61
+#: includes/class-setup.php:65
 msgid "ویژگی‌های سراسری برای فیلتر و مشخصات فنی: %s. موارد موجود دوباره ساخته نمی‌شوند."
 msgstr ""
 
-#: includes/class-setup.php:64
+#: includes/class-setup.php:68
 msgid "ساخت دسته‌بندی‌های اصلی پیشنهادی"
 msgstr ""
 
-#: includes/class-setup.php:68
+#: includes/class-setup.php:72
 msgid "ساخت صفحه «خرید عمده و استعلام قیمت»"
 msgstr ""
 
-#: includes/class-setup.php:69
+#: includes/class-setup.php:73
 msgid "یک برگه با فرم استعلام می‌سازد و آن را در تنظیمات افزونه و قالب به‌عنوان صفحه خرید عمده ثبت می‌کند."
 msgstr ""
 
-#: includes/class-setup.php:75
+#: includes/class-setup.php:79
 msgid "ساخت صفحه اصلی با Elementor"
 msgstr ""
 
-#: includes/class-setup.php:76
+#: includes/class-setup.php:80
 msgid "برگه «صفحه اصلی» را با ویجت‌های صمدی (بنر، مزایا، دسته‌ها، پیشنهادهای ویژه، پرفروش‌ها، جدیدترین‌ها، برندها، مقالات) می‌سازد. همه بخش‌ها در Elementor قابل ویرایش‌اند."
 msgstr ""
 
-#: includes/class-setup.php:80
+#: includes/class-setup.php:84
 msgid "ابزارهای راه‌اندازی"
 msgstr ""
 
-#: includes/class-setup.php:95
+#: includes/class-setup.php:104
+msgid "ساخت ویژگی‌ها و دسته‌بندی‌ها"
+msgstr ""
+
+#: includes/class-setup.php:106
+msgid "ساخت صفحه اصلی Elementor"
+msgstr ""
+
+#: includes/class-setup.php:110
 msgid "به‌عنوان صفحه اصلی سایت تنظیم شود"
 msgstr ""
 
-#: includes/class-setup.php:97
+#: includes/class-setup.php:112
 msgid "اجرا"
 msgstr ""
 
-#: includes/class-setup.php:104
+#: includes/class-setup.php:119
 msgid "قالب‌های آماده هدر/فوتر Elementor Pro در پوشه templates/elementor افزونه قرار دارند و از «قالب‌ها ← وارد کردن» قابل استفاده‌اند."
 msgstr ""
 
-#: includes/class-setup.php:123
+#: includes/class-setup.php:138
 msgid "%d ویژگی ساخته شد. برای هر ویژگی از «محصولات ← ویژگی‌ها ← پیکربندی» مقادیر را اضافه کنید."
 msgstr ""
 
-#: includes/class-setup.php:125
+#: includes/class-setup.php:140
 msgid "%d دسته‌بندی ساخته شد. تصویر و ترتیب دسته‌ها را از «محصولات ← دسته‌بندی‌ها» تنظیم کنید."
 msgstr ""
 
-#: includes/class-setup.php:126
+#: includes/class-setup.php:141
 msgid "صفحه خرید عمده ساخته و تنظیم شد."
 msgstr ""
 
-#: includes/class-setup.php:127
+#: includes/class-setup.php:142
 msgid "صفحه اصلی Elementor ساخته شد."
 msgstr ""
 
-#: includes/class-setup.php:128
+#: includes/class-setup.php:143
+msgid "دمو اعمال شد. لوگو، اطلاعات تماس، منوها و محصولات واقعی خود را اضافه کنید."
+msgstr ""
+
+#: includes/class-setup.php:144
 msgid "عملیات انجام نشد. دسترسی یا پیش‌نیازها را بررسی کنید."
 msgstr ""
 
-#: includes/class-setup.php:137
+#: includes/class-setup.php:153
 msgid "مشاهده"
 msgstr ""
 
-#: includes/class-setup.php:139
+#: includes/class-setup.php:155
 msgid "ویرایش با Elementor"
 msgstr ""
 
-#: includes/class-setup.php:307
+#: includes/class-setup.php:350
 msgid "صفحه اصلی"
 msgstr ""
 
-#: includes/class-plugin.php:101
+#: includes/class-plugin.php:102
 msgid "محصولی با این عبارت پیدا نشد."
 msgstr ""
 
-#: includes/class-plugin.php:102
+#: includes/class-plugin.php:103
 msgid "مشاهده همه نتایج"
 msgstr ""
 
-#: includes/class-plugin.php:103
+#: includes/class-plugin.php:104
 msgid "در حال جستجو…"
 msgstr ""
 
-#: includes/class-plugin.php:107
+#: includes/class-plugin.php:108
 msgid "کد:"
 msgstr ""
 
-#: includes/class-plugin.php:108
+#: includes/class-plugin.php:109
 msgid "نتایج به‌روزرسانی شد."
 msgstr ""
 
-#: includes/class-plugin.php:109
+#: includes/class-plugin.php:110
 msgid "بارگذاری نتایج با خطا مواجه شد. صفحه دوباره بارگذاری می‌شود."
 msgstr ""
 
-#: includes/class-plugin.php:116
+#: includes/class-plugin.php:117
 msgid "حذف ردیف"
 msgstr ""
 
-#: includes/class-plugin.php:141
+#: includes/class-plugin.php:142
 msgid "افزونه Samadi Elementor Widgets برای کار به WooCommerce نیاز دارد. لطفاً WooCommerce را نصب و فعال کنید."
 msgstr ""
 

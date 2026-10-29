@@ -206,6 +206,21 @@ function samadi_customize_register( $wp_customize ) {
 		'samadi_sanitize_checkbox'
 	);
 
+	$add(
+		'store_type',
+		'samadi_typography',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'نوع فروشگاه (نماد پیش‌فرض و آیکون‌ها)', 'samadi-electric' ),
+			'description' => __( 'برای اعمال کامل یک دمو (رنگ‌ها، دسته‌ها، صفحه اصلی) از «ووکامرس ← تنظیمات صمدی ← دموها» استفاده کنید.', 'samadi-electric' ),
+			'choices'     => array(
+				'electric' => __( 'تجهیزات الکتریکی', 'samadi-electric' ),
+				'medical'  => __( 'تجهیزات و لوازم پزشکی', 'samadi-electric' ),
+			),
+		),
+		'samadi_sanitize_choice'
+	);
+
 	/* ----- Header ----- */
 	$wp_customize->add_section(
 		'samadi_header',

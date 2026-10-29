@@ -65,7 +65,7 @@ if ( is_wp_error( $samadi_terms ) || ! $samadi_terms ) {
 					<span class="se-cat-card__media">
 						<?php
 						$samadi_img = samadi_term_image( $samadi_term, 'samadi-category' );
-						echo $samadi_img ? $samadi_img : samadi_get_icon( 'zap', array( 'size' => 36 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo $samadi_img ? $samadi_img : samadi_get_icon( samadi_placeholder_icon(), array( 'size' => 36 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						?>
 					</span>
 					<span class="se-cat-card__name"><?php echo esc_html( $samadi_term->name ); ?></span>

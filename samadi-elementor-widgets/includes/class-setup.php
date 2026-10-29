@@ -55,6 +55,10 @@ class Samadi_EW_Setup {
 	 */
 	public static function render_tools() {
 		$tools = array(
+			'demo'       => array(
+				__( 'اعمال دمو (نوع فروشگاه)', 'samadi-elementor-widgets' ),
+				__( 'رنگ‌ها، نماد لوگو، متن‌های بنر و مزایا را تنظیم می‌کند؛ در صورت انتخاب، ویژگی‌ها و دسته‌های همان نوع فروشگاه و صفحه اصلی Elementor را هم می‌سازد. محصول، قیمت، مجوز یا اطلاعات تماس ساخته نمی‌شود.', 'samadi-elementor-widgets' ),
+			),
 			'attributes' => array(
 				__( 'ساخت ویژگی‌های پیشنهادی محصولات', 'samadi-elementor-widgets' ),
 				/* translators: %s: list of attributes. */
@@ -91,7 +95,18 @@ class Samadi_EW_Setup {
 							<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION ); ?>">
 							<input type="hidden" name="tool" value="<?php echo esc_attr( $tool ); ?>">
 							<?php wp_nonce_field( self::ACTION . '_' . $tool ); ?>
-							<?php if ( 'home' === $tool ) : ?>
+							<?php if ( 'demo' === $tool ) : ?>
+								<select name="demo" style="display:block;margin-bottom:6px">
+									<?php foreach ( Samadi_EW_Demos::all() as $demo_key => $demo ) : ?>
+										<option value="<?php echo esc_attr( $demo_key ); ?>" <?php selected( function_exists( 'samadi_option' ) ? get_theme_mod( 'samadi_active_demo', 'electric' ) : '', $demo_key ); ?>><?php echo esc_html( $demo['label'] ); ?></option>
+									<?php endforeach; ?>
+								</select>
+								<label style="display:block"><input type="checkbox" name="structure" value="1" checked> <?php esc_html_e( 'ساخت ویژگی‌ها و دسته‌بندی‌ها', 'samadi-elementor-widgets' ); ?></label>
+								<?php if ( did_action( 'elementor/loaded' ) ) : ?>
+									<label style="display:block"><input type="checkbox" name="home" value="1" checked> <?php esc_html_e( 'ساخت صفحه اصلی Elementor', 'samadi-elementor-widgets' ); ?></label>
+								<?php endif; ?>
+							<?php endif; ?>
+							<?php if ( 'home' === $tool || 'demo' === $tool ) : ?>
 								<label style="display:block;margin-bottom:6px"><input type="checkbox" name="set_front" value="1"> <?php esc_html_e( 'به‌عنوان صفحه اصلی سایت تنظیم شود', 'samadi-elementor-widgets' ); ?></label>
 							<?php endif; ?>
 							<?php submit_button( __( 'اجرا', 'samadi-elementor-widgets' ), 'secondary', 'submit', false ); ?>
@@ -125,6 +140,7 @@ class Samadi_EW_Setup {
 			'categories' => sprintf( __( '%d دسته‌بندی ساخته شد. تصویر و ترتیب دسته‌ها را از «محصولات ← دسته‌بندی‌ها» تنظیم کنید.', 'samadi-elementor-widgets' ), $count ),
 			'quote_page' => __( 'صفحه خرید عمده ساخته و تنظیم شد.', 'samadi-elementor-widgets' ),
 			'home'       => __( 'صفحه اصلی Elementor ساخته شد.', 'samadi-elementor-widgets' ),
+			'demo'       => __( 'دمو اعمال شد. لوگو، اطلاعات تماس، منوها و محصولات واقعی خود را اضافه کنید.', 'samadi-elementor-widgets' ),
 			'error'      => __( 'عملیات انجام نشد. دسترسی یا پیش‌نیازها را بررسی کنید.', 'samadi-elementor-widgets' ),
 		);
 
@@ -133,9 +149,9 @@ class Samadi_EW_Setup {
 		}
 
 		$link = '';
-		if ( $page_id && in_array( $code, array( 'quote_page', 'home' ), true ) ) {
+		if ( $page_id && in_array( $code, array( 'quote_page', 'home', 'demo' ), true ) ) {
 			$link = ' <a href="' . esc_url( get_permalink( $page_id ) ) . '">' . esc_html__( 'مشاهده', 'samadi-elementor-widgets' ) . '</a>';
-			if ( 'home' === $code && did_action( 'elementor/loaded' ) ) {
+			if ( in_array( $code, array( 'home', 'demo' ), true ) && did_action( 'elementor/loaded' ) ) {
 				$link .= ' | <a href="' . esc_url( admin_url( 'post.php?post=' . $page_id . '&action=elementor' ) ) . '">' . esc_html__( 'ویرایش با Elementor', 'samadi-elementor-widgets' ) . '</a>';
 			}
 		}
@@ -154,6 +170,19 @@ class Samadi_EW_Setup {
 		$args = array( 'samadi_setup' => 'error' );
 
 		switch ( $tool ) {
+			case 'demo':
+				if ( current_user_can( 'edit_theme_options' ) && current_user_can( 'manage_product_terms' ) ) {
+					$result = Samadi_EW_Demos::apply(
+						isset( $_POST['demo'] ) ? sanitize_key( wp_unslash( $_POST['demo'] ) ) : '',
+						! empty( $_POST['structure'] ),
+						! empty( $_POST['home'] ) && current_user_can( 'publish_pages' ),
+						! empty( $_POST['set_front'] ) && current_user_can( 'manage_options' )
+					);
+					if ( $result['ok'] ) {
+						$args = array( 'samadi_setup' => 'demo', 'page_id' => $result['page_id'] );
+					}
+				}
+				break;
 			case 'attributes':
 				if ( current_user_can( 'manage_product_terms' ) ) {
 					$args = array( 'samadi_setup' => 'attributes', 'count' => self::create_attributes() );
@@ -191,11 +220,11 @@ class Samadi_EW_Setup {
 	 *
 	 * @return int Number created.
 	 */
-	private static function create_attributes() {
+	public static function create_attributes( $attributes = null ) {
 		$existing = wp_list_pluck( wc_get_attribute_taxonomies(), 'attribute_name' );
 		$created  = 0;
 
-		foreach ( self::recommended_attributes() as $slug => $label ) {
+		foreach ( null === $attributes ? self::recommended_attributes() : $attributes as $slug => $label ) {
 			if ( in_array( $slug, $existing, true ) ) {
 				continue;
 			}
@@ -221,10 +250,10 @@ class Samadi_EW_Setup {
 	 *
 	 * @return int Number created.
 	 */
-	private static function create_categories() {
+	public static function create_categories( $categories = null ) {
 		$created = 0;
 
-		foreach ( self::recommended_categories() as $name ) {
+		foreach ( null === $categories ? self::recommended_categories() : $categories as $name ) {
 			if ( term_exists( $name, 'product_cat' ) ) {
 				continue;
 			}
@@ -279,7 +308,7 @@ class Samadi_EW_Setup {
 	 * @param bool $set_front Set as the static front page.
 	 * @return int Page ID or 0.
 	 */
-	private static function create_home_page( $set_front ) {
+	public static function create_home_page( $set_front, $extra = array() ) {
 		$file = SAMADI_EW_DIR . 'templates/elementor/home.json';
 
 		if ( ! file_exists( $file ) ) {
@@ -297,6 +326,20 @@ class Samadi_EW_Setup {
 			'{{wholesale_url}}' => preg_replace( '/#.*$/', '', samadi_ew_quote_url() ),
 			'{{blog_url}}'      => get_option( 'page_for_posts' ) ? get_permalink( (int) get_option( 'page_for_posts' ) ) : '',
 		);
+
+		// Texts default to the current Customizer values (or a demo's values passed in $extra).
+		$defaults = array(
+			'{{hero_title}}' => function_exists( 'samadi_option' ) ? (string) samadi_option( 'hero_title' ) : '',
+			'{{hero_text}}'  => function_exists( 'samadi_option' ) ? (string) samadi_option( 'hero_text' ) : '',
+			'{{hero_btn1}}'  => function_exists( 'samadi_option' ) ? (string) samadi_option( 'hero_btn1_text' ) : __( 'مشاهده محصولات', 'samadi-elementor-widgets' ),
+			'{{hero_btn2}}'  => function_exists( 'samadi_option' ) ? (string) samadi_option( 'hero_btn2_text' ) : __( 'خرید عمده', 'samadi-elementor-widgets' ),
+		);
+		for ( $n = 1; $n <= 5; $n++ ) {
+			$defaults[ "{{b{$n}_icon}}" ]  = function_exists( 'samadi_option' ) ? (string) samadi_option( "benefit_{$n}_icon" ) : 'check';
+			$defaults[ "{{b{$n}_title}}" ] = function_exists( 'samadi_option' ) ? (string) samadi_option( "benefit_{$n}_title" ) : '';
+			$defaults[ "{{b{$n}_text}}" ]  = function_exists( 'samadi_option' ) ? (string) samadi_option( "benefit_{$n}_text" ) : '';
+		}
+		$replacements = array_merge( $replacements, $defaults, $extra );
 
 		$content = self::replace_placeholders( $template['content'], $replacements );
 

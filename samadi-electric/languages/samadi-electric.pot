@@ -39,7 +39,7 @@ msgstr ""
 msgid "بازگشت به خانه"
 msgstr ""
 
-#: 404.php:24 inc/helpers.php:83
+#: 404.php:24 inc/helpers.php:86
 msgid "مشاهده محصولات"
 msgstr ""
 
@@ -285,331 +285,347 @@ msgstr ""
 msgid "پیشنهاد اصلی: زبان سایت را در «تنظیمات ← عمومی» فارسی قرار دهید. این گزینه برای زمانی است که زبان وردپرس فارسی نیست."
 msgstr ""
 
-#: inc/customizer.php:213
-msgid "هدر"
+#: inc/customizer.php:214
+msgid "نوع فروشگاه (نماد پیش‌فرض و آیکون‌ها)"
 msgstr ""
 
 #: inc/customizer.php:215
-msgid "هدر داخلی قالب. اگر در Elementor Pro قالب هدر با شرط نمایش ساخته شود، یا در بخش «Elementor» یک قالب هدر انتخاب شود، جایگزین این هدر می‌شود."
+msgid "برای اعمال کامل یک دمو (رنگ‌ها، دسته‌ها، صفحه اصلی) از «ووکامرس ← تنظیمات صمدی ← دموها» استفاده کنید."
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "تجهیزات الکتریکی"
 msgstr ""
 
 #: inc/customizer.php:218
-msgid "لوگوی موبایل"
+msgid "تجهیزات و لوازم پزشکی"
 msgstr ""
 
-#: inc/customizer.php:219
-msgid "هدر چسبان"
-msgstr ""
-
-#: inc/customizer.php:220
-msgid "نمایش مگامنوی دسته‌بندی محصولات"
-msgstr ""
-
-#: inc/customizer.php:221
-msgid "عنوان دکمه دسته‌بندی‌ها"
-msgstr ""
-
-#: inc/customizer.php:222
-msgid "نمایش جستجو"
-msgstr ""
-
-#: inc/customizer.php:223
-msgid "نمایش حساب کاربری"
-msgstr ""
-
-#: inc/customizer.php:224
-msgid "عنوان دکمه خرید عمده (خالی = مخفی)"
+#: inc/customizer.php:228
+msgid "هدر"
 msgstr ""
 
 #: inc/customizer.php:230
-msgid "اطلاعات تماس و شبکه‌های اجتماعی"
+msgid "هدر داخلی قالب. اگر در Elementor Pro قالب هدر با شرط نمایش ساخته شود، یا در بخش «Elementor» یک قالب هدر انتخاب شود، جایگزین این هدر می‌شود."
 msgstr ""
 
-#: inc/customizer.php:232
-msgid "فقط اطلاعات واقعی فروشگاه را وارد کنید. موارد خالی در سایت نمایش داده نمی‌شوند."
+#: inc/customizer.php:233
+msgid "لوگوی موبایل"
+msgstr ""
+
+#: inc/customizer.php:234
+msgid "هدر چسبان"
 msgstr ""
 
 #: inc/customizer.php:235
-msgid "تلفن ثابت"
+msgid "نمایش مگامنوی دسته‌بندی محصولات"
 msgstr ""
 
 #: inc/customizer.php:236
-msgid "تلفن همراه"
+msgid "عنوان دکمه دسته‌بندی‌ها"
 msgstr ""
 
 #: inc/customizer.php:237
-msgid "ایمیل"
+msgid "نمایش جستجو"
 msgstr ""
 
 #: inc/customizer.php:238
-msgid "آدرس"
+msgid "نمایش حساب کاربری"
 msgstr ""
 
 #: inc/customizer.php:239
-msgid "ساعات کاری"
+msgid "عنوان دکمه خرید عمده (خالی = مخفی)"
 msgstr ""
 
-#: inc/customizer.php:240
-msgid "اینستاگرام (لینک کامل)"
+#: inc/customizer.php:245
+msgid "اطلاعات تماس و شبکه‌های اجتماعی"
 msgstr ""
 
-#: inc/customizer.php:241
-msgid "تلگرام (لینک کامل)"
+#: inc/customizer.php:247
+msgid "فقط اطلاعات واقعی فروشگاه را وارد کنید. موارد خالی در سایت نمایش داده نمی‌شوند."
 msgstr ""
 
-#: inc/customizer.php:242
-msgid "واتس‌اپ (لینک کامل wa.me)"
-msgstr ""
-
-#: inc/customizer.php:243
-msgid "لینکدین (لینک کامل)"
-msgstr ""
-
-#: inc/customizer.php:249 inc/helpers.php:50 inc/helpers.php:85
-msgid "خرید عمده"
+#: inc/customizer.php:250
+msgid "تلفن ثابت"
 msgstr ""
 
 #: inc/customizer.php:251
-msgid "صفحه‌ای که فرم خرید عمده/استعلام قیمت در آن قرار دارد (شورت‌کد [samadi_quote_form] از افزونه همراه). اگر خالی باشد، دکمه‌های خرید عمده نمایش داده نمی‌شوند."
+msgid "تلفن همراه"
+msgstr ""
+
+#: inc/customizer.php:252
+msgid "ایمیل"
+msgstr ""
+
+#: inc/customizer.php:253
+msgid "آدرس"
 msgstr ""
 
 #: inc/customizer.php:254
-msgid "صفحه خرید عمده"
+msgid "ساعات کاری"
 msgstr ""
 
 #: inc/customizer.php:255
-msgid "یا لینک دلخواه"
+msgid "اینستاگرام (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:261
-msgid "صفحه اصلی (پیش‌فرض قالب)"
+#: inc/customizer.php:256
+msgid "تلگرام (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:263
-msgid "این تنظیمات برای صفحه اصلی داخلی قالب است. اگر در «تنظیمات → خواندن» یک برگه ساخته‌شده با Elementor را به‌عنوان صفحه اصلی انتخاب کنید، همان برگه نمایش داده می‌شود و از Elementor ویرایش می‌شود."
+#: inc/customizer.php:257
+msgid "واتس‌اپ (لینک کامل wa.me)"
 msgstr ""
 
-#: inc/customizer.php:267
-msgid "نمایش بنر اصلی"
+#: inc/customizer.php:258
+msgid "لینکدین (لینک کامل)"
 msgstr ""
 
-#: inc/customizer.php:268
-msgid "نمایش مزایای خرید"
+#: inc/customizer.php:264 inc/helpers.php:53 inc/helpers.php:88
+msgid "خرید عمده"
+msgstr ""
+
+#: inc/customizer.php:266
+msgid "صفحه‌ای که فرم خرید عمده/استعلام قیمت در آن قرار دارد (شورت‌کد [samadi_quote_form] از افزونه همراه). اگر خالی باشد، دکمه‌های خرید عمده نمایش داده نمی‌شوند."
 msgstr ""
 
 #: inc/customizer.php:269
-msgid "نمایش دسته‌بندی‌های محبوب"
+msgid "صفحه خرید عمده"
 msgstr ""
 
 #: inc/customizer.php:270
+msgid "یا لینک دلخواه"
+msgstr ""
+
+#: inc/customizer.php:276
+msgid "صفحه اصلی (پیش‌فرض قالب)"
+msgstr ""
+
+#: inc/customizer.php:278
+msgid "این تنظیمات برای صفحه اصلی داخلی قالب است. اگر در «تنظیمات → خواندن» یک برگه ساخته‌شده با Elementor را به‌عنوان صفحه اصلی انتخاب کنید، همان برگه نمایش داده می‌شود و از Elementor ویرایش می‌شود."
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "نمایش بنر اصلی"
+msgstr ""
+
+#: inc/customizer.php:283
+msgid "نمایش مزایای خرید"
+msgstr ""
+
+#: inc/customizer.php:284
+msgid "نمایش دسته‌بندی‌های محبوب"
+msgstr ""
+
+#: inc/customizer.php:285
 msgid "نمایش پیشنهادهای ویژه (تخفیف‌دار)"
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:286
 msgid "نمایش پرفروش‌ترین‌ها"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:287
 msgid "نمایش جدیدترین محصولات"
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:288
 msgid "نمایش برندها"
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:289
 msgid "نمایش مقالات آموزشی"
 msgstr ""
 
-#: inc/customizer.php:286
+#: inc/customizer.php:301
 msgid "دسته‌بندی‌های منتخب"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:302
 msgid "ترتیب نمایش مطابق ترتیب دسته‌ها در «محصولات → دسته‌بندی‌ها» (قابل جابه‌جایی با کشیدن) است. اگر چیزی انتخاب نشود، دسته‌های اصلی نمایش داده می‌شوند."
 msgstr ""
 
-#: inc/customizer.php:292
+#: inc/customizer.php:307
 msgid "حداکثر تعداد دسته‌ها"
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:308
 msgid "تعداد محصولات هر بخش"
 msgstr ""
 
-#: inc/customizer.php:294
+#: inc/customizer.php:309
 msgid "تعداد مقالات"
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:310
 msgid "تصویر بنر اصلی"
 msgstr ""
 
-#: inc/customizer.php:296
+#: inc/customizer.php:311
 msgid "عنوان بنر"
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:312
 msgid "متن بنر"
 msgstr ""
 
-#: inc/customizer.php:298
+#: inc/customizer.php:313
 msgid "متن دکمه اول"
 msgstr ""
 
-#: inc/customizer.php:299
+#: inc/customizer.php:314
 msgid "لینک دکمه اول (خالی = فروشگاه)"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:315
 msgid "متن دکمه دوم (به صفحه خرید عمده لینک می‌شود)"
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:321
 msgid "موقعیت متن بنر"
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:323
 msgid "راست"
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:324
 msgid "وسط"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:325
 msgid "چپ"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:332
 msgid "مزایای فروشگاه"
 msgstr ""
 
-#: inc/customizer.php:318
+#: inc/customizer.php:333
 msgid "نمایش نوار مزایا"
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:337
 msgid "آیکون مورد %d"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:339
 msgid "عنوان مورد %d (خالی = مخفی)"
 msgstr ""
 
-#: inc/customizer.php:326
+#: inc/customizer.php:341
 msgid "توضیح مورد %d"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:345
 msgid "فروشگاه و کارت محصول"
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:351
 msgid "حالت نمایش کارت محصول"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:353
 msgid "استاندارد"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:354
 msgid "فشرده"
 msgstr ""
 
-#: inc/customizer.php:340
+#: inc/customizer.php:355
 msgid "با حاشیه"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:360
 msgid "نمایش کد کالا در کارت"
 msgstr ""
 
-#: inc/customizer.php:346
+#: inc/customizer.php:361
 msgid "نمایش برند در کارت"
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:362
 msgid "نمایش وضعیت موجودی در کارت"
 msgstr ""
 
-#: inc/customizer.php:348
+#: inc/customizer.php:363
 msgid "نمایش امتیاز در کارت"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:364
 msgid "تعداد ستون محصولات (دسکتاپ)"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:365
 msgid "تعداد محصول در هر صفحه"
 msgstr ""
 
-#: inc/customizer.php:351
+#: inc/customizer.php:366
 msgid "نمایش ستون فیلترها در آرشیو"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:367
 msgid "نمایش کد کالا در صفحه محصول"
 msgstr ""
 
-#: inc/customizer.php:353
+#: inc/customizer.php:368
 msgid "نمایش برند در صفحه محصول"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:369
 msgid "نمایش مزایای فروشگاه در صفحه محصول"
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:372
 msgid "مسیر راهنما (Breadcrumb)"
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:373
 msgid "نمایش مسیر راهنما"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:379
 msgid "منبع"
 msgstr ""
 
-#: inc/customizer.php:365
+#: inc/customizer.php:380
 msgid "حالت خودکار در صورت فعال بودن Yoast SEO یا Rank Math از Breadcrumb همان افزونه (همراه با Schema آن) استفاده می‌کند."
 msgstr ""
 
-#: inc/customizer.php:367
+#: inc/customizer.php:382
 msgid "خودکار"
 msgstr ""
 
-#: inc/customizer.php:368
+#: inc/customizer.php:383
 msgid "ووکامرس / قالب"
 msgstr ""
 
-#: inc/customizer.php:375
+#: inc/customizer.php:390
 msgid "موبایل"
 msgstr ""
 
-#: inc/customizer.php:376
+#: inc/customizer.php:391
 msgid "نوار ناوبری پایین موبایل"
 msgstr ""
 
-#: inc/customizer.php:377
+#: inc/customizer.php:392
 msgid "نمایش علاقه‌مندی‌ها در نوار پایین (در صورت نصب افزونه علاقه‌مندی)"
 msgstr ""
 
-#: inc/customizer.php:378
+#: inc/customizer.php:393
 msgid "نوار خرید چسبان در صفحه محصول"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:396
 msgid "فوتر"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:397
 msgid "درباره فروشگاه"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:398
 msgid "متن کپی‌رایت (خالی = پیش‌فرض)"
 msgstr ""
 
@@ -801,55 +817,55 @@ msgstr ""
 msgid "نمایش فهرستی"
 msgstr ""
 
-#: inc/helpers.php:47
+#: inc/helpers.php:50
 msgid "همه دسته‌بندی‌ها"
 msgstr ""
 
-#: inc/helpers.php:81
+#: inc/helpers.php:84
 msgid "تجهیزات الکتریکی باکیفیت، برای زندگی بهتر"
 msgstr ""
 
-#: inc/helpers.php:82
+#: inc/helpers.php:85
 msgid "صمدی الکتریک، همراه مطمئن شما در تأمین کلیه لوازم برق ساختمان و صنعت."
 msgstr ""
 
-#: inc/helpers.php:91
+#: inc/helpers.php:94
 msgid "ارسال سریع"
 msgstr ""
 
-#: inc/helpers.php:92
+#: inc/helpers.php:95
 msgid "به سراسر ایران"
 msgstr ""
 
-#: inc/helpers.php:94
+#: inc/helpers.php:97
 msgid "ضمانت اصالت کالا"
 msgstr ""
 
-#: inc/helpers.php:95
+#: inc/helpers.php:98
 msgid "از برندهای معتبر"
 msgstr ""
 
-#: inc/helpers.php:97
+#: inc/helpers.php:100
 msgid "مشاوره تخصصی"
 msgstr ""
 
-#: inc/helpers.php:98
+#: inc/helpers.php:101
 msgid "پیش از خرید"
 msgstr ""
 
-#: inc/helpers.php:100
+#: inc/helpers.php:103
 msgid "قیمت مناسب"
 msgstr ""
 
-#: inc/helpers.php:101
+#: inc/helpers.php:104
 msgid "خرید مستقیم"
 msgstr ""
 
-#: inc/helpers.php:103
+#: inc/helpers.php:106
 msgid "پشتیبانی واقعی"
 msgstr ""
 
-#: inc/helpers.php:104
+#: inc/helpers.php:107
 msgid "همیشه کنار شما"
 msgstr ""
 

@@ -51,7 +51,7 @@ function samadi_site_logo( $context = 'header' ) {
 		// Built-in brand mark + site name text.
 		printf(
 			'<img class="se-logo__mark" src="%s" width="44" height="44" alt="" aria-hidden="true">',
-			esc_url( SAMADI_URI . '/assets/images/logo-mark.svg' )
+			esc_url( SAMADI_URI . ( 'medical' === samadi_option( 'store_type' ) ? '/assets/images/logo-mark-medical.svg' : '/assets/images/logo-mark.svg' ) )
 		);
 		echo '<span class="se-logo__text"><span class="se-logo__name">' . esc_html( $name ) . '</span>';
 		$tagline = get_bloginfo( 'description', 'display' );

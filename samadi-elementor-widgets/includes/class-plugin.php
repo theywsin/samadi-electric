@@ -53,6 +53,7 @@ final class Samadi_EW_Plugin {
 			'class-recently-viewed',
 			'class-shortcodes',
 			'class-setup',
+			'class-demos',
 		);
 
 		foreach ( $modules as $module ) {
